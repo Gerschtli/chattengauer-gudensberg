@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Banner from '$lib/Banner.svelte';
 	import Gig from '$lib/Gig.svelte';
+	import { SimpleLayout } from '$lib/simpleLayout';
 
 	const gigs: {
 		weekday: string;
@@ -33,29 +34,22 @@
 	];
 </script>
 
-<svelte:head>
-	<title>Termine Chattengauer - Musik aus der Region</title>
-</svelte:head>
+<SimpleLayout.Root title="Auftritte & Veranstaltungen">
+	<Banner />
 
-<Banner />
+	<SimpleLayout.Section class="space-y-2">
+		<SimpleLayout.H1>Auftritte & Veranstaltungen</SimpleLayout.H1>
 
-<section class="mt-3 space-y-2">
-	<header class="flex flex-col items-center px-4 pt-4">
-		<h1 class="text-md text-center font-semibold uppercase text-slate-700">
-			Auftritte & Veranstaltungen
-			<span class="ml-1 inline-block h-2 w-2 rounded-sm bg-red-500" />
-		</h1>
-		<div class="my-1 w-1/3 border-b-2 border-red-500" />
-	</header>
+		<article class="px-4">
+			<h2 class="my-3 text-xs font-semibold uppercase text-slate-700">November 2022</h2>
+			{#each gigs as gig}
+				<Gig {gig} />
+			{/each}
 
-	<article class="px-4">
-		<h2 class="my-3 text-xs font-semibold uppercase text-slate-700">November 2022</h2>
-		{#each gigs as gig}
-			<Gig {gig} />
-		{/each}
-		<h2 class="my-3 text-xs font-semibold uppercase text-slate-700">Dezember 2022</h2>
-		{#each gigs as gig}
-			<Gig {gig} />
-		{/each}
-	</article>
-</section>
+			<h2 class="my-3 text-xs font-semibold uppercase text-slate-700">Dezember 2022</h2>
+			{#each gigs as gig}
+				<Gig {gig} />
+			{/each}
+		</article>
+	</SimpleLayout.Section>
+</SimpleLayout.Root>

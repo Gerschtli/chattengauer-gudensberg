@@ -1,18 +1,17 @@
 <script lang="ts">
 	import Banner from '$lib/Banner.svelte';
+	import { SimpleLayout } from '$lib/simpleLayout';
 	import Gigs from './Gigs.svelte';
 	import Intro from './Intro.svelte';
 	import News from './News.svelte';
 </script>
 
-<svelte:head>
-	<title>Chattengauer - Musik aus der Region</title>
-</svelte:head>
+<SimpleLayout.Root title="Chattengauer">
+	<Banner />
 
-<Banner />
+	<Intro />
 
-<Intro />
+	<News />
 
-<News />
-
-<Gigs />
+	<Gigs />
+</SimpleLayout.Root>

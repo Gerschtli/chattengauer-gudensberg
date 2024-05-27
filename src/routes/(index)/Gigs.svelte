@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Gig from '$lib/Gig.svelte';
+	import { SimpleLayout } from '$lib/simpleLayout';
 	import { ChevronRight } from 'lucide-svelte';
 
 	const gigs: {
@@ -33,14 +34,8 @@
 	];
 </script>
 
-<section class="mt-3 space-y-2">
-	<header class="flex flex-col items-center px-4 pt-4">
-		<h1 class="text-md text-center font-semibold uppercase text-slate-700">
-			Auftritte & Veranstaltungen
-			<span class="ml-1 inline-block h-2 w-2 rounded-sm bg-red-500" />
-		</h1>
-		<div class="my-1 w-1/3 border-b-2 border-red-500" />
-	</header>
+<SimpleLayout.Section class="space-y-2">
+	<SimpleLayout.H1>Auftritte & Veranstaltungen</SimpleLayout.H1>
 
 	<article class="px-4">
 		{#each gigs as gig}
@@ -53,4 +48,4 @@
 			</a>
 		</footer>
 	</article>
-</section>
+</SimpleLayout.Section>
