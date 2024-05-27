@@ -21,7 +21,7 @@
 			day: '16.12.2022',
 			start: '20:00',
 			end: '22:00',
-			description: 'Mitgliederversammlung F 26',
+			description: 'Mitgliederversammlung F26',
 		},
 		{
 			weekday: 'Mo',

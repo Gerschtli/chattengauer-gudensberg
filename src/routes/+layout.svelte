@@ -7,7 +7,7 @@
 <header class="flex items-center justify-between border-b border-slate-300 p-4">
 	<hgroup>
 		<h1 class="text-lg"><a href="/">Chattengauer</a></h1>
-		<h2 class="text-xs text-slate-500">Dein Musikversion in Gudensberg</h2>
+		<h2 class="text-xs text-slate-500">Dein Musikverein in Gudensberg</h2>
 	</hgroup>
 
 	<div class="ml-4">
@@ -60,6 +60,6 @@
 
 	<ul class="flex gap-4">
 		<li><a class="text-xs font-bold" href="/datenschutz">Datenschutz</a></li>
-		<li><a class="text-xs font-bold" href="/datenschutz">Impressum</a></li>
+		<li><a class="text-xs font-bold" href="/impressum">Impressum</a></li>
 	</ul>
 </footer>
