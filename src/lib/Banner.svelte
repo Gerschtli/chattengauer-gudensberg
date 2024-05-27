@@ -1,3 +1,3 @@
 <figure>
-	<img src="https://via.placeholder.com/400x150?text=Cooles+Bild" alt="" />
+	<img src="https://via.placeholder.com/1000x300?text=Cooles+Bild" alt="" />
 </figure>
