@@ -35,7 +35,11 @@
 
 <article class="{color} p-4">
 	<figure class="relative m-3 mb-3 overflow-hidden">
-		<img src="https://www.original-chattengauer.de/uploads/imgs/221216_adventskonzert_gruppenbild.jpg" alt="" />
+		<img
+			src="https://www.original-chattengauer.de/uploads/imgs/221216_adventskonzert_gruppenbild.jpg"
+			alt=""
+			class="w-full"
+		/>
 		<figcaption class="absolute inset-x-0 bottom-0 p-3 text-sm font-semibold text-slate-200 backdrop-blur">
 			Unser Adventskonzert am 17.12.
 		</figcaption>
@@ -70,10 +74,12 @@
 			</header>
 
 			{#each [1, 2, 3] as _}
-				<img
-					src="https://www.original-chattengauer.de/uploads/imgs/221216_adventskonzert_gruppenbild.jpg"
-					alt=""
-				/>
+				<figure class="grid place-content-center">
+					<img
+						src="https://www.original-chattengauer.de/uploads/imgs/221216_adventskonzert_gruppenbild.jpg"
+						alt=""
+					/>
+				</figure>
 
 				<p class="px-4 text-sm text-slate-800">
 					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo tempora sapiente at quaerat iste
