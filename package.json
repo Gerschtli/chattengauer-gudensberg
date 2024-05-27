@@ -2,6 +2,10 @@
 	"name": "chattengauer-gudensberg",
 	"version": "0.0.1",
 	"private": true,
+	"engines": {
+		"node": "20.x"
+	},
+	"packageManager": "pnpm@8.15.5",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -15,7 +19,7 @@
 		"test:unit": "vitest"
 	},
 	"devDependencies": {
-		"@playwright/test": "^1.28.1",
+		"@playwright/test": "1.44.0",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
