@@ -1,4 +1,4 @@
-<header class="flex flex-col px-4 pt-4">
+<header class="flex flex-col px-4 py-2">
 	<h1 class="text-xl font-semibold uppercase text-slate-800">
 		<slot />
 		<span class="ml-1 inline-block h-2 w-2 rounded-sm bg-red-500" />

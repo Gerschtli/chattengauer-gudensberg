@@ -3,7 +3,7 @@
 </script>
 
 <SimpleLayout.Section>
-	<p class="p-4 text-sm">
+	<p class="px-4 text-sm">
 		Du spielst ein Instrument oder möchtest es lernen? Bei uns bist du richtig aufgehoben mit unseren verschiedenen
 		Orchestern: Eine
 		<a class="text-blue-700" href="/blaeserklasse">Bläserklasse</a>
