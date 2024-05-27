@@ -22,5 +22,13 @@ module.exports = {
 				parser: '@typescript-eslint/parser',
 			},
 		},
+		{
+			files: ['tests/**'],
+			plugins: ['playwright'],
+			extends: 'plugin:playwright/recommended',
+		},
 	],
+	rules: {
+		'@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+	},
 };
