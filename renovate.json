@@ -1,4 +1,12 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["config:recommended"]
+	"extends": ["config:recommended"],
+	"ignoreDeps": ["@playwright/test", "pnpm"],
+	"packageRules": [
+		{
+			"matchPackagePatterns": ["lucide-svelte"],
+			"groupName": "lucide-svelte",
+			"schedule": ["on the first day of the month"]
+		}
+	]
 }
