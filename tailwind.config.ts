@@ -4,7 +4,15 @@ export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				sans: ['Trade Gothic LT Std Regular', 'system-ui'],
+				accent: ['"Trade Gothic LT Std Bold Condensed No. 20"', 'system-ui'],
+			},
+			colors: {
+				accent: '#dd1e25',
+			},
+		},
 		container: {
 			center: true,
 			screens: {
