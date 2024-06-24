@@ -23,7 +23,7 @@
 	</p>
 
 	<footer class="text-right text-sm">
-		<a href="/news/{id}" class="font-bold text-red-500">
+		<a href="/news/{id}" class="font-bold text-accent">
 			Mehr Bilder <ChevronRight class="inline-block align-middle" size={16} />
 		</a>
 	</footer>

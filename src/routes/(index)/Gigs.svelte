@@ -43,7 +43,7 @@
 		{/each}
 
 		<footer class="text-right text-sm">
-			<a href="/termine" class="font-bold text-red-500">
+			<a href="/termine" class="font-bold text-accent">
 				Alle Termine <ChevronRight class="inline-block align-middle" size={16} />
 			</a>
 		</footer>

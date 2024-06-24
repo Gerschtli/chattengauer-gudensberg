@@ -6,10 +6,10 @@
 	<div class="container grid gap-y-6 px-4 py-6 text-white md:grid-cols-2 md:gap-x-4">
 		<article>
 			<header>
-				<h1 class="text-sm font-bold uppercase">
-					Kontakt <span class="ml-1 inline-block h-2 w-2 rounded-sm bg-red-500" />
+				<h1 class="font-accent text-sm font-bold uppercase">
+					Kontakt <span class="ml-1 inline-block h-2 w-2 rounded-sm bg-accent" />
 				</h1>
-				<div class="my-1 w-1/4 border-b-2 border-red-500" />
+				<div class="my-1 w-1/4 border-b-2 border-accent" />
 			</header>
 
 			<p class="mt-2 space-y-1 text-xs">
@@ -30,10 +30,10 @@
 
 		<article>
 			<header>
-				<h1 class="text-sm font-bold uppercase">
-					Bankverbindung <span class="ml-1 inline-block h-2 w-2 rounded-sm bg-red-500" />
+				<h1 class="font-accent text-sm font-bold uppercase">
+					Bankverbindung <span class="ml-1 inline-block h-2 w-2 rounded-sm bg-accent" />
 				</h1>
-				<div class="my-1 w-1/4 border-b-2 border-red-500" />
+				<div class="my-1 w-1/4 border-b-2 border-accent" />
 			</header>
 
 			<div class="mt-2 inline-grid grid-cols-[auto_auto] gap-x-3 gap-y-1 text-xs">
