@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    playwright.url = "github:pietdevries94/playwright-web-flake/1.44.0";
+    playwright.url = "github:pietdevries94/playwright-web-flake/1.44.1";
   };
 
   outputs = { self, nixpkgs, playwright }:
