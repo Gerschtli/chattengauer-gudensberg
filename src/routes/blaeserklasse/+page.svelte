@@ -1,11 +1,8 @@
 <script lang="ts">
-	import Banner from '$lib/Banner.svelte';
 	import { SimpleLayout } from '$lib/simpleLayout';
 </script>
 
 <SimpleLayout.Root title="Bläserklasse">
-	<Banner />
-
 	<SimpleLayout.Section class="space-y-2">
 		<SimpleLayout.H1>Bläserklasse</SimpleLayout.H1>
 

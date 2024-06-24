@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Banner from '$lib/Banner.svelte';
 	import Gig from '$lib/Gig.svelte';
 	import { SimpleLayout } from '$lib/simpleLayout';
 
@@ -35,8 +34,6 @@
 </script>
 
 <SimpleLayout.Root title="Auftritte & Veranstaltungen">
-	<Banner />
-
 	<SimpleLayout.Section class="space-y-2">
 		<SimpleLayout.H1>Auftritte & Veranstaltungen</SimpleLayout.H1>
 
