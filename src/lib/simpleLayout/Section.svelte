@@ -1,1 +1,1 @@
-<section class={$$props.class}><slot /></section>
+<section class={$$props['class']}><slot /></section>

@@ -48,7 +48,7 @@ jobs:
 
       - run: pnpm run test:unit run
 
-      - run: pnpm run test:integration
+      - run: pnpm run test:e2e
 
   nix:
     runs-on: ubuntu-latest
