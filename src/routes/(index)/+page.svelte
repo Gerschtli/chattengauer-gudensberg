@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { SimpleLayout } from '$lib/simpleLayout';
+	import Ensembles from './Ensembles.svelte';
 	import Gigs from './Gigs.svelte';
-	import Intro from './Intro.svelte';
 	import News from './News.svelte';
 </script>
 
 <SimpleLayout.Root title="Chattengauer">
-	<Intro />
+	<Ensembles />
 
 	<News />
 
