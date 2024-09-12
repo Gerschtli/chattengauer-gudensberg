@@ -10,7 +10,7 @@ importers:
     devDependencies:
       '@fontsource/open-sans':
         specifier: ^5.0.30
-        version: 5.0.30
+        version: 5.1.0
       '@playwright/test':
         specifier: 1.47.0
         version: 1.47.0
@@ -338,8 +338,8 @@ packages:
     resolution: {integrity: sha512-autAXT203ixhqei9xt+qkYOvY8l6LAFIdT2UXc/RPNeUVfqRF1BV94GTJyVPFKT8nFM6MyVJhjLj9E8JWvf5zQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@fontsource/open-sans@5.0.30':
-    resolution: {integrity: sha512-u5Siu6un1R0Q5UZ9lr56YujMe5xjXWoJm3qJUiEKk6IMKqOkedT/NsbAgIQtaqJL1jMZbpCVXGVCd97ahQYeKQ==}
+  '@fontsource/open-sans@5.1.0':
+    resolution: {integrity: sha512-g+mjF8gWUDwck9DrRCkhmFeEj7fskjtKZJKAQguVzSg93lc6ThakTHMRgs0dZfe5qBbktrV839tDrb4bIDyZSA==}
 
   '@humanwhocodes/module-importer@1.0.1':
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
@@ -2233,7 +2233,7 @@ snapshots:
     dependencies:
       levn: 0.4.1
 
-  '@fontsource/open-sans@5.0.30': {}
+  '@fontsource/open-sans@5.1.0': {}
 
   '@humanwhocodes/module-importer@1.0.1': {}
 
