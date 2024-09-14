@@ -19,7 +19,6 @@
 		"test:unit": "vitest"
 	},
 	"devDependencies": {
-		"@fontsource/open-sans": "^5.0.30",
 		"@playwright/test": "1.47.0",
 		"@sveltejs/adapter-vercel": "^5.4.3",
 		"@sveltejs/kit": "^2.5.26",
