@@ -8,7 +8,7 @@
 
 <svelte:window bind:scrollY />
 
-<header class="sticky top-0 z-10 border-b border-slate-200 bg-white/90">
+<header class="sticky top-0 z-10 bg-white/95 shadow-header">
 	<div class="container flex w-full items-center justify-between transition-all" class:py-4={scrollY === 0}>
 		<a href="/" class="flex items-center gap-4 px-4">
 			<img src={schrift} class="h-10" alt="Logo der Chattengauer Gudensberg" />

@@ -16,6 +16,9 @@ export default {
 			screens: {
 				xs: '468px',
 			},
+			boxShadow: {
+				header: '0 -16px 16px 16px rgba(0, 0, 0, 0.3)',
+			},
 		},
 		container: {
 			center: true,
