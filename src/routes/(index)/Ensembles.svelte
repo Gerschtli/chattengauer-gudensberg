@@ -23,7 +23,7 @@
 	];
 </script>
 
-<SimpleLayout.Section class="grid grid-cols-1 gap-4 px-4 xs:grid-cols-2 lg:grid-cols-4">
+<SimpleLayout.Section class="grid grid-cols-1 gap-px px-4 xs:grid-cols-2 lg:grid-cols-4">
 	{#each ensembles as ensemble}
 		<a
 			href={ensemble.link}
