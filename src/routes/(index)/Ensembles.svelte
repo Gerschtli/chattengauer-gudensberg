@@ -23,9 +23,12 @@
 	];
 </script>
 
-<SimpleLayout.Section class="grid grid-cols-2 gap-4">
+<SimpleLayout.Section class="grid grid-cols-1 gap-4 px-4 xs:grid-cols-2 lg:grid-cols-4">
 	{#each ensembles as ensemble}
-		<a href={ensemble.link} class="group grid aspect-[4/3] overflow-hidden">
+		<a
+			href={ensemble.link}
+			class="group grid aspect-[2.5/1] overflow-hidden xs:aspect-[1.5/1] sm:aspect-[2/1] lg:aspect-[1/1]"
+		>
 			<span
 				style="background-image: url('{ensembleImage}')"
 				class="relative col-[1] row-[1] bg-cover bg-center object-cover transition-all group-hover:scale-105"

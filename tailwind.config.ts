@@ -13,6 +13,9 @@ export default {
 			colors: {
 				accent: '#dd1e25',
 			},
+			screens: {
+				xs: '468px',
+			},
 		},
 		container: {
 			center: true,
