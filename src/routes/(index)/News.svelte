@@ -24,7 +24,7 @@
 <SimpleLayout.Section class="space-y-2">
 	<SimpleLayout.H1>Aktuelles & Ankündigungen</SimpleLayout.H1>
 
-	<div class="flex flex-col gap-px px-4">
+	<div class="flex flex-col gap-px">
 		{#each news as newsEntry}
 			<a href={newsEntry.link} class="group grid aspect-[2.5/1] overflow-hidden lg:aspect-[4/1]">
 				<span
