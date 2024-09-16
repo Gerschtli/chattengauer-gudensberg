@@ -2,16 +2,20 @@
 	import schrift from '$lib/assets/schrift.svg';
 	import wave from '$lib/assets/wave.svg';
 	import { Menu } from 'lucide-svelte';
+
+	let scrollY: number;
 </script>
 
-<header class="relative">
-	<div class="t-0 flex w-full items-center justify-between border-b border-slate-200 bg-white/70">
-		<a href="/" class="flex items-center gap-4 px-6">
+<svelte:window bind:scrollY />
+
+<header class="sticky top-0 z-10 border-b border-slate-200 bg-white/90">
+	<div class="container flex w-full items-center justify-between transition-all" class:py-4={scrollY === 0}>
+		<a href="/" class="flex items-center gap-4 px-4">
 			<img src={schrift} class="h-10" alt="Logo der Chattengauer Gudensberg" />
 			<img src={wave} class="h-14" alt="Logo der Chattengauer Gudensberg" />
 		</a>
 
-		<div class="p-6">
+		<div class="p-4">
 			<Menu size={32} />
 		</div>
 	</div>

@@ -6,4 +6,4 @@
 	<title>{title} - Musik aus der Region</title>
 </svelte:head>
 
-<main class="container space-y-4 py-4"><slot /></main>
+<main class="container space-y-8 py-4"><slot /></main>
