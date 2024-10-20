@@ -31,4 +31,4 @@ export default {
 	},
 
 	plugins: [typography],
-} as Config;
+} satisfies Config;
