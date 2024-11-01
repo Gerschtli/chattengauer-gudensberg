@@ -49,7 +49,7 @@ importers:
         version: 9.1.0(eslint@9.13.0(jiti@2.3.3))
       eslint-plugin-playwright:
         specifier: ^1.8.0
-        version: 1.8.0(eslint@9.13.0(jiti@2.3.3))
+        version: 1.8.3(eslint@9.13.0(jiti@2.3.3))
       eslint-plugin-svelte:
         specifier: ^2.45.1
         version: 2.45.1(eslint@9.13.0(jiti@2.3.3))(svelte@4.2.19)
@@ -934,8 +934,8 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
-  eslint-plugin-playwright@1.8.0:
-    resolution: {integrity: sha512-+vHG8VdtgMKwsEJrj973FqoTSn7GAtUsgudSeolLrigBPKwuXeHjcWKYPYPpMUVAISl3IMR7reQmK2v13sjaRw==}
+  eslint-plugin-playwright@1.8.3:
+    resolution: {integrity: sha512-h87JPFHkz8a6oPhn8GRGGhSQoAJjx0AkOv1jME6NoMk2FpEsfvfJJNaQDxLSqSALkCr0IJXPGTnp6SIRVu5Nqg==}
     engines: {node: '>=16.6.0'}
     peerDependencies:
       eslint: '>=8.40.0'
@@ -2842,7 +2842,7 @@ snapshots:
     dependencies:
       eslint: 9.13.0(jiti@2.3.3)
 
-  eslint-plugin-playwright@1.8.0(eslint@9.13.0(jiti@2.3.3)):
+  eslint-plugin-playwright@1.8.3(eslint@9.13.0(jiti@2.3.3)):
     dependencies:
       eslint: 9.13.0(jiti@2.3.3)
       globals: 13.24.0
