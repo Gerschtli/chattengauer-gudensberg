@@ -4,7 +4,7 @@
 	import schrift from '$lib/assets/schrift.svg';
 	import wave from '$lib/assets/wave.svg';
 
-	let scrollY: number = $state(0);
+	let scrollY = $state(0);
 </script>
 
 <svelte:window bind:scrollY />
