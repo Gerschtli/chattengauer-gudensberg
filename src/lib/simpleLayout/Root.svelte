@@ -3,7 +3,7 @@
 
 	interface Props {
 		title: string;
-		children?: Snippet;
+		children: Snippet;
 	}
 
 	let { title, children }: Props = $props();
@@ -13,4 +13,4 @@
 	<title>{title} - Musik aus der Region</title>
 </svelte:head>
 
-<main class="container space-y-8 py-4">{@render children?.()}</main>
+<main class="container space-y-8 py-4">{@render children()}</main>

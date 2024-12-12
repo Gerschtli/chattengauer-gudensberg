@@ -7,7 +7,7 @@
 	import Header from './Header.svelte';
 
 	interface Props {
-		children?: Snippet;
+		children: Snippet;
 	}
 
 	let { children }: Props = $props();
@@ -15,6 +15,6 @@
 
 <Header />
 
-{@render children?.()}
+{@render children()}
 
 <Footer />
