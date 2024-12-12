@@ -1,7 +1,8 @@
 <script lang="ts">
+	import { ChevronRight } from 'lucide-svelte';
+
 	import Gig from '$lib/Gig.svelte';
 	import { SimpleLayout } from '$lib/simpleLayout';
-	import { ChevronRight } from 'lucide-svelte';
 
 	const gigs: {
 		weekday: string;

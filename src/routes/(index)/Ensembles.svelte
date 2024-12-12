@@ -1,7 +1,8 @@
 <script lang="ts">
+	import { ChevronRightIcon } from 'lucide-svelte';
+
 	import ensembleImage from '$lib/assets/ensembleImage.jpg';
 	import { SimpleLayout } from '$lib/simpleLayout';
-	import { ChevronRightIcon } from 'lucide-svelte';
 
 	const ensembles = [
 		{

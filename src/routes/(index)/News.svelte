@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { SimpleLayout } from '$lib/simpleLayout';
 	import { ChevronRightIcon } from 'lucide-svelte';
+
+	import { SimpleLayout } from '$lib/simpleLayout';
 
 	const news = [
 		{

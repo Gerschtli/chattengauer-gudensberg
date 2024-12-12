@@ -1,7 +1,8 @@
 <script lang="ts">
+	import { Menu } from 'lucide-svelte';
+
 	import schrift from '$lib/assets/schrift.svg';
 	import wave from '$lib/assets/wave.svg';
-	import { Menu } from 'lucide-svelte';
 
 	let scrollY: number = $state(0);
 </script>
