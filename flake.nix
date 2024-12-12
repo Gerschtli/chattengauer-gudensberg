@@ -3,22 +3,14 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    playwright.url = "github:pietdevries94/playwright-web-flake/1.48.1";
   };
 
-  outputs = { self, nixpkgs, playwright }:
+  outputs = { self, nixpkgs }:
     let
       forEachSystem = nixpkgs.lib.genAttrs [ "aarch64-darwin" "x86_64-linux" ];
 
       pkgsFor = forEachSystem (system: import nixpkgs {
         inherit system;
-        overlays = [
-          (final: prev: {
-            inherit (playwright.packages.${system})
-              playwright-driver
-              playwright-test;
-          })
-        ];
       });
 
       nodejsFor = forEachSystem (system: pkgsFor.${system}.nodejs_20);
@@ -36,10 +28,6 @@
                 nodejs
                 nodejs.pkgs.pnpm
               ];
-
-              PLAYWRIGHT_BROWSERS_PATH = pkgs.playwright-driver.browsers;
-              PLAYWRIGHT_BROWSERS_VERSION = pkgs.playwright-driver.version;
-              PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD = "true";
             };
           });
 
@@ -72,10 +60,6 @@
                 ${getExe pkgs.jq} --raw-output '.engines.node' ${./package.json} \
                   | ${getExe pkgs.gnused} -e 's,\.x$,,'
               '';
-
-            playwright = checker "playwright" "npm package @playwright/test" pkgs.playwright-driver ''
-              ${getExe pkgs.jq} --raw-output '.devDependencies."@playwright/test"' ${./package.json}
-            '';
 
             pnpm = checker "pnpm" "pnpm version in package.json" nodejs.pkgs.pnpm ''
               ${getExe pkgs.jq} --raw-output '.packageManager' ${./package.json} \

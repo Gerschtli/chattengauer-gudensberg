@@ -1,6 +1,5 @@
 import js from '@eslint/js';
 import prettier from 'eslint-config-prettier';
-import playwright from 'eslint-plugin-playwright';
 import svelte from 'eslint-plugin-svelte';
 import globals from 'globals';
 import ts from 'typescript-eslint';
@@ -32,10 +31,6 @@ export default [
 				parser: ts.parser,
 			},
 		},
-	},
-	{
-		...playwright.configs['flat/recommended'],
-		files: ['tests/**'],
 	},
 	{
 		ignores: ['.svelte-kit/', '.vercel/', 'build/', 'coverage/'],
