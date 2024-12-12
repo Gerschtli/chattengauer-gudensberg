@@ -7,9 +7,9 @@
 </script>
 
 <SimpleLayout.Root title="Chattengauer">
-	<Ensembles />
-
 	<News />
+
+	<Ensembles />
 
 	<Gigs />
 </SimpleLayout.Root>
