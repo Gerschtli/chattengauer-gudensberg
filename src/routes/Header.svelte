@@ -3,7 +3,7 @@
 	import wave from '$lib/assets/wave.svg';
 	import { Menu } from 'lucide-svelte';
 
-	let scrollY: number;
+	let scrollY: number = $state(0);
 </script>
 
 <svelte:window bind:scrollY />

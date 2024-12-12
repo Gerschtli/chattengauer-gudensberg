@@ -7,9 +7,9 @@
 		<article>
 			<header>
 				<h1 class="font-accent text-sm font-bold uppercase">
-					Kontakt <span class="ml-1 inline-block h-2 w-2 rounded-sm bg-accent" />
+					Kontakt <span class="ml-1 inline-block h-2 w-2 rounded-sm bg-accent"></span>
 				</h1>
-				<div class="my-1 w-1/4 border-b-2 border-accent" />
+				<div class="my-1 w-1/4 border-b-2 border-accent"></div>
 			</header>
 
 			<p class="mt-2 space-y-1 text-xs">
@@ -31,9 +31,9 @@
 		<article>
 			<header>
 				<h1 class="font-accent text-sm font-bold uppercase">
-					Bankverbindung <span class="ml-1 inline-block h-2 w-2 rounded-sm bg-accent" />
+					Bankverbindung <span class="ml-1 inline-block h-2 w-2 rounded-sm bg-accent"></span>
 				</h1>
-				<div class="my-1 w-1/4 border-b-2 border-accent" />
+				<div class="my-1 w-1/4 border-b-2 border-accent"></div>
 			</header>
 
 			<div class="mt-2 inline-grid grid-cols-[auto_auto] gap-x-3 gap-y-1 text-xs">

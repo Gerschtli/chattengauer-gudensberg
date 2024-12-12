@@ -32,10 +32,10 @@
 			<span
 				style="background-image: url('{ensembleImage}')"
 				class="relative col-[1] row-[1] bg-cover bg-center object-cover transition-all group-hover:scale-105"
-			/>
+			></span>
 			<span
 				class="relative col-[1] row-[1] bg-gradient-to-t from-black/70 to-transparent transition-all group-hover:to-black/20"
-			/>
+			></span>
 			<span
 				class="relative col-[1] row-[1] flex items-end justify-between space-y-2 p-4 text-white transition-all group-hover:pb-8"
 			>
