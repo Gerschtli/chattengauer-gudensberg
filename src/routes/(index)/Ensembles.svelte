@@ -7,19 +7,19 @@
 	const ensembles = [
 		{
 			name: 'Hauptorchester',
-			link: '/hauptorchester',
+			link: '/ensembles/hauptorchester',
 		},
 		{
 			name: 'Jugendorchester',
-			link: '/jugendorchester',
+			link: '/ensembles/jugendorchester',
 		},
 		{
 			name: 'Bläserklassen',
-			link: '/blaeserklassen',
+			link: '/ensembles/blaeserklassen',
 		},
 		{
-			name: 'Eltern Ensemble',
-			link: '/eltern-ensemble',
+			name: 'Eltern Orchester',
+			link: '/ensembles/eltern-orchester',
 		},
 	];
 </script>
