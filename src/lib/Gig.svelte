@@ -6,14 +6,19 @@
 			start: string;
 			end: string;
 			description: string;
+			location: string;
 		};
 	}
 
 	let { gig }: Props = $props();
 </script>
 
-<div class="py-2">
-	<span class="inline-block h-2 w-2 rounded-sm bg-accent"></span>
-	{gig.day}, {gig.start} - {gig.end} Uhr
-	<p class="pl-4 text-sm font-semibold">{gig.description}</p>
+<!-- TODO: use grid instead of flexbox -->
+<div class="py-2 flex gap-2">
+	<span class="h-2 aspect-square mt-2 flex-shrink-0 rounded-sm bg-accent"></span>
+	<div>
+		<p class="text-slate-700">{gig.day}, {gig.start} - {gig.end} Uhr</p>
+		<p class="font-semibold">{gig.description}</p>
+		<p class="text-sm text-slate-500">{gig.location}</p>
+	</div>
 </div>

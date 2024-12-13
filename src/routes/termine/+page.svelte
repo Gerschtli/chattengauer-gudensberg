@@ -8,6 +8,7 @@
 		start: string;
 		end: string;
 		description: string;
+		location: string;
 	}[] = [
 		{
 			weekday: 'Mi',
@@ -15,6 +16,7 @@
 			start: '17:00',
 			end: '18:00',
 			description: 'Kid.Chatts (2021 und 2022) Grundschul-Weihnachtskonzert',
+			location: 'Bürgerhaus Gudensberg, Rathausgasse, 34281 Gudensberg',
 		},
 		{
 			weekday: 'Fr',
@@ -22,6 +24,7 @@
 			start: '20:00',
 			end: '22:00',
 			description: 'Mitgliederversammlung F26',
+			location: 'F26, Fritzlarer Str. 26, 34281 Gudensberg',
 		},
 		{
 			weekday: 'Mo',
@@ -29,6 +32,7 @@
 			start: '17:00',
 			end: '18:00',
 			description: 'Kid.Chatts (2021 und 2022) Grundschul-Weihnachtskonzert',
+			location: 'Grundschule Gudensberg, Holzweg 20, 34281 Gudensberg',
 		},
 	];
 </script>
