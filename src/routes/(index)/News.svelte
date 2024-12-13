@@ -27,7 +27,7 @@
 
 	<div class="flex flex-col gap-px">
 		{#each news as newsEntry}
-			<a href={newsEntry.link} class="group grid aspect-[2.5/1] overflow-hidden lg:aspect-[4/1]">
+			<a href={newsEntry.link} class="group grid aspect-[2.5/1] overflow-hidden">
 				<span
 					style="background-image: url('{newsEntry.image}')"
 					class="relative col-[1] row-[1] bg-cover bg-center object-cover transition-all group-hover:scale-105"
