@@ -32,13 +32,13 @@
 			<a href={ensemble.link} class="group grid aspect-[2.5/1] overflow-hidden xs:aspect-[1.5/1] sm:aspect-[2/1]">
 				<span
 					style="background-image: url('{ensembleImage}')"
-					class="relative col-[1] row-[1] bg-cover bg-center object-cover transition-all group-hover:scale-105"
+					class="relative grid-1 bg-cover bg-center object-cover transition-all group-hover:scale-105"
 				></span>
 				<span
-					class="relative col-[1] row-[1] bg-gradient-to-t from-black/70 to-transparent transition-all group-hover:to-black/20"
+					class="relative grid-1 bg-gradient-to-t from-black/70 to-transparent transition-all group-hover:to-black/20"
 				></span>
 				<span
-					class="relative col-[1] row-[1] flex items-end justify-between space-y-2 p-4 text-white transition-all group-hover:pb-8"
+					class="relative grid-1 flex items-end justify-between space-y-2 p-4 text-white transition-all group-hover:pb-8"
 				>
 					<span class="text-xl">
 						{ensemble.name}

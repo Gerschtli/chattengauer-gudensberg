@@ -21,3 +21,10 @@
 			url('/fonts/trade-gothic-lt-std-bold-condensed-no-20-5872def1d27d8.woff') format('woff');
 	}
 }
+
+@layer utilities {
+	.grid-1 {
+		grid-column: 1;
+		grid-row: 1;
+	}
+}
