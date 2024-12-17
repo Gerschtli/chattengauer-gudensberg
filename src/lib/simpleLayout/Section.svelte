@@ -3,7 +3,7 @@
 
 	interface Props {
 		children: Snippet;
-		class: string;
+		class?: string;
 	}
 
 	let { children, class: className }: Props = $props();
