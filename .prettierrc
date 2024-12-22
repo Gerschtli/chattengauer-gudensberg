@@ -5,7 +5,12 @@
 	"trailingComma": "all",
 	"printWidth": 120,
 	"htmlWhitespaceSensitivity": "ignore",
-	"plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss", "@trivago/prettier-plugin-sort-imports"],
+	"plugins": [
+		"prettier-plugin-svelte",
+		"@trivago/prettier-plugin-sort-imports",
+		"prettier-plugin-css-order",
+		"prettier-plugin-tailwindcss"
+	],
 	"importOrderParserPlugins": ["typescript"],
 	"importOrder": ["^\\$(app|env)/", "^\\$lib/server", "^\\$", "^\\.\\./", "^\\./", "\\.css$"],
 	"importOrderSeparation": true,

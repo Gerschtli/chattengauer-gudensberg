@@ -49,9 +49,9 @@
 		display: flex;
 		overflow-x: auto;
 		-webkit-overflow-scrolling: touch;
+		gap: var(--gap);
 		scroll-snap-type: x mandatory;
 		scrollbar-width: none;
-		gap: var(--gap);
 
 		&::-webkit-scrollbar {
 			display: none;
@@ -60,10 +60,10 @@
 
 	.slider > div {
 		flex-shrink: 0;
-		width: 100%;
 		aspect-ratio: 16 / 9;
+		width: 100%;
 		overflow: hidden;
-		scroll-snap-stop: always;
 		scroll-snap-align: center;
+		scroll-snap-stop: always;
 	}
 </style>
