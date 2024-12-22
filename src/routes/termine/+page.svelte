@@ -37,11 +37,11 @@
 	];
 </script>
 
-<SimpleLayout.Root title="Auftritte & Veranstaltungen">
+<SimpleLayout.Root title="Auftritte & Veranstaltungen" class="pt-6">
 	<SimpleLayout.Section class="space-y-2">
 		<SimpleLayout.H1>Auftritte & Veranstaltungen</SimpleLayout.H1>
 
-		<article class="px-4">
+		<article>
 			<h2 class="my-3 text-xs font-semibold uppercase text-slate-700">November 2022</h2>
 			{#each gigs as gig}
 				<Gig {gig} />

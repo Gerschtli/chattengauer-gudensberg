@@ -14,17 +14,17 @@
 	<SimpleLayout.Section class="space-y-2">
 		<SimpleLayout.H1>Ensemble {data.slug}</SimpleLayout.H1>
 
-		<p class="px-4 text-sm">
+		<p>
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis similique nam earum totam, quo suscipit
 			blanditiis! Placeat veritatis magni, a consectetur odio perspiciatis vitae voluptatum, rem nisi nesciunt
 			eos. Natus!
 		</p>
-		<p class="px-4 text-sm">
+		<p>
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis similique nam earum totam, quo suscipit
 			blanditiis! Placeat veritatis magni, a consectetur odio perspiciatis vitae voluptatum, rem nisi nesciunt
 			eos. Natus!
 		</p>
-		<p class="px-4 text-sm">
+		<p>
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis similique nam earum totam, quo suscipit
 			blanditiis! Placeat veritatis magni, a consectetur odio perspiciatis vitae voluptatum, rem nisi nesciunt
 			eos. Natus!

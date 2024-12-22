@@ -20,6 +20,44 @@
 			local('Trade Gothic LT Std Bold Condensed No. 20'),
 			url('/fonts/trade-gothic-lt-std-bold-condensed-no-20-5872def1d27d8.woff') format('woff');
 	}
+
+	:root {
+		--content-max-width: 768px;
+	}
+}
+
+@layer components {
+	.content-grid {
+		--content-padding: theme('spacing.4');
+		--breakout-size: calc(var(--content-max-width) * 0.1);
+
+		display: grid;
+		grid-template-columns:
+			[full-width-start]
+			minmax(0, 1fr)
+			[breakout-start]
+			minmax(var(--content-padding), var(--breakout-size))
+			[content-start]
+			min(100% - (var(--content-padding) * 2), var(--content-max-width))
+			[content-end]
+			minmax(var(--content-padding), var(--breakout-size))
+			[breakout-end]
+			minmax(0, 1fr)
+			[full-width-end];
+	}
+
+	.content-grid > :not(.content-grid, .content-grid__breakout, .content-grid__full-width) {
+		grid-column: content;
+	}
+
+	.content-grid > .content-grid__breakout {
+		grid-column: breakout;
+	}
+
+	.content-grid > .content-grid,
+	.content-grid__full-width {
+		grid-column: full-width;
+	}
 }
 
 @layer utilities {

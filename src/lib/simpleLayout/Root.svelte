@@ -2,15 +2,16 @@
 	import type { Snippet } from 'svelte';
 
 	interface Props {
+		class?: string;
 		title: string;
 		children: Snippet;
 	}
 
-	let { title, children }: Props = $props();
+	let { class: className, title, children }: Props = $props();
 </script>
 
 <svelte:head>
-	<title>{title} - Musik aus der Region</title>
+	<title>{title}</title>
 </svelte:head>
 
-<main class="container space-y-8 pb-4">{@render children()}</main>
+<main class="content-grid gap-y-6 pb-4 {className}">{@render children()}</main>

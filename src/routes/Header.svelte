@@ -9,15 +9,24 @@
 
 <svelte:window bind:scrollY />
 
-<header class="sticky top-0 z-10 bg-white/95 shadow-header">
-	<div class="container flex w-full items-center justify-between transition-all" class:py-4={scrollY === 0}>
-		<a href="/" class="flex items-center gap-4 px-4">
+<header class="sticky top-0 z-10 bg-white/95">
+	<div
+		class="mx-auto flex w-full max-w-[--content-max-width] items-center justify-between px-4 py-2 transition-all"
+		class:py-4={scrollY === 0}
+	>
+		<a href="/" class="flex items-center gap-4">
 			<img src={schrift} class="h-10" alt="Logo der Chattengauer Gudensberg" />
 			<img src={wave} class="h-14" alt="Logo der Chattengauer Gudensberg" />
 		</a>
 
-		<div class="p-4">
+		<div>
 			<Menu size={32} />
 		</div>
 	</div>
 </header>
+
+<style>
+	header {
+		box-shadow: 0 -16px 16px 16px rgba(0, 0, 0, 0.3);
+	}
+</style>

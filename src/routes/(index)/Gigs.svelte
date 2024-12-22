@@ -42,7 +42,7 @@
 <SimpleLayout.Section class="space-y-2">
 	<SimpleLayout.H1>Auftritte & Veranstaltungen</SimpleLayout.H1>
 
-	<article class="px-4">
+	<article>
 		{#each gigs as gig}
 			<Gig {gig} />
 		{/each}

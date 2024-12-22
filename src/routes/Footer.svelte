@@ -3,7 +3,7 @@
 </script>
 
 <footer class="bg-slate-800">
-	<div class="container grid gap-y-6 px-4 py-6 text-white md:grid-cols-2 md:gap-x-4">
+	<div class="mx-auto grid max-w-[--content-max-width] gap-y-6 px-4 py-6 text-white md:grid-cols-2 md:gap-x-4">
 		<article>
 			<header>
 				<h1 class="font-accent text-sm font-bold uppercase">

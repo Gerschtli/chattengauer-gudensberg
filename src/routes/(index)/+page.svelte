@@ -13,15 +13,15 @@
 </script>
 
 <SimpleLayout.Root title="Chattengauer">
-	<section class="grid grid-cols-1 grid-rows-1 h-48 overflow-hidden">
+	<section class="content-grid__full-width grid h-48 grid-cols-1 grid-rows-1 overflow-hidden">
 		<img
-			class="grid-1 place-self-center"
+			class="grid-1 h-full w-full object-cover"
 			src="https://www.original-chattengauer.de/uploads/imgs/221216_adventskonzert_gruppenbild.jpg"
 			alt=""
 		/>
 		<p class="grid-1 grid place-content-center">
 			<a
-				class="bg-white/80 py-2 px-4 font-bold shadow-black/50 hover:shadow-lg shadow-sm hover:bg-white/90 transition-all"
+				class="bg-white/80 px-4 py-2 font-bold shadow-sm shadow-black/50 transition-all hover:bg-white/90 hover:shadow-lg"
 				href="/news"
 			>
 				Aktuelle Termine und News <ChevronRightIcon class="inline-block align-middle text-accent" size={16} />
@@ -29,17 +29,17 @@
 		</p>
 	</section>
 
-	<SimpleLayout.Section class="space-y-2">
+	<SimpleLayout.Section class="content-grid space-y-2">
 		<SimpleLayout.H1>Willkommen bei den Chattengauern!</SimpleLayout.H1>
 
-		<p class="px-4">
+		<p>
 			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium veniam, inventore nobis nam porro
 			officiis exercitationem, dicta beatae dolorem cupiditate illum, corporis corrupti magnam! Unde voluptatibus
 			quas laboriosam fugiat consequatur et cum nobis aliquam fugit quo. Quis eius quidem asperiores beatae. Eos
 			necessitatibus id cum quod eum nulla sed natus!
 		</p>
 
-		<ul class="ps-8 pe-4 space-y-2 list-disc">
+		<ul class="list-disc space-y-2 pl-4">
 			<li class="list-item">
 				<strong>Zusammenhalt:</strong>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, tenetur ea. Accusantium quisquam sed reiciendis
@@ -55,7 +55,7 @@
 			</li>
 		</ul>
 
-		<ImageSlider images={[ensembleImage, example1, example2]} />
+		<ImageSlider class="content-grid__breakout" images={[ensembleImage, example1, example2]} />
 	</SimpleLayout.Section>
 
 	<News />

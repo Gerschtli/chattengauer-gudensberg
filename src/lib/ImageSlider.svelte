@@ -28,11 +28,11 @@
 			<div><img src={image} alt="" loading="lazy" /></div>
 		{/each}
 	</div>
-	<div class="grid-1 self-end justify-self-center mb-4">
-		<div class="gap-2 flex">
+	<div class="grid-1 mb-4 self-end justify-self-center">
+		<div class="flex gap-2">
 			{#each images as _, i}
 				<button
-					class="h-3 w-3 shadow-sm shadow-black/30 rounded-full border border-white b-1"
+					class="b-1 h-3 w-3 rounded-full border border-white shadow-sm shadow-black/30"
 					class:bg-white={currentIndex !== i}
 					class:bg-accent={currentIndex === i}
 					onclick={() => scrollToSlide(i)}
