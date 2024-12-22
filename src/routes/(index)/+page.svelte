@@ -9,16 +9,11 @@
 
 	import Ensembles from './Ensembles.svelte';
 	import Gigs from './Gigs.svelte';
-	import News from './News.svelte';
 </script>
 
 <SimpleLayout.Root title="Chattengauer">
 	<section class="content-grid__full-width grid h-48 grid-cols-1 grid-rows-1 overflow-hidden">
-		<img
-			class="grid-1 h-full w-full object-cover"
-			src="https://www.original-chattengauer.de/uploads/imgs/221216_adventskonzert_gruppenbild.jpg"
-			alt=""
-		/>
+		<img class="grid-1 h-full w-full object-cover object-[center_35%]" src={example2} alt="" />
 		<p class="grid-1 grid place-content-center">
 			<a
 				class="bg-white/80 px-4 py-2 font-bold shadow-sm shadow-black/50 transition-all hover:bg-white/90 hover:shadow-lg"
@@ -57,8 +52,6 @@
 
 		<ImageSlider class="content-grid__breakout" images={[ensembleImage, example1, example2]} />
 	</SimpleLayout.Section>
-
-	<News />
 
 	<Ensembles />
 
