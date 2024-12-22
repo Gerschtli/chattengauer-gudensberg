@@ -8,7 +8,6 @@
 	import { SimpleLayout } from '$lib/simpleLayout';
 
 	import Ensembles from './Ensembles.svelte';
-	import Gigs from './Gigs.svelte';
 </script>
 
 <SimpleLayout.Root title="Chattengauer">
@@ -17,7 +16,7 @@
 		<p class="grid-1 grid place-content-center">
 			<a
 				class="bg-white/80 px-4 py-2 font-bold shadow-sm shadow-black/50 transition-all hover:bg-white/90 hover:shadow-lg"
-				href="/news"
+				href="/termine"
 			>
 				Aktuelle Termine und News <ChevronRightIcon class="inline-block align-middle text-accent" size={16} />
 			</a>
@@ -54,6 +53,4 @@
 	</SimpleLayout.Section>
 
 	<Ensembles />
-
-	<Gigs />
 </SimpleLayout.Root>
