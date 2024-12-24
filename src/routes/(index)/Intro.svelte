@@ -6,7 +6,7 @@
 	import { SimpleLayout } from '$lib/simpleLayout';
 </script>
 
-<SimpleLayout.Section class="content-grid space-y-2">
+<SimpleLayout.Section class="content-grid gap-y-4">
 	<SimpleLayout.H1>Willkommen bei den Chattengauern!</SimpleLayout.H1>
 
 	<p>

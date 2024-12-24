@@ -27,9 +27,10 @@
 }
 
 @layer components {
-	.content-grid {
+	.content-grid,
+	.content-grid--raw {
 		--content-padding: theme('spacing.4');
-		--breakout-size: calc(var(--content-max-width) * 0.1);
+		--breakout-size: var(--content-padding);
 
 		display: grid;
 		grid-template-columns:
@@ -38,7 +39,9 @@
 			[breakout-start]
 			minmax(var(--content-padding), var(--breakout-size))
 			[content-start]
-			min(100% - (var(--content-padding) * 2), var(--content-max-width))
+			min(50% - (var(--content-padding)), var(--content-max-width) / 2)
+			[center]
+			min(50% - (var(--content-padding)), var(--content-max-width) / 2)
 			[content-end]
 			minmax(var(--content-padding), var(--breakout-size))
 			[breakout-end]

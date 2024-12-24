@@ -1,53 +1,100 @@
 <script lang="ts">
 	import { ChevronRightIcon } from 'lucide-svelte';
 
+	import ImageSlider from '$lib/ImageSlider.svelte';
 	import ensembleImage from '$lib/assets/ensembleImage.jpg';
+	import example1 from '$lib/assets/example1.avif';
+	import example2 from '$lib/assets/example2.avif';
 	import { SimpleLayout } from '$lib/simpleLayout';
 
 	const ensembles = [
 		{
 			name: 'Hauptorchester',
 			link: '/ensembles/hauptorchester',
+			images: [ensembleImage, example1, example2],
 		},
 		{
 			name: 'Jugendorchester',
 			link: '/ensembles/jugendorchester',
+			images: [example1, example2, ensembleImage],
 		},
 		{
 			name: 'Bläserklassen',
 			link: '/ensembles/blaeserklassen',
+			images: [example2, example1, ensembleImage],
 		},
 		{
 			name: 'Eltern Orchester',
 			link: '/ensembles/eltern-orchester',
+			images: [example1, example2],
 		},
 	];
 </script>
 
-<SimpleLayout.Section class="space-y-2">
-	<SimpleLayout.H1>Ensembles</SimpleLayout.H1>
+<SimpleLayout.Section class="content-grid">
+	<SimpleLayout.H2>Ensembles</SimpleLayout.H2>
 
-	<div class="grid grid-cols-1 gap-px xs:grid-cols-2">
-		{#each ensembles as ensemble}
-			<a href={ensemble.link} class="group grid aspect-[2.5/1] overflow-hidden xs:aspect-[1.5/1] sm:aspect-[2/1]">
-				<span
-					style="background-image: url('{ensembleImage}')"
-					class="grid-1 relative bg-cover bg-center object-cover transition-all group-hover:scale-105"
-				></span>
-				<span
-					class="grid-1 relative bg-gradient-to-t from-black/70 to-transparent transition-all group-hover:to-black/20"
-				></span>
-				<span
-					class="grid-1 relative flex items-end justify-between space-y-2 p-4 text-white transition-all group-hover:pb-8"
+	<div class="content-grid gap-y-2 md:gap-y-0">
+		{#each ensembles as ensemble, i}
+			{@const even = i % 2 === 0}
+
+			<article class={['content-grid--raw content-grid__full-width py-4', even || 'bg-slate-800 text-slate-200']}>
+				<div class={['place-content-center', even ? 'breakout-left' : 'breakout-right md:order-2']}>
+					<ImageSlider images={ensemble.images} />
+				</div>
+
+				<div
+					class={[
+						'flex h-full flex-col gap-y-2 py-4',
+						even ? 'content-right md:pl-4' : 'content-left md:order-1 md:pr-4',
+					]}
 				>
-					<span class="text-xl">
-						{ensemble.name}
-					</span>
-					<span class="translate-y-[200%] text-xl transition-all group-hover:translate-y-0">
-						<ChevronRightIcon size={32} />
-					</span>
-				</span>
-			</a>
+					<h2 class="font-accent text-xl">{ensemble.name}</h2>
+
+					<p class="text-sm">
+						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa, aut? Nemo omnis quis debitis at
+						ad nesciunt dolorem, consequuntur libero officiis nam iusto, facere quo beatae deleniti. Quod,
+						excepturi harum.
+					</p>
+
+					<footer class="flex-grow place-content-end text-right text-sm">
+						<a href={ensemble.link} class={['font-bold', even ? 'text-accent' : 'text-rose-400']}>
+							Mehr Infos zum {ensemble.name}
+							<ChevronRightIcon class="inline align-middle" size={16} />
+						</a>
+					</footer>
+				</div>
+			</article>
 		{/each}
 	</div>
 </SimpleLayout.Section>
+
+<style>
+	.breakout-left,
+	.breakout-right {
+		grid-column: breakout;
+	}
+
+	.content-left,
+	.content-right {
+		grid-column: content;
+	}
+
+	@media (width >= theme('screens.md')) {
+		.breakout-left {
+			grid-column: breakout-start / center;
+		}
+
+		.breakout-right {
+			grid-column: center / breakout-end;
+		}
+
+		.content-left {
+			grid-column: content-start / center;
+		}
+
+		.content-right {
+			grid-column: center / content-end;
+		}
+	}
+</style>

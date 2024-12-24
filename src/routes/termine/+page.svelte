@@ -37,7 +37,7 @@
 	];
 </script>
 
-<SimpleLayout.Root title="Auftritte & Veranstaltungen" class="pt-6">
+<SimpleLayout.Root title="Auftritte & Veranstaltungen">
 	<SimpleLayout.Section class="space-y-2">
 		<SimpleLayout.H1>Auftritte & Veranstaltungen</SimpleLayout.H1>
 

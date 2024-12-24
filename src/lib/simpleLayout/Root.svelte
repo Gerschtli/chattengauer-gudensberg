@@ -14,4 +14,4 @@
 	<title>{title}</title>
 </svelte:head>
 
-<main class="content-grid gap-y-6 pb-4 {className}">{@render children()}</main>
+<main class="content-grid pb-4 {className}">{@render children()}</main>

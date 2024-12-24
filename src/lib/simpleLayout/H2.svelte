@@ -8,11 +8,12 @@
 	let { children }: Props = $props();
 </script>
 
-<header class="flex flex-col pt-4">
-	<h2 class="font-accent text-lg font-semibold uppercase text-slate-800">
-		<span class="border-b-2 border-accent pb-1 pr-4">
+<header class="pt-8">
+	<h2 class="font-accent text-2xl font-semibold uppercase text-slate-800">
+		<span
+			class="border-b-2 border-accent pr-2 after:ml-2 after:inline-block after:h-2 after:w-2 after:rounded-sm after:bg-accent"
+		>
 			{@render children()}
-			<span class="ml-1 inline-block h-2 w-2 rounded-sm bg-accent"></span>
 		</span>
 	</h2>
 </header>
