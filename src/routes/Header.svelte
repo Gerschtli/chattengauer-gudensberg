@@ -1,22 +1,22 @@
 <script lang="ts">
 	import { Menu } from 'lucide-svelte';
+	import { scrollY } from 'svelte/reactivity/window';
 
 	import { browser } from '$app/environment';
 
 	import schrift from '$lib/assets/schrift.svg';
 	import wave from '$lib/assets/wave.svg';
 
-	let scrollY = $state(0);
 	const heightInitial = 100;
 	const heightScroll = 70;
 	const heightCalculated = $derived.by(() => {
-		if (browser && CSS.supports('(animation-timeline: view())')) return heightInitial;
+		if ((browser && CSS.supports('(animation-timeline: view())')) || scrollY.current === undefined) {
+			return heightInitial;
+		}
 
-		return Math.max(heightInitial - scrollY, heightScroll);
+		return Math.max(heightInitial - scrollY.current, heightScroll);
 	});
 </script>
-
-<svelte:window bind:scrollY />
 
 <div class="placeholder" style:--height-initial="{heightInitial}px"></div>
 
