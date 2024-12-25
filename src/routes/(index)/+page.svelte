@@ -2,8 +2,11 @@
 	import { SimpleLayout } from '$lib/simpleLayout';
 
 	import Banner from './Banner.svelte';
+	import Engage from './Engage.svelte';
 	import Ensembles from './Ensembles.svelte';
 	import Intro from './Intro.svelte';
+
+	let { data } = $props();
 </script>
 
 <SimpleLayout.Root title="Chattengauer">
@@ -12,4 +15,6 @@
 	<Intro />
 
 	<Ensembles />
+
+	<Engage {data} />
 </SimpleLayout.Root>
