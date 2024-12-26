@@ -1,11 +1,25 @@
 <script lang="ts">
-	import { Menu } from 'lucide-svelte';
+	import { MenuIcon } from 'lucide-svelte';
 	import { scrollY } from 'svelte/reactivity/window';
 
 	import { browser } from '$app/environment';
 
 	import schrift from '$lib/assets/schrift.svg';
 	import wave from '$lib/assets/wave.svg';
+
+	let lastScrollY = $state(0);
+	let hideHeader = $state(false);
+
+	$effect(() => {
+		if (scrollY.current === undefined || lastScrollY === scrollY.current) return;
+
+		if (scrollY.current <= heightInitial) {
+			hideHeader = false;
+		} else {
+			hideHeader = lastScrollY < scrollY.current;
+		}
+		lastScrollY = scrollY.current;
+	});
 
 	const heightInitial = 100;
 	const heightScroll = 70;
@@ -20,7 +34,9 @@
 
 <div class="placeholder" style:--height-initial="{heightInitial}px"></div>
 
-<header class="fixed top-0 z-10 w-full bg-white/95">
+<header
+	class={['fixed top-0 z-10 w-full bg-white/95 transition-transform duration-500', hideHeader && '-translate-y-full']}
+>
 	<div
 		class="mx-auto flex w-full max-w-[--content-max-width] items-center justify-between px-4"
 		style:--height-initial="{heightInitial}px"
@@ -33,7 +49,7 @@
 		</a>
 
 		<div>
-			<Menu size={32} />
+			<MenuIcon size={32} />
 		</div>
 	</div>
 </header>
