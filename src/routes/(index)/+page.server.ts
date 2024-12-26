@@ -1,4 +1,4 @@
-import { fail, superValidate } from 'sveltekit-superforms';
+import { fail, message, superValidate } from 'sveltekit-superforms';
 import { zod } from 'sveltekit-superforms/adapters';
 
 import { schema } from './schema';
@@ -17,6 +17,6 @@ export const actions = {
 
 		console.log(form.data);
 
-		return { form };
+		return message(form, { type: 'success', text: 'Nachricht wurde gesendet, wir melden uns!' });
 	},
 };

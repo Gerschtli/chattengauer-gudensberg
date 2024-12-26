@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Control, Description, Field, FieldErrors, Fieldset, Label, Legend } from 'formsnap';
+	import { CheckIcon, LoaderCircleIcon, XIcon } from 'lucide-svelte';
 	import SuperDebug, { superForm } from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
 
@@ -15,7 +16,7 @@
 	const form = superForm(data.form, {
 		validators: zodClient(schema),
 	});
-	const { form: formData, enhance } = form;
+	const { form: formData, enhance, delayed, message } = form;
 </script>
 
 <SimpleLayout.Section class="content-grid gap-y-4">
@@ -179,8 +180,21 @@
 					<FieldErrors class="text-xs text-red-600" />
 				</Field>
 			</div>
-			<div>
-				<button class="rounded-md bg-accent px-4 py-2 text-sm text-white shadow-sm">Absenden</button>
+			<div class="flex items-center gap-4">
+				<button
+					class="rounded-md bg-accent px-4 py-2 text-sm text-white shadow-sm transition-colors hover:brightness-105 focus:brightness-110 active:brightness-90"
+				>
+					Absenden
+				</button>
+
+				{#if $delayed}<LoaderCircleIcon class="flex-shrink-0 animate-spin" />{/if}
+				{#if $message?.type === 'error'}
+					<XIcon class="flex-shrink-0 text-red-700" size={24} strokeWidth={3} />
+					<p class="text-pretty text-red-700">{$message.text}</p>
+				{:else if $message?.type === 'success'}
+					<CheckIcon class="flex-shrink-0 text-green-700" size={24} strokeWidth={3} />
+					<p class="text-pretty text-green-700">{$message.text}</p>
+				{/if}
 			</div>
 		{/if}
 	</form>
