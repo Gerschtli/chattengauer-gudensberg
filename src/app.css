@@ -24,6 +24,10 @@
 	:root {
 		--content-max-width: 768px;
 	}
+
+	html {
+		@apply antialiased;
+	}
 }
 
 @layer components {
