@@ -1,33 +1,17 @@
 <script lang="ts">
 	import { SimpleLayout } from '$lib/simpleLayout';
 
-	import type { PageData } from './$types';
+	import Engage from './Engage.svelte';
+	import Facts from './Facts.svelte';
+	import Infos from './Infos.svelte';
 
-	interface Props {
-		data: PageData;
-	}
-
-	let { data }: Props = $props();
+	let { data } = $props();
 </script>
 
 <SimpleLayout.Root title="Ensemble {data.slug}">
-	<SimpleLayout.Section class="space-y-2">
-		<SimpleLayout.H1>Ensemble {data.slug}</SimpleLayout.H1>
+	<Infos {data} />
 
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis similique nam earum totam, quo suscipit
-			blanditiis! Placeat veritatis magni, a consectetur odio perspiciatis vitae voluptatum, rem nisi nesciunt
-			eos. Natus!
-		</p>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis similique nam earum totam, quo suscipit
-			blanditiis! Placeat veritatis magni, a consectetur odio perspiciatis vitae voluptatum, rem nisi nesciunt
-			eos. Natus!
-		</p>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis similique nam earum totam, quo suscipit
-			blanditiis! Placeat veritatis magni, a consectetur odio perspiciatis vitae voluptatum, rem nisi nesciunt
-			eos. Natus!
-		</p>
-	</SimpleLayout.Section>
+	<Facts />
+
+	<Engage {data} />
 </SimpleLayout.Root>
