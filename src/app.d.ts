@@ -5,7 +5,9 @@ declare global {
 		// interface Error {}
 		// interface Locals {}
 		// interface PageData {}
-		// interface PageState {}
+		interface PageState {
+			showNav: boolean;
+		}
 		// interface Platform {}
 
 		namespace Superforms {

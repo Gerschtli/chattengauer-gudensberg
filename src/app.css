@@ -27,6 +27,10 @@
 
 	html {
 		@apply antialiased;
+
+		&:has(nav) {
+			@apply overflow-hidden;
+		}
 	}
 }
 
