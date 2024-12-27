@@ -13,6 +13,7 @@
 
 	let { gigs }: Props = $props();
 
+	const slideDuration = 500;
 	const showMax = 3;
 	let expandGigs = $state(false);
 
@@ -47,7 +48,7 @@
 	{/each}
 
 	{#if expandGigs}
-		<div class="grid gap-y-4" in:slide={{ duration: 500 }}>
+		<div class="grid gap-y-4" in:slide={{ duration: slideDuration }}>
 			{#each gigs.slice(showMax) as gig}
 				{@render gigWithSeparator(gig)}
 			{/each}
@@ -55,7 +56,7 @@
 	{/if}
 
 	{#if !expandGigs && gigs.length > showMax}
-		<footer class="grid place-content-center text-sm" out:slide={{ duration: 250 }}>
+		<footer class="grid place-content-center text-sm" out:slide={{ duration: slideDuration / 2 }}>
 			<button class="font-bold text-accent" onclick={() => (expandGigs = true)}>
 				<ChevronDownIcon class="inline align-middle" size={16} />
 				Alle Termine aufklappen
