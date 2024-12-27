@@ -31,12 +31,12 @@
 	<div class="grid-1 mb-4 self-end justify-self-center">
 		<div class="flex gap-2">
 			{#each images as _, i}
-				<button
-					class="b-1 h-3 w-3 rounded-full border border-white shadow-sm shadow-black/30"
-					class:bg-white={currentIndex !== i}
-					class:bg-accent={currentIndex === i}
-					onclick={() => scrollToSlide(i)}
-				>
+				<button class="rounded-full p-1" onclick={() => scrollToSlide(i)}>
+					<span
+						class="block size-5 rounded-full border-4 border-white shadow-sm shadow-black/30"
+						class:bg-white={currentIndex !== i}
+						class:bg-accent={currentIndex === i}
+					></span>
 					<span class="sr-only">Gehe zum nächsten Bild</span>
 				</button>
 			{/each}
