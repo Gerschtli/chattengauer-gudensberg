@@ -27,17 +27,22 @@
 <div class="grid {className}">
 	<div class="slider grid-1" style:--gap="{gap}px" bind:this={slider} bind:clientWidth {onscroll}>
 		{#each assets as { type, uri }}
-			{#if type === 'image'}
-				<div><img src={uri} alt="" loading="lazy" /></div>
-			{/if}
+			<div>
+				{#if type === 'image'}
+					<img src={uri} alt="" loading="lazy" />
+				{:else if type === 'video'}
+					<!-- svelte-ignore a11y_media_has_caption -->
+					<video src={uri} controls></video>
+				{/if}
+			</div>
 		{/each}
 	</div>
-	<div class="grid-1 mb-4 self-end justify-self-center">
+	<div class="grid-1 -mb-4 self-end justify-self-center">
 		<div class="flex gap-2">
 			{#each assets as _, i}
 				<button class="rounded-full p-1" onclick={() => scrollToSlide(i)}>
 					<span
-						class="block size-5 rounded-full border-4 border-white shadow-sm shadow-black/30"
+						class="block size-4 rounded-full border-4 border-white shadow-sm shadow-black/30"
 						class:bg-white={currentIndex !== i}
 						class:bg-accent={currentIndex === i}
 					></span>

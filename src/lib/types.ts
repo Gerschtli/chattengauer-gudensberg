@@ -1,1 +1,1 @@
-export type SliderAsset = { type: 'image'; uri: string };
+export type SliderAsset = { type: 'image' | 'video'; uri: string };

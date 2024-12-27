@@ -3,6 +3,7 @@
 	import ensembleImage from '$lib/assets/ensembleImage.jpg';
 	import example1 from '$lib/assets/example1.avif';
 	import example2 from '$lib/assets/example2.avif';
+	import testVideo from '$lib/assets/test.mp4';
 	import { SimpleLayout } from '$lib/simpleLayout';
 
 	import type { PageData } from './$types';
@@ -46,7 +47,9 @@
 	<Slider
 		class="content-grid__breakout"
 		assets={[
+			{ type: 'video', uri: testVideo },
 			{ type: 'image', uri: ensembleImage },
+			{ type: 'video', uri: testVideo },
 			{ type: 'image', uri: example1 },
 			{ type: 'image', uri: example2 },
 		]}
