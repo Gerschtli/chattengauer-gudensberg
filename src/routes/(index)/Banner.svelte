@@ -9,7 +9,7 @@
 	<p class="grid-1 grid place-content-center">
 		<a
 			class="bg-white/80 px-4 py-2 font-bold shadow-sm shadow-black/50 transition-all hover:bg-white/90 hover:shadow-lg"
-			href="/termine"
+			href="/aktuelles"
 		>
 			Aktuelle Termine und News <ChevronRightIcon class="inline-block align-middle text-accent" size={16} />
 		</a>
