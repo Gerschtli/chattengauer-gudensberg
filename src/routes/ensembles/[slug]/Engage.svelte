@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Control, Description, Field, FieldErrors, Label } from 'formsnap';
-	import { CheckIcon, LoaderCircleIcon, XIcon } from 'lucide-svelte';
+	import { AsteriskIcon, CheckIcon, LoaderCircleIcon, XIcon } from 'lucide-svelte';
 	import SuperDebug, { superForm } from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
 
@@ -32,11 +32,16 @@
 	{/if}
 
 	<form method="POST" use:enhance class="form flex flex-col gap-y-4">
-		<div>
+		<div class="flex flex-col gap-y-1">
 			<Field {form} name="instrument">
 				<Control>
 					{#snippet children({ props })}
-						<Label class="text-sm">Dein Instrument</Label>
+						<Label class="text-sm">
+							Dein Instrument
+							{#if props['aria-required']}
+								<AsteriskIcon class="inline align-top text-slate-500" strokeWidth={1} size={12} />
+							{/if}
+						</Label>
 						<input
 							{...props}
 							class="w-full rounded-md border border-slate-300 px-3 py-2"
@@ -45,15 +50,20 @@
 						/>
 					{/snippet}
 				</Control>
-				<Description class="text-sm text-neutral-400">Welches Instrument spielst du?</Description>
 				<FieldErrors class="text-xs text-red-600" />
+				<Description class="text-sm text-neutral-400">Welches Instrument spielst du?</Description>
 			</Field>
 		</div>
-		<div>
+		<div class="flex flex-col gap-y-1">
 			<Field {form} name="name">
 				<Control>
 					{#snippet children({ props })}
-						<Label class="text-sm">Dein Name</Label>
+						<Label class="text-sm">
+							Dein Name
+							{#if props['aria-required']}
+								<AsteriskIcon class="inline align-top text-slate-500" strokeWidth={1} size={12} />
+							{/if}
+						</Label>
 						<input
 							{...props}
 							class="w-full rounded-md border border-slate-300 px-3 py-2"
@@ -65,11 +75,16 @@
 				<FieldErrors class="text-xs text-red-600" />
 			</Field>
 		</div>
-		<div>
+		<div class="flex flex-col gap-y-1">
 			<Field {form} name="email">
 				<Control>
 					{#snippet children({ props })}
-						<Label class="text-sm">Deine E-Mail Adresse</Label>
+						<Label class="text-sm">
+							Deine E-Mail Adresse
+							{#if props['aria-required']}
+								<AsteriskIcon class="inline align-top text-slate-500" strokeWidth={1} size={12} />
+							{/if}
+						</Label>
 						<input
 							{...props}
 							class="w-full rounded-md border border-slate-300 px-3 py-2"
@@ -78,17 +93,22 @@
 						/>
 					{/snippet}
 				</Control>
+				<FieldErrors class="text-xs text-red-600" />
 				<Description class="text-sm text-neutral-400">
 					Wie können wir dich erreichen? Wird ausschließlich zur direkten Kontaktaufnahme verwendet.
 				</Description>
-				<FieldErrors class="text-xs text-red-600" />
 			</Field>
 		</div>
-		<div>
+		<div class="flex flex-col gap-y-1">
 			<Field {form} name="message">
 				<Control>
 					{#snippet children({ props })}
-						<Label class="text-sm">Deine Nachricht</Label>
+						<Label class="text-sm">
+							Deine Nachricht
+							{#if props['aria-required']}
+								<AsteriskIcon class="inline align-top text-slate-500" strokeWidth={1} size={12} />
+							{/if}
+						</Label>
 						<textarea
 							{...props}
 							class="h-32 w-full rounded-md border border-slate-300 px-3 py-2"

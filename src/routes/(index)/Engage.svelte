@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Control, Description, Field, FieldErrors, Fieldset, Label, Legend } from 'formsnap';
-	import { CheckIcon, LoaderCircleIcon, XIcon } from 'lucide-svelte';
+	import { AsteriskIcon, CheckIcon, LoaderCircleIcon, XIcon } from 'lucide-svelte';
 	import SuperDebug, { superForm } from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
 
@@ -32,7 +32,7 @@
 	{/if}
 
 	<form method="POST" use:enhance class="form flex flex-col gap-y-4">
-		<div>
+		<div class="flex flex-col gap-y-1">
 			<Fieldset {form} name="intention">
 				<Legend class="text-sm">Du möchtest</Legend>
 				<div class="intention-set mt-1">
@@ -87,11 +87,16 @@
 		</div>
 
 		{#if $formData.intention === IntentionEnum.Enum.join}
-			<div>
+			<div class="flex flex-col gap-y-1">
 				<Field {form} name="instrument">
 					<Control>
 						{#snippet children({ props })}
-							<Label class="text-sm">Dein Instrument</Label>
+							<Label class="text-sm">
+								Dein Instrument
+								{#if props['aria-required']}
+									<AsteriskIcon class="inline align-top text-slate-500" strokeWidth={1} size={12} />
+								{/if}
+							</Label>
 							<input
 								{...props}
 								class="w-full rounded-md border border-slate-300 px-3 py-2"
@@ -100,16 +105,21 @@
 							/>
 						{/snippet}
 					</Control>
-					<Description class="text-sm text-neutral-400">Welches Instrument spielst du?</Description>
 					<FieldErrors class="text-xs text-red-600" />
+					<Description class="text-sm text-neutral-400">Welches Instrument spielst du?</Description>
 				</Field>
 			</div>
 		{:else if $formData.intention === IntentionEnum.Enum.apply}
-			<div>
+			<div class="flex flex-col gap-y-1">
 				<Field {form} name="experience">
 					<Control>
 						{#snippet children({ props })}
-							<Label class="text-sm">Deine Vorerfahrungen</Label>
+							<Label class="text-sm">
+								Deine Vorerfahrungen
+								{#if props['aria-required']}
+									<AsteriskIcon class="inline align-top text-slate-500" strokeWidth={1} size={12} />
+								{/if}
+							</Label>
 							<input
 								{...props}
 								class="w-full rounded-md border border-slate-300 px-3 py-2"
@@ -118,8 +128,8 @@
 							/>
 						{/snippet}
 					</Control>
-					<Description class="text-sm text-neutral-400">Hast du schon einmal dirigiert?</Description>
 					<FieldErrors class="text-xs text-red-600" />
+					<Description class="text-sm text-neutral-400">Hast du schon einmal dirigiert?</Description>
 				</Field>
 			</div>
 		{:else if $formData.intention === IntentionEnum.Enum.support}
@@ -129,74 +139,87 @@
 				maiores.
 			</p>
 		{/if}
-		{#if $formData.intention}
-			<div>
-				<Field {form} name="name">
-					<Control>
-						{#snippet children({ props })}
-							<Label class="text-sm">Dein Name</Label>
-							<input
-								{...props}
-								class="w-full rounded-md border border-slate-300 px-3 py-2"
-								type="name"
-								bind:value={$formData.name}
-							/>
-						{/snippet}
-					</Control>
-					<FieldErrors class="text-xs text-red-600" />
-				</Field>
-			</div>
-			<div>
-				<Field {form} name="email">
-					<Control>
-						{#snippet children({ props })}
-							<Label class="text-sm">Deine E-Mail Adresse</Label>
-							<input
-								{...props}
-								class="w-full rounded-md border border-slate-300 px-3 py-2"
-								type="email"
-								bind:value={$formData.email}
-							/>
-						{/snippet}
-					</Control>
-					<Description class="text-sm text-neutral-400">
-						Wie können wir dich erreichen? Wird ausschließlich zur direkten Kontaktaufnahme verwendet.
-					</Description>
-					<FieldErrors class="text-xs text-red-600" />
-				</Field>
-			</div>
-			<div>
-				<Field {form} name="message">
-					<Control>
-						{#snippet children({ props })}
-							<Label class="text-sm">Deine Nachricht</Label>
-							<textarea
-								{...props}
-								class="h-32 w-full rounded-md border border-slate-300 px-3 py-2"
-								bind:value={$formData.message}
-							></textarea>
-						{/snippet}
-					</Control>
-					<FieldErrors class="text-xs text-red-600" />
-				</Field>
-			</div>
-			<div class="flex items-center gap-4">
-				<button
-					class="rounded-md bg-accent px-4 py-2 text-sm text-white shadow-sm transition-colors hover:brightness-105 focus:brightness-110 active:brightness-90"
-				>
-					Absenden
-				</button>
+		<div class="flex flex-col gap-y-1">
+			<Field {form} name="name">
+				<Control>
+					{#snippet children({ props })}
+						<Label class="text-sm">
+							Dein Name
+							{#if props['aria-required']}
+								<AsteriskIcon class="inline align-top text-slate-500" strokeWidth={1} size={12} />
+							{/if}
+						</Label>
+						<input
+							{...props}
+							class="w-full rounded-md border border-slate-300 px-3 py-2"
+							type="name"
+							bind:value={$formData.name}
+						/>
+					{/snippet}
+				</Control>
+				<FieldErrors class="text-xs text-red-600" />
+			</Field>
+		</div>
+		<div class="flex flex-col gap-y-1">
+			<Field {form} name="email">
+				<Control>
+					{#snippet children({ props })}
+						<Label class="text-sm">
+							Deine E-Mail Adresse
+							{#if props['aria-required']}
+								<AsteriskIcon class="inline align-top text-slate-500" strokeWidth={1} size={12} />
+							{/if}
+						</Label>
+						<input
+							{...props}
+							class="w-full rounded-md border border-slate-300 px-3 py-2"
+							type="email"
+							bind:value={$formData.email}
+						/>
+					{/snippet}
+				</Control>
+				<FieldErrors class="text-xs text-red-600" />
+				<Description class="text-sm text-neutral-400">
+					Wie können wir dich erreichen? Wird ausschließlich zur direkten Kontaktaufnahme verwendet.
+				</Description>
+			</Field>
+		</div>
+		<div class="flex flex-col gap-y-1">
+			<Field {form} name="message">
+				<Control>
+					{#snippet children({ props })}
+						<Label class="text-sm">
+							Deine Nachricht
+							{#if props['aria-required']}
+								<AsteriskIcon class="inline align-top text-slate-500" strokeWidth={1} size={12} />
+							{/if}
+						</Label>
+						<textarea
+							{...props}
+							class="w-full rounded-md border border-slate-300 px-3 py-2"
+							bind:value={$formData.message}
+						></textarea>
+					{/snippet}
+				</Control>
+				<FieldErrors class="text-xs text-red-600" />
+			</Field>
+		</div>
+		<div class="flex items-center gap-4">
+			<button
+				class="rounded-md bg-accent px-4 py-2 text-sm text-white shadow-sm transition-colors hover:brightness-105 focus:brightness-110 active:brightness-90"
+			>
+				Absenden
+			</button>
 
-				{#if $delayed}<LoaderCircleIcon class="flex-shrink-0 animate-spin" />{/if}
-				{#if $message?.type === 'error'}
-					<XIcon class="flex-shrink-0 text-red-700" size={24} strokeWidth={3} />
-					<p class="text-pretty text-red-700">{$message.text}</p>
-				{:else if $message?.type === 'success'}
-					<CheckIcon class="flex-shrink-0 text-green-700" size={24} strokeWidth={3} />
-					<p class="text-pretty text-green-700">{$message.text}</p>
-				{/if}
-			</div>
-		{/if}
+			{#if $delayed}<LoaderCircleIcon class="flex-shrink-0 animate-spin" />{/if}
+			{#if $message?.type === 'error'}
+				<XIcon class="flex-shrink-0 text-red-700" size={24} strokeWidth={3} />
+				<p class="text-pretty text-red-700">{$message.text}</p>
+			{:else if $message?.type === 'success'}
+				<CheckIcon class="flex-shrink-0 text-green-700" size={24} strokeWidth={3} />
+				<p class="text-pretty text-green-700">{$message.text}</p>
+			{/if}
+		</div>
 	</form>
 </SimpleLayout.Section>
 
