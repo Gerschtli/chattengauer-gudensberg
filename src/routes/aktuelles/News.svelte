@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { HashIcon } from 'lucide-svelte';
 
-	import ImageSlider from '$lib/ImageSlider.svelte';
+	import Slider from '$lib/Slider.svelte';
 	import { SimpleLayout } from '$lib/simpleLayout';
 
 	import type { NewsData } from './types';
@@ -37,7 +37,7 @@
 					<p>{entry.description}</p>
 				{/if}
 
-				<ImageSlider class="content-grid__breakout" images={entry.images} />
+				<Slider class="content-grid__breakout" assets={entry.assets} />
 			</article>
 		{/each}
 	</div>

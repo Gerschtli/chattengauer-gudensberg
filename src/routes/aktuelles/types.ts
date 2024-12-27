@@ -1,3 +1,5 @@
+import type { SliderAsset } from '$lib/types';
+
 export type GigData = {
 	start: Date;
 	end: Date;
@@ -12,5 +14,5 @@ export type NewsData = {
 	title: string;
 	description?: string;
 	ensembles: string[];
-	images: string[];
+	assets: SliderAsset[];
 };

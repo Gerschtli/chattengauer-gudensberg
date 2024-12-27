@@ -1,32 +1,48 @@
 <script lang="ts">
 	import { ChevronRightIcon } from 'lucide-svelte';
 
-	import ImageSlider from '$lib/ImageSlider.svelte';
+	import Slider from '$lib/Slider.svelte';
 	import ensembleImage from '$lib/assets/ensembleImage.jpg';
 	import example1 from '$lib/assets/example1.avif';
 	import example2 from '$lib/assets/example2.avif';
 	import { SimpleLayout } from '$lib/simpleLayout';
+	import type { SliderAsset } from '$lib/types';
 
 	const ensembles = [
 		{
 			name: 'Hauptorchester',
 			link: '/ensembles/hauptorchester',
-			images: [ensembleImage, example1, example2],
+			assets: [
+				{ type: 'image', uri: ensembleImage },
+				{ type: 'image', uri: example1 },
+				{ type: 'image', uri: example2 },
+			] satisfies SliderAsset[],
 		},
 		{
 			name: 'Jugendorchester',
 			link: '/ensembles/jugendorchester',
-			images: [example1, example2, ensembleImage],
+			assets: [
+				{ type: 'image', uri: example1 },
+				{ type: 'image', uri: example2 },
+				{ type: 'image', uri: ensembleImage },
+			] satisfies SliderAsset[],
 		},
 		{
 			name: 'Bläserklassen',
 			link: '/ensembles/blaeserklassen',
-			images: [example2, example1, ensembleImage],
+			assets: [
+				{ type: 'image', uri: example2 },
+				{ type: 'image', uri: example1 },
+				{ type: 'image', uri: ensembleImage },
+			] satisfies SliderAsset[],
 		},
 		{
 			name: 'Eltern Orchester',
 			link: '/ensembles/eltern-orchester',
-			images: [example1, example2],
+			assets: [
+				{ type: 'image', uri: example1 },
+				{ type: 'image', uri: example2 },
+			] satisfies SliderAsset[],
 		},
 	];
 </script>
@@ -45,7 +61,7 @@
 				]}
 			>
 				<div class={['place-content-center', even ? 'breakout-left' : 'breakout-right md:order-2']}>
-					<ImageSlider images={ensemble.images} />
+					<Slider assets={ensemble.assets} />
 				</div>
 
 				<div

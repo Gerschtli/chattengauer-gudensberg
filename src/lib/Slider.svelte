@@ -1,10 +1,12 @@
 <script lang="ts">
+	import type { SliderAsset } from './types';
+
 	interface Props {
 		class?: string;
-		images: string[];
+		assets: SliderAsset[];
 	}
 
-	const { class: className, images }: Props = $props();
+	const { class: className, assets }: Props = $props();
 
 	const gap = 8;
 	let clientWidth = $state(0);
@@ -24,13 +26,15 @@
 
 <div class="grid {className}">
 	<div class="slider grid-1" style:--gap="{gap}px" bind:this={slider} bind:clientWidth {onscroll}>
-		{#each images as image}
-			<div><img src={image} alt="" loading="lazy" /></div>
+		{#each assets as { type, uri }}
+			{#if type === 'image'}
+				<div><img src={uri} alt="" loading="lazy" /></div>
+			{/if}
 		{/each}
 	</div>
 	<div class="grid-1 mb-4 self-end justify-self-center">
 		<div class="flex gap-2">
-			{#each images as _, i}
+			{#each assets as _, i}
 				<button class="rounded-full p-1" onclick={() => scrollToSlide(i)}>
 					<span
 						class="block size-5 rounded-full border-4 border-white shadow-sm shadow-black/30"

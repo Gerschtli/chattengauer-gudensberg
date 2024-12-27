@@ -61,7 +61,11 @@ export async function load() {
 			description:
 				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores praesentium porro deleniti officia eos accusantium consequuntur et esse quibusdam in?',
 			ensembles: ['Jugendorchester', 'Bläserklasse'],
-			images: [ensembleImage, example1, example2],
+			assets: [
+				{ type: 'image', uri: ensembleImage },
+				{ type: 'image', uri: example1 },
+				{ type: 'image', uri: example2 },
+			],
 		},
 		{
 			date: new Date('2025-06-12T12:00+01:00'),
@@ -69,7 +73,11 @@ export async function load() {
 			description:
 				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores praesentium porro deleniti officia eos accusantium consequuntur et esse quibusdam in?',
 			ensembles: ['Jugendorchester', 'Bläserklasse'],
-			images: [ensembleImage, example1, example2],
+			assets: [
+				{ type: 'image', uri: ensembleImage },
+				{ type: 'image', uri: example1 },
+				{ type: 'image', uri: example2 },
+			],
 		},
 	] satisfies NewsData[];
 
