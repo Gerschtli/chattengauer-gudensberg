@@ -46,7 +46,7 @@
 				</h2>
 			</header>
 
-			<ul class="flex flex-wrap gap-x-4 gap-y-2 text-xs font-bold md:flex-col">
+			<ul class="link-grid grid gap-x-8 gap-y-2 text-xs font-bold md:flex-col">
 				<li>
 					<a href="https://www.instagram.com/original.chattengauer" target="_blank" rel="noopener noreferrer">
 						<span class="inline-block aspect-square h-4 rounded-full fill-white align-middle">
@@ -81,3 +81,9 @@
 		</article>
 	</div>
 </footer>
+
+<style>
+	.link-grid {
+		grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+	}
+</style>
