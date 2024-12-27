@@ -5,6 +5,7 @@
 
 	import Footer from './Footer.svelte';
 	import Header from './Header.svelte';
+	import Navigation from './Navigation.svelte';
 
 	interface Props {
 		children: Snippet;
@@ -14,6 +15,8 @@
 </script>
 
 <Header />
+
+<Navigation />
 
 {@render children()}
 
