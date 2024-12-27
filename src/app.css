@@ -26,7 +26,8 @@
 	}
 
 	html {
-		@apply antialiased;
+		@apply antialiased accent-accent;
+		scrollbar-gutter: stable;
 
 		&:has(nav) {
 			@apply overflow-hidden;

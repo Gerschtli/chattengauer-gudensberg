@@ -23,7 +23,7 @@
 {#if page.state.showNav}
 	<div class="fixed inset-0 z-20 bg-white/75" transition:fade>
 		<nav
-			class="fixed inset-0 left-[15%] overflow-y-auto bg-white/90 p-4 shadow-lg shadow-black/40"
+			class="fixed right-0 h-full w-[600px] max-w-[90%] overflow-y-auto bg-white/90 p-4 text-lg shadow-lg shadow-black/40"
 			transition:fly={{ x: '100%' }}
 		>
 			<button class="float-right" aria-label="Menü schließen" onclick={closeNav}>
