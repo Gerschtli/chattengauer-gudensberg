@@ -31,14 +31,19 @@
 	];
 </script>
 
-<SimpleLayout.Section class="content-grid">
+<SimpleLayout.Section class="content-grid gap-y-4">
 	<SimpleLayout.H2>Ensembles</SimpleLayout.H2>
 
-	<div class="content-grid gap-y-2 md:gap-y-0">
+	<div class="content-grid gap-y-4 md:gap-y-0">
 		{#each ensembles as ensemble, i}
 			{@const even = i % 2 === 0}
 
-			<article class={['content-grid--raw content-grid__full-width py-4', even || 'bg-slate-800 text-slate-200']}>
+			<article
+				class={[
+					'content-grid--raw content-grid__full-width md:py-4',
+					even || 'bg-slate-800 py-4 text-slate-200',
+				]}
+			>
 				<div class={['place-content-center', even ? 'breakout-left' : 'breakout-right md:order-2']}>
 					<ImageSlider images={ensemble.images} />
 				</div>

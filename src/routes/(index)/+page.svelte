@@ -10,7 +10,9 @@
 </script>
 
 <SimpleLayout.Root title="Chattengauer">
-	<Banner />
+	{#snippet banner()}
+		<Banner />
+	{/snippet}
 
 	<Intro />
 
