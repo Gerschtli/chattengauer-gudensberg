@@ -14,6 +14,23 @@
 	let { children }: Props = $props();
 </script>
 
+<svelte:head>
+	<link
+		rel="preload"
+		href="/fonts/trade-gothic-lt-std-58a78e64434a9.woff"
+		as="font"
+		crossorigin="anonymous"
+		fetchpriority="high"
+	/>
+	<link
+		rel="preload"
+		href="/fonts/trade-gothic-lt-std-bold-condensed-no-20-5872def1d27d8.woff"
+		as="font"
+		crossorigin="anonymous"
+		fetchpriority="high"
+	/>
+</svelte:head>
+
 <Header />
 
 <Navigation />
