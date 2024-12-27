@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { HashIcon, MapPinIcon } from 'lucide-svelte';
+	import { HashIcon, MapPinIcon, SquareArrowOutUpRightIcon } from 'lucide-svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
 
 	import type { GigData } from './types';
@@ -34,13 +34,23 @@
 	{/if}
 	<p class="text-sm text-slate-600">
 		<MapPinIcon class="inline" strokeWidth={1.5} size={20} />
-		{gig.location}
+		<a
+			href="https://www.google.com/maps/search/?api=1&query={encodeURIComponent(gig.location)}"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="underline decoration-from-font underline-offset-2 hover:text-accent"
+		>
+			{gig.location}
+			<SquareArrowOutUpRightIcon class="inline" size={14} />
+		</a>
 	</p>
 	<p class="text-sm text-slate-600">
 		<HashIcon class="inline" strokeWidth={1.5} size={20} />
 		{#each gig.ensembles as ensemble, i}
 			{#if i !== 0},{/if}
-			<a href="/ensembles/{ensemble}" class="underline hover:text-accent">{ensemble}</a>
+			<a href="/ensembles/{ensemble}" class="underline decoration-from-font underline-offset-2 hover:text-accent">
+				{ensemble}
+			</a>
 		{/each}
 	</p>
 </div>
