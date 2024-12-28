@@ -11,10 +11,13 @@ import type { GigData } from '$lib/types';
 import type { NewsData } from './types';
 
 export async function load({ fetch }) {
+	console.time('ical processing');
 	const response = await fetch(LINK_ICAL);
+	console.timeLog('ical processing', 'fetch finished');
 	const data = await response.text();
 
 	const icalEvents = await parseIcalData(data);
+	console.timeEnd('ical processing');
 
 	const gigs = [
 		...icalEvents,

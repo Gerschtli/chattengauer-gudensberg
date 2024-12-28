@@ -60,6 +60,8 @@ export async function parseIcalData(data: string) {
 	const jcalData = await ICAL.parse(data);
 	const comp = new ICAL.Component(jcalData);
 
+	console.timeLog('ical processing', `count of elements: ${comp.getAllSubcomponents().length}`);
+
 	const icalEvents: GigData[] = [];
 	for (const elem of comp.getAllSubcomponents()) {
 		if (elem.name !== 'vevent') continue;
