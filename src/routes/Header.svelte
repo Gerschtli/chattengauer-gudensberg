@@ -32,7 +32,9 @@
 		return Math.max(heightInitial - scrollY.current, heightScroll);
 	});
 
-	function openNav() {
+	function openNav(e: MouseEvent) {
+		e.stopPropagation();
+
 		pushState('', { showNav: true });
 	}
 </script>

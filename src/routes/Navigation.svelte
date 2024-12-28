@@ -5,24 +5,36 @@
 	import { afterNavigate } from '$app/navigation';
 	import { page } from '$app/state';
 
+	let navRef: HTMLElement | undefined;
+
 	function closeNav() {
 		history.back();
 	}
 
 	function onkeydown(e: KeyboardEvent) {
-		if (e.key === 'Escape' && page.state.showNav) closeNav();
+		if (!page.state.showNav) return;
+		if (e.key !== 'Escape') return;
+		closeNav();
+	}
+
+	function onclick(e: MouseEvent) {
+		if (!page.state.showNav) return;
+		if (navRef?.contains(e.target as HTMLElement)) return;
+		closeNav();
 	}
 
 	afterNavigate(() => {
-		if (page.state.showNav) closeNav();
+		if (!page.state.showNav) return;
+		closeNav();
 	});
 </script>
 
-<svelte:window {onkeydown} />
+<svelte:window {onkeydown} {onclick} />
 
 {#if page.state.showNav}
 	<div class="fixed inset-0 z-20 bg-white/75" transition:fade>
 		<nav
+			bind:this={navRef}
 			class="fixed right-0 h-full w-[600px] max-w-[90%] overflow-y-auto bg-white/90 p-4 text-lg shadow-lg shadow-black/40"
 			transition:fly={{ x: '100%' }}
 		>
