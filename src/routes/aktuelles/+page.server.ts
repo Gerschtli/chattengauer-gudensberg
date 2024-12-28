@@ -1,3 +1,7 @@
+import { LINK_ICAL } from '$env/static/private';
+
+import { parseIcalData } from '$lib/server/ical';
+
 import ensembleImage from '$lib/assets/ensembleImage.jpg';
 import example1 from '$lib/assets/example1.avif';
 import example2 from '$lib/assets/example2.avif';
@@ -6,8 +10,14 @@ import type { GigData } from '$lib/types';
 
 import type { NewsData } from './types';
 
-export async function load() {
+export async function load({ fetch }) {
+	const response = await fetch(LINK_ICAL);
+	const data = await response.text();
+
+	const icalEvents = await parseIcalData(data);
+
 	const gigs = [
+		...icalEvents,
 		{
 			time: {
 				type: 'range',
