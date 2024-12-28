@@ -8,11 +8,16 @@
 	import schrift from '$lib/assets/schrift.svg';
 	import wave from '$lib/assets/wave.svg';
 
-	let lastScrollY = $state(0);
+	let lastScrollY = $state<number | undefined>();
 	let hideHeader = $state(false);
 
 	$effect(() => {
 		if (scrollY.current === undefined || lastScrollY === scrollY.current) return;
+
+		if (lastScrollY === undefined) {
+			lastScrollY = scrollY.current;
+			return;
+		}
 
 		if (scrollY.current <= heightInitial) {
 			hideHeader = false;
