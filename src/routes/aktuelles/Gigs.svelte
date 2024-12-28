@@ -3,9 +3,10 @@
 	import { slide } from 'svelte/transition';
 
 	import { SimpleLayout } from '$lib/simpleLayout';
+	import { TIME_ZONE, getStart } from '$lib/time';
+	import type { GigData } from '$lib/types';
 
 	import Gig from './Gig.svelte';
-	import type { GigData } from './types';
 
 	interface Props {
 		gigs: GigData[];
@@ -20,7 +21,11 @@
 	const set = new Set<string>();
 
 	function buildSeparator(gig: GigData) {
-		const rendered = new Intl.DateTimeFormat('de-DE', { month: 'long', year: 'numeric' }).format(gig.start);
+		const rendered = new Intl.DateTimeFormat('de-DE', {
+			month: 'long',
+			year: 'numeric',
+			timeZone: TIME_ZONE,
+		}).format(getStart(gig.time));
 
 		if (set.has(rendered)) return undefined;
 
