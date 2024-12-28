@@ -40,10 +40,13 @@
 <div class="placeholder" style:--height-initial="{heightInitial}px"></div>
 
 <header
-	class={['fixed top-0 z-10 w-full bg-white/95 transition-transform duration-500', hideHeader && '-translate-y-full']}
+	class={[
+		'content-grid fixed top-0 z-10 w-full bg-white/95 transition-transform duration-500',
+		hideHeader && '-translate-y-full',
+	]}
 >
 	<div
-		class="mx-auto flex w-full max-w-[--content-max-width] items-center justify-between px-4"
+		class="flex items-center justify-between"
 		style:--height-initial="{heightInitial}px"
 		style:--height-scroll="{heightScroll}px"
 		style:--height-calculated="{heightCalculated}px"

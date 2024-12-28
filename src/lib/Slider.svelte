@@ -32,16 +32,16 @@
 			{/if}
 		{/each}
 	</div>
-	<div class="grid-1 mb-4 self-end justify-self-center">
+	<div class="grid-1 z-0 mb-4 self-end justify-self-center">
 		<div class="flex gap-2">
 			{#each assets as _, i}
 				<button class="rounded-full p-1" onclick={() => scrollToSlide(i)}>
 					<span
-						class="block size-5 rounded-full border-4 border-white shadow-sm shadow-black/30"
+						class="block size-3 rounded-full border-2 border-white shadow-md shadow-black/60"
 						class:bg-white={currentIndex !== i}
 						class:bg-accent={currentIndex === i}
 					></span>
-					<span class="sr-only">Gehe zum nächsten Bild</span>
+					<span class="sr-only">Gehe zu Bild Nummer {i + 1}</span>
 				</button>
 			{/each}
 		</div>

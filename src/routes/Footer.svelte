@@ -2,8 +2,8 @@
 	import { MailIcon, PhoneIcon, UserIcon } from 'lucide-svelte';
 </script>
 
-<footer class="bg-slate-800">
-	<div class="mx-auto grid max-w-[--content-max-width] gap-y-6 px-4 py-6 text-white md:grid-cols-2 md:gap-x-4">
+<footer class="content-grid bg-slate-800 py-8">
+	<div class="grid gap-y-6 text-white md:grid-cols-2 md:gap-x-4">
 		<article class="space-y-4">
 			<header>
 				<h2 class="font-accent text-sm uppercase">
@@ -15,7 +15,7 @@
 				</h2>
 			</header>
 
-			<ul class="space-y-1 text-xs">
+			<ul class="space-y-3 text-xs">
 				<li>
 					<UserIcon class="mr-1 inline-block" size={16} />
 					Martin Salfer
@@ -46,7 +46,7 @@
 				</h2>
 			</header>
 
-			<ul class="link-grid grid gap-x-8 gap-y-2 text-xs md:flex-col">
+			<ul class="link-grid grid gap-x-8 gap-y-3 text-xs md:flex-col">
 				<li>
 					<a href="https://www.instagram.com/original.chattengauer" target="_blank" rel="noopener noreferrer">
 						<span class="inline-block aspect-square h-4 rounded-full fill-white align-middle">
@@ -84,6 +84,6 @@
 
 <style>
 	.link-grid {
-		grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
 	}
 </style>
