@@ -15,7 +15,7 @@
 </script>
 
 <SimpleLayout.Section class="content-grid gap-y-4">
-	<SimpleLayout.H1>News</SimpleLayout.H1>
+	<SimpleLayout.H2>News</SimpleLayout.H2>
 
 	<div class="content-grid gap-y-8">
 		{#each news as entry}

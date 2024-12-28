@@ -41,7 +41,7 @@
 					<span
 						class="border-b-2 border-accent pb-1 pr-2 after:ml-2 after:inline-block after:h-2 after:w-2 after:rounded-sm after:bg-accent"
 					>
-						Links
+						Weitere Links
 					</span>
 				</h2>
 			</header>
