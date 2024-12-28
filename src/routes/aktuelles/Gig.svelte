@@ -28,7 +28,7 @@
 <div class={['gig grid', className]}>
 	<div class="ml-1 aspect-square h-2 self-center rounded-sm bg-accent"></div>
 	<p class="text-sm text-slate-600">{timeFormatted}</p>
-	<p class="text-lg font-semibold">{gig.title}</p>
+	<p class="font-accent text-lg">{gig.title}</p>
 	{#if gig.description}
 		<p class="mb-0.5 leading-tight">{gig.description}</p>
 	{/if}

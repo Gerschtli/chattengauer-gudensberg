@@ -33,7 +33,7 @@
 {#snippet gigWithSeparator(gig: GigData)}
 	{@const separator = buildSeparator(gig)}
 	{#if separator}
-		<h2 class="text-xs font-semibold uppercase text-slate-700">
+		<h2 class="text-xs font-bold uppercase text-slate-700">
 			{separator}
 		</h2>
 	{/if}

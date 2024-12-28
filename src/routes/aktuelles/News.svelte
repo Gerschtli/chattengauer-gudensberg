@@ -23,7 +23,7 @@
 					<p class="text-xs text-slate-600">
 						{new Intl.DateTimeFormat('de-DE', { dateStyle: 'full' }).format(entry.date)}
 					</p>
-					<h3 class="text-2xl font-bold">{entry.title}</h3>
+					<h3 class="font-accent text-2xl">{entry.title}</h3>
 					<p class="text-sm text-slate-600">
 						<HashIcon class="-ml-0.5 inline" strokeWidth={1.5} size={16} />
 						{#each entry.ensembles as ensemble, i}

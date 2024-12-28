@@ -9,7 +9,7 @@
 </script>
 
 <header>
-	<h2 class="font-accent text-3xl font-semibold uppercase text-slate-800">
+	<h2 class="font-accent text-3xl uppercase text-slate-800">
 		<span
 			class="border-b-2 border-accent pr-2 after:ml-2 after:inline-block after:h-2 after:w-2 after:rounded-sm after:bg-accent"
 		>

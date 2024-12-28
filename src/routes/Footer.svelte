@@ -6,7 +6,7 @@
 	<div class="mx-auto grid max-w-[--content-max-width] gap-y-6 px-4 py-6 text-white md:grid-cols-2 md:gap-x-4">
 		<article class="space-y-4">
 			<header>
-				<h2 class="font-accent text-sm font-semibold uppercase">
+				<h2 class="font-accent text-sm uppercase">
 					<span
 						class="border-b-2 border-accent pb-1 pr-2 after:ml-2 after:inline-block after:h-2 after:w-2 after:rounded-sm after:bg-accent"
 					>
@@ -37,7 +37,7 @@
 
 		<article class="space-y-4">
 			<header>
-				<h2 class="font-accent text-sm font-semibold uppercase">
+				<h2 class="font-accent text-sm uppercase">
 					<span
 						class="border-b-2 border-accent pb-1 pr-2 after:ml-2 after:inline-block after:h-2 after:w-2 after:rounded-sm after:bg-accent"
 					>
@@ -46,7 +46,7 @@
 				</h2>
 			</header>
 
-			<ul class="link-grid grid gap-x-8 gap-y-2 text-xs font-bold md:flex-col">
+			<ul class="link-grid grid gap-x-8 gap-y-2 text-xs md:flex-col">
 				<li>
 					<a href="https://www.instagram.com/original.chattengauer" target="_blank" rel="noopener noreferrer">
 						<span class="inline-block aspect-square h-4 rounded-full fill-white align-middle">
