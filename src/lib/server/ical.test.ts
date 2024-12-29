@@ -98,36 +98,6 @@ describe('parseIcalData', () => {
 		});
 	});
 
-	it('parses recurring event into only first occurence', async () => {
-		const ical = buildIcal(dedent`
-			BEGIN:VEVENT
-			UID:249e9350-c55c-11ef-8256-275ce817640b
-			CREATED:20241228T204141Z
-			DTSTART;TZID=Europe/Berlin:20250131T120000
-			DTEND;TZID=Europe/Berlin:20250131T153500
-			SUMMARY:Tobias Test Wiederkehrend
-			DESCRIPTION:Website: Ja
-			RRULE:FREQ=WEEKLY;INTERVAL=1;UNTIL=20250214T225959Z;BYDAY=FR;
-			DTSTAMP:20241228T204212Z
-			END:VEVENT
-		`);
-
-		const eventDataList = await parseIcalData(ical);
-
-		expect.soft(eventDataList).toHaveLength(1);
-		expect.soft(eventDataList[0]).toStrictEqual({
-			time: {
-				type: 'range',
-				start: new Date('2025-01-31T11:00:00.000Z'),
-				end: new Date('2025-01-31T14:35:00.000Z'),
-			},
-			title: 'Tobias Test Wiederkehrend',
-			description: undefined,
-			location: undefined,
-			ensembles: [],
-		});
-	});
-
 	it.each([
 		{
 			description: 'no summary',
@@ -219,6 +189,21 @@ describe('parseIcalData', () => {
 				SUMMARY:Tobias Test
 				DESCRIPTION:abc
 				DTSTAMP:20241228T201849Z
+				END:VEVENT
+			`,
+		},
+		{
+			description: 'has rrule',
+			event: dedent`
+				BEGIN:VEVENT
+				UID:249e9350-c55c-11ef-8256-275ce817640b
+				CREATED:20241228T204141Z
+				DTSTART;TZID=Europe/Berlin:20250131T120000
+				DTEND;TZID=Europe/Berlin:20250131T153500
+				SUMMARY:Tobias Test Wiederkehrend
+				DESCRIPTION:Website: Ja
+				RRULE:FREQ=WEEKLY;INTERVAL=1;UNTIL=20250214T225959Z;BYDAY=FR;
+				DTSTAMP:20241228T204212Z
 				END:VEVENT
 			`,
 		},

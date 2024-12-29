@@ -70,6 +70,9 @@ export async function parseIcalData(data: string) {
 	for (const elem of comp.getAllSubcomponents()) {
 		if (elem.name !== 'vevent') continue;
 
+		const rrule = elem.getFirstProperty('rrule');
+		if (rrule) continue;
+
 		const day = getDate(elem, 'dtstart');
 		const start = getDateTime(elem, 'dtstart');
 		const end = getDateTime(elem, 'dtend');
