@@ -173,6 +173,20 @@ describe('parseIcalData', () => {
 				END:VEVENT
 			`,
 		},
+		{
+			description: 'cancelled',
+			event: dedent`
+				BEGIN:VEVENT
+				UID:2513f5f0-c552-11ef-8256-275ce817640b
+				CREATED:20241228T201839Z
+				DTSTART;TZID=Europe/Berlin:20241228T210000
+				DTEND;TZID=Europe/Berlin:20241228T220000
+				SUMMARY:Tobias Test
+				STATUS:CANCELLED
+				DTSTAMP:20241228T201849Z
+				END:VEVENT
+			`,
+		},
 	])('skips events when $description', async ({ event }) => {
 		const ical = buildIcal(event);
 

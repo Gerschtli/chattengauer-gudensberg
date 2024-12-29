@@ -70,6 +70,7 @@ export async function parseIcalData(data: string) {
 		const start = getDateTime(elem, 'dtstart');
 		const end = getDateTime(elem, 'dtend');
 		const title = getText(elem, 'summary');
+		const status = getText(elem, 'status');
 		const descriptionRaw = getText(elem, 'description');
 		const location = getText(elem, 'location');
 
@@ -87,7 +88,7 @@ export async function parseIcalData(data: string) {
 			};
 		}
 
-		if (!title || !time) continue;
+		if (!title || !time || status === 'CANCELLED') continue;
 
 		const { description, ensembles } = splitDescriptionRaw(descriptionRaw);
 
