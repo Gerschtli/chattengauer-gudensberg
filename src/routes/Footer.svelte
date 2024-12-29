@@ -15,7 +15,7 @@
 				</h2>
 			</header>
 
-			<ul class="space-y-3 text-xs">
+			<ul role="list" class="space-y-3 text-xs">
 				<li>
 					<UserIcon class="mr-1 inline-block" size={16} />
 					Martin Salfer
@@ -46,7 +46,7 @@
 				</h2>
 			</header>
 
-			<ul class="link-grid grid gap-x-8 gap-y-3 text-xs md:flex-col">
+			<ul role="list" class="link-grid grid gap-x-8 gap-y-3 text-xs md:flex-col">
 				<li>
 					<a href="https://www.instagram.com/original.chattengauer" target="_blank" rel="noopener noreferrer">
 						<span class="inline-block aspect-square h-4 rounded-full fill-white align-middle">

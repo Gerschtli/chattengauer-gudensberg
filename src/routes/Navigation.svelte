@@ -48,11 +48,11 @@
 				</a>
 			{/snippet}
 
-			<ul class="mx-auto max-w-[450px] space-y-4 p-4">
+			<ul role="list" class="mx-auto max-w-[450px] space-y-4 p-4">
 				<li>{@render link('/', 'Startseite')}</li>
 				<li class="space-y-2">
 					<span>Ensembles</span>
-					<ul class="space-y-2 pl-8">
+					<ul role="list" class="space-y-2 pl-8">
 						<li>{@render link('/ensembles/hauptorchester', 'Hauptorchester')}</li>
 						<li>{@render link('/ensembles/jugendorchester', 'Jugendorchester')}</li>
 						<li>{@render link('/ensembles/blaeserklassen', 'Bläserklassen')}</li>

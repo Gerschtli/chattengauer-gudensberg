@@ -5,7 +5,7 @@
 <SimpleLayout.Section class="content-grid gap-y-2">
 	<SimpleLayout.H2>Das Wichtigste in Kürze</SimpleLayout.H2>
 
-	<ul class="list-disc pl-4">
+	<ul role="list" class="list-disc pl-4">
 		<li>
 			<strong>Probenzeiten:</strong>
 			freitags 20 Uhr

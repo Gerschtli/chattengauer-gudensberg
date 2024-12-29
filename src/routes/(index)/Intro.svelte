@@ -16,7 +16,7 @@
 		necessitatibus id cum quod eum nulla sed natus!
 	</p>
 
-	<ul class="list-disc space-y-2 pl-4">
+	<ul role="list" class="list-disc space-y-2 pl-4">
 		<li class="list-item">
 			<strong>Zusammenhalt:</strong>
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, tenetur ea. Accusantium quisquam sed reiciendis
