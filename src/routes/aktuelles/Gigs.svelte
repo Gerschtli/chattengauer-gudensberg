@@ -61,7 +61,7 @@
 	{/if}
 
 	{#if !expandGigs && gigs.length > showMax}
-		<footer class="text-right text-sm" out:slide={{ duration: slideDuration / 2 }}>
+		<footer class="text-right text-sm">
 			<button class="font-bold text-accent" onclick={() => (expandGigs = true)}>
 				Alle Termine aufklappen
 				<ChevronDownIcon class="inline align-middle" size={16} />
