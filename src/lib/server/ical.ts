@@ -35,25 +35,29 @@ function getText(component: ICAL.Component, name: string) {
 	return value;
 }
 
-function splitDescriptionRaw(descriptionRaw: string | undefined) {
-	if (!descriptionRaw) return { description: undefined, ensembles: [] };
+function splitDescriptionRaw(descriptionRaw: string) {
+	const matchesMarker = descriptionRaw.match(/(?:\s|^)Website: ?Ja\s?/);
+	if (!matchesMarker) {
+		return { marker: false } as const;
+	}
 
-	const matchesEnsembles = descriptionRaw.match(/\nEnsembles:(.+)[\s\S]?/);
+	const matchesEnsembles = descriptionRaw.match(/(?:\s|^)Ensembles:(.+)\s?/);
 	let ensembles: string[] = [];
 	if (matchesEnsembles) {
 		ensembles = matchesEnsembles[1].split(',').map((x) => x.trim());
 	}
 
-	const matchesDescription = descriptionRaw.match(/\nWebsite Beschreibung:([\s\S]+)/);
+	const matchesDescription = descriptionRaw.match(/(?:\s|^)Website Beschreibung:([\s\S]+)/);
 	let description: string | undefined = undefined;
 	if (matchesDescription) {
 		description = matchesDescription[1].trim();
 	}
 
 	return {
+		marker: true,
 		description,
 		ensembles,
-	};
+	} as const;
 }
 
 export async function parseIcalData(data: string) {
@@ -88,9 +92,11 @@ export async function parseIcalData(data: string) {
 			};
 		}
 
-		if (!title || !time || status === 'CANCELLED') continue;
+		if (!title || !time || !descriptionRaw || status === 'CANCELLED') continue;
 
-		const { description, ensembles } = splitDescriptionRaw(descriptionRaw);
+		const { marker, description, ensembles } = splitDescriptionRaw(descriptionRaw);
+
+		if (!marker) continue;
 
 		icalEvents.push({
 			time,

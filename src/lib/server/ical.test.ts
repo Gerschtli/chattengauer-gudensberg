@@ -15,7 +15,7 @@ describe('parseIcalData', () => {
 			DTEND;TZID=Europe/Berlin:20241228T220000
 			SUMMARY:Tobias Test
 			LOCATION:Musterstraße 123, 12345 Musterstadt
-			DESCRIPTION:Beschreibung für Intern\n\nEnsembles: Jugendorchester\, Bläserklasse\nWebsite Beschreibung: Beschreibung für Öffentlichkeit\nsome content\n\nLeerzeile hier drüber\nsome content
+			DESCRIPTION:Beschreibung für Intern\n\nWebsite: Ja\nEnsembles: Jugendorchester\, Bläserklasse\nWebsite Beschreibung: Beschreibung für Öffentlichkeit\nsome content\n\nLeerzeile hier drüber\nsome content
 			DTSTAMP:20241228T201849Z
 			END:VEVENT
 		`);
@@ -42,7 +42,7 @@ describe('parseIcalData', () => {
 		});
 	});
 
-	it('parses event without location and description', async () => {
+	it('parses event without location and description values', async () => {
 		const ical = buildIcal(dedent`
 			BEGIN:VEVENT
 			UID:8cfd96e0-c55b-11ef-8256-275ce817640b
@@ -50,6 +50,7 @@ describe('parseIcalData', () => {
 			DTSTART;TZID=Europe/Berlin:20250131T223000
 			DTEND;TZID=Europe/Berlin:20250131T233000
 			SUMMARY:Tobias Test Minimal
+			DESCRIPTION:Website: Ja
 			DTSTAMP:20241228T204212Z
 			END:VEVENT
 		`);
@@ -77,6 +78,7 @@ describe('parseIcalData', () => {
 			CREATED:20241228T204015Z
 			DTSTART;VALUE=DATE:20250131
 			SUMMARY:Tobias Test Ganztägig
+			DESCRIPTION:Website: Ja
 			DTSTAMP:20241228T204212Z
 			END:VEVENT
 		`);
@@ -104,6 +106,7 @@ describe('parseIcalData', () => {
 			DTSTART;TZID=Europe/Berlin:20250131T120000
 			DTEND;TZID=Europe/Berlin:20250131T153500
 			SUMMARY:Tobias Test Wiederkehrend
+			DESCRIPTION:Website: Ja
 			RRULE:FREQ=WEEKLY;INTERVAL=1;UNTIL=20250214T225959Z;BYDAY=FR;
 			DTSTAMP:20241228T204212Z
 			END:VEVENT
@@ -134,6 +137,7 @@ describe('parseIcalData', () => {
 				CREATED:20241228T201839Z
 				DTSTART;TZID=Europe/Berlin:20241228T210000
 				DTEND;TZID=Europe/Berlin:20241228T220000
+				DESCRIPTION:Website: Ja
 				DTSTAMP:20241228T201849Z
 				END:VEVENT
 			`,
@@ -146,6 +150,7 @@ describe('parseIcalData', () => {
 				CREATED:20241228T201839Z
 				DTEND;TZID=Europe/Berlin:20241228T220000
 				SUMMARY:Tobias Test
+				DESCRIPTION:Website: Ja
 				DTSTAMP:20241228T201849Z
 				END:VEVENT
 			`,
@@ -158,6 +163,7 @@ describe('parseIcalData', () => {
 				CREATED:20241228T201839Z
 				DTSTART;TZID=Europe/Berlin:20241228T210000
 				SUMMARY:Tobias Test
+				DESCRIPTION:Website: Ja
 				DTSTAMP:20241228T201849Z
 				END:VEVENT
 			`,
@@ -169,6 +175,7 @@ describe('parseIcalData', () => {
 				UID:2513f5f0-c552-11ef-8256-275ce817640b
 				CREATED:20241228T201839Z
 				SUMMARY:Tobias Test
+				DESCRIPTION:Website: Ja
 				DTSTAMP:20241228T201849Z
 				END:VEVENT
 			`,
@@ -182,7 +189,35 @@ describe('parseIcalData', () => {
 				DTSTART;TZID=Europe/Berlin:20241228T210000
 				DTEND;TZID=Europe/Berlin:20241228T220000
 				SUMMARY:Tobias Test
+				DESCRIPTION:Website: Ja
 				STATUS:CANCELLED
+				DTSTAMP:20241228T201849Z
+				END:VEVENT
+			`,
+		},
+		{
+			description: 'no description',
+			event: dedent`
+				BEGIN:VEVENT
+				UID:2513f5f0-c552-11ef-8256-275ce817640b
+				CREATED:20241228T201839Z
+				DTSTART;TZID=Europe/Berlin:20241228T210000
+				DTEND;TZID=Europe/Berlin:20241228T220000
+				SUMMARY:Tobias Test
+				DTSTAMP:20241228T201849Z
+				END:VEVENT
+			`,
+		},
+		{
+			description: 'no marker in description',
+			event: dedent`
+				BEGIN:VEVENT
+				UID:2513f5f0-c552-11ef-8256-275ce817640b
+				CREATED:20241228T201839Z
+				DTSTART;TZID=Europe/Berlin:20241228T210000
+				DTEND;TZID=Europe/Berlin:20241228T220000
+				SUMMARY:Tobias Test
+				DESCRIPTION:abc
 				DTSTAMP:20241228T201849Z
 				END:VEVENT
 			`,
