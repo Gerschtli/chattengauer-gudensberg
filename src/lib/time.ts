@@ -1,8 +1,8 @@
-import type { GigData } from './types';
+import type { EventData } from './types';
 
 export const TIME_ZONE = 'Europe/Berlin';
 
-export function getStart(time: GigData['time']) {
+export function getStart(time: EventData['time']) {
 	switch (time.type) {
 		case 'all-day': {
 			return new Date(time.day);
@@ -13,7 +13,7 @@ export function getStart(time: GigData['time']) {
 	}
 }
 
-export function getEnd(time: GigData['time']) {
+export function getEnd(time: EventData['time']) {
 	switch (time.type) {
 		case 'all-day': {
 			const date = new Date(time.day);

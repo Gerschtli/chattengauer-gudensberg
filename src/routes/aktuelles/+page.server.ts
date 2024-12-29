@@ -15,7 +15,7 @@ export async function load({ fetch }) {
 	console.timeLog('ical processing', 'fetch finished');
 	const data = await response.text();
 
-	const gigs = await parseIcalData(data);
+	const events = await parseIcalData(data);
 	console.timeEnd('ical processing');
 
 	const news = [
@@ -46,8 +46,8 @@ export async function load({ fetch }) {
 	] satisfies NewsData[];
 
 	return {
-		gigs: gigs
-			.filter((gig) => getEnd(gig.time) >= new Date())
+		events: events
+			.filter((event) => getEnd(event.time) >= new Date())
 			.toSorted((a, b) => getStart(a.time).getTime() - getStart(b.time).getTime()),
 		news: news.toSorted((a, b) => b.date.getTime() - a.date.getTime()),
 	};

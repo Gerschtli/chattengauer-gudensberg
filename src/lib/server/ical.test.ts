@@ -20,10 +20,10 @@ describe('parseIcalData', () => {
 			END:VEVENT
 		`);
 
-		const gigData = await parseIcalData(ical);
+		const eventDataList = await parseIcalData(ical);
 
-		expect.soft(gigData).toHaveLength(1);
-		expect.soft(gigData[0]).toStrictEqual({
+		expect.soft(eventDataList).toHaveLength(1);
+		expect.soft(eventDataList[0]).toStrictEqual({
 			time: {
 				type: 'range',
 				start: new Date('2024-12-28T20:00:00.000Z'),
@@ -55,10 +55,10 @@ describe('parseIcalData', () => {
 			END:VEVENT
 		`);
 
-		const gigData = await parseIcalData(ical);
+		const eventDataList = await parseIcalData(ical);
 
-		expect.soft(gigData).toHaveLength(1);
-		expect.soft(gigData[0]).toStrictEqual({
+		expect.soft(eventDataList).toHaveLength(1);
+		expect.soft(eventDataList[0]).toStrictEqual({
 			time: {
 				type: 'range',
 				start: new Date('2025-01-31T21:30:00.000Z'),
@@ -83,10 +83,10 @@ describe('parseIcalData', () => {
 			END:VEVENT
 		`);
 
-		const gigData = await parseIcalData(ical);
+		const eventDataList = await parseIcalData(ical);
 
-		expect.soft(gigData).toHaveLength(1);
-		expect.soft(gigData[0]).toStrictEqual({
+		expect.soft(eventDataList).toHaveLength(1);
+		expect.soft(eventDataList[0]).toStrictEqual({
 			time: {
 				type: 'all-day',
 				day: '2025-01-31',
@@ -112,10 +112,10 @@ describe('parseIcalData', () => {
 			END:VEVENT
 		`);
 
-		const gigData = await parseIcalData(ical);
+		const eventDataList = await parseIcalData(ical);
 
-		expect.soft(gigData).toHaveLength(1);
-		expect.soft(gigData[0]).toStrictEqual({
+		expect.soft(eventDataList).toHaveLength(1);
+		expect.soft(eventDataList[0]).toStrictEqual({
 			time: {
 				type: 'range',
 				start: new Date('2025-01-31T11:00:00.000Z'),
@@ -225,9 +225,9 @@ describe('parseIcalData', () => {
 	])('skips events when $description', async ({ event }) => {
 		const ical = buildIcal(event);
 
-		const gigData = await parseIcalData(ical);
+		const eventDataList = await parseIcalData(ical);
 
-		expect.soft(gigData).toHaveLength(0);
+		expect.soft(eventDataList).toHaveLength(0);
 	});
 });
 

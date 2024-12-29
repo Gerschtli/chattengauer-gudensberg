@@ -4,28 +4,28 @@
 
 	import { SimpleLayout } from '$lib/simpleLayout';
 	import { TIME_ZONE, getStart } from '$lib/time';
-	import type { GigData } from '$lib/types';
+	import type { EventData } from '$lib/types';
 
-	import Gig from './Gig.svelte';
+	import Event from './Event.svelte';
 
 	interface Props {
-		gigs: GigData[];
+		events: EventData[];
 	}
 
-	let { gigs }: Props = $props();
+	let { events }: Props = $props();
 
 	const slideDuration = 500;
 	const showMax = 3;
-	let expandGigs = $state(false);
+	let expandAll = $state(false);
 
 	const set = new Set<string>();
 
-	function buildSeparator(gig: GigData) {
+	function buildSeparator(event: EventData) {
 		const rendered = new Intl.DateTimeFormat('de-DE', {
 			month: 'long',
 			year: 'numeric',
 			timeZone: TIME_ZONE,
-		}).format(getStart(gig.time));
+		}).format(getStart(event.time));
 
 		if (set.has(rendered)) return undefined;
 
@@ -35,34 +35,34 @@
 	}
 </script>
 
-{#snippet gigWithSeparator(gig: GigData)}
-	{@const separator = buildSeparator(gig)}
+{#snippet eventWithSeparator(event: EventData)}
+	{@const separator = buildSeparator(event)}
 	{#if separator}
 		<h2 class="text-xs font-bold uppercase text-slate-700">
 			{separator}
 		</h2>
 	{/if}
-	<Gig {gig} />
+	<Event {event} />
 {/snippet}
 
 <SimpleLayout.Section class="grid gap-y-4">
 	<SimpleLayout.H1>Aktuelle Termine</SimpleLayout.H1>
 
-	{#each gigs.slice(0, showMax) as gig}
-		{@render gigWithSeparator(gig)}
+	{#each events.slice(0, showMax) as event}
+		{@render eventWithSeparator(event)}
 	{/each}
 
-	{#if expandGigs}
+	{#if expandAll}
 		<div class="grid gap-y-4" in:slide={{ duration: slideDuration }}>
-			{#each gigs.slice(showMax) as gig}
-				{@render gigWithSeparator(gig)}
+			{#each events.slice(showMax) as event}
+				{@render eventWithSeparator(event)}
 			{/each}
 		</div>
 	{/if}
 
-	{#if !expandGigs && gigs.length > showMax}
+	{#if !expandAll && events.length > showMax}
 		<footer class="text-right text-sm">
-			<button class="font-bold text-accent" onclick={() => (expandGigs = true)}>
+			<button class="font-bold text-accent" onclick={() => (expandAll = true)}>
 				Alle Termine aufklappen
 				<ChevronDownIcon class="inline align-middle" size={16} />
 			</button>

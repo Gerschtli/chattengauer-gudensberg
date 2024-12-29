@@ -1,4 +1,4 @@
-export type GigData = {
+export type EventData = {
 	time:
 		| {
 				type: 'all-day';

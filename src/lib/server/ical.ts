@@ -1,6 +1,6 @@
 import ICAL from 'ical.js';
 
-import type { GigData } from '$lib/types';
+import type { EventData } from '$lib/types';
 
 function getDateTime(component: ICAL.Component, name: string) {
 	const property = component.getFirstProperty(name);
@@ -66,7 +66,7 @@ export async function parseIcalData(data: string) {
 
 	console.timeLog('ical processing', `count of elements: ${comp.getAllSubcomponents().length}`);
 
-	const icalEvents: GigData[] = [];
+	const icalEvents: EventData[] = [];
 	for (const elem of comp.getAllSubcomponents()) {
 		if (elem.name !== 'vevent') continue;
 
@@ -78,7 +78,7 @@ export async function parseIcalData(data: string) {
 		const descriptionRaw = getText(elem, 'description');
 		const location = getText(elem, 'location');
 
-		let time: GigData['time'] | undefined;
+		let time: EventData['time'] | undefined;
 		if (day) {
 			time = {
 				type: 'all-day',
