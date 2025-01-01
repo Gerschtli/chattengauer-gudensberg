@@ -7,16 +7,16 @@ import { CONTACT_EMAIL, CONTACT_NAME, SENDER_EMAIL, SENDER_NAME } from '$env/sta
 
 import { sendMail } from '$lib/server/mail';
 
-import { ensembles } from '$lib/ensembles';
+import { isEnsemble } from '$lib/ensembles';
 
 import { schema } from './schema';
 
 export async function load({ params }) {
-	if (!(params.slug in ensembles)) error(404);
+	if (!isEnsemble(params.slug)) error(404);
 
 	return {
 		form: await superValidate(zod(schema)),
-		slug: params.slug as keyof typeof ensembles,
+		slug: params.slug,
 	};
 }
 

@@ -17,6 +17,12 @@ import jugendorchester4 from '$lib/assets/ensembles/jugendorchester-4.jpg?enhanc
 
 export type Picture = typeof grossesOrchester1;
 
+export type Ensemble = keyof typeof ensembles;
+
+export function isEnsemble(slug: string): slug is Ensemble {
+	return slug in ensembles;
+}
+
 export const ensembles = {
 	'grosses-orchester': {
 		name: 'Großes Orchester',

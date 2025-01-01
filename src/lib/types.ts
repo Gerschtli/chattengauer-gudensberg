@@ -1,4 +1,4 @@
-import type { Picture } from './ensembles';
+import type { Ensemble, Picture } from './ensembles';
 
 export type EventData = {
 	time:
@@ -14,7 +14,7 @@ export type EventData = {
 	title: string;
 	description?: string;
 	location?: string;
-	ensembles?: string[];
+	ensembles?: Ensemble[];
 };
 
 export type SliderAsset = { type: 'image'; uri: string | Picture };

@@ -2,11 +2,11 @@
 	import { ChevronRightIcon } from 'lucide-svelte';
 
 	import Slider from '$lib/Slider.svelte';
-	import { ensembles } from '$lib/ensembles';
+	import { type Ensemble, ensembles } from '$lib/ensembles';
 	import { SimpleLayout } from '$lib/simpleLayout';
 </script>
 
-{#snippet ensembleInfo(lightBg: boolean, slug: keyof typeof ensembles)}
+{#snippet ensembleInfo(lightBg: boolean, slug: Ensemble)}
 	{@const { name, images } = ensembles[slug]}
 
 	<article

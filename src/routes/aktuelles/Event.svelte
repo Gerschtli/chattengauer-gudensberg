@@ -2,6 +2,7 @@
 	import { HashIcon, MapPinIcon } from 'lucide-svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
 
+	import { ensembles } from '$lib/ensembles';
 	import { TIME_ZONE } from '$lib/time';
 	import type { EventData } from '$lib/types';
 
@@ -72,7 +73,7 @@
 					href="/ensembles/{ensemble}"
 					class="underline decoration-from-font underline-offset-2 hover:text-accent"
 				>
-					{ensemble}
+					{ensembles[ensemble].name}
 				</a>
 			{/each}
 		</p>

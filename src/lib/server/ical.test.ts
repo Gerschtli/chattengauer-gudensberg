@@ -15,7 +15,7 @@ describe('parseIcalData', () => {
 			DTEND;TZID=Europe/Berlin:20241228T220000
 			SUMMARY:Tobias Test
 			LOCATION:Musterstraße 123, 12345 Musterstadt
-			DESCRIPTION:Beschreibung für Intern\n\nWebsite: Ja\nEnsembles: Jugendorchester\, Bläserklasse\nWebsite Beschreibung: Beschreibung für Öffentlichkeit\nsome content\n\nLeerzeile hier drüber\nsome content
+			DESCRIPTION:Beschreibung für Intern\n\nWebsite: Ja\nEnsembles: jugendorchester\, blaeserklassen, abc\nWebsite Beschreibung: Beschreibung für Öffentlichkeit\nsome content\n\nLeerzeile hier drüber\nsome content
 			DTSTAMP:20241228T201849Z
 			END:VEVENT
 		`);
@@ -38,7 +38,7 @@ describe('parseIcalData', () => {
 				some content
 			`,
 			location: 'Musterstraße 123, 12345 Musterstadt',
-			ensembles: ['Jugendorchester', 'Bläserklasse'],
+			ensembles: ['jugendorchester', 'blaeserklassen'],
 		});
 	});
 

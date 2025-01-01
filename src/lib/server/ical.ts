@@ -1,5 +1,6 @@
 import ICAL from 'ical.js';
 
+import { type Ensemble, isEnsemble } from '$lib/ensembles';
 import type { EventData } from '$lib/types';
 
 function getDateTime(component: ICAL.Component, name: string) {
@@ -42,9 +43,12 @@ function splitDescriptionRaw(descriptionRaw: string) {
 	}
 
 	const matchesEnsembles = descriptionRaw.match(/(?:\s|^)Ensembles:(.+)\s?/);
-	let ensembles: string[] = [];
+	let ensembles: Ensemble[] = [];
 	if (matchesEnsembles) {
-		ensembles = matchesEnsembles[1].split(',').map((x) => x.trim());
+		ensembles = matchesEnsembles[1]
+			.split(',')
+			.map((x) => x.trim())
+			.filter((ensemble) => isEnsemble(ensemble));
 	}
 
 	const matchesDescription = descriptionRaw.match(/(?:\s|^)Website Beschreibung:([\s\S]+)/);
