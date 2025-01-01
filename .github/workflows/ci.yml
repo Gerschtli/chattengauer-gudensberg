@@ -22,7 +22,7 @@ jobs:
         uses: DeterminateSystems/nix-installer-action@v12
 
       - name: Setup magic nix cache
-        uses: DeterminateSystems/magic-nix-cache-action@v7
+        uses: DeterminateSystems/magic-nix-cache-action@v8
 
       - name: Build dev shell
         shell: bash
@@ -61,6 +61,6 @@ jobs:
         uses: DeterminateSystems/nix-installer-action@v12
 
       - name: Setup magic nix cache
-        uses: DeterminateSystems/magic-nix-cache-action@v7
+        uses: DeterminateSystems/magic-nix-cache-action@v8
 
       - run: nix flake check --print-build-logs
