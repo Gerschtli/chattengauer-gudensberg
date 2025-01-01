@@ -28,7 +28,11 @@
 	<div class="slider grid-1" style:--gap="{gap}px" bind:this={slider} bind:clientWidth {onscroll}>
 		{#each assets as { type, uri }}
 			{#if type === 'image'}
-				<div><img src={uri} alt="" loading="lazy" /></div>
+				{#if typeof uri === 'string'}
+					<div><img src={uri} alt="" loading="lazy" /></div>
+				{:else}
+					<div><enhanced:img src={uri} alt="" loading="lazy" /></div>
+				{/if}
 			{/if}
 		{/each}
 	</div>

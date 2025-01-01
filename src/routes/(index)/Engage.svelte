@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Control, Description, Field, FieldErrors, Fieldset, Label, Legend } from 'formsnap';
+	import { Control, Description, Field, FieldErrors, Fieldset, Label } from 'formsnap';
 	import { AsteriskIcon, CheckIcon, LoaderCircleIcon, XIcon } from 'lucide-svelte';
 	import SuperDebug, { superForm } from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
@@ -20,12 +20,7 @@
 </script>
 
 <SimpleLayout.Section class="content-grid gap-y-4">
-	<SimpleLayout.H2>Mitmachen!</SimpleLayout.H2>
-
-	<p>
-		Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad rem possimus, aliquid magni voluptatem optio
-		accusantium adipisci at saepe corrupti ab obcaecati est aut numquam facilis quibusdam beatae eos. Itaque.
-	</p>
+	<h2 id="kontakt" class="heading-2">Werde Teil der Chattengauer</h2>
 
 	{#if dev}
 		<SuperDebug data={$formData} />
@@ -34,7 +29,6 @@
 	<form method="POST" use:enhance class="form flex flex-col gap-y-4">
 		<div class="flex flex-col gap-y-1">
 			<Fieldset {form} name="intention">
-				<Legend class="text-sm">Du möchtest</Legend>
 				<div class="intention-set mt-1">
 					<Control>
 						{#snippet children({ props })}
@@ -44,10 +38,10 @@
 								bind:group={$formData.intention}
 								value={IntentionEnum.enum.join}
 							/>
-							<Label>Mitmachen</Label>
+							<Label class="font-bold">Mach mit!</Label>
 							<Description>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam repellendus cum
-								exercitationem!
+								Möchtest du ein Instrument lernen oder dich als Musiker in eins unserer Orchester
+								einbringen? Dann wird es höchste Zeit, dass wir uns kennenlernen!
 							</Description>
 						{/snippet}
 					</Control>
@@ -59,10 +53,12 @@
 								bind:group={$formData.intention}
 								value={IntentionEnum.enum.apply}
 							/>
-							<Label>Dirigent*in werden</Label>
+							<Label class="font-bold">Sei dabei!</Label>
 							<Description>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam repellendus cum
-								exercitationem!
+								Du bist Instrumentallehrer, Dirigent oder hast eine Fortbildung zum Bläserklassenleiter
+								absolviert? <br />
+								Wenn auch für dich Teamgeist und Spaß an der Musik an erster Stelle stehen und du dein Wissen
+								und Können gerne bei uns einbringen möchtest, dann sollten wir uns definitiv kennenlernen!
 							</Description>
 						{/snippet}
 					</Control>
@@ -74,10 +70,22 @@
 								bind:group={$formData.intention}
 								value={IntentionEnum.enum.support}
 							/>
-							<Label>Unterstützen</Label>
-							<Description>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam repellendus cum
-								exercitationem!
+							<Label class="font-bold">Unterstütze uns!</Label>
+							<Description class="grid gap-1">
+								<p>Hilf uns dabei, noch mehr zu bewegen:</p>
+
+								<h3 class="font-bold">Spenden</h3>
+								<p>
+									Du bist begeistert von unserem Verein und willst spenden? Egal, ob kleine oder große
+									Beiträge - um unsere Projekte und den Nachwuchs zu fördern sind wir über deine
+									Unterstützung sehr dankbar.
+								</p>
+
+								<h3 class="font-bold">Fördermitgliedschaft</h3>
+								<p>
+									Du kannst dir eine Fördermitgliedschaft vorstellen? Für alle, die Teil unserer
+									Gemeinschaft sein und uns finanziell unterstützen möchten, ohne aktiv mitzuspielen.
+								</p>
 							</Description>
 						{/snippet}
 					</Control>
@@ -132,12 +140,6 @@
 					<Description class="text-sm text-neutral-400">Hast du schon einmal dirigiert?</Description>
 				</Field>
 			</div>
-		{:else if $formData.intention === IntentionEnum.Enum.support}
-			<p>
-				Du kannst Fördermitglied werden oder uns etwas spenden! Lorem ipsum dolor sit amet consectetur
-				adipisicing elit. Perferendis rerum autem impedit earum quae dolor, optio corrupti delectus quasi
-				maiores.
-			</p>
 		{/if}
 		<div class="flex flex-col gap-y-1">
 			<Field {form} name="name">
@@ -196,7 +198,7 @@
 						</Label>
 						<textarea
 							{...props}
-							class="w-full rounded-md border border-slate-300 px-3 py-2"
+							class="h-32 w-full rounded-md border border-slate-300 px-3 py-2"
 							bind:value={$formData.message}
 						></textarea>
 					{/snippet}
@@ -236,7 +238,6 @@
 
 		:global([data-fs-description]) {
 			grid-column: 2;
-			font-style: italic;
 			font-size: theme('fontSize.sm');
 		}
 	}

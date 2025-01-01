@@ -6,13 +6,7 @@
 	<div class="grid gap-y-6 text-white md:grid-cols-2 md:gap-x-4">
 		<article class="space-y-4">
 			<header>
-				<h2 class="font-accent text-sm uppercase">
-					<span
-						class="border-b-2 border-accent pb-1 pr-2 after:ml-2 after:inline-block after:h-2 after:w-2 after:rounded-sm after:bg-accent"
-					>
-						Kontakt
-					</span>
-				</h2>
+				<h2 class="heading-footer">Kontakt</h2>
 			</header>
 
 			<ul role="list" class="space-y-3 text-xs">
@@ -37,13 +31,7 @@
 
 		<article class="space-y-4">
 			<header>
-				<h2 class="font-accent text-sm uppercase">
-					<span
-						class="border-b-2 border-accent pb-1 pr-2 after:ml-2 after:inline-block after:h-2 after:w-2 after:rounded-sm after:bg-accent"
-					>
-						Weitere Links
-					</span>
-				</h2>
+				<h2 class="heading-footer">Weitere Links</h2>
 			</header>
 
 			<ul role="list" class="link-grid grid gap-x-8 gap-y-3 text-xs md:flex-col">

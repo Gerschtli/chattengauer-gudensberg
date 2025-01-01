@@ -72,6 +72,53 @@
 	.content-grid__full-width {
 		grid-column: full-width;
 	}
+
+	.heading-1,
+	.heading-2,
+	.heading-footer {
+		--_font-size: var(--font-size, 2rem);
+		--_letter-spacing: var(--letter-spacing, -0.3rem);
+		--_color: var(--color, theme('colors.slate.800'));
+
+		width: fit-content;
+		color: var(--color);
+		font-size: var(--_font-size);
+		line-height: 1.2;
+		font-family: theme('fontFamily.accent');
+		text-decoration: underline;
+		text-decoration-color: theme('colors.accent');
+		text-decoration-thickness: 0.125rem;
+		text-underline-offset: 0.5rem;
+		text-transform: uppercase;
+		text-wrap: balance;
+
+		&::after {
+			display: inline-block;
+			border-radius: theme('borderRadius.sm');
+			content: ' . ';
+			color: theme('colors.accent');
+			font-size: max(3rem, calc(var(--_font-size) * 2));
+			line-height: var(--_font-size);
+			letter-spacing: var(--_letter-spacing);
+			text-decoration: inherit;
+			text-underline-offset: inherit;
+			white-space: pre;
+		}
+	}
+
+	.heading-1 {
+		--font-size: 2.5rem;
+	}
+
+	.heading-2 {
+		--font-size: 2rem;
+	}
+
+	.heading-footer {
+		--font-size: 0.875rem;
+		--_letter-spacing: -0.1rem;
+		--color: theme('colors.white');
+	}
 }
 
 @layer utilities {

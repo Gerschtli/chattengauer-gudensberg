@@ -1,41 +1,51 @@
 <script lang="ts">
 	import Slider from '$lib/Slider.svelte';
-	import ensembleImage from '$lib/assets/ensembleImage.jpg';
 	import example1 from '$lib/assets/example1.avif';
 	import example2 from '$lib/assets/example2.avif';
 	import { SimpleLayout } from '$lib/simpleLayout';
 </script>
 
 <SimpleLayout.Section class="content-grid gap-y-4">
-	<SimpleLayout.H1>Willkommen bei den Chattengauern!</SimpleLayout.H1>
+	<h1 class="heading-1">Willkommen bei den Chattengauern aus Gudensberg!</h1>
 
 	<p>
-		Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium veniam, inventore nobis nam porro officiis
-		exercitationem, dicta beatae dolorem cupiditate illum, corporis corrupti magnam! Unde voluptatibus quas
-		laboriosam fugiat consequatur et cum nobis aliquam fugit quo. Quis eius quidem asperiores beatae. Eos
-		necessitatibus id cum quod eum nulla sed natus!
+		Wir sind nicht einfach nur ein Musikverein &ndash; wir stehen für vielfältige Musikauswahl, lockere Proben und
+		eine starke Gemeinschaft über alle Altersgrenzen hinweg. Hier geht es nicht nur um die richtigen Töne und tolle
+		Konzerte, sondern auch um die Erlebnisse und Freundschaften, die daraus entstehen.
 	</p>
 
+	<p>
+		Egal, ob Kind, Jugendlicher, Erwachsener oder Senior - bei uns findet jeder seinen Platz in einem unserer
+		Orchester.
+	</p>
+
+	<h2 class="font-accent text-xl">Was uns ausmacht:</h2>
+
 	<ul role="list" class="list-disc space-y-2 pl-4">
-		<li class="list-item">
-			<strong>Zusammenhalt:</strong>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, tenetur ea. Accusantium quisquam sed reiciendis
-			tempore eveniet perferendis nostrum adipisci.
+		<li>
+			<strong>Teamgeist:</strong>
+			Egal ob Anfänger oder Profi, jung oder alt &ndash; bei uns zählt der Zusammenhalt.
 		</li>
 		<li>
-			<strong>Spaß:</strong>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, quae!
+			<strong>Neugier:</strong>
+			Wir lieben es, Neues auszuprobieren &ndash; ob moderne Pop-Songs, Filmmusik oder einzigartige Projekte.
 		</li>
 		<li>
-			<strong>Gemeinschaft:</strong>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas odit repellat doloremque?
+			<strong>Wohlfühlen:</strong>
+			Richtig gute Musik ist unser Ding, aber der Spaß steht immer im Vordergrund. Keine steifen Proben, sondern gute
+			Laune und viel Freude.
+		</li>
+		<li>
+			<strong>Erlebnisse:</strong>
+			Gemeinsame Events, Auftritte und Freizeitspaß machen unseren Verein einzigartig.
 		</li>
 	</ul>
+
+	<p>Entdecke, wie spannend und vielseitig unser Orchester ist und sei Teil unserer musikalischen Reise!</p>
 
 	<Slider
 		class="content-grid__breakout"
 		assets={[
-			{ type: 'image', uri: ensembleImage },
 			{ type: 'image', uri: example1 },
 			{ type: 'image', uri: example2 },
 		]}

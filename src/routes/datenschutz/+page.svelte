@@ -4,7 +4,7 @@
 
 <SimpleLayout.Root title="Datenschutz">
 	<SimpleLayout.Section class="space-y-4">
-		<SimpleLayout.H1>Datenschutz</SimpleLayout.H1>
+		<h1 class="heading-1">Datenschutz</h1>
 
 		<p>
 			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis doloribus provident dolore, molestiae aut

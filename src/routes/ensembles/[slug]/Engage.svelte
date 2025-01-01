@@ -20,7 +20,7 @@
 </script>
 
 <SimpleLayout.Section class="content-grid gap-y-4">
-	<SimpleLayout.H2>Mitmachen!</SimpleLayout.H2>
+	<h2 class="heading-2">Mitmachen!</h2>
 
 	<p>
 		Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad rem possimus, aliquid magni voluptatem optio

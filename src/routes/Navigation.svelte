@@ -5,6 +5,8 @@
 	import { afterNavigate } from '$app/navigation';
 	import { page } from '$app/state';
 
+	import { ensembles } from '$lib/ensembles';
+
 	let navRef: HTMLElement | undefined;
 
 	function closeNav() {
@@ -51,15 +53,15 @@
 			<ul role="list" class="mx-auto max-w-[450px] space-y-4 p-4">
 				<li>{@render link('/', 'Startseite')}</li>
 				<li class="space-y-2">
-					<span>Ensembles</span>
+					<span>Unsere Ensembles</span>
 					<ul role="list" class="space-y-2 pl-8">
-						<li>{@render link('/ensembles/hauptorchester', 'Hauptorchester')}</li>
-						<li>{@render link('/ensembles/jugendorchester', 'Jugendorchester')}</li>
-						<li>{@render link('/ensembles/blaeserklassen', 'Bläserklassen')}</li>
+						{#each Object.entries(ensembles) as [slug, { name }]}
+							<li>{@render link(`/ensembles/${slug}`, name)}</li>
+						{/each}
 					</ul>
 				</li>
 				<li>{@render link('/aktuelles', 'Aktuelle Termine und News')}</li>
-				<li>{@render link('/', 'Kontakt')}</li>
+				<li>{@render link('/#kontakt', 'Werde Teil der Chattengauer')}</li>
 			</ul>
 		</nav>
 	</div>

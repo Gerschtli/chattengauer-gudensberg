@@ -4,7 +4,7 @@
 
 <SimpleLayout.Root title="Satzung">
 	<SimpleLayout.Section class="space-y-4">
-		<SimpleLayout.H1>Satzung</SimpleLayout.H1>
+		<h1 class="heading-1">Satzung</h1>
 
 		<p>
 			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis doloribus provident dolore, molestiae aut
