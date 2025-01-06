@@ -74,4 +74,9 @@
 		scroll-snap-align: center;
 		scroll-snap-stop: always;
 	}
+
+	.slider > div img {
+		height: 100%;
+		object-fit: contain;
+	}
 </style>
