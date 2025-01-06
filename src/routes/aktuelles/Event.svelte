@@ -40,7 +40,7 @@
 <div class={['event grid', className]}>
 	<div class="ml-1 aspect-square h-2 self-center rounded-sm bg-accent"></div>
 	<p class="text-sm text-slate-600">{timeFormatted}</p>
-	<h3 class="font-accent text-lg">{event.title}</h3>
+	<h3 class="font-accent text-lg font-accent-bold">{event.title}</h3>
 
 	{#if event.description}
 		<div class="mb-0.5 grid gap-y-2">

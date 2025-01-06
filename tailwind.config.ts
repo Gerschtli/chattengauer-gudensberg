@@ -7,8 +7,11 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['Trade Gothic LT Std Regular', 'system-ui'],
-				accent: ['"Trade Gothic LT Std Bold Condensed No. 20"', 'system-ui'],
+				sans: ['"Roboto"', 'system-ui'],
+				accent: ['"Saira Condensed"', 'system-ui'],
+			},
+			fontWeight: {
+				'accent-bold': '600',
 			},
 			colors: {
 				accent: '#dd1e25',

@@ -5,21 +5,31 @@
 @layer base {
 	@font-face {
 		font-style: normal;
-		font-weight: normal;
+		font-weight: 400;
 		src:
-			local('Trade Gothic LT Std Regular'),
-			url('/fonts/trade-gothic-lt-std-58a78e64434a9.woff') format('woff');
-		font-family: 'Trade Gothic LT Std Regular';
+			local('Roboto-Regular'),
+			url('/fonts/Roboto-Regular.woff2') format('woff2');
+		font-family: 'Roboto';
 		font-display: swap;
 	}
 
 	@font-face {
 		font-style: normal;
-		font-weight: normal;
+		font-weight: 700;
 		src:
-			local('Trade Gothic LT Std Bold Condensed No. 20'),
-			url('/fonts/trade-gothic-lt-std-bold-condensed-no-20-5872def1d27d8.woff') format('woff');
-		font-family: 'Trade Gothic LT Std Bold Condensed No. 20';
+			local('Roboto-Bold'),
+			url('/fonts/Roboto-Bold.woff2') format('woff2');
+		font-family: 'Roboto';
+		font-display: swap;
+	}
+
+	@font-face {
+		font-style: normal;
+		font-weight: theme('fontWeight.accent-bold');
+		src:
+			local('SairaCondensed-Semibold'),
+			url('/fonts/SairaCondensed-Semibold.woff2') format('woff2');
+		font-family: 'Saira Condensed';
 		font-display: swap;
 	}
 
@@ -83,6 +93,7 @@
 
 		width: fit-content;
 		color: var(--color);
+		font-weight: theme('fontWeight.accent-bold');
 		font-size: var(--_font-size);
 		line-height: 1.2;
 		font-family: theme('fontFamily.accent');
