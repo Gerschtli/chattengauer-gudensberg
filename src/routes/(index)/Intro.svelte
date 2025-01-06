@@ -17,7 +17,7 @@
 		Orchester.
 	</p>
 
-	<h2 class="font-accent text-2xl">Was uns ausmacht:</h2>
+	<h2 class="heading-3">Was uns ausmacht:</h2>
 
 	<ul role="list" class="list-disc space-y-2 pl-4">
 		<li>

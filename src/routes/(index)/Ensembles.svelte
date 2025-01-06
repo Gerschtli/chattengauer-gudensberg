@@ -25,7 +25,7 @@
 				lightBg ? 'content-right md:pl-4' : 'content-left md:order-1 md:pr-4',
 			]}
 		>
-			<h2 class="font-accent text-xl">{name}</h2>
+			<h3 class="font-accent text-xl">{name}</h3>
 
 			{#if slug === 'grosses-orchester'}
 				<p class="text-sm">Unser Ensemble für fortgeschrittene Musiker.</p>

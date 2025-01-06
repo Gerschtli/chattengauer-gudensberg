@@ -56,7 +56,7 @@
 				Weil Spaß und Erfolg Hand in Hand gehen! Gemeinsam spielen wir kleine Konzerte und feiern erste Erfolge.
 			</p>
 
-			<h2 class="font-accent text-2xl">Was ist das Besondere?</h2>
+			<h2 class="heading-3">Was ist das Besondere?</h2>
 
 			<p>Jugendliche der Chattengauer werden eure Instrumenten-Paten!</p>
 			<p>
