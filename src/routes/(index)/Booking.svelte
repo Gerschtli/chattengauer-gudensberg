@@ -21,9 +21,9 @@
 </script>
 
 <SimpleLayout.Section class="content-grid gap-y-4">
-	<h2 class="heading-2">Hier spielt die Musik</h2>
+	<h2 id="live-musik-die-begeistert" class="heading-2">Live-Musik, die begeistert!</h2>
 
-	<p>Du möchtest die Chattengauer für Deine Veranstaltung buchen?</p>
+	<p>Du möchtest die Chattengauer für ein Event buchen?</p>
 
 	<p>
 		Egal, ob Firmenfeier, Geburtstag oder Jubiläum, Festumzug, Kirmes oder Dorffest &ndash; wir machen deine

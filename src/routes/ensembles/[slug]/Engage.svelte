@@ -11,7 +11,11 @@
 	import type { PageData } from './$types';
 	import { schema } from './schema.js';
 
-	let { data }: { data: PageData } = $props();
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 
 	const form = superForm(data.form, {
 		validators: zodClient(schema),
@@ -22,10 +26,29 @@
 <SimpleLayout.Section class="content-grid gap-y-4">
 	<h2 class="heading-2">Mitmachen!</h2>
 
-	<p>
-		Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad rem possimus, aliquid magni voluptatem optio
-		accusantium adipisci at saepe corrupti ab obcaecati est aut numquam facilis quibusdam beatae eos. Itaque.
-	</p>
+	{#if data.slug === 'grosses-orchester'}
+		<p>
+			<strong>Du möchtest mitspielen?</strong>
+			Wir freuen uns immer über neue Talente, die unser Team bereichern. Probier&lsquo; es aus &ndash; wir heißen dich
+			herzlich willkommen!
+		</p>
+	{:else if data.slug === 'blaeserklassen'}
+		<p>
+			<strong>Mach mit!</strong>
+			Du möchtest ein Instrument lernen? Jetzt ist die Gelegenheit! Deine Eltern melden sich bei uns und schon bald
+			bist du Teil der Kid.Chatts und kannst zusammen mit vielen anderen Kindern Musik machen.
+		</p>
+	{:else if data.slug === 'jugendorchester'}
+		<p>
+			<strong>Neugierig geworden?</strong>
+			Schreib uns und erlebe schon bald, wie cool Musik & mehr in der Gruppe sein kann.
+		</p>
+	{:else if data.slug === 'brass-und-spass'}
+		<p>
+			<strong>Schreib uns eine kurze Nachricht und komm vorbei!</strong>
+			Wir freuen uns auf neue Gesichter, die mit uns Musik machen und viel Spaß haben wollen und frische Klänge.
+		</p>
+	{/if}
 
 	{#if dev}
 		<SuperDebug data={$formData} />

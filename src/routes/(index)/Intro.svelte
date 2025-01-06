@@ -1,7 +1,5 @@
 <script lang="ts">
-	import Slider from '$lib/Slider.svelte';
-	import example1 from '$lib/assets/example1.avif';
-	import example2 from '$lib/assets/example2.avif';
+	import notenstaender from '$lib/assets/notenstaender.jpg?enhanced';
 	import { SimpleLayout } from '$lib/simpleLayout';
 </script>
 
@@ -19,12 +17,12 @@
 		Orchester.
 	</p>
 
-	<h2 class="font-accent text-xl">Was uns ausmacht:</h2>
+	<h2 class="font-accent text-2xl">Was uns ausmacht:</h2>
 
 	<ul role="list" class="list-disc space-y-2 pl-4">
 		<li>
 			<strong>Teamgeist:</strong>
-			Egal ob Anfänger oder Profi, jung oder alt &ndash; bei uns zählt der Zusammenhalt.
+			Egal ob Anfänger oder Profi, alt oder jung &ndash; bei uns zählt der Zusammenhalt.
 		</li>
 		<li>
 			<strong>Neugier:</strong>
@@ -43,11 +41,7 @@
 
 	<p>Entdecke, wie spannend und vielseitig unser Orchester ist und sei Teil unserer musikalischen Reise!</p>
 
-	<Slider
-		class="content-grid__breakout"
-		assets={[
-			{ type: 'image', uri: example1 },
-			{ type: 'image', uri: example2 },
-		]}
-	/>
+	<div class="content-grid__breakout">
+		<enhanced:img src={notenstaender} alt="" loading="lazy" sizes="min(768px, 100vw)" />
+	</div>
 </SimpleLayout.Section>

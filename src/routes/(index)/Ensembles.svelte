@@ -10,7 +10,10 @@
 	{@const { name, images } = ensembles[slug]}
 
 	<article
-		class={['content-grid--raw content-grid__full-width md:py-4', lightBg || 'bg-slate-800 py-4 text-slate-200']}
+		class={[
+			'content-grid--raw content-grid__full-width md:py-4 md:first-of-type:pt-0',
+			lightBg || 'bg-slate-800 py-4 text-slate-200',
+		]}
 	>
 		<div class={['place-content-center', lightBg ? 'breakout-left' : 'breakout-right md:order-2']}>
 			<Slider assets={images.map((image) => ({ type: 'image', uri: image }))} />
@@ -32,11 +35,12 @@
 				</p>
 			{:else if slug === 'blaeserklassen'}
 				<p class="text-sm">
-					Unsere Jüngsten (8-10 Jahre) machen ihre ersten Schritte in die Welt des „Musik-selber-machens“.
+					Unsere Jüngsten (8-10 Jahre) machen ihre ersten Schritte in die spannende Welt des
+					„Musik-selber-machens“.
 				</p>
 				<p class="text-sm">
-					Mit viel Spaß und in entspannter Atmosphäre lernen sie ihr Instrument und erleben erste
-					Bühnenmomente. Ein spielerischer Einstieg, der begeistert.
+					Mit viel Spaß und in entspannter Atmosphäre entdecken und lernen sie ihr Instrument und erleben
+					erste Bühnenmomente. Ein spielerischer Einstieg, der begeistert.
 				</p>
 			{:else if slug === 'jugendorchester'}
 				<p class="text-sm">Modern, cool und voller Energie &ndash; unser Orchester für 11- bis 25-Jährige.</p>
@@ -63,11 +67,9 @@
 {/snippet}
 
 <SimpleLayout.Section class="content-grid gap-y-4">
-	<h2 class="heading-2">Unsere Ensembles</h2>
+	<h2 class="heading-2">Finde dein Ensemble</h2>
 
 	<p>Bei uns gibt es für jeden die richtige Mischung aus Musik, Spaß und Gemeinschaft.</p>
-
-	<p>Finde dein Ensemble:</p>
 
 	<div class="content-grid gap-y-4 md:gap-y-0">
 		{@render ensembleInfo(true, 'grosses-orchester')}

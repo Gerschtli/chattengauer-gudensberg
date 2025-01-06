@@ -20,7 +20,7 @@
 </script>
 
 <SimpleLayout.Section class="content-grid gap-y-4">
-	<h2 id="kontakt" class="heading-2">Werde Teil der Chattengauer</h2>
+	<h2 id="werde-teil-der-chattengauer" class="heading-2">Werde Teil der Chattengauer</h2>
 
 	{#if dev}
 		<SuperDebug data={$formData} />
@@ -58,7 +58,7 @@
 								Du bist Instrumentallehrer, Dirigent oder hast eine Fortbildung zum Bläserklassenleiter
 								absolviert? <br />
 								Wenn auch für dich Teamgeist und Spaß an der Musik an erster Stelle stehen und du dein Wissen
-								und Können gerne bei uns einbringen möchtest, dann sollten wir uns definitiv kennenlernen!
+								und Können gerne bei uns einbringen möchtest, dann zögere nicht und schick uns eine Nachricht!
 							</Description>
 						{/snippet}
 					</Control>
@@ -83,8 +83,8 @@
 
 								<h3 class="font-bold">Fördermitgliedschaft</h3>
 								<p>
-									Du kannst dir eine Fördermitgliedschaft vorstellen? Für alle, die Teil unserer
-									Gemeinschaft sein und uns finanziell unterstützen möchten, ohne aktiv mitzuspielen.
+									Für alle, die Teil unserer Gemeinschaft sein und uns finanziell unterstützen
+									möchten, ohne aktiv mitzuspielen.
 								</p>
 							</Description>
 						{/snippet}
@@ -238,7 +238,7 @@
 
 		:global([data-fs-description]) {
 			grid-column: 2;
-			font-size: theme('fontSize.sm');
+			color: theme('colors.slate.700');
 		}
 	}
 </style>

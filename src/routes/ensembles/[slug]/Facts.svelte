@@ -127,7 +127,7 @@
 			</li>
 			<li>
 				<strong>Repertoire:</strong>
-				Von leichten Stücken bis hin zu bekannten Melodien &ndash; wir spielen, was Spaß macht!
+				Von leichten Stücken bis hin zu bekannten Melodien &ndash; wir spielen, was uns Spaß macht!
 			</li>
 			<li>
 				<strong>Einstieg:</strong>

@@ -30,7 +30,7 @@ export const ensembles = {
 		images: [grossesOrchester1, grossesOrchester2, grossesOrchester3],
 	},
 	blaeserklassen: {
-		name: 'Bläserklassen',
+		name: 'Bläserklassen Kid.Chatts',
 		claim: 'Der perfekte Einstieg',
 		images: [blaeserklassen1, blaeserklassen2, blaeserklassen3, blaeserklassen4, blaeserklassen5],
 	},
