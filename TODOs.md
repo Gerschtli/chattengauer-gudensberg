@@ -1,16 +1,19 @@
 - decisions
-  - licence for fonts
   - env vars
-  - form result (email?)
 - missing data
-  - favicon
   - images
   - content
   - form fields
   - title, description
   - claim
 - technical todos
-  - videos
+  - scale img to max width
   - claim
   - robots
   - storyblok
+
+---
+
+- heading end box back to square instead of dot
+- instrument data list
+- error pages
