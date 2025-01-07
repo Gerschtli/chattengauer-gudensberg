@@ -21,13 +21,11 @@
 </script>
 
 <SimpleLayout.Section class="content-grid gap-y-4">
-	<h2 id="live-musik-die-begeistert" class="heading-2">Live-Musik, die begeistert!</h2>
-
-	<p>Du möchtest die Chattengauer für ein Event buchen?</p>
+	<h2 id="chattengauer-buchen" class="heading-2">Chattengauer buchen</h2>
 
 	<p>
-		Egal, ob Firmenfeier, Geburtstag oder Jubiläum, Festumzug, Kirmes oder Dorffest &ndash; wir machen deine
-		Veranstaltung zu einem besonderen Moment. Hier kannst du unsere Ensembles buchen
+		Live-Musik, die begeistert! Egal, ob Firmenfeier, Geburtstag oder Jubiläum, Festumzug, Kirmes oder Dorffest
+		&ndash; wir machen deine Veranstaltung zu einem besonderen Moment. Hier kannst du unsere Ensembles buchen
 	</p>
 
 	{#if dev}

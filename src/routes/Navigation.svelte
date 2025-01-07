@@ -62,7 +62,7 @@
 				</li>
 				<li>{@render link('/aktuelles', 'Aktuelle Termine und News')}</li>
 				<li>{@render link('/#werde-teil-der-chattengauer', 'Werde Teil der Chattengauer')}</li>
-				<li>{@render link('/#live-musik-die-begeistert', 'Live-Musik, die begeistert!')}</li>
+				<li>{@render link('/#chattengauer-buchen', 'Chattengauer buchen')}</li>
 				<li>{@render link('/probenraum', 'Unser Probenraum')}</li>
 			</ul>
 		</nav>
