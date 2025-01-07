@@ -8,6 +8,7 @@
   - claim
 - technical todos
   - scale img to max width
+  - fix booking form on index page
   - claim
   - robots
   - storyblok
@@ -17,3 +18,8 @@
 - heading end box back to square instead of dot
 - instrument data list
 - error pages
+- datenschutz
+- facebook link
+- image slider blur im hintergrund
+- banner position
+- bilder 3/2
