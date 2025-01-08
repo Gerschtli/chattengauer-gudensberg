@@ -19,6 +19,9 @@ export default {
 			screens: {
 				xs: '468px',
 			},
+			aspectRatio: {
+				media: '3 / 2',
+			},
 		},
 	},
 

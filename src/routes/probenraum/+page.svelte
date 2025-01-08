@@ -1,7 +1,10 @@
 <script lang="ts">
+	import { MapPinIcon } from 'lucide-svelte';
+
 	import { env } from '$env/dynamic/public';
 
 	import Slider from '$lib/Slider.svelte';
+	import placeholder from '$lib/assets/placeholder-google-maps.jpg';
 	import erdgeschossG1Beschriftet from '$lib/assets/probenraum/erdgeschoss-g1-beschriftet.jpg?enhanced';
 	import g1Visualsierung from '$lib/assets/probenraum/g1-visualsierung.jpg?enhanced';
 	import probe1 from '$lib/assets/probenraum/probe1.jpg?enhanced';
@@ -13,6 +16,8 @@
 	import probe7 from '$lib/assets/probenraum/probe7.jpg?enhanced';
 	import probe8 from '$lib/assets/probenraum/probe8.png?enhanced';
 	import { SimpleLayout } from '$lib/simpleLayout';
+
+	let mapsEnabled = $state(false);
 </script>
 
 <SimpleLayout.Root title="Unser Probenraum">
@@ -52,18 +57,44 @@
 		<h2 class="heading-3">Anfahrt</h2>
 
 		<p>
+			<MapPinIcon class="inline" strokeWidth={1.5} size={20} />
+			<a
+				href="https://www.google.com/maps/search/?api=1&query=G1,+Grabenweg+1,+34281+Gudensberg"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="underline decoration-from-font underline-offset-2 hover:text-accent"
+			>
+				G1, Grabenweg 1, 34281 Gudensberg
+			</a>
+		</p>
+
+		<p>
 			Ausreichend Park- und Fahrradstellplätze vorhanden. Die nächste Bushaltestelle ist Gudensberg-Rathaus, ca.
 			300 m entfernt.
 		</p>
 
-		<iframe
-			class="content-grid__breakout aspect-video w-full"
-			title="Google Maps zur Adresse des G1"
-			style="border:0"
-			loading="lazy"
-			allowfullscreen
-			referrerpolicy="no-referrer-when-downgrade"
-			src="https://www.google.com/maps/embed/v1/place?key={env.PUBLIC_GOOGLE_MAPS_API_KEY}&q=G1 - Gemeinsam Eins - Kommunikations- und Begegnungszentrum"
-		></iframe>
+		{#if mapsEnabled}
+			<iframe
+				class="content-grid__breakout aspect-media w-full"
+				title="Google Maps zur Adresse des G1"
+				style="border:0"
+				loading="lazy"
+				allowfullscreen
+				referrerpolicy="no-referrer-when-downgrade"
+				src="https://www.google.com/maps/embed/v1/place?key={env.PUBLIC_GOOGLE_MAPS_API_KEY}&q=G1+-+Gemeinsam+Eins+-+Kommunikations-+und+Begegnungszentrum"
+			></iframe>
+		{:else}
+			<div
+				class="content-grid__breakout grid aspect-media place-content-center"
+				style:background-image="url('{placeholder}')"
+			>
+				<button
+					class="rounded-md bg-slate-700/90 p-4 text-white shadow-sm transition-colors hover:brightness-105 focus:brightness-110 active:brightness-90"
+					onclick={() => (mapsEnabled = true)}
+				>
+					Karte zur Anfahrt via Google Maps anzeigen
+				</button>
+			</div>
+		{/if}
 	</SimpleLayout.Section>
 </SimpleLayout.Root>
