@@ -4,6 +4,7 @@
 
 	import { browser } from '$app/environment';
 	import { pushState } from '$app/navigation';
+	import { page } from '$app/state';
 
 	import schrift from '$lib/assets/schrift.svg';
 	import wave from '$lib/assets/wave.svg';
@@ -40,7 +41,7 @@
 	function openNav(e: MouseEvent) {
 		e.stopPropagation();
 
-		pushState('', { showNav: true });
+		pushState(page.url, { showNav: true });
 	}
 </script>
 

@@ -135,6 +135,10 @@
 		--_letter-spacing: -0.1rem;
 		--color: theme('colors.white');
 	}
+
+	[id] {
+		scroll-margin: 70px;
+	}
 }
 
 @layer utilities {

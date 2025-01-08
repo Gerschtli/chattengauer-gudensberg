@@ -2,7 +2,7 @@
 	import { XIcon } from 'lucide-svelte';
 	import { fade, fly } from 'svelte/transition';
 
-	import { afterNavigate } from '$app/navigation';
+	import { afterNavigate, pushState } from '$app/navigation';
 	import { page } from '$app/state';
 
 	import { ensembles } from '$lib/ensembles';
@@ -45,7 +45,29 @@
 			</button>
 
 			{#snippet link(href: string, label: string)}
-				<a {href} class="underline decoration-from-font underline-offset-2 hover:text-accent">
+				<a
+					{href}
+					class={[
+						'underline decoration-from-font underline-offset-2 hover:text-accent',
+						href === page.url.pathname && 'text-accent/80',
+					]}
+					onclick={(e) => {
+						if (!href.includes('#')) return;
+
+						const [pathname, id] = href.split('#');
+						if (pathname !== page.url.pathname) return;
+
+						e.stopPropagation();
+
+						closeNav();
+
+						pushState(href, { showNav: false });
+
+						setTimeout(() => {
+							document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+						}, 0);
+					}}
+				>
 					{label}
 				</a>
 			{/snippet}
