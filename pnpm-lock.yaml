@@ -28,7 +28,7 @@ importers:
         version: 0.5.15(tailwindcss@3.4.17)
       '@trivago/prettier-plugin-sort-imports':
         specifier: ^5.2.1
-        version: 5.2.1(prettier-plugin-svelte@3.3.2(prettier@3.4.2)(svelte@5.16.1))(prettier@3.4.2)(svelte@5.16.1)
+        version: 5.2.1(prettier-plugin-svelte@3.3.3(prettier@3.4.2)(svelte@5.16.1))(prettier@3.4.2)(svelte@5.16.1)
       '@types/eslint':
         specifier: ^9.6.1
         version: 9.6.1
@@ -85,10 +85,10 @@ importers:
         version: 2.1.2(postcss@8.4.49)(prettier@3.4.2)
       prettier-plugin-svelte:
         specifier: ^3.3.2
-        version: 3.3.2(prettier@3.4.2)(svelte@5.16.1)
+        version: 3.3.3(prettier@3.4.2)(svelte@5.16.1)
       prettier-plugin-tailwindcss:
         specifier: ^0.6.9
-        version: 0.6.9(@trivago/prettier-plugin-sort-imports@5.2.1(prettier-plugin-svelte@3.3.2(prettier@3.4.2)(svelte@5.16.1))(prettier@3.4.2)(svelte@5.16.1))(prettier-plugin-css-order@2.1.2(postcss@8.4.49)(prettier@3.4.2))(prettier-plugin-svelte@3.3.2(prettier@3.4.2)(svelte@5.16.1))(prettier@3.4.2)
+        version: 0.6.9(@trivago/prettier-plugin-sort-imports@5.2.1(prettier-plugin-svelte@3.3.3(prettier@3.4.2)(svelte@5.16.1))(prettier@3.4.2)(svelte@5.16.1))(prettier-plugin-css-order@2.1.2(postcss@8.4.49)(prettier@3.4.2))(prettier-plugin-svelte@3.3.3(prettier@3.4.2)(svelte@5.16.1))(prettier@3.4.2)
       svelte:
         specifier: ^5.16.1
         version: 5.16.1
@@ -2170,8 +2170,8 @@ packages:
     peerDependencies:
       prettier: 3.x
 
-  prettier-plugin-svelte@3.3.2:
-    resolution: {integrity: sha512-kRPjH8wSj2iu+dO+XaUv4vD8qr5mdDmlak3IT/7AOgGIMRG86z/EHOLauFcClKEnOUf4A4nOA7sre5KrJD4Raw==}
+  prettier-plugin-svelte@3.3.3:
+    resolution: {integrity: sha512-yViK9zqQ+H2qZD1w/bH7W8i+bVfKrD8GIFjkFe4Thl6kCT9SlAsXVNmt3jCvQOCsnOhcvYgsoVlRV/Eu6x5nNw==}
     peerDependencies:
       prettier: ^3.0.0
       svelte: ^3.2.0 || ^4.0.0-next.0 || ^5.0.0-next.0
@@ -3441,7 +3441,7 @@ snapshots:
       postcss-selector-parser: 6.0.10
       tailwindcss: 3.4.17
 
-  '@trivago/prettier-plugin-sort-imports@5.2.1(prettier-plugin-svelte@3.3.2(prettier@3.4.2)(svelte@5.16.1))(prettier@3.4.2)(svelte@5.16.1)':
+  '@trivago/prettier-plugin-sort-imports@5.2.1(prettier-plugin-svelte@3.3.3(prettier@3.4.2)(svelte@5.16.1))(prettier@3.4.2)(svelte@5.16.1)':
     dependencies:
       '@babel/generator': 7.26.3
       '@babel/parser': 7.26.3
@@ -3451,7 +3451,7 @@ snapshots:
       lodash: 4.17.21
       prettier: 3.4.2
     optionalDependencies:
-      prettier-plugin-svelte: 3.3.2(prettier@3.4.2)(svelte@5.16.1)
+      prettier-plugin-svelte: 3.3.3(prettier@3.4.2)(svelte@5.16.1)
       svelte: 5.16.1
     transitivePeerDependencies:
       - supports-color
@@ -4543,18 +4543,18 @@ snapshots:
     transitivePeerDependencies:
       - postcss
 
-  prettier-plugin-svelte@3.3.2(prettier@3.4.2)(svelte@5.16.1):
+  prettier-plugin-svelte@3.3.3(prettier@3.4.2)(svelte@5.16.1):
     dependencies:
       prettier: 3.4.2
       svelte: 5.16.1
 
-  prettier-plugin-tailwindcss@0.6.9(@trivago/prettier-plugin-sort-imports@5.2.1(prettier-plugin-svelte@3.3.2(prettier@3.4.2)(svelte@5.16.1))(prettier@3.4.2)(svelte@5.16.1))(prettier-plugin-css-order@2.1.2(postcss@8.4.49)(prettier@3.4.2))(prettier-plugin-svelte@3.3.2(prettier@3.4.2)(svelte@5.16.1))(prettier@3.4.2):
+  prettier-plugin-tailwindcss@0.6.9(@trivago/prettier-plugin-sort-imports@5.2.1(prettier-plugin-svelte@3.3.3(prettier@3.4.2)(svelte@5.16.1))(prettier@3.4.2)(svelte@5.16.1))(prettier-plugin-css-order@2.1.2(postcss@8.4.49)(prettier@3.4.2))(prettier-plugin-svelte@3.3.3(prettier@3.4.2)(svelte@5.16.1))(prettier@3.4.2):
     dependencies:
       prettier: 3.4.2
     optionalDependencies:
-      '@trivago/prettier-plugin-sort-imports': 5.2.1(prettier-plugin-svelte@3.3.2(prettier@3.4.2)(svelte@5.16.1))(prettier@3.4.2)(svelte@5.16.1)
+      '@trivago/prettier-plugin-sort-imports': 5.2.1(prettier-plugin-svelte@3.3.3(prettier@3.4.2)(svelte@5.16.1))(prettier@3.4.2)(svelte@5.16.1)
       prettier-plugin-css-order: 2.1.2(postcss@8.4.49)(prettier@3.4.2)
-      prettier-plugin-svelte: 3.3.2(prettier@3.4.2)(svelte@5.16.1)
+      prettier-plugin-svelte: 3.3.3(prettier@3.4.2)(svelte@5.16.1)
 
   prettier@3.4.2: {}
 
