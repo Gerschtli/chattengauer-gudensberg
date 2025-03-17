@@ -18,7 +18,7 @@
 	<h2 class="heading-1">News</h2>
 
 	<div class="content-grid gap-y-8">
-		{#each news as entry}
+		{#each news as entry, i (i)}
 			<article class="content-grid gap-y-2">
 				<header>
 					<p class="text-xs text-slate-600">
@@ -29,7 +29,7 @@
 					<h3 class="font-accent text-2xl font-accent-bold">{entry.title}</h3>
 					<p class="text-sm text-slate-600">
 						<HashIcon class="-ml-0.5 inline" strokeWidth={1.5} size={16} />
-						{#each entry.ensembles as ensemble, i}
+						{#each entry.ensembles as ensemble, i (i)}
 							{#if i !== 0},{/if}
 							<a href="/ensembles/{ensemble}" class="underline hover:text-accent">{ensemble}</a>
 						{/each}

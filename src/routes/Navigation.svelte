@@ -77,7 +77,7 @@
 				<li class="space-y-2">
 					<span>Unsere Ensembles</span>
 					<ul role="list" class="space-y-2 pl-8">
-						{#each Object.entries(ensembles) as [slug, { name }]}
+						{#each Object.entries(ensembles) as [slug, { name }] (slug)}
 							<li>{@render link(`/ensembles/${slug}`, name)}</li>
 						{/each}
 					</ul>

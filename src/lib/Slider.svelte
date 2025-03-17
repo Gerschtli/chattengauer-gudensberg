@@ -26,7 +26,7 @@
 
 <div class="grid {className}">
 	<div class="slider grid-1" style:--gap="{gap}px" bind:this={slider} bind:clientWidth {onscroll}>
-		{#each assets as { type, uri }}
+		{#each assets as { type, uri }, i (i)}
 			{#if type === 'image'}
 				{#if typeof uri === 'string'}
 					<div><img src={uri} alt="" loading="lazy" /></div>
@@ -38,7 +38,7 @@
 	</div>
 	<div class="grid-1 z-0 mb-4 self-end justify-self-center">
 		<div class="flex gap-2">
-			{#each assets as _, i}
+			{#each assets as _, i (i)}
 				<button class="rounded-full p-1" onclick={() => scrollToSlide(i)}>
 					<span
 						class="block size-3 rounded-full border-2 border-white shadow-md shadow-black/60"

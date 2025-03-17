@@ -44,7 +44,7 @@
 
 	{#if event.description}
 		<div class="mb-0.5 grid gap-y-2">
-			{#each event.description.split('\n') as line}
+			{#each event.description.split('\n') as line, i (i)}
 				<p class="leading-tight">{line}</p>
 			{/each}
 		</div>
@@ -67,7 +67,7 @@
 	{#if event.ensembles?.length}
 		<p class="text-sm text-slate-600">
 			<HashIcon class="inline" strokeWidth={1.5} size={20} />
-			{#each event.ensembles as ensemble, i}
+			{#each event.ensembles as ensemble, i (i)}
 				{#if i !== 0},{/if}
 				<a
 					href="/ensembles/{ensemble}"
