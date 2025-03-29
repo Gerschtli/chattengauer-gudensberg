@@ -46,7 +46,10 @@
 {/snippet}
 
 <SimpleLayout.Section class="grid gap-y-4">
-	<h1 class="heading-1">Aktuelle Termine</h1>
+	<h1 class="heading-1">
+		Aktuelle Termine
+		<span></span>
+	</h1>
 
 	{#each events.slice(0, showMax) as event, i (i)}
 		{@render eventWithSeparator(event)}

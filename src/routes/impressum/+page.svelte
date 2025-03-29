@@ -4,7 +4,10 @@
 
 <SimpleLayout.Root title="Impressum">
 	<SimpleLayout.Section class="space-y-4">
-		<h1 class="heading-1">Impressum</h1>
+		<h1 class="heading-1">
+			Impressum
+			<span></span>
+		</h1>
 
 		<p>Dieser Internetauftritt wird betrieben von Original Chattengauer -Bläserchor Gudensberg-.</p>
 
@@ -87,9 +90,15 @@
 			</li>
 		</ul>
 
-		<h2 class="heading-2">Haftungsausschluss</h2>
+		<h2 class="heading-2">
+			Haftungsausschluss
+			<span></span>
+		</h2>
 
-		<h3 class="heading-3">Haftung für Inhalte</h3>
+		<h3 class="heading-3">
+			Haftung für Inhalte
+			<span></span>
+		</h3>
 
 		<p>
 			Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und
@@ -103,7 +112,10 @@
 			Inhalte umgehend entfernen.
 		</p>
 
-		<h3 class="heading-3">Haftung für Links</h3>
+		<h3 class="heading-3">
+			Haftung für Links
+			<span></span>
+		</h3>
 
 		<p>
 			Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben.
@@ -115,7 +127,10 @@
 			Rechtsverletzungen werden wir derartige Links umgehend entfernen.
 		</p>
 
-		<h2 class="heading-2">Urheberrecht</h2>
+		<h2 class="heading-2">
+			Urheberrecht
+			<span></span>
+		</h2>
 
 		<p>
 			Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen

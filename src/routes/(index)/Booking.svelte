@@ -21,7 +21,10 @@
 </script>
 
 <SimpleLayout.Section class="content-grid gap-y-4">
-	<h2 id="chattengauer-buchen" class="heading-2">Chattengauer buchen</h2>
+	<h2 id="chattengauer-buchen" class="heading-2">
+		Chattengauer buchen
+		<span></span>
+	</h2>
 
 	<p>
 		Live-Musik, die begeistert! Egal, ob Firmenfeier, Geburtstag oder Jubiläum, Festumzug, Kirmes oder Dorffest

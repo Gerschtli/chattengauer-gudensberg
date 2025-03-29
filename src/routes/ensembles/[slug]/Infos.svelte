@@ -15,7 +15,10 @@
 </script>
 
 <SimpleLayout.Section class="content-grid gap-y-2">
-	<h1 class="heading-1">{ensemble.name} &ndash; {ensemble.claim}</h1>
+	<h1 class="heading-1">
+		{ensemble.name} &ndash; {ensemble.claim}
+		<span></span>
+	</h1>
 
 	<div class="clear-both space-y-2">
 		<figure class="float-right flex flex-col items-center gap-2 pb-4 pl-4">
@@ -56,7 +59,10 @@
 				Weil Spaß und Erfolg Hand in Hand gehen! Gemeinsam spielen wir kleine Konzerte und feiern erste Erfolge.
 			</p>
 
-			<h2 class="heading-3">Was ist das Besondere?</h2>
+			<h2 class="heading-3">
+				Was ist das Besondere?
+				<span></span>
+			</h2>
 
 			<p>Jugendliche der Chattengauer werden eure Instrumenten-Paten!</p>
 			<p>

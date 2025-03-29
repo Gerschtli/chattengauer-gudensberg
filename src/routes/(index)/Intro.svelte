@@ -4,7 +4,10 @@
 </script>
 
 <SimpleLayout.Section class="content-grid gap-y-4">
-	<h1 class="heading-1">Willkommen bei den Chattengauern aus Gudensberg!</h1>
+	<h1 class="heading-1">
+		Willkommen bei den Chattengauern aus Gudensberg!
+		<span></span>
+	</h1>
 
 	<p>
 		Wir sind nicht einfach nur ein Musikverein &ndash; wir stehen für vielfältige Musikauswahl, lockere Proben und
@@ -17,7 +20,10 @@
 		Orchester.
 	</p>
 
-	<h2 class="heading-3">Was uns ausmacht:</h2>
+	<h2 class="heading-3">
+		Was uns ausmacht:
+		<span></span>
+	</h2>
 
 	<ul role="list" class="list-disc space-y-2 pl-4">
 		<li>

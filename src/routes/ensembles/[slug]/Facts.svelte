@@ -11,7 +11,10 @@
 </script>
 
 <SimpleLayout.Section class="content-grid gap-y-2">
-	<h2 class="heading-2">Das Wichtigste in Kürze</h2>
+	<h2 class="heading-2">
+		Das Wichtigste in Kürze
+		<span></span>
+	</h2>
 
 	<ul role="list" class="list-disc pl-4">
 		{#if data.slug === 'grosses-orchester'}

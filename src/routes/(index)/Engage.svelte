@@ -20,7 +20,10 @@
 </script>
 
 <SimpleLayout.Section class="content-grid gap-y-4">
-	<h2 id="werde-teil-der-chattengauer" class="heading-2">Werde Teil der Chattengauer</h2>
+	<h2 id="werde-teil-der-chattengauer" class="heading-2">
+		Werde Teil der Chattengauer
+		<span></span>
+	</h2>
 
 	{#if dev}
 		<SuperDebug data={$formData} />

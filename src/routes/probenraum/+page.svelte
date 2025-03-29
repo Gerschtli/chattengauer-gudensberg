@@ -22,7 +22,10 @@
 
 <SimpleLayout.Root title="Unser Probenraum">
 	<SimpleLayout.Section class="content-grid gap-y-4">
-		<h1 class="heading-1">Unser Probenraum</h1>
+		<h1 class="heading-1">
+			Unser Probenraum
+			<span></span>
+		</h1>
 
 		<p>
 			Seit September 2024 verfügt die Stadt Gudensberg mit dem G1 über ein neues Kommunikations- und
@@ -54,7 +57,10 @@
 			entfalten und als Verein wachsen können.
 		</p>
 
-		<h2 class="heading-3">Anfahrt</h2>
+		<h2 class="heading-3">
+			Anfahrt
+			<span></span>
+		</h2>
 
 		<p>
 			<MapPinIcon class="inline" strokeWidth={1.5} size={20} />

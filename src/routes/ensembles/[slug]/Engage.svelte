@@ -24,7 +24,10 @@
 </script>
 
 <SimpleLayout.Section class="content-grid gap-y-4">
-	<h2 class="heading-2">Mitmachen!</h2>
+	<h2 class="heading-2">
+		Mitmachen!
+		<span></span>
+	</h2>
 
 	{#if data.slug === 'grosses-orchester'}
 		<p>

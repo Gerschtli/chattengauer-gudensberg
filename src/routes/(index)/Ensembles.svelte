@@ -67,7 +67,10 @@
 {/snippet}
 
 <SimpleLayout.Section class="content-grid gap-y-4">
-	<h2 class="heading-2">Finde dein Ensemble</h2>
+	<h2 class="heading-2">
+		Finde dein Ensemble
+		<span></span>
+	</h2>
 
 	<p>Bei uns gibt es für jeden die richtige Mischung aus Musik, Spaß und Gemeinschaft.</p>
 
