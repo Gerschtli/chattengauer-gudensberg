@@ -6,6 +6,7 @@
 
 	import { dev } from '$app/environment';
 
+	import { instruments } from '$lib/instruments';
 	import { SimpleLayout } from '$lib/simpleLayout';
 
 	import type { PageData } from './$types';
@@ -112,12 +113,18 @@
 								{...props}
 								class="w-full rounded-md border border-slate-300 px-3 py-2"
 								type="text"
+								list="instruments"
 								bind:value={$formData.instrument}
 							/>
+							<datalist id="instruments">
+								{#each instruments as instrument (instrument)}
+									<option value={instrument}></option>
+								{/each}
+							</datalist>
 						{/snippet}
 					</Control>
 					<FieldErrors class="text-xs text-red-600" />
-					<Description class="text-sm text-neutral-400">Welches Instrument spielst du?</Description>
+					<Description class="text-sm text-neutral-400">Welche(s) Instrument(e) spielst du?</Description>
 				</Field>
 			</div>
 		{:else if $formData.intention === IntentionEnum.Enum.apply}
