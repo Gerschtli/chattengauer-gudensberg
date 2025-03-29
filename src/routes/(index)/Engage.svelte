@@ -243,5 +243,9 @@
 			grid-column: 2;
 			color: theme('colors.slate.700');
 		}
+
+		input:global([data-fs-error]) {
+			filter: drop-shadow(0 0 4px theme('colors.accent'));
+		}
 	}
 </style>
