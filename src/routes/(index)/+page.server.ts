@@ -6,41 +6,84 @@ import { CONTACT_EMAIL, CONTACT_NAME, SENDER_EMAIL, SENDER_NAME } from '$env/sta
 
 import { sendMail } from '$lib/server/mail';
 
-import { schema } from './schema';
+import { schemaBooking, schemaEngage } from './schema';
 
 export async function load() {
 	return {
-		form: await superValidate(zod(schema)),
+		formBooking: await superValidate(zod(schemaBooking)),
+		formEngage: await superValidate(zod(schemaEngage)),
 	};
 }
 
 export const actions = {
-	async default({ request }) {
-		const form = await superValidate(request, zod(schema));
+	async booking({ request }) {
+		const formBooking = await superValidate(request, zod(schemaBooking));
 
-		if (!form.valid) return fail(400, { form });
+		if (!formBooking.valid) return fail(400, { formBooking });
 
 		const success = await sendMail({
 			from: { name: SENDER_NAME, address: SENDER_EMAIL },
 			to: { name: CONTACT_NAME, address: CONTACT_EMAIL },
-			replyTo: { name: form.data.name, address: form.data.email },
-			subject: `Kontaktformular: ${form.data.intention}`,
+			replyTo: { name: formBooking.data.name, address: formBooking.data.email },
+			subject: `Kontaktformular: Buchen`,
 			text: dedent`
-				Name: ${form.data.name}
-				Intention: ${form.data.intention}
-				Erfahrung: ${form.data.experience ?? 'N/A'}
-				Instrument: ${form.data.instrument ?? 'N/A'}
+				Name: ${formBooking.data.name}
+				Intention: Buchen
 
-				${form.data.message}
+				${formBooking.data.message}
 			`,
 		});
 
 		if (success) {
-			return message(form, { type: 'success', text: 'Nachricht wurde gesendet, wir melden uns!' });
+			return message(formBooking, { type: 'success', text: 'Nachricht wurde gesendet, wir melden uns!' });
 		}
 
 		return message(
-			form,
+			formBooking,
+			{ type: 'error', text: 'Etwas ist schief gelaufen, bitte versuche es noch einmal.' },
+			{ status: 500 },
+		);
+	},
+
+	async engage({ request }) {
+		const formEngage = await superValidate(request, zod(schemaEngage));
+
+		if (!formEngage.valid) return fail(400, { formEngage });
+
+		let intention: string;
+		switch (formEngage.data.intention) {
+			case 'join':
+				intention = 'Mach mit!';
+				break;
+			case 'apply':
+				intention = 'Sei dabei!';
+				break;
+			case 'support':
+				intention = 'Unterstütze uns!';
+				break;
+		}
+
+		const success = await sendMail({
+			from: { name: SENDER_NAME, address: SENDER_EMAIL },
+			to: { name: CONTACT_NAME, address: CONTACT_EMAIL },
+			replyTo: { name: formEngage.data.name, address: formEngage.data.email },
+			subject: `Kontaktformular: ${intention}`,
+			text: dedent`
+				Name: ${formEngage.data.name}
+				Intention: ${intention}
+				Erfahrung: ${formEngage.data.experience ?? 'N/A'}
+				Instrument: ${formEngage.data.instrument ?? 'N/A'}
+
+				${formEngage.data.message}
+			`,
+		});
+
+		if (success) {
+			return message(formEngage, { type: 'success', text: 'Nachricht wurde gesendet, wir melden uns!' });
+		}
+
+		return message(
+			formEngage,
 			{ type: 'error', text: 'Etwas ist schief gelaufen, bitte versuche es noch einmal.' },
 			{ status: 500 },
 		);

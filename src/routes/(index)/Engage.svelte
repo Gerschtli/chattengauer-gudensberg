@@ -9,12 +9,12 @@
 	import { SimpleLayout } from '$lib/simpleLayout';
 
 	import type { PageData } from './$types';
-	import { IntentionEnum, schema } from './schema.js';
+	import { IntentionEnum, schemaEngage } from './schema.js';
 
 	let { data }: { data: PageData } = $props();
 
-	const form = superForm(data.form, {
-		validators: zodClient(schema),
+	const form = superForm(data.formEngage, {
+		validators: zodClient(schemaEngage),
 	});
 	const { form: formData, enhance, delayed, message } = form;
 </script>
@@ -29,7 +29,7 @@
 		<SuperDebug data={$formData} />
 	{/if}
 
-	<form method="POST" use:enhance class="form flex flex-col gap-y-4">
+	<form method="POST" action="?/engage" use:enhance class="form flex flex-col gap-y-4">
 		<div class="flex flex-col gap-y-1">
 			<Fieldset {form} name="intention">
 				<div class="intention-set mt-1">

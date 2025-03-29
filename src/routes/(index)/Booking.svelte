@@ -9,13 +9,13 @@
 	import { SimpleLayout } from '$lib/simpleLayout';
 
 	import type { PageData } from './$types';
-	import { schema } from './schema.js';
+	import { schemaBooking } from './schema.js';
 
 	let { data }: { data: PageData } = $props();
 
 	// FIXME: use correct form
-	const form = superForm(data.form, {
-		validators: zodClient(schema),
+	const form = superForm(data.formBooking, {
+		validators: zodClient(schemaBooking),
 	});
 	const { form: formData, enhance, delayed, message } = form;
 </script>
@@ -35,7 +35,7 @@
 		<SuperDebug data={$formData} />
 	{/if}
 
-	<form method="POST" use:enhance class="form flex flex-col gap-y-4">
+	<form method="POST" action="?/booking" use:enhance class="form flex flex-col gap-y-4">
 		<div class="flex flex-col gap-y-1">
 			<Field {form} name="name">
 				<Control>
