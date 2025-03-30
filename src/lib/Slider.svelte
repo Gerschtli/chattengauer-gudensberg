@@ -28,11 +28,23 @@
 	<div class="slider grid-1" style:--gap="{gap}px" bind:this={slider} bind:clientWidth {onscroll}>
 		{#each assets as { type, uri }, i (i)}
 			{#if type === 'image'}
-				{#if typeof uri === 'string'}
-					<div><img src={uri} alt="" loading="lazy" /></div>
-				{:else}
-					<div><enhanced:img src={uri} alt="" loading="lazy" /></div>
-				{/if}
+				<div class="item">
+					{#if typeof uri === 'string'}
+						<div class="background">
+							<img src={uri} alt="" loading="lazy" class="blur-image" />
+						</div>
+						<div class="content">
+							<img src={uri} alt="" loading="lazy" class="image" />
+						</div>
+					{:else}
+						<div class="background">
+							<enhanced:img src={uri} alt="" loading="lazy" class="blur-image" />
+						</div>
+						<div class="content">
+							<enhanced:img src={uri} alt="" loading="lazy" class="image" />
+						</div>
+					{/if}
+				</div>
 			{/if}
 		{/each}
 	</div>
@@ -66,19 +78,38 @@
 		}
 	}
 
-	.slider > div {
+	.item {
 		display: grid;
 		flex-shrink: 0;
-		place-content: center;
-		aspect-ratio: 16 / 9;
 		width: 100%;
 		overflow: hidden;
 		scroll-snap-align: center;
 		scroll-snap-stop: always;
 	}
 
-	.slider > div img {
+	.background,
+	.content {
+		grid-row: 1;
+		grid-column: 1;
+		aspect-ratio: 3 / 2;
+	}
+
+	.image,
+	.blur-image {
+		width: 100%;
 		height: 100%;
+		object-position: center;
+	}
+
+	.blur-image {
+		scale: 1.5;
+		filter: blur(10px) brightness(120%);
+		object-fit: cover;
+	}
+
+	.image {
+		position: relative;
+		filter: drop-shadow(0 0 1px theme('colors.slate.600'));
 		object-fit: contain;
 	}
 </style>
