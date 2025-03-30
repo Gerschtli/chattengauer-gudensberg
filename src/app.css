@@ -34,7 +34,7 @@
 	}
 
 	:root {
-		--content-max-width: 768px;
+		--content-max-width: 768px; /* take care of image sizes if changed */
 	}
 
 	html {

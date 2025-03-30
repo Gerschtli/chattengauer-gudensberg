@@ -17,5 +17,6 @@
 		alt=""
 		fetchpriority="high"
 		loading="eager"
+		sizes="100vw"
 	/>
 </section>

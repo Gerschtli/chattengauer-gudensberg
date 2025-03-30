@@ -48,6 +48,6 @@
 	<p>Entdecke, wie spannend und vielseitig unser Orchester ist und sei Teil unserer musikalischen Reise!</p>
 
 	<div class="content-grid__breakout">
-		<enhanced:img src={notenstaender} alt="" loading="lazy" sizes="min(768px, 100vw)" />
+		<enhanced:img src={notenstaender} alt="" loading="lazy" sizes="min(800px, 100vw)" />
 	</div>
 </SimpleLayout.Section>

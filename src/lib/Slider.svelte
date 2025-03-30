@@ -38,10 +38,16 @@
 						</div>
 					{:else}
 						<div class="background">
-							<enhanced:img src={uri} alt="" loading="lazy" class="blur-image" />
+							<enhanced:img
+								src={uri}
+								alt=""
+								loading="lazy"
+								class="blur-image"
+								sizes="min(800px, 100vw)"
+							/>
 						</div>
 						<div class="content">
-							<enhanced:img src={uri} alt="" loading="lazy" class="image" />
+							<enhanced:img src={uri} alt="" loading="lazy" class="image" sizes="min(800px, 100vw)" />
 						</div>
 					{/if}
 				</div>
