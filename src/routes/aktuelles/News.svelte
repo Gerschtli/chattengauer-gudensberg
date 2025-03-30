@@ -12,6 +12,8 @@
 	}
 
 	let { news }: Props = $props();
+
+	const dateTimeFormat = new Intl.DateTimeFormat('de-DE', { dateStyle: 'full', timeZone: TIME_ZONE });
 </script>
 
 <SimpleLayout.Section class="content-grid gap-y-4">
@@ -25,9 +27,7 @@
 			<article class="content-grid gap-y-2">
 				<header>
 					<p class="text-xs text-slate-600">
-						{new Intl.DateTimeFormat('de-DE', { dateStyle: 'full', timeZone: TIME_ZONE }).format(
-							entry.date,
-						)}
+						{dateTimeFormat.format(entry.date)}
 					</p>
 					<h3 class="font-accent text-2xl font-accent-bold">{entry.title}</h3>
 					<p class="text-sm text-slate-600">

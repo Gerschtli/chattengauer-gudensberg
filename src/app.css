@@ -153,6 +153,10 @@
 	[id] {
 		scroll-margin: 70px;
 	}
+
+	p {
+		@apply hyphens-auto;
+	}
 }
 
 @layer utilities {

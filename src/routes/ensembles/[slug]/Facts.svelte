@@ -10,7 +10,7 @@
 	let { data }: Props = $props();
 </script>
 
-<SimpleLayout.Section class="content-grid gap-y-2">
+<SimpleLayout.Section class="content-grid gap-y-4">
 	<h2 class="heading-2">
 		Das Wichtigste in Kürze
 		<span></span>

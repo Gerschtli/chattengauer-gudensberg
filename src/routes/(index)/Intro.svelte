@@ -20,7 +20,7 @@
 		Orchester.
 	</p>
 
-	<h2 class="heading-3">
+	<h2 class="heading-3 pt-2">
 		Was uns ausmacht:
 		<span></span>
 	</h2>

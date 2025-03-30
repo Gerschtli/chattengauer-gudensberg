@@ -67,7 +67,9 @@
 	}
 
 	.slider > div {
+		display: grid;
 		flex-shrink: 0;
+		place-content: center;
 		aspect-ratio: 16 / 9;
 		width: 100%;
 		overflow: hidden;

@@ -51,6 +51,10 @@
 		<span></span>
 	</h1>
 
+	{#if events.length === 0}
+		<p class="text-slate-600">Es stehen aktuell keine Termine an.</p>
+	{/if}
+
 	{#each events.slice(0, showMax) as event, i (i)}
 		{@render eventWithSeparator(event)}
 	{/each}

@@ -14,7 +14,7 @@
 	const ensemble = $derived(ensembles[data.slug]);
 </script>
 
-<SimpleLayout.Section class="content-grid gap-y-2">
+<SimpleLayout.Section class="content-grid gap-y-4">
 	<h1 class="heading-1">
 		{ensemble.name} &ndash; {ensemble.claim}
 		<span></span>
@@ -59,7 +59,7 @@
 				Weil Spaß und Erfolg Hand in Hand gehen! Gemeinsam spielen wir kleine Konzerte und feiern erste Erfolge.
 			</p>
 
-			<h2 class="heading-3">
+			<h2 class="heading-3 pt-2">
 				Was ist das Besondere?
 				<span></span>
 			</h2>
