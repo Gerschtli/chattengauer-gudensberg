@@ -76,7 +76,7 @@
 					{/snippet}
 				</Control>
 				<FieldErrors class="text-xs text-red-600" />
-				<Description class="text-sm text-neutral-400">
+				<Description class="text-sm text-neutral-500">
 					Wie können wir dich erreichen? Wird ausschließlich zur direkten Kontaktaufnahme verwendet.
 				</Description>
 			</Field>

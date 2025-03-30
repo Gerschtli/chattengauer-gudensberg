@@ -124,7 +124,7 @@
 						{/snippet}
 					</Control>
 					<FieldErrors class="text-xs text-red-600" />
-					<Description class="text-sm text-neutral-400">Welche(s) Instrument(e) spielst du?</Description>
+					<Description class="text-sm text-neutral-500">Welche(s) Instrument(e) spielst du?</Description>
 				</Field>
 			</div>
 		{:else if $formData.intention === IntentionEnum.Enum.apply}
@@ -147,7 +147,7 @@
 						{/snippet}
 					</Control>
 					<FieldErrors class="text-xs text-red-600" />
-					<Description class="text-sm text-neutral-400">Hast du schon einmal dirigiert?</Description>
+					<Description class="text-sm text-neutral-500">Hast du schon einmal dirigiert?</Description>
 				</Field>
 			</div>
 		{/if}
@@ -191,7 +191,7 @@
 					{/snippet}
 				</Control>
 				<FieldErrors class="text-xs text-red-600" />
-				<Description class="text-sm text-neutral-400">
+				<Description class="text-sm text-neutral-500">
 					Wie können wir dich erreichen? Wird ausschließlich zur direkten Kontaktaufnahme verwendet.
 				</Description>
 			</Field>

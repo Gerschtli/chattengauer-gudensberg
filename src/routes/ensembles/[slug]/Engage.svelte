@@ -84,7 +84,7 @@
 					{/snippet}
 				</Control>
 				<FieldErrors class="text-xs text-red-600" />
-				<Description class="text-sm text-neutral-400">Welche(s) Instrument(e) spielst du?</Description>
+				<Description class="text-sm text-neutral-500">Welche(s) Instrument(e) spielst du?</Description>
 			</Field>
 		</div>
 		<div class="flex flex-col gap-y-1">
@@ -127,7 +127,7 @@
 					{/snippet}
 				</Control>
 				<FieldErrors class="text-xs text-red-600" />
-				<Description class="text-sm text-neutral-400">
+				<Description class="text-sm text-neutral-500">
 					Wie können wir dich erreichen? Wird ausschließlich zur direkten Kontaktaufnahme verwendet.
 				</Description>
 			</Field>
