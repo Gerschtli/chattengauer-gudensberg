@@ -1,18 +1,21 @@
 <script lang="ts">
 	import { ChevronRightIcon } from 'lucide-svelte';
 
-	import bannerImage from '$lib/assets/homepage-banner.jpg?enhanced';
+	import type { BannerImageStoryblok } from '$lib/component-types-storyblok';
+
+	let { data = $bindable() }: { data: BannerImageStoryblok } = $props();
 </script>
 
 <section class="content-grid__full-width grid">
 	<div class="grid-1">
-		<enhanced:img
-			class="h-[40vh] object-cover object-[center_50%]"
-			src={bannerImage}
+		<img
+			class="image h-[40vh] w-full object-cover"
+			style:--position-x="{data.positionX}%"
+			style:--position-y="{data.positionY}%"
+			src={data.image.filename}
 			alt=""
 			fetchpriority="high"
 			loading="eager"
-			sizes="100vw"
 		/>
 	</div>
 
@@ -27,3 +30,9 @@
 		</p>
 	</div>
 </section>
+
+<style>
+	.image {
+		object-position: var(--position-x) var(--position-y);
+	}
+</style>

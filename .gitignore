@@ -2,6 +2,7 @@
 /.vercel
 /build
 /package
+/static/editor.html
 /test-results
 
 node_modules
