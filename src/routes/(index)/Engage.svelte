@@ -218,41 +218,41 @@
 		</div>
 		<div class="flex items-center gap-4">
 			<button
-				class="rounded-md bg-accent px-4 py-2 text-sm text-white shadow-sm transition-colors hover:brightness-105 focus:brightness-110 active:brightness-90"
+				class="bg-accent rounded-md px-4 py-2 text-sm text-white shadow-xs transition-colors hover:brightness-105 focus:brightness-110 active:brightness-90"
 			>
 				Absenden
 			</button>
 
-			{#if $delayed}<LoaderCircleIcon class="flex-shrink-0 animate-spin" />{/if}
+			{#if $delayed}<LoaderCircleIcon class="shrink-0 animate-spin" />{/if}
 			{#if $message?.type === 'error'}
-				<XIcon class="flex-shrink-0 text-red-700" size={24} strokeWidth={3} />
+				<XIcon class="shrink-0 text-red-700" size={24} strokeWidth={3} />
 				<p class="text-pretty text-red-700">{$message.text}</p>
 			{:else if $message?.type === 'success'}
-				<CheckIcon class="flex-shrink-0 text-green-700" size={24} strokeWidth={3} />
+				<CheckIcon class="shrink-0 text-green-700" size={24} strokeWidth={3} />
 				<p class="text-pretty text-green-700">{$message.text}</p>
 			{/if}
 		</div>
 	</form>
 </SimpleLayout.Section>
 
-<style lang="postcss">
+<style>
 	form :global([aria-invalid='true']) {
-		@apply border-red-700;
+		border-color: var(--color-red-700);
 	}
 
 	.intention-set {
 		display: grid;
 		grid-template-columns: min-content 1fr;
-		column-gap: theme('spacing.4');
-		row-gap: theme('spacing.1');
+		column-gap: calc(var(--spacing) * 4);
+		row-gap: var(--spacing);
 
 		:global([data-fs-description]) {
 			grid-column: 2;
-			color: theme('colors.slate.700');
+			color: var(--color-slate-700);
 		}
 
 		input:global([data-fs-error]) {
-			filter: drop-shadow(0 0 4px theme('colors.accent'));
+			filter: drop-shadow(0 0 4px var(--color-accent));
 		}
 	}
 </style>

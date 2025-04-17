@@ -24,13 +24,13 @@
 		<figure class="float-right flex flex-col items-center gap-2 pb-4 pl-4">
 			<img src="https://placehold.co/300" class="size-[150px] rounded-full" alt="" />
 			<figcaption class="flex flex-col items-center">
-				<span class="text-xs uppercase tracking-tighter text-slate-500">Musikalischer Leiter:</span>
+				<span class="text-xs tracking-tighter text-slate-500 uppercase">Musikalischer Leiter:</span>
 				XXX
 			</figcaption>
 		</figure>
 
 		{#if data.slug === 'grosses-orchester'}
-			<p class="!mt-0">
+			<p class="mt-0!">
 				Willkommen in unserem Herzstück! Das Große Orchester vereint fortgeschrittene Musiker, die ihr Können in
 				ein vielseitiges Repertoire einbringen: Von traditioneller Blasmusik wie Polka, Marsch oder Walzer über
 				mitreißenden Swing bis hin zu den Klassikern der 60er, 70er und 80er Jahre.
@@ -40,7 +40,7 @@
 				Inspirierende Proben, spannende Konzertauftritte und eine Gemeinschaft, die den Spaß an der Musik teilt.
 			</p>
 		{:else if data.slug === 'blaeserklassen'}
-			<p class="!mt-0">
+			<p class="mt-0!">
 				Du willst Trompete, Klarinette, Posaune, Horn, Flöte, Euphonium, Tuba, Saxophon oder Schlagzeug lernen?
 			</p>
 			<p>Du möchtest gemeinsam mit anderen viel Spaß haben?</p>
@@ -71,7 +71,7 @@
 			</p>
 			<p>Außerdem planen sie mit euch gemeinsame Patentage und Freizeit-Aktionen!</p>
 		{:else if data.slug === 'jugendorchester'}
-			<p class="!mt-0">
+			<p class="mt-0!">
 				Die perfekte Ergänzung zu deinem Instrumentalunterricht: unser Jugendorchester ist der Hotspot für junge
 				Musiker zwischen 11 und 25 Jahren. In der Gruppe kannst du dein Können voll entfalten. Hier geht es
 				modern und kreativ zu: mitreißende Filmmusik, Musicals und aktuelle Hits stehen auf dem Programm.
@@ -83,7 +83,7 @@
 				ist auch dabei.
 			</p>
 		{:else if data.slug === 'brass-und-spass'}
-			<p class="!mt-0">
+			<p class="mt-0!">
 				Deine Zeit ist jetzt und du möchtest endlich ein Instrument lernen? Oder du hast früher ein Instrument
 				gespielt und möchtest wieder einsteigen oder träumst du davon, ein neues Instrument auszuprobieren? Dann
 				ist Brass & Spaß genau das Richtige für dich!

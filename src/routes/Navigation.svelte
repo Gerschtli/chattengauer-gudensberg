@@ -48,7 +48,7 @@
 				<a
 					{href}
 					class={[
-						'underline decoration-from-font underline-offset-2 hover:text-accent',
+						'hover:text-accent underline decoration-from-font underline-offset-2',
 						href === page.url.pathname && 'text-accent/80',
 					]}
 					onclick={(e) => {

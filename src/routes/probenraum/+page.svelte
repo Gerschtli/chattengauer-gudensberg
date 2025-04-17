@@ -68,7 +68,7 @@
 				href="https://www.google.com/maps/search/?api=1&query=G1,+Grabenweg+1,+34281+Gudensberg"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="underline decoration-from-font underline-offset-2 hover:text-accent"
+				class="hover:text-accent underline decoration-from-font underline-offset-2"
 			>
 				G1, Grabenweg 1, 34281 Gudensberg
 			</a>
@@ -91,11 +91,11 @@
 			></iframe>
 		{:else}
 			<div
-				class="content-grid__breakout grid aspect-media place-content-center"
+				class="content-grid__breakout aspect-media grid place-content-center"
 				style:background-image="url('{placeholder}')"
 			>
 				<button
-					class="rounded-md bg-slate-700/90 p-4 text-white shadow-sm transition-colors hover:brightness-105 focus:brightness-110 active:brightness-90"
+					class="rounded-md bg-slate-700/90 p-4 text-white shadow-xs transition-colors hover:brightness-105 focus:brightness-110 active:brightness-90"
 					onclick={() => (mapsEnabled = true)}
 				>
 					Karte zur Anfahrt via Google Maps anzeigen

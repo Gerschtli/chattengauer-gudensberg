@@ -115,7 +115,7 @@
 
 	.image {
 		position: relative;
-		filter: drop-shadow(0 0 1px theme('colors.slate.600'));
+		filter: drop-shadow(0 0 1px var(--color-slate-600));
 		object-fit: contain;
 	}
 </style>

@@ -38,7 +38,7 @@
 			<li>
 				<strong>Probezeiten:</strong>
 				freitags von 20-22 Uhr im
-				<a href="/probenraum" class="underline decoration-from-font underline-offset-2 hover:text-accent">
+				<a href="/probenraum" class="hover:text-accent underline decoration-from-font underline-offset-2">
 					G1 (Grabenweg 1)
 				</a>
 			</li>
@@ -71,11 +71,11 @@
 			<li>
 				<strong>Probezeiten:</strong>
 				freitags von 14.30-15.30 Uhr im
-				<a href="/probenraum" class="underline decoration-from-font underline-offset-2 hover:text-accent">
+				<a href="/probenraum" class="hover:text-accent underline decoration-from-font underline-offset-2">
 					G1 (Grabenweg 1)
 				</a>
 				im ersten Jahr und freitags von 16.00-17.00 Uhr im
-				<a href="/probenraum" class="underline decoration-from-font underline-offset-2 hover:text-accent">
+				<a href="/probenraum" class="hover:text-accent underline decoration-from-font underline-offset-2">
 					G1 (Grabenweg 1)
 				</a>
 				im zweiten Jahr
@@ -110,7 +110,7 @@
 			<li>
 				<strong>Probezeiten:</strong>
 				freitags von 18-20 Uhr im
-				<a href="/probenraum" class="underline decoration-from-font underline-offset-2 hover:text-accent">
+				<a href="/probenraum" class="hover:text-accent underline decoration-from-font underline-offset-2">
 					G1 (Grabenweg 1)
 				</a>
 			</li>
@@ -143,7 +143,7 @@
 			<li>
 				<strong>Probezeiten:</strong>
 				dienstags von 19-20.30 Uhr im
-				<a href="/probenraum" class="underline decoration-from-font underline-offset-2 hover:text-accent">
+				<a href="/probenraum" class="hover:text-accent underline decoration-from-font underline-offset-2">
 					G1 (Grabenweg 1)
 				</a>
 			</li>

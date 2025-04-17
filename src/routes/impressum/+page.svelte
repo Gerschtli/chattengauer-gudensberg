@@ -61,7 +61,7 @@
 			<li>
 				Facebook: <a
 					href="https://www.facebook.com/originalchattengauer/"
-					class="underline decoration-from-font underline-offset-2 hover:text-accent"
+					class="hover:text-accent underline decoration-from-font underline-offset-2"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
@@ -71,7 +71,7 @@
 			<li>
 				Instagram: <a
 					href="https://www.instagram.com/original.chattengauer/"
-					class="underline decoration-from-font underline-offset-2 hover:text-accent"
+					class="hover:text-accent underline decoration-from-font underline-offset-2"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
@@ -81,7 +81,7 @@
 			<li>
 				TikTok: <a
 					href="https://www.tiktok.com/@chattengauer/"
-					class="underline decoration-from-font underline-offset-2 hover:text-accent"
+					class="hover:text-accent underline decoration-from-font underline-offset-2"
 					target="_blank"
 					rel="noopener noreferrer"
 				>

@@ -1,6 +1,24 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/typography';
+
+@theme {
+	--font-sans: 'Roboto', system-ui;
+	--font-accent: 'Saira Condensed', system-ui;
+
+	--font-weight-accent-bold: 600;
+
+	--color-accent: #dd1e25;
+
+	--breakpoint-xs: 468px;
+
+	--aspect-media: 3 / 2;
+}
+
+@utility grid-1 {
+	grid-row: 1;
+	grid-column: 1;
+}
 
 @layer base {
 	@font-face {
@@ -25,7 +43,7 @@
 
 	@font-face {
 		font-style: normal;
-		font-weight: theme('fontWeight.accent-bold');
+		font-weight: var(--font-weight-accent-bold);
 		src:
 			local('SairaCondensed-Semibold'),
 			url('/fonts/SairaCondensed-Semibold.woff2') format('woff2');
@@ -38,7 +56,7 @@
 	}
 
 	html {
-		@apply antialiased accent-accent;
+		@apply accent-accent antialiased;
 		scrollbar-gutter: stable;
 
 		&:has(nav) {
@@ -50,7 +68,7 @@
 @layer components {
 	.content-grid,
 	.content-grid--raw {
-		--content-padding: theme('spacing.4');
+		--content-padding: --spacing(4);
 		--breakout-size: var(--content-padding);
 
 		display: grid;
@@ -89,16 +107,16 @@
 	.heading-footer {
 		--_font-size: var(--font-size, 2rem);
 		--_letter-spacing: var(--letter-spacing, -0.3rem);
-		--_color: var(--color, theme('colors.slate.800'));
+		--_color: var(--color, var(--color-slate-800));
 
 		width: fit-content;
 		color: var(--color);
-		font-weight: theme('fontWeight.accent-bold');
+		font-weight: var(--font-weight-accent-bold);
 		font-size: var(--_font-size);
 		line-height: 1.2;
-		font-family: theme('fontFamily.accent');
+		font-family: var(--font-accent);
 		text-decoration: underline;
-		text-decoration-color: theme('colors.accent');
+		text-decoration-color: var(--color-accent);
 		text-decoration-thickness: 0.125rem;
 		text-underline-offset: 0.5rem;
 		text-transform: uppercase;
@@ -119,8 +137,8 @@
 
 			&::after {
 				align-items: baseline;
-				border-radius: theme('borderRadius.sm');
-				background-color: theme('colors.accent');
+				border-radius: var(--radius-sm);
+				background-color: var(--color-accent);
 				aspect-ratio: 1;
 				width: 0.35em;
 				content: '';
@@ -147,7 +165,7 @@
 	.heading-footer {
 		--font-size: 0.875rem;
 		--letter-spacing: -0.1rem;
-		--color: theme('colors.white');
+		--color: var(--color-white);
 	}
 
 	[id] {
@@ -156,12 +174,5 @@
 
 	p {
 		@apply hyphens-auto;
-	}
-}
-
-@layer utilities {
-	.grid-1 {
-		grid-row: 1;
-		grid-column: 1;
 	}
 }

@@ -38,7 +38,7 @@
 {#snippet eventWithSeparator(event: EventData)}
 	{@const separator = buildSeparator(event)}
 	{#if separator}
-		<h2 class="text-xs font-bold uppercase text-slate-700">
+		<h2 class="text-xs font-bold text-slate-700 uppercase">
 			{separator}
 		</h2>
 	{/if}
@@ -69,7 +69,7 @@
 
 	{#if !expandAll && events.length > showMax}
 		<footer class="text-right text-sm">
-			<button class="font-bold text-accent" onclick={() => (expandAll = true)}>
+			<button class="text-accent font-bold" onclick={() => (expandAll = true)}>
 				Alle Termine aufklappen
 				<ChevronDownIcon class="inline align-middle" size={16} />
 			</button>

@@ -25,7 +25,7 @@
 				lightBg ? 'content-right md:pl-4' : 'content-left md:order-1 md:pr-4',
 			]}
 		>
-			<h3 class="font-accent text-xl font-accent-bold">{name}</h3>
+			<h3 class="font-accent font-accent-bold text-xl">{name}</h3>
 
 			{#if slug === 'grosses-orchester'}
 				<p class="text-sm">Unser Ensemble für fortgeschrittene Musiker.</p>
@@ -56,7 +56,7 @@
 				</p>
 			{/if}
 
-			<footer class="flex-grow place-content-end text-right text-sm">
+			<footer class="grow place-content-end text-right text-sm">
 				<a href="/ensembles/{slug}" class={['font-bold', lightBg ? 'text-accent' : 'text-rose-400']}>
 					Mehr Infos
 					<ChevronRightIcon class="inline align-middle" size={16} />
@@ -83,6 +83,8 @@
 </SimpleLayout.Section>
 
 <style>
+	/* @reference "../../app.css"; */
+
 	.breakout-left,
 	.breakout-right {
 		grid-column: breakout;
@@ -93,7 +95,8 @@
 		grid-column: content;
 	}
 
-	@media (width >= theme('screens.md')) {
+	/* TODO: @media (width >= theme(--breakpoint-md)) { */
+	@media (width >= 768px) {
 		.breakout-left {
 			grid-column: breakout-start / center;
 		}
