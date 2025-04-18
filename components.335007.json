@@ -280,6 +280,41 @@
 			"component_group_name": "richtext"
 		},
 		{
+			"name": "imageSlider",
+			"display_name": "Bild",
+			"description": "",
+			"created_at": "2025-04-18T22:30:41.642Z",
+			"updated_at": "2025-04-18T22:32:19.034Z",
+			"id": 7239546,
+			"schema": {
+				"images": {
+					"type": "multiasset",
+					"pos": 0,
+					"required": true,
+					"display_name": "Bilder",
+					"filetypes": ["images"],
+					"id": "podv6zYJTv2C6letHbWErw",
+					"description": "Breite von mindestens 1600 Pixel."
+				}
+			},
+			"image": null,
+			"preview_field": null,
+			"is_root": false,
+			"preview_tmpl": null,
+			"is_nestable": true,
+			"all_presets": [],
+			"preset_id": null,
+			"real_name": "Bild",
+			"component_group_uuid": "7d329944-f827-4304-85c6-d04a64ab2869",
+			"color": null,
+			"icon": null,
+			"internal_tags_list": [],
+			"internal_tag_ids": [],
+			"content_type_asset_preview": null,
+			"metadata": {},
+			"component_group_name": "richtext"
+		},
+		{
 			"name": "page",
 			"display_name": "Seite",
 			"description": null,

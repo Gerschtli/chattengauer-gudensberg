@@ -3,7 +3,8 @@
 	import type { Snippet } from 'svelte';
 
 	import Image from '$lib/Image.svelte';
-	import type { ImageStoryblok, RichtextStoryblok } from '$lib/component-types-storyblok';
+	import SliderStoryblok from '$lib/SliderStoryblok.svelte';
+	import type { ImageSliderStoryblok, ImageStoryblok, RichtextStoryblok } from '$lib/component-types-storyblok';
 
 	interface Props {
 		data: RichtextStoryblok;
@@ -14,7 +15,7 @@
 
 	const dataNormalized = $derived(data?.content ?? []);
 
-	type CustomBlok = ImageStoryblok;
+	type CustomBlok = ImageStoryblok | ImageSliderStoryblok;
 
 	function getCustomBloks(attrs: unknown) {
 		if (
@@ -41,6 +42,10 @@
 				{#if blok.component === 'image'}
 					<div class="content-grid__breakout">
 						<Image asset={blok.image} />
+					</div>
+				{:else if blok.component === 'imageSlider'}
+					<div class="content-grid__breakout">
+						<SliderStoryblok multiasset={blok.images} />
 					</div>
 				{/if}
 			{/each}

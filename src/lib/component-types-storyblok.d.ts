@@ -167,6 +167,13 @@ export interface ImageStoryblok {
 	[k: string]: any;
 }
 
+export interface ImageSliderStoryblok {
+	images: MultiassetStoryblok;
+	component: 'imageSlider';
+	_uid: string;
+	[k: string]: any;
+}
+
 export interface PageStoryblok {
 	title: string;
 	description?: string;
