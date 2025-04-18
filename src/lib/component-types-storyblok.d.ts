@@ -2,6 +2,22 @@
 // DO NOT MODIFY THIS FILE BY HAND.
 import type { ISbStoryData } from 'storyblok';
 
+export interface RichtextStoryblok {
+	type: string;
+	content?: RichtextStoryblok[];
+	marks?: RichtextStoryblok[];
+	attrs?: any;
+	text?: string;
+	[k: string]: any;
+}
+
+export interface HomeStoryblok {
+	intro: RichtextStoryblok;
+	component: 'home';
+	_uid: string;
+	[k: string]: any;
+}
+
 export interface AssetStoryblok {
 	alt: string | null;
 	copyright?: string | null;
@@ -27,31 +43,6 @@ export interface AssetStoryblok {
 	[k: string]: any;
 }
 
-export interface BannerImageStoryblok {
-	image: AssetStoryblok;
-	positionX: string;
-	positionY: string;
-	component: 'bannerImage';
-	_uid: string;
-	[k: string]: any;
-}
-
-export interface RichtextStoryblok {
-	type: string;
-	content?: RichtextStoryblok[];
-	marks?: RichtextStoryblok[];
-	attrs?: any;
-	text?: string;
-	[k: string]: any;
-}
-
-export interface HomeStoryblok {
-	intro: RichtextStoryblok;
-	component: 'home';
-	_uid: string;
-	[k: string]: any;
-}
-
 export interface ImageStoryblok {
 	image: AssetStoryblok;
 	component: 'image';
@@ -62,7 +53,7 @@ export interface ImageStoryblok {
 export interface PageStoryblok {
 	title: string;
 	description?: string;
-	banner?: BannerImageStoryblok[];
+	banner?: AssetStoryblok;
 	content: HomeStoryblok[];
 	component: 'page';
 	_uid: string;

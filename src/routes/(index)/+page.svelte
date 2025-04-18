@@ -4,6 +4,7 @@
 
 	import type { ImageStoryblok } from '$lib/component-types-storyblok';
 	import { SimpleLayout } from '$lib/simpleLayout';
+	import { getAspectRatio } from '$lib/storyblok/util';
 
 	import Banner from './Banner.svelte';
 	import Booking from './Booking.svelte';
@@ -40,8 +41,8 @@
 
 <SimpleLayout.Root title={story.content.title} description={story.content.description}>
 	{#snippet banner()}
-		{#if story.content.banner?.[0]}
-			<Banner data={story.content.banner[0]} />
+		{#if story.content.banner}
+			<Banner image={story.content.banner} />
 		{/if}
 	{/snippet}
 
@@ -61,12 +62,24 @@
 						{#each getCustomBloks(item.attrs) as blok (blok._uid)}
 							{#if blok.component === 'image'}
 								<div class="content-grid__breakout">
-									<img
-										src={blok.image.filename}
-										alt={blok.image.alt}
-										title={blok.image.title}
-										loading="lazy"
-									/>
+									<picture>
+										<source
+											media="(max-width: 400px)"
+											srcset="{blok.image.filename}/m/400x0 1x, {blok.image.filename}/m/800x0 2x"
+										/>
+										<source
+											media="(min-width: 401px)"
+											srcset="{blok.image.filename}/m/800x0 1x, {blok.image.filename}/m/1600x0 2x"
+										/>
+
+										<img
+											src="{blok.image.filename}/m/800x0"
+											style:aspect-ratio={getAspectRatio(blok.image)}
+											loading="lazy"
+											alt={blok.image.alt}
+											title={blok.image.title}
+										/>
+									</picture>
 								</div>
 							{/if}
 						{/each}

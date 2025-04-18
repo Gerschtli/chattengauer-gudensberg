@@ -1,66 +1,6 @@
 {
 	"components": [
 		{
-			"name": "bannerImage",
-			"display_name": null,
-			"description": "Banner Bild",
-			"created_at": "2025-04-17T20:55:36.018Z",
-			"updated_at": "2025-04-17T22:37:11.237Z",
-			"id": 7233452,
-			"schema": {
-				"image": {
-					"type": "asset",
-					"pos": 0,
-					"id": "SbL4CiYaS8-zTES6bbsfVA",
-					"display_name": "Bild",
-					"required": true,
-					"filetypes": ["images"]
-				},
-				"positionX": {
-					"type": "number",
-					"pos": 1,
-					"required": true,
-					"description": "Werte von 0% (links) bis 100% (rechts) verschieben das Bild horizontal.\nStandard ist 50 (Bild wird zentriert).\nAm besten in der mobilen Ansicht testen.",
-					"default_value": "50",
-					"min_value": 0,
-					"max_value": 100,
-					"decimals": 0,
-					"steps": 1,
-					"id": "mg-ZPBM4QPGHmRcNPGKqGQ",
-					"display_name": "Fokus verschieben horizontal"
-				},
-				"positionY": {
-					"type": "number",
-					"pos": 2,
-					"description": "Werte von 0% (oben) bis 100% (unten) verschieben das Bild vertikal.\nStandard ist 50 (Bild wird zentriert).\nAm besten in der Desktop Ansicht testen.",
-					"min_value": 0,
-					"max_value": 100,
-					"decimals": 0,
-					"steps": 1,
-					"default_value": "50",
-					"id": "OouVv3x_QXqHMWZ5kbR9CA",
-					"required": true,
-					"display_name": "Fokus verschieben vertikal"
-				}
-			},
-			"image": null,
-			"preview_field": "image",
-			"is_root": false,
-			"preview_tmpl": null,
-			"is_nestable": true,
-			"all_presets": [],
-			"preset_id": null,
-			"real_name": "bannerImage",
-			"component_group_uuid": "all",
-			"color": null,
-			"icon": null,
-			"internal_tags_list": [],
-			"internal_tag_ids": [],
-			"content_type_asset_preview": null,
-			"metadata": {},
-			"component_group_name": ""
-		},
-		{
 			"name": "home",
 			"display_name": null,
 			"description": "Startseite",
@@ -105,7 +45,7 @@
 			"display_name": "Bild",
 			"description": "",
 			"created_at": "2025-04-18T13:21:56.870Z",
-			"updated_at": "2025-04-18T13:24:39.961Z",
+			"updated_at": "2025-04-18T17:38:03.172Z",
 			"id": 7237051,
 			"schema": {
 				"image": {
@@ -114,7 +54,8 @@
 					"required": true,
 					"display_name": "Bild",
 					"filetypes": ["images"],
-					"id": "podv6zYJTv2C6letHbWErw"
+					"id": "podv6zYJTv2C6letHbWErw",
+					"description": "Breite von mindestens 1600 Pixel."
 				}
 			},
 			"image": null,
@@ -139,7 +80,7 @@
 			"display_name": "Seite",
 			"description": null,
 			"created_at": "2025-04-14T20:34:40.854Z",
-			"updated_at": "2025-04-18T12:29:15.798Z",
+			"updated_at": "2025-04-18T18:52:54.628Z",
 			"id": 7218570,
 			"schema": {
 				"title": {
@@ -158,16 +99,12 @@
 					"required": false
 				},
 				"banner": {
-					"type": "bloks",
+					"type": "asset",
 					"pos": 2,
-					"filetypes": ["images"],
 					"display_name": "Banner Bild",
-					"id": "3KYVab0DQk-pkXcGTbJpaw",
-					"minimum": 0,
-					"maximum": 1,
-					"restrict_type": "",
-					"restrict_components": true,
-					"component_whitelist": ["bannerImage"]
+					"description": "Breite von mindestens 4000 Pixel.\nAm besten Fokuspunkt setzen.",
+					"filetypes": ["images"],
+					"id": "SohIlRQFQI2lAwAbuVZSfQ"
 				},
 				"content": {
 					"type": "bloks",

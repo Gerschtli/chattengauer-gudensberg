@@ -1,22 +1,33 @@
 <script lang="ts">
 	import { ChevronRightIcon } from 'lucide-svelte';
 
-	import type { BannerImageStoryblok } from '$lib/component-types-storyblok';
+	import type { AssetStoryblok } from '$lib/component-types-storyblok';
 
-	let { data = $bindable() }: { data: BannerImageStoryblok } = $props();
+	let { image = $bindable() }: { image: AssetStoryblok } = $props();
+
+	const filter = $derived(image.focus ? `filters:focal(${image.focus})` : 'smart');
 </script>
 
 <section class="content-grid__full-width grid">
 	<div class="grid-1">
-		<img
-			class="image h-[40vh] w-full object-cover"
-			style:--position-x="{data.positionX}%"
-			style:--position-y="{data.positionY}%"
-			src={data.image.filename}
-			alt=""
-			fetchpriority="high"
-			loading="eager"
-		/>
+		<picture>
+			{#each [400, 600, 800, 1000, 1200, 1600, 2000] as size (size)}
+				<source
+					media="(max-width: {size}px)"
+					srcset="{image.filename}/m/{size}x300/{filter} 1x, {image.filename}/m/{size * 2}x600/{filter} 2x"
+				/>
+			{/each}
+			<source srcset="{image.filename}/m/4000x0/{filter}" />
+
+			<img
+				src={image.filename}
+				class="image h-[300px] w-full object-cover object-center"
+				fetchpriority="high"
+				loading="eager"
+				alt={image.alt}
+				title={image.title}
+			/>
+		</picture>
 	</div>
 
 	<div class="grid-1 content-grid place-content-end">
@@ -30,9 +41,3 @@
 		</p>
 	</div>
 </section>
-
-<style>
-	.image {
-		object-position: var(--position-x) var(--position-y);
-	}
-</style>
