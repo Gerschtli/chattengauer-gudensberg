@@ -8,12 +8,10 @@
 </script>
 
 <SimpleLayout.Root {title} class="content-grid gap-y-4">
-	{#if page.status === 404}
-		<h1 class="heading-1">
-			{title}
-			<span></span>
-		</h1>
-	{/if}
+	<h1 class="heading-1">
+		{title}
+		<span></span>
+	</h1>
 
 	{#if isNotFoundError}
 		<!-- prettier-ignore -->
