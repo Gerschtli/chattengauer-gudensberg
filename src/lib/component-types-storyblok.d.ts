@@ -36,10 +36,34 @@ export interface BannerImageStoryblok {
 	[k: string]: any;
 }
 
+export interface RichtextStoryblok {
+	type: string;
+	content?: RichtextStoryblok[];
+	marks?: RichtextStoryblok[];
+	attrs?: any;
+	text?: string;
+	[k: string]: any;
+}
+
+export interface HomeStoryblok {
+	intro: RichtextStoryblok;
+	component: 'home';
+	_uid: string;
+	[k: string]: any;
+}
+
+export interface ImageStoryblok {
+	image: AssetStoryblok;
+	component: 'image';
+	_uid: string;
+	[k: string]: any;
+}
+
 export interface PageStoryblok {
 	title: string;
 	description?: string;
 	banner?: BannerImageStoryblok[];
+	content: HomeStoryblok[];
 	component: 'page';
 	_uid: string;
 	[k: string]: any;
