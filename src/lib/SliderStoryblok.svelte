@@ -1,6 +1,6 @@
 <script lang="ts">
+	import Image from './Image.svelte';
 	import type { MultiassetStoryblok } from './component-types-storyblok';
-	import { getDimensionsOfImageUrl } from './storyblok/util';
 
 	interface Props {
 		class?: string;
@@ -10,7 +10,6 @@
 	const { class: className, multiasset }: Props = $props();
 
 	const gap = 8;
-	const aspectRatio = 3 / 2;
 
 	let clientWidth = $state(0);
 	const elementWidth = $derived(clientWidth + gap);
@@ -27,41 +26,15 @@
 	}
 </script>
 
-{#snippet picture(asset: MultiassetStoryblok[number], isBlur: boolean)}
-	{@const dimensions = getDimensionsOfImageUrl(asset)}
-	{@const isLandscape =
-		!dimensions.width || !dimensions.height || dimensions.width / dimensions.height >= aspectRatio}
-	{@const dimensionBuilder = (width: number) => (isLandscape ? `${width}x0` : `0x${Math.floor(width / aspectRatio)}`)}
-
-	<picture>
-		<source
-			media="(max-width: 400px)"
-			srcset="{asset.filename}/m/{dimensionBuilder(400)} 1x, {asset.filename}/m/{dimensionBuilder(800)} 2x"
-		/>
-		<source
-			media="(min-width: 401px)"
-			srcset="{asset.filename}/m/{dimensionBuilder(800)} 1x, {asset.filename}/m/{dimensionBuilder(1600)} 2x"
-		/>
-
-		<img
-			class={{ image: !isBlur, 'blur-image': isBlur }}
-			src="{asset.filename}/m/{dimensionBuilder(800)}"
-			loading="lazy"
-			alt={asset.alt}
-			title={asset.title}
-		/>
-	</picture>
-{/snippet}
-
 <div class="grid {className}">
 	<div class="slider grid-1" style:--gap="{gap}px" bind:this={slider} bind:clientWidth {onscroll}>
 		{#each multiasset as asset (asset.id)}
 			<div class="item">
 				<div class="background">
-					{@render picture(asset, true)}
+					<Image {asset} fixedSize class="blur-image" />
 				</div>
 				<div class="content">
-					{@render picture(asset, false)}
+					<Image {asset} fixedSize class="image" />
 				</div>
 			</div>
 		{/each}
@@ -112,20 +85,20 @@
 		aspect-ratio: var(--aspect-media);
 	}
 
-	.image,
-	.blur-image {
+	.item :global(.image),
+	.item :global(.blur-image) {
 		width: 100%;
 		height: 100%;
 		object-position: center;
 	}
 
-	.blur-image {
+	.item :global(.blur-image) {
 		scale: 1.5;
 		filter: blur(10px) brightness(120%);
 		object-fit: cover;
 	}
 
-	.image {
+	.item :global(.image) {
 		position: relative;
 		filter: drop-shadow(0 0 1px var(--color-slate-600));
 		object-fit: contain;

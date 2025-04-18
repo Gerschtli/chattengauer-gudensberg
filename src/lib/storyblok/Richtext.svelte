@@ -2,8 +2,8 @@
 	import { renderRichText } from '@storyblok/svelte';
 	import type { Snippet } from 'svelte';
 
+	import Image from '$lib/Image.svelte';
 	import type { ImageStoryblok, RichtextStoryblok } from '$lib/component-types-storyblok';
-	import { getAspectRatio, getDimensionsOfImageUrl } from '$lib/storyblok/util';
 
 	interface Props {
 		data: RichtextStoryblok;
@@ -39,33 +39,8 @@
 		{:else if item.type === 'blok'}
 			{#each getCustomBloks(item.attrs) as blok (blok._uid)}
 				{#if blok.component === 'image'}
-					{@const dimensions = getDimensionsOfImageUrl(blok.image)}
-					{@const isLandscape =
-						!dimensions.width || !dimensions.height || dimensions.width / dimensions.height >= 3 / 2}
-					{@const dimensionBuilder = (width: number) => (isLandscape ? `${width}x0` : `0x${width}`)}
-
 					<div class="content-grid__breakout">
-						<picture>
-							<source
-								media="(max-width: 400px)"
-								srcset="{blok.image.filename}/m/{dimensionBuilder(400)} 1x, {blok.image
-									.filename}/m/{dimensionBuilder(800)} 2x"
-							/>
-							<source
-								media="(min-width: 401px)"
-								srcset="{blok.image.filename}/m/{dimensionBuilder(800)} 1x, {blok.image
-									.filename}/m/{dimensionBuilder(1600)} 2x"
-							/>
-
-							<img
-								src="{blok.image.filename}/m/{dimensionBuilder(800)}"
-								style:aspect-ratio={isLandscape ? getAspectRatio(blok.image) : undefined}
-								class={[!isLandscape && 'aspect-media w-full object-contain']}
-								loading="lazy"
-								alt={blok.image.alt}
-								title={blok.image.title}
-							/>
-						</picture>
+						<Image asset={blok.image} />
 					</div>
 				{/if}
 			{/each}
