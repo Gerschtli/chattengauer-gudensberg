@@ -5,7 +5,7 @@ export function getDimensionsOfImageUrl(asset: AssetStoryblok) {
 
 	if (result?.length !== 3) return {};
 
-	return { width: result[1], height: result[2] };
+	return { width: parseInt(result[1]), height: parseInt(result[2]) };
 }
 
 export function getAspectRatio(asset: AssetStoryblok) {

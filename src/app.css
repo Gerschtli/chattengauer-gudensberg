@@ -86,15 +86,18 @@
 			[full-width-end];
 	}
 
-	.content-grid > :not(.content-grid, .content-grid__breakout, .content-grid__full-width) {
+	.content-grid > :not(.content-grid, .content-grid__breakout, .content-grid__full-width),
+	.content-grid > .contents > :not(.content-grid, .content-grid__breakout, .content-grid__full-width) {
 		grid-column: content;
 	}
 
-	.content-grid > .content-grid__breakout {
+	.content-grid > .content-grid__breakout,
+	.content-grid > .contents > .content-grid__breakout {
 		grid-column: breakout;
 	}
 
 	.content-grid > .content-grid,
+	.content-grid > .contents > .content-grid,
 	.content-grid__full-width {
 		grid-column: full-width;
 	}

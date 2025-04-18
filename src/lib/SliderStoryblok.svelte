@@ -1,15 +1,17 @@
 <script lang="ts">
-	// TODO: remove this component
-	import type { SliderAsset } from './types';
+	import type { MultiassetStoryblok } from './component-types-storyblok';
+	import { getDimensionsOfImageUrl } from './storyblok/util';
 
 	interface Props {
 		class?: string;
-		assets: SliderAsset[];
+		multiasset: MultiassetStoryblok;
 	}
 
-	const { class: className, assets }: Props = $props();
+	const { class: className, multiasset }: Props = $props();
 
 	const gap = 8;
+	const aspectRatio = 3 / 2;
+
 	let clientWidth = $state(0);
 	const elementWidth = $derived(clientWidth + gap);
 
@@ -25,39 +27,48 @@
 	}
 </script>
 
+{#snippet picture(asset: MultiassetStoryblok[number], isBlur: boolean)}
+	{@const dimensions = getDimensionsOfImageUrl(asset)}
+	{@const isLandscape =
+		!dimensions.width || !dimensions.height || dimensions.width / dimensions.height >= aspectRatio}
+	{@const dimensionBuilder = (width: number) => (isLandscape ? `${width}x0` : `0x${Math.floor(width / aspectRatio)}`)}
+
+	<picture>
+		<source
+			media="(max-width: 400px)"
+			srcset="{asset.filename}/m/{dimensionBuilder(400)} 1x, {asset.filename}/m/{dimensionBuilder(800)} 2x"
+		/>
+		<source
+			media="(min-width: 401px)"
+			srcset="{asset.filename}/m/{dimensionBuilder(800)} 1x, {asset.filename}/m/{dimensionBuilder(1600)} 2x"
+		/>
+
+		<img
+			class={{ image: !isBlur, 'blur-image': isBlur }}
+			src="{asset.filename}/m/{dimensionBuilder(800)}"
+			loading="lazy"
+			alt={asset.alt}
+			title={asset.title}
+		/>
+	</picture>
+{/snippet}
+
 <div class="grid {className}">
 	<div class="slider grid-1" style:--gap="{gap}px" bind:this={slider} bind:clientWidth {onscroll}>
-		{#each assets as { type, uri }, i (i)}
-			{#if type === 'image'}
-				<div class="item">
-					{#if typeof uri === 'string'}
-						<div class="background">
-							<img src={uri} alt="" loading="lazy" class="blur-image" />
-						</div>
-						<div class="content">
-							<img src={uri} alt="" loading="lazy" class="image" />
-						</div>
-					{:else}
-						<div class="background">
-							<enhanced:img
-								src={uri}
-								alt=""
-								loading="lazy"
-								class="blur-image"
-								sizes="min(800px, 100vw)"
-							/>
-						</div>
-						<div class="content">
-							<enhanced:img src={uri} alt="" loading="lazy" class="image" sizes="min(800px, 100vw)" />
-						</div>
-					{/if}
+		{#each multiasset as asset (asset.id)}
+			<div class="item">
+				<div class="background">
+					{@render picture(asset, true)}
 				</div>
-			{/if}
+				<div class="content">
+					{@render picture(asset, false)}
+				</div>
+			</div>
 		{/each}
 	</div>
 	<div class="grid-1 z-0 mb-4 self-end justify-self-center">
 		<div class="flex gap-2">
-			{#each assets as _, i (i)}
+			{#each multiasset as _, i (i)}
 				<button class="rounded-full p-1" onclick={() => scrollToSlide(i)}>
 					<span
 						class="block size-3 rounded-full border-2 border-white shadow-md shadow-black/60"
