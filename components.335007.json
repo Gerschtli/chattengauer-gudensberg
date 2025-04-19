@@ -2,10 +2,10 @@
 	"components": [
 		{
 			"name": "default",
-			"display_name": "Standard",
+			"display_name": "Standard Seite",
 			"description": "",
 			"created_at": "2025-04-18T23:47:27.703Z",
-			"updated_at": "2025-04-18T23:53:26.787Z",
+			"updated_at": "2025-04-19T00:40:29.485Z",
 			"id": 7239551,
 			"schema": {
 				"text": {
@@ -56,7 +56,7 @@
 			"is_nestable": true,
 			"all_presets": [],
 			"preset_id": null,
-			"real_name": "Standard",
+			"real_name": "Standard Seite",
 			"component_group_uuid": "fdacd861-53f2-486f-9d58-3c7194c734af",
 			"color": null,
 			"icon": null,
@@ -530,6 +530,31 @@
 			"content_type_asset_preview": null,
 			"metadata": {},
 			"component_group_name": ""
+		},
+		{
+			"name": "news",
+			"display_name": "Aktuelles Seite",
+			"description": "",
+			"created_at": "2025-04-19T00:40:07.542Z",
+			"updated_at": "2025-04-19T00:40:22.273Z",
+			"id": 7239588,
+			"schema": {},
+			"image": null,
+			"preview_field": null,
+			"is_root": false,
+			"preview_tmpl": null,
+			"is_nestable": true,
+			"all_presets": [],
+			"preset_id": null,
+			"real_name": "Aktuelles Seite",
+			"component_group_uuid": "fdacd861-53f2-486f-9d58-3c7194c734af",
+			"color": null,
+			"icon": null,
+			"internal_tags_list": [],
+			"internal_tag_ids": [],
+			"content_type_asset_preview": null,
+			"metadata": {},
+			"component_group_name": "content"
 		},
 		{
 			"name": "page",

@@ -195,11 +195,17 @@ export interface LeaderStoryblok {
 	[k: string]: any;
 }
 
+export interface NewsStoryblok {
+	component: 'news';
+	_uid: string;
+	[k: string]: any;
+}
+
 export interface PageStoryblok {
 	title: string;
 	description?: string;
 	banner?: AssetStoryblok;
-	content: (DefaultStoryblok | EnsembleStoryblok | HomeStoryblok)[];
+	content: (DefaultStoryblok | EnsembleStoryblok | HomeStoryblok | NewsStoryblok)[];
 	component: 'page';
 	_uid: string;
 	[k: string]: any;
