@@ -1,23 +1,28 @@
 <script lang="ts">
+	import { useStoryblokBridge } from '@storyblok/svelte';
+	import { onMount } from 'svelte';
+
 	import { SimpleLayout } from '$lib/simpleLayout';
+	import Richtext from '$lib/storyblok/Richtext.svelte';
+
+	let { data } = $props();
+
+	let story = $derived(data.story);
+
+	onMount(() => {
+		useStoryblokBridge(story.id, (newStory) => (story = newStory), {
+			preventClicks: true,
+			resolveLinks: 'url',
+		});
+	});
 </script>
 
-<SimpleLayout.Root title="Datenschutz">
-	<SimpleLayout.Section class="space-y-4">
-		<h1 class="heading-1">
-			Datenschutz
-			<span></span>
-		</h1>
+<SimpleLayout.Root title={story.content.title} description={story.content.description}>
+	{#if story.content.content[0].component === 'default'}
+		{@const content = story.content.content[0]}
 
-		<p>
-			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis doloribus provident dolore, molestiae aut
-			nobis obcaecati quaerat aliquid nemo ratione?
-		</p>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid laudantium iste numquam ducimus distinctio
-			omnis similique dignissimos, rerum facilis repellendus nesciunt minima possimus autem nemo sit dolorum est
-			quibusdam. Cumque laborum molestiae voluptatem officiis. Provident nostrum quis recusandae reiciendis optio
-			facilis voluptatibus tenetur quisquam vitae eligendi? Beatae harum quas quis.
-		</p>
-	</SimpleLayout.Section>
+		<SimpleLayout.Section class="content-grid gap-y-4">
+			<Richtext data={content.text} />
+		</SimpleLayout.Section>
+	{/if}
 </SimpleLayout.Root>
