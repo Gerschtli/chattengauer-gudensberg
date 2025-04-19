@@ -179,6 +179,10 @@
 		ul {
 			@apply list-disc space-y-2 pl-4;
 		}
+
+		a {
+			@apply hover:text-accent underline decoration-from-font underline-offset-2;
+		}
 	}
 
 	[id] {

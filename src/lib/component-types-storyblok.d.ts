@@ -2,18 +2,56 @@
 // DO NOT MODIFY THIS FILE BY HAND.
 import type { ISbStoryData } from 'storyblok';
 
-export interface EnsembleStoryblok {
-	component: 'ensemble';
-	_uid: string;
-	[k: string]: any;
-}
-
 export interface RichtextStoryblok {
 	type: string;
 	content?: RichtextStoryblok[];
 	marks?: RichtextStoryblok[];
 	attrs?: any;
 	text?: string;
+	[k: string]: any;
+}
+
+export interface DefaultStoryblok {
+	text: RichtextStoryblok;
+	component: 'default';
+	_uid: string;
+	[k: string]: any;
+}
+
+export type MultiassetStoryblok = {
+	alt: string | null;
+	copyright?: string | null;
+	fieldtype: 'asset';
+	id: number;
+	filename: string | null;
+	name: string;
+	title: string | null;
+	focus: string | null;
+	meta_data?: {
+		[k: string]: any;
+	};
+	source?: string | null;
+	is_external_url?: boolean;
+	is_private?: boolean;
+	src?: string;
+	updated_at?: string;
+	width?: number | null;
+	height?: number | null;
+	aspect_ratio?: number | null;
+	public_id?: string | null;
+	content_type?: string;
+	[k: string]: any;
+}[];
+
+export interface EnsembleStoryblok {
+	title: string;
+	slogan?: string;
+	leader?: LeaderStoryblok[];
+	infos: RichtextStoryblok;
+	imageSlider: MultiassetStoryblok;
+	facts: RichtextStoryblok;
+	component: 'ensemble';
+	_uid: string;
 	[k: string]: any;
 }
 
@@ -91,31 +129,6 @@ export type MultilinkStoryblok =
 			[k: string]: any;
 	  };
 
-export type MultiassetStoryblok = {
-	alt: string | null;
-	copyright?: string | null;
-	fieldtype: 'asset';
-	id: number;
-	filename: string | null;
-	name: string;
-	title: string | null;
-	focus: string | null;
-	meta_data?: {
-		[k: string]: any;
-	};
-	source?: string | null;
-	is_external_url?: boolean;
-	is_private?: boolean;
-	src?: string;
-	updated_at?: string;
-	width?: number | null;
-	height?: number | null;
-	aspect_ratio?: number | null;
-	public_id?: string | null;
-	content_type?: string;
-	[k: string]: any;
-}[];
-
 export interface EnsembleTeaserStoryblok {
 	title: string;
 	description: RichtextStoryblok;
@@ -174,11 +187,19 @@ export interface ImageSliderStoryblok {
 	[k: string]: any;
 }
 
+export interface LeaderStoryblok {
+	name: string;
+	image: AssetStoryblok;
+	component: 'leader';
+	_uid: string;
+	[k: string]: any;
+}
+
 export interface PageStoryblok {
 	title: string;
 	description?: string;
 	banner?: AssetStoryblok;
-	content: (EnsembleStoryblok | HomeStoryblok)[];
+	content: (DefaultStoryblok | EnsembleStoryblok | HomeStoryblok)[];
 	component: 'page';
 	_uid: string;
 	[k: string]: any;
