@@ -68,7 +68,7 @@
 					</a>
 				</li>
 				<li><a href="/probenraum">Unser Probenraum G1</a></li>
-				<li><a href="/Chattengauer-Satzung.pdf">Satzung</a></li>
+				<li><a href="/Chattengauer-Satzung.pdf" target="_blank">Satzung</a></li>
 				<li><a href="/datenschutz">Datenschutz</a></li>
 				<li><a href="/impressum">Impressum</a></li>
 			</ul>
