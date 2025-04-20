@@ -200,6 +200,22 @@ export interface ImageSliderStoryblok {
 	[k: string]: any;
 }
 
+export interface NewsStoryblok {
+	date: string;
+	title: string;
+	ensembles?: any[];
+	content: RichtextStoryblok;
+	component: 'news';
+	_uid: string;
+	[k: string]: any;
+}
+
+export interface NewsListStoryblok {
+	component: 'newsList';
+	_uid: string;
+	[k: string]: any;
+}
+
 export interface PageStoryblok {
 	title: string;
 	description?: string;

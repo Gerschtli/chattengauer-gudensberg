@@ -8,6 +8,7 @@ import Image from './richtext/Image.svelte';
 import ImageSlider from './richtext/ImageSlider.svelte';
 import TextAndLeader from './richtext/TextAndLeader.svelte';
 import Events from './richtext/events/Events.svelte';
+import NewsList from './richtext/newsList/NewsList.svelte';
 
 export const components = {
 	banner: Banner,
@@ -17,6 +18,7 @@ export const components = {
 	form: Form,
 	image: Image,
 	imageSlider: ImageSlider,
+	newsList: NewsList,
 	page: Page,
 	section: Section,
 	textAndLeader: TextAndLeader,
