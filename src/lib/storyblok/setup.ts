@@ -1,4 +1,5 @@
 import { type ISbStoriesParams, type ISbStoryData, apiPlugin, storyblokInit, useStoryblokApi } from '@storyblok/svelte';
+import { error } from '@sveltejs/kit';
 
 import { dev } from '$app/environment';
 import { PUBLIC_STORYBLOK_ACCESS_TOKEN } from '$env/static/public';
@@ -27,11 +28,17 @@ export function initStoryblokApi() {
 }
 
 export async function loadStory(storyblokApi: ReturnType<typeof initStoryblokApi>, story: string) {
-	const dataStory = await storyblokApi.get(`cdn/stories/${story}`, {
-		version: dev ? 'draft' : 'published',
-	});
+	try {
+		const dataStory = await storyblokApi.get(`cdn/stories/${story}`, {
+			version: dev ? 'draft' : 'published',
+		});
 
-	return dataStory.data.story as ISbStoryData<PageStoryblok>;
+		return dataStory.data.story as ISbStoryData<PageStoryblok>;
+	} catch (e) {
+		if (e && typeof e === 'object' && 'status' in e && e.status === 404) error(404);
+
+		throw e;
+	}
 }
 
 export async function loadStories<T>(storyblokApi: ReturnType<typeof initStoryblokApi>, options: ISbStoriesParams) {
