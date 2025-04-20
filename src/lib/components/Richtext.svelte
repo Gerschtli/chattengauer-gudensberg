@@ -1,13 +1,14 @@
 <script lang="ts">
 	import { StoryblokComponent, renderRichText } from '@storyblok/svelte';
 
+	import { anchorProse } from '$lib/anchorProse';
 	import type { RichtextStoryblok } from '$lib/component-types-storyblok';
 
 	const { blok, class: className }: { blok: RichtextStoryblok; class?: string } = $props();
 </script>
 
 {#if blok.content && blok.content?.length > 0}
-	<div class="prose contents {className}">
+	<div class="prose contents {className}" use:anchorProse>
 		{#each blok.content as item, i (i)}
 			{#if item.type === 'blok'}
 				{#each item.attrs.body as itemInner, i (i)}
