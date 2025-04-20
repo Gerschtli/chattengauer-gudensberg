@@ -178,7 +178,7 @@
 		}
 
 		a {
-			@apply hover:text-accent underline decoration-from-font underline-offset-2;
+			@apply hover:text-accent focus:text-accent underline decoration-from-font underline-offset-2;
 		}
 	}
 

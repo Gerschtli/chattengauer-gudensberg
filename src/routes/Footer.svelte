@@ -18,15 +18,23 @@
 					Martin Salfer
 				</li>
 				<li>
-					<a href="mailto:original.chattengauer@gmx.de">
+					<a href="mailto:original.chattengauer@gmx.de" class="group">
 						<MailIcon class="mr-1 inline-block" size={16} />
-						original.chattengauer@gmx.de
+						<span
+							class="decoration-from-font underline-offset-2 group-hover:underline group-focus:underline"
+						>
+							original.chattengauer@gmx.de
+						</span>
 					</a>
 				</li>
 				<li>
-					<a href="tel:+4915152763235">
+					<a href="tel:+4915152763235" class="group">
 						<PhoneIcon class="mr-1 inline-block" size={16} />
-						0151 52763235
+						<span
+							class="decoration-from-font underline-offset-2 group-hover:underline group-focus:underline"
+						>
+							0151 52763235
+						</span>
 					</a>
 				</li>
 			</ul>
@@ -42,7 +50,12 @@
 
 			<ul role="list" class="link-grid grid gap-x-8 gap-y-3 text-xs md:flex-col">
 				<li>
-					<a href="https://www.instagram.com/original.chattengauer" target="_blank" rel="noopener noreferrer">
+					<a
+						class="group"
+						href="https://www.instagram.com/original.chattengauer"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<span class="inline-block aspect-square h-4 rounded-full fill-white align-middle">
 							<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 								<title>Instagram</title>
@@ -51,11 +64,20 @@
 								/>
 							</svg>
 						</span>
-						Instagram
+						<span
+							class="decoration-from-font underline-offset-2 group-hover:underline group-focus:underline"
+						>
+							Instagram
+						</span>
 					</a>
 				</li>
 				<li>
-					<a href="https://www.tiktok.com/@chattengauer" target="_blank" rel="noopener noreferrer">
+					<a
+						class="group"
+						href="https://www.tiktok.com/@chattengauer"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<span class="inline-block aspect-square h-4 rounded-full fill-white align-middle">
 							<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 								<title>TikTok</title>
@@ -64,13 +86,46 @@
 								/>
 							</svg>
 						</span>
-						TikTok
+						<span
+							class="decoration-from-font underline-offset-2 group-hover:underline group-focus:underline"
+						>
+							TikTok
+						</span>
 					</a>
 				</li>
-				<li><a href="/probenraum">Unser Probenraum G1</a></li>
-				<li><a href="/Chattengauer-Satzung.pdf" target="_blank">Satzung</a></li>
-				<li><a href="/datenschutz">Datenschutz</a></li>
-				<li><a href="/impressum">Impressum</a></li>
+				<li>
+					<a
+						class="decoration-from-font underline-offset-2 hover:underline focus:underline"
+						href="/probenraum"
+					>
+						Unser Probenraum G1
+					</a>
+				</li>
+				<li>
+					<a
+						class="decoration-from-font underline-offset-2 hover:underline focus:underline"
+						href="/Chattengauer-Satzung.pdf"
+						target="_blank"
+					>
+						Satzung
+					</a>
+				</li>
+				<li>
+					<a
+						class="decoration-from-font underline-offset-2 hover:underline focus:underline"
+						href="/datenschutz"
+					>
+						Datenschutz
+					</a>
+				</li>
+				<li>
+					<a
+						class="decoration-from-font underline-offset-2 hover:underline focus:underline"
+						href="/impressum"
+					>
+						Impressum
+					</a>
+				</li>
 			</ul>
 		</article>
 	</div>

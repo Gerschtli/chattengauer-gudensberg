@@ -9,7 +9,6 @@
 	onMount(() => {
 		useStoryblokBridge(story.id, (newStory) => (story = newStory), {
 			preventClicks: true,
-			resolveLinks: 'url',
 		});
 	});
 </script>

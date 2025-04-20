@@ -36,12 +36,11 @@
 				</div>
 
 				<footer class="grow place-content-end text-right text-sm">
-					<!-- TODO: is cached_url the right field? -->
 					<a
 						href="/{ensemble.link.cached_url}"
-						class={['font-bold', lightBg ? 'text-accent' : 'text-rose-400']}
+						class={['group font-bold no-underline', lightBg ? 'text-accent' : 'text-rose-400']}
 					>
-						Mehr Infos
+						<span class="group-hover:underline group-focus:underline">Mehr Infos</span>
 						<ChevronRightIcon class="inline align-middle" size={16} />
 					</a>
 				</footer>
