@@ -29,10 +29,10 @@
 			Leider ist ein unerwarteter Fehler aufgetreten, das tut uns leid! Bitte versuche es später noch einmal. Wenn
 			das Problem weiterhin besteht, kontaktiere uns gerne unter
 			<a
-				href="mailto:original.chattengauer@gmx.de"
+				href="mailto:{page.data.config.content.contactEmail}"
 				class="underline decoration-from-font underline-offset-2 hover:text-accent"
 			>
-				original.chattengauer@gmx.de
+				{page.data.config.content.contactEmail}
 			</a>.
 		</p>
 	{/if}
