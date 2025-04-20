@@ -252,13 +252,6 @@ export interface PageStoryblok {
 	[k: string]: any;
 }
 
-export interface SectionStoryblok {
-	content: RichtextStoryblok;
-	component: 'section';
-	_uid: string;
-	[k: string]: any;
-}
-
 export interface TextAndLeaderStoryblok {
 	name: string;
 	image: AssetStoryblok;

@@ -1,6 +1,5 @@
 import Banner from './Banner.svelte';
 import Page from './Page.svelte';
-import Section from './Section.svelte';
 import Directions from './richtext/Directions.svelte';
 import EnsembleTeaserList from './richtext/EnsembleTeaserList.svelte';
 import Form from './richtext/Form.svelte';
@@ -20,6 +19,5 @@ export const components = {
 	imageSlider: ImageSlider,
 	newsList: NewsList,
 	page: Page,
-	section: Section,
 	textAndLeader: TextAndLeader,
 };
