@@ -23,6 +23,16 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 	<meta name="apple-mobile-web-app-title" content="Chattengauer" />
 	<link rel="manifest" href="/site.webmanifest" />
+
+	<link rel="preload" href="/fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+	<link rel="preload" href="/fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+	<link
+		rel="preload"
+		href="/fonts/SairaCondensed-Semibold.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin="anonymous"
+	/>
 </svelte:head>
 
 <Header />
