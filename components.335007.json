@@ -5,7 +5,7 @@
 			"display_name": null,
 			"description": "",
 			"created_at": "2025-04-19T19:06:16.724Z",
-			"updated_at": "2025-04-20T00:35:12.857Z",
+			"updated_at": "2025-04-20T21:39:27.783Z",
 			"id": 7241757,
 			"schema": {
 				"image": {
@@ -37,14 +37,13 @@
 			"all_presets": [],
 			"preset_id": null,
 			"real_name": "banner",
-			"component_group_uuid": "5b9680c1-4962-4a05-ac4e-ab20a95b980d",
+			"component_group_uuid": null,
 			"color": null,
 			"icon": null,
 			"internal_tags_list": [],
 			"internal_tag_ids": [],
 			"content_type_asset_preview": null,
-			"metadata": {},
-			"component_group_name": "general"
+			"metadata": {}
 		},
 		{
 			"name": "config",
@@ -116,7 +115,7 @@
 			"internal_tag_ids": [],
 			"content_type_asset_preview": null,
 			"metadata": {},
-			"component_group_name": "general"
+			"component_group_name": ""
 		},
 		{
 			"name": "directions",
@@ -251,7 +250,7 @@
 			"internal_tag_ids": [],
 			"content_type_asset_preview": null,
 			"metadata": {},
-			"component_group_name": "general"
+			"component_group_name": ""
 		},
 		{
 			"name": "ensembleTeaserList",
@@ -636,7 +635,7 @@
 			"internal_tag_ids": [],
 			"content_type_asset_preview": null,
 			"metadata": {},
-			"component_group_name": "general"
+			"component_group_name": ""
 		},
 		{
 			"name": "newsList",
@@ -755,7 +754,7 @@
 			"internal_tag_ids": [],
 			"content_type_asset_preview": null,
 			"metadata": {},
-			"component_group_name": "general"
+			"component_group_name": ""
 		},
 		{
 			"name": "section",
@@ -820,7 +819,7 @@
 			"internal_tag_ids": [],
 			"content_type_asset_preview": null,
 			"metadata": {},
-			"component_group_name": "general"
+			"component_group_name": ""
 		},
 		{
 			"name": "textAndLeader",
@@ -904,13 +903,6 @@
 		}
 	],
 	"component_groups": [
-		{
-			"name": "general",
-			"id": 544629,
-			"uuid": "5b9680c1-4962-4a05-ac4e-ab20a95b980d",
-			"parent_id": null,
-			"parent_uuid": null
-		},
 		{
 			"name": "richtext",
 			"id": 543709,
