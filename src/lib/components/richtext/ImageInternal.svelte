@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { AssetStoryblok } from './component-types-storyblok';
-	import { getAspectRatio, getDimensionsOfImageUrl } from './storyblok/util';
+	import type { AssetStoryblok } from '../../component-types-storyblok';
+	import { getAspectRatio, getDimensionsOfImageUrl } from '../../storyblok/util';
 
 	interface Props {
 		asset: AssetStoryblok;

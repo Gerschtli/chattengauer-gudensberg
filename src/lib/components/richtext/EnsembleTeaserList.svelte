@@ -2,8 +2,9 @@
 	import { renderRichText } from '@storyblok/svelte';
 	import { ChevronRightIcon } from 'lucide-svelte';
 
-	import SliderStoryblok from '$lib/SliderStoryblok.svelte';
 	import type { EnsembleTeaserListStoryblok } from '$lib/component-types-storyblok';
+
+	import ImageSliderInternal from './ImageSliderInternal.svelte';
 
 	const { blok = $bindable() }: { blok: EnsembleTeaserListStoryblok } = $props();
 </script>
@@ -19,7 +20,7 @@
 			]}
 		>
 			<div class={['place-content-center', lightBg ? 'breakout-left' : 'breakout-right md:order-2']}>
-				<SliderStoryblok multiasset={ensemble.images} />
+				<ImageSliderInternal multiasset={ensemble.images} />
 			</div>
 
 			<div

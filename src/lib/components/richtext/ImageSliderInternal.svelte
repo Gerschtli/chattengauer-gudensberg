@@ -1,15 +1,17 @@
 <script lang="ts">
-	// TODO: remove this component
-	import type { SliderAsset } from './types';
+	import type { MultiassetStoryblok } from '$lib/component-types-storyblok';
+
+	import ImageInternal from './ImageInternal.svelte';
 
 	interface Props {
 		class?: string;
-		assets: SliderAsset[];
+		multiasset: MultiassetStoryblok;
 	}
 
-	const { class: className, assets }: Props = $props();
+	const { class: className, multiasset }: Props = $props();
 
 	const gap = 8;
+
 	let clientWidth = $state(0);
 	const elementWidth = $derived(clientWidth + gap);
 
@@ -27,37 +29,20 @@
 
 <div class="grid {className}">
 	<div class="slider grid-1" style:--gap="{gap}px" bind:this={slider} bind:clientWidth {onscroll}>
-		{#each assets as { type, uri }, i (i)}
-			{#if type === 'image'}
-				<div class="item">
-					{#if typeof uri === 'string'}
-						<div class="background">
-							<img src={uri} alt="" loading="lazy" class="blur-image" />
-						</div>
-						<div class="content">
-							<img src={uri} alt="" loading="lazy" class="image" />
-						</div>
-					{:else}
-						<div class="background">
-							<enhanced:img
-								src={uri}
-								alt=""
-								loading="lazy"
-								class="blur-image"
-								sizes="min(800px, 100vw)"
-							/>
-						</div>
-						<div class="content">
-							<enhanced:img src={uri} alt="" loading="lazy" class="image" sizes="min(800px, 100vw)" />
-						</div>
-					{/if}
+		{#each multiasset as asset (asset.id)}
+			<div class="item">
+				<div class="background">
+					<ImageInternal {asset} fixedSize class="blur-image" />
 				</div>
-			{/if}
+				<div class="content">
+					<ImageInternal {asset} fixedSize class="image" />
+				</div>
+			</div>
 		{/each}
 	</div>
 	<div class="grid-1 z-0 mb-4 self-end justify-self-center">
 		<div class="flex gap-2">
-			{#each assets as _, i (i)}
+			{#each multiasset as _, i (i)}
 				<button class="rounded-full p-1" onclick={() => scrollToSlide(i)}>
 					<span
 						class="block size-3 rounded-full border-2 border-white shadow-md shadow-black/60"
@@ -101,20 +86,20 @@
 		aspect-ratio: var(--aspect-media);
 	}
 
-	.image,
-	.blur-image {
+	.item :global(.image),
+	.item :global(.blur-image) {
 		width: 100%;
 		height: 100%;
 		object-position: center;
 	}
 
-	.blur-image {
+	.item :global(.blur-image) {
 		scale: 1.5;
 		filter: blur(10px) brightness(120%);
 		object-fit: cover;
 	}
 
-	.image {
+	.item :global(.image) {
 		position: relative;
 		filter: drop-shadow(0 0 1px var(--color-slate-600));
 		object-fit: contain;
