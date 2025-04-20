@@ -9,7 +9,7 @@
 	<title>{title}</title>
 </svelte:head>
 
-<main class="content-grid gap-y-4 py-8">
+<main class="content-grid gap-y-4 pt-4 pb-8">
 	<h1 class="heading-1">
 		{title}
 		<span></span>
