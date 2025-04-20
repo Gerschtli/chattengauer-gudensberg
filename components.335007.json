@@ -47,6 +47,78 @@
 			"component_group_name": "general"
 		},
 		{
+			"name": "config",
+			"display_name": "Konfiguration",
+			"description": "",
+			"created_at": "2025-04-20T21:03:58.949Z",
+			"updated_at": "2025-04-20T21:14:00.197Z",
+			"id": 7245533,
+			"schema": {
+				"contactName": {
+					"type": "text",
+					"pos": 0,
+					"id": "YOU2Tx1IRFOLbZ0EfPXsxg",
+					"display_name": "Kontakt Name",
+					"required": true
+				},
+				"contactEmail": {
+					"type": "text",
+					"pos": 1,
+					"id": "GncQ66c0RxqX9mm3KNcihQ",
+					"display_name": "Kontakt E-Mail",
+					"required": true
+				},
+				"contactPhone": {
+					"type": "text",
+					"pos": 2,
+					"id": "-O87uCHEQ8OW9at6YR2J5Q",
+					"display_name": "Kontakt Telefon",
+					"required": true
+				},
+				"navigation": {
+					"type": "bloks",
+					"pos": 3,
+					"id": "bHOoGfqOSAG-xCWrKIbsZA",
+					"display_name": "Links in Navigation",
+					"required": true,
+					"minimum": 1,
+					"restrict_type": "",
+					"restrict_components": true,
+					"component_whitelist": ["navigationLink", "navigationGroup"]
+				},
+				"tab-b7e67c29-db7d-47d1-b616-5a6d240aa67f": {
+					"display_name": "Navigation",
+					"keys": ["navigation"],
+					"pos": 4,
+					"type": "tab",
+					"id": "t-Z8Kdt9R9G2FlptJAqmfw"
+				},
+				"tab-795130bd-a6ab-498b-bb3b-cce48b6ffeb9": {
+					"display_name": "Footer",
+					"keys": ["contactName", "contactEmail", "contactPhone"],
+					"pos": 5,
+					"type": "tab",
+					"id": "eVEwvaarSYu7O8zki2_-uQ"
+				}
+			},
+			"image": null,
+			"preview_field": null,
+			"is_root": true,
+			"preview_tmpl": null,
+			"is_nestable": false,
+			"all_presets": [],
+			"preset_id": null,
+			"real_name": "Konfiguration",
+			"component_group_uuid": "5b9680c1-4962-4a05-ac4e-ab20a95b980d",
+			"color": null,
+			"icon": null,
+			"internal_tags_list": [],
+			"internal_tag_ids": [],
+			"content_type_asset_preview": null,
+			"metadata": {},
+			"component_group_name": "general"
+		},
+		{
 			"name": "directions",
 			"display_name": "Anfahrt",
 			"description": "",
@@ -392,6 +464,91 @@
 			"content_type_asset_preview": null,
 			"metadata": {},
 			"component_group_name": "richtext"
+		},
+		{
+			"name": "navigationGroup",
+			"display_name": "Navigation Gruppe",
+			"description": "",
+			"created_at": "2025-04-20T21:10:09.232Z",
+			"updated_at": "2025-04-20T21:11:00.035Z",
+			"id": 7245686,
+			"schema": {
+				"title": {
+					"type": "text",
+					"pos": 0,
+					"display_name": "Titel",
+					"required": true,
+					"id": "s3qIaED1TgmKqbrpUfgS7Q"
+				},
+				"items": {
+					"type": "bloks",
+					"pos": 1,
+					"display_name": "Unterelemente",
+					"required": true,
+					"minimum": 1,
+					"restrict_type": "",
+					"restrict_components": true,
+					"component_whitelist": ["navigationLink"],
+					"id": "dIxy44U1RCihmB9AJi-rxA"
+				}
+			},
+			"image": null,
+			"preview_field": null,
+			"is_root": false,
+			"preview_tmpl": null,
+			"is_nestable": true,
+			"all_presets": [],
+			"preset_id": null,
+			"real_name": "Navigation Gruppe",
+			"component_group_uuid": "all",
+			"color": null,
+			"icon": null,
+			"internal_tags_list": [],
+			"internal_tag_ids": [],
+			"content_type_asset_preview": null,
+			"metadata": {},
+			"component_group_name": ""
+		},
+		{
+			"name": "navigationLink",
+			"display_name": "Navigation Link",
+			"description": "",
+			"created_at": "2025-04-20T21:08:55.455Z",
+			"updated_at": "2025-04-20T21:09:58.452Z",
+			"id": 7245684,
+			"schema": {
+				"link": {
+					"type": "multilink",
+					"pos": 0,
+					"required": true,
+					"show_anchor": true,
+					"allow_target_blank": true,
+					"allow_custom_attributes": true,
+					"id": "ilyWbt1AQVa9Gw3WsO7aEg"
+				},
+				"title": {
+					"type": "text",
+					"pos": 1,
+					"id": "i9DNsVJiThKwVW-Wy9s8RQ",
+					"display_name": "Titel",
+					"required": true
+				}
+			},
+			"image": null,
+			"preview_field": null,
+			"is_root": false,
+			"preview_tmpl": null,
+			"is_nestable": true,
+			"all_presets": [],
+			"preset_id": null,
+			"real_name": "Navigation Link",
+			"component_group_uuid": null,
+			"color": null,
+			"icon": null,
+			"internal_tags_list": [],
+			"internal_tag_ids": [],
+			"content_type_asset_preview": null,
+			"metadata": {}
 		},
 		{
 			"name": "news",

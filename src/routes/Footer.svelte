@@ -1,5 +1,9 @@
 <script lang="ts">
 	import { MailIcon, PhoneIcon, UserIcon } from 'lucide-svelte';
+
+	import type { ConfigStoryblok } from '$lib/component-types-storyblok';
+
+	const { blok }: { blok: ConfigStoryblok } = $props();
 </script>
 
 <footer class="content-grid bg-slate-800 py-8">
@@ -15,7 +19,7 @@
 			<ul role="list" class="space-y-3 text-xs">
 				<li>
 					<UserIcon class="mr-1 inline-block" size={16} />
-					Martin Salfer
+					{blok.contactName}
 				</li>
 				<li>
 					<a href="mailto:original.chattengauer@gmx.de" class="group">
@@ -23,7 +27,7 @@
 						<span
 							class="decoration-from-font underline-offset-2 group-hover:underline group-focus:underline"
 						>
-							original.chattengauer@gmx.de
+							{blok.contactEmail}
 						</span>
 					</a>
 				</li>
@@ -33,7 +37,7 @@
 						<span
 							class="decoration-from-font underline-offset-2 group-hover:underline group-focus:underline"
 						>
-							0151 52763235
+							{blok.contactPhone}
 						</span>
 					</a>
 				</li>

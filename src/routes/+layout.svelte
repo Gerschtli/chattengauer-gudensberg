@@ -3,15 +3,17 @@
 
 	import '../app.css';
 
+	import type { LayoutData } from './$types';
 	import Footer from './Footer.svelte';
 	import Header from './Header.svelte';
 	import Navigation from './Navigation.svelte';
 
 	interface Props {
 		children: Snippet;
+		data: LayoutData;
 	}
 
-	let { children }: Props = $props();
+	let { children, data }: Props = $props();
 </script>
 
 <svelte:head>
@@ -25,8 +27,8 @@
 
 <Header />
 
-<Navigation />
+<Navigation blok={data.config.content.navigation} />
 
 {@render children()}
 
-<Footer />
+<Footer blok={data.config.content} />

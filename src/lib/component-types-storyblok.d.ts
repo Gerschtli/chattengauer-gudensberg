@@ -110,6 +110,16 @@ export interface BannerStoryblok {
 	[k: string]: any;
 }
 
+export interface ConfigStoryblok {
+	contactName: string;
+	contactEmail: string;
+	contactPhone: string;
+	navigation: (NavigationLinkStoryblok | NavigationGroupStoryblok)[];
+	component: 'config';
+	_uid: string;
+	[k: string]: any;
+}
+
 export interface DirectionsStoryblok {
 	address: string;
 	googleSearch: string;
@@ -196,6 +206,22 @@ export interface ImageStoryblok {
 export interface ImageSliderStoryblok {
 	images: MultiassetStoryblok;
 	component: 'imageSlider';
+	_uid: string;
+	[k: string]: any;
+}
+
+export interface NavigationGroupStoryblok {
+	title: string;
+	items: NavigationLinkStoryblok[];
+	component: 'navigationGroup';
+	_uid: string;
+	[k: string]: any;
+}
+
+export interface NavigationLinkStoryblok {
+	link: Exclude<MultilinkStoryblok, { linktype?: 'email' } | { linktype?: 'asset' }>;
+	title: string;
+	component: 'navigationLink';
 	_uid: string;
 	[k: string]: any;
 }

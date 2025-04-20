@@ -27,13 +27,13 @@ export function initStoryblokApi() {
 	return useStoryblokApi();
 }
 
-export async function loadStory(storyblokApi: ReturnType<typeof initStoryblokApi>, story: string) {
+export async function loadStory<T = PageStoryblok>(storyblokApi: ReturnType<typeof initStoryblokApi>, story: string) {
 	try {
 		const dataStory = await storyblokApi.get(`cdn/stories/${story}`, {
 			version: dev ? 'draft' : 'published',
 		});
 
-		return dataStory.data.story as ISbStoryData<PageStoryblok>;
+		return dataStory.data.story as ISbStoryData<T>;
 	} catch (e) {
 		if (e && typeof e === 'object' && 'status' in e && e.status === 404) error(404);
 

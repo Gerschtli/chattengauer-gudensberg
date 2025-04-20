@@ -5,9 +5,15 @@
 	import { afterNavigate, pushState } from '$app/navigation';
 	import { page } from '$app/state';
 
-	import { ensembles } from '$lib/ensembles';
+	import type {
+		MultilinkStoryblok,
+		NavigationGroupStoryblok,
+		NavigationLinkStoryblok,
+	} from '$lib/component-types-storyblok';
 
-	let navRef: HTMLElement | undefined;
+	const { blok }: { blok: (NavigationLinkStoryblok | NavigationGroupStoryblok)[] } = $props();
+
+	let navRef = $state<HTMLElement | undefined>(undefined);
 
 	function closeNav() {
 		history.back();
@@ -29,6 +35,16 @@
 		if (!page.state.showNav) return;
 		closeNav();
 	});
+
+	function buildUrl(link: Exclude<MultilinkStoryblok, { linktype?: 'email' } | { linktype?: 'asset' }>) {
+		let url = '/';
+		if (link.cached_url !== 'home') url += link.cached_url;
+
+		let anchorSuffix = '';
+		if (link.anchor) anchorSuffix = `#${link.anchor}`;
+
+		return url + anchorSuffix;
+	}
 </script>
 
 <svelte:window {onkeydown} {onclick} />
@@ -44,48 +60,50 @@
 				<XIcon size={32} />
 			</button>
 
-			{#snippet link(href: string, label: string)}
+			{#snippet link(link: NavigationLinkStoryblok)}
+				{@const url = buildUrl(link.link)}
 				<a
-					{href}
+					href={url}
 					class={[
 						'hover:text-accent underline decoration-from-font underline-offset-2',
-						href === page.url.pathname && 'text-accent/80',
+						url === page.url.pathname && 'text-accent/80',
 					]}
 					onclick={(e) => {
-						if (!href.includes('#')) return;
+						if (!url.includes('#')) return;
 
-						const [pathname, id] = href.split('#');
+						const [pathname, id] = url.split('#');
 						if (pathname !== page.url.pathname) return;
 
 						e.stopPropagation();
 
 						closeNav();
 
-						pushState(href, { showNav: false });
+						pushState(url, { showNav: false });
 
 						setTimeout(() => {
 							document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 						}, 0);
 					}}
 				>
-					{label}
+					{link.title}
 				</a>
 			{/snippet}
 
 			<ul role="list" class="mx-auto max-w-[450px] space-y-4 p-4">
-				<li>{@render link('/', 'Startseite')}</li>
-				<li class="space-y-2">
-					<span>Unsere Ensembles</span>
-					<ul role="list" class="space-y-2 pl-8">
-						{#each Object.entries(ensembles) as [slug, { name }] (slug)}
-							<li>{@render link(`/ensembles/${slug}`, name)}</li>
-						{/each}
-					</ul>
-				</li>
-				<li>{@render link('/aktuelles', 'Aktuelle Termine und News')}</li>
-				<li>{@render link('/#werde-teil-der-chattengauer', 'Werde Teil der Chattengauer')}</li>
-				<li>{@render link('/#chattengauer-buchen', 'Chattengauer buchen')}</li>
-				<li>{@render link('/probenraum', 'Unser Probenraum')}</li>
+				{#each blok as item (item._uid)}
+					{#if item.component === 'navigationLink'}
+						<li>{@render link(item)}</li>
+					{:else if item.component === 'navigationGroup'}
+						<li class="space-y-2">
+							<span>{item.title}</span>
+							<ul role="list" class="space-y-2 pl-8">
+								{#each item.items as subItem (subItem._uid)}
+									<li>{@render link(subItem)}</li>
+								{/each}
+							</ul>
+						</li>
+					{/if}
+				{/each}
 			</ul>
 		</nav>
 	</div>
