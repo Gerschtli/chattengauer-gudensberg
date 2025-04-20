@@ -6,12 +6,15 @@
 	import { TIME_ZONE, getStart } from '$lib/time';
 	import type { EventData } from '$lib/types';
 
+	import { getEnsembleList } from '../newsList/context';
+
 	import Event from './Event.svelte';
 	import { getEvents } from './context';
 
 	let { blok }: { blok: EventsStoryblok } = $props();
 
 	const events = getEvents();
+	const ensembleMap = Object.fromEntries(getEnsembleList().map((e) => [e.url, e.name]));
 
 	const slideDuration = 500;
 	const showMax = $derived(parseInt(blok.showMax));
@@ -41,7 +44,7 @@
 			{separator}
 		</h2>
 	{/if}
-	<Event {event} />
+	<Event {event} {ensembleMap} />
 {/snippet}
 
 <div class="grid gap-y-4">

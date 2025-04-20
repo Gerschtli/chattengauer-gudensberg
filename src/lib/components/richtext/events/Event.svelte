@@ -1,17 +1,15 @@
 <script lang="ts">
 	import { HashIcon, MapPinIcon } from 'lucide-svelte';
-	import type { HTMLAttributes } from 'svelte/elements';
 
-	import { ensembles } from '$lib/ensembles';
 	import { TIME_ZONE } from '$lib/time';
 	import type { EventData } from '$lib/types';
 
 	interface Props {
-		class?: HTMLAttributes<EventTarget>['class'];
 		event: EventData;
+		ensembleMap: Record<string, string>;
 	}
 
-	let { class: className, event }: Props = $props();
+	let { event, ensembleMap }: Props = $props();
 
 	const timeFormatted = $derived.by(() => {
 		if (event.time.type === 'all-day') {
@@ -37,7 +35,7 @@
 	});
 </script>
 
-<div class={['event grid', className]}>
+<div class="event grid">
 	<div class="bg-accent ml-1 aspect-square h-2 self-center rounded-xs"></div>
 	<p class="text-sm text-slate-600">{timeFormatted}</p>
 	<h3 class="font-accent font-accent-bold text-lg">{event.title}</h3>
@@ -68,12 +66,11 @@
 		<p class="text-sm text-slate-600">
 			<HashIcon class="inline" strokeWidth={1.5} size={20} />
 			{#each event.ensembles as ensemble, i (i)}
+				{@const url = `/ensembles/${ensemble}`}
+				{@const name = ensembleMap[url]}
 				{#if i !== 0},{/if}
-				<a
-					href="/ensembles/{ensemble}"
-					class="hover:text-accent underline decoration-from-font underline-offset-2"
-				>
-					{ensembles[ensemble].name}
+				<a href={url} class="hover:text-accent underline decoration-from-font underline-offset-2">
+					{name}
 				</a>
 			{/each}
 		</p>

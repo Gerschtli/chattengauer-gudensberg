@@ -16,8 +16,10 @@ export async function load({ parent, data }) {
 		}),
 	]);
 
-	const ensembleMap = new Map<string, { url: string; name: string }>();
-	ensembleList.forEach((e) => ensembleMap.set(e.uuid, { url: `/${e.full_slug}`, name: e.name }));
-
-	return { ...data, story, newsList, ensembleMap };
+	return {
+		...data,
+		story,
+		newsList,
+		ensembleList: ensembleList.map((e) => ({ uuid: e.uuid, url: `/${e.full_slug}`, name: e.name })),
+	};
 }

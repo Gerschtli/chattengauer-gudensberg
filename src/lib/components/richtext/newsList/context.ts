@@ -3,12 +3,14 @@ import { getContext, setContext } from 'svelte';
 
 import type { NewsStoryblok } from '$lib/component-types-storyblok';
 
-export function setEnsembleMap(ensembleMap: Map<string, { url: string; name: string }>) {
-	setContext<Map<string, { url: string; name: string }>>('ensemble-map', ensembleMap);
+type EnsembleList = { uuid: string; url: string; name: string }[];
+
+export function setEnsembleList(ensembleList: EnsembleList) {
+	setContext<EnsembleList>('ensemble-list', ensembleList);
 }
 
-export function getEnsembleMap() {
-	return getContext<Map<string, { url: string; name: string }>>('ensemble-map');
+export function getEnsembleList() {
+	return getContext<EnsembleList>('ensemble-list');
 }
 
 export function setNewsList(newsList: ISbStoryData<NewsStoryblok>[]) {

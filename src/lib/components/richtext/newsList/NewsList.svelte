@@ -5,12 +5,12 @@
 	import Richtext from '$lib/components/Richtext.svelte';
 	import { TIME_ZONE } from '$lib/time';
 
-	import { getEnsembleMap, getNewsList } from './context';
+	import { getEnsembleList, getNewsList } from './context';
 
 	const { blok: _blok }: { blok: NewsListStoryblok } = $props();
 
 	const newsList = getNewsList();
-	const ensembleMap = getEnsembleMap();
+	const ensembleMap = Object.fromEntries(getEnsembleList().map((e) => [e.uuid, e]));
 
 	const dateTimeFormat = new Intl.DateTimeFormat('de-DE', { dateStyle: 'full', timeZone: TIME_ZONE });
 </script>
@@ -27,9 +27,9 @@
 					<p class="text-sm text-slate-600">
 						<HashIcon class="-ml-0.5 inline" strokeWidth={1.5} size={16} />
 						{#each news.content.ensembles as ensembleId, i (ensembleId)}
-							{@const ensemble = ensembleMap.get(ensembleId)}
+							{@const ensemble = ensembleMap[ensembleId]}
 							{#if i !== 0},{/if}
-							<a href={ensemble?.url} class="hover:text-accent underline">{ensemble?.name}</a>
+							<a href={ensemble.url} class="hover:text-accent underline">{ensemble.name}</a>
 						{/each}
 					</p>
 				{/if}
