@@ -1,3 +1,5 @@
+import type { RequestEvent } from '@sveltejs/kit';
+
 import { LINK_ICAL } from '$env/static/private';
 
 import { parseIcalData } from '$lib/server/ical';
@@ -9,7 +11,7 @@ import { getEnd, getStart } from '$lib/time';
 
 import type { NewsData } from './types';
 
-export async function load({ fetch }) {
+async function fetchEvents(fetch: RequestEvent['fetch']) {
 	console.time('ical processing');
 	const response = await fetch(LINK_ICAL);
 	console.timeLog('ical processing', 'fetch finished');
@@ -17,6 +19,14 @@ export async function load({ fetch }) {
 
 	const events = await parseIcalData(data);
 	console.timeEnd('ical processing');
+
+	return events
+		.filter((event) => getEnd(event.time) >= new Date())
+		.toSorted((a, b) => getStart(a.time).getTime() - getStart(b.time).getTime());
+}
+
+export async function load({ fetch }) {
+	const events = await fetchEvents(fetch);
 
 	const news = [
 		{
@@ -46,9 +56,7 @@ export async function load({ fetch }) {
 	] satisfies NewsData[];
 
 	return {
-		events: events
-			.filter((event) => getEnd(event.time) >= new Date())
-			.toSorted((a, b) => getStart(a.time).getTime() - getStart(b.time).getTime()),
+		events,
 		news: news.toSorted((a, b) => b.date.getTime() - a.date.getTime()),
 	};
 }

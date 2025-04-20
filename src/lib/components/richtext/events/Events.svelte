@@ -2,19 +2,19 @@
 	import { ChevronDownIcon } from 'lucide-svelte';
 	import { slide } from 'svelte/transition';
 
+	import type { EventsStoryblok } from '$lib/component-types-storyblok';
 	import { TIME_ZONE, getStart } from '$lib/time';
 	import type { EventData } from '$lib/types';
 
 	import Event from './Event.svelte';
+	import { getEvents } from './context';
 
-	interface Props {
-		events: EventData[];
-	}
+	let { blok }: { blok: EventsStoryblok } = $props();
 
-	let { events }: Props = $props();
+	const events = getEvents();
 
 	const slideDuration = 500;
-	const showMax = 3;
+	const showMax = $derived(parseInt(blok.showMax));
 	let expandAll = $state(false);
 
 	const set = new Set<string>();
@@ -44,14 +44,9 @@
 	<Event {event} />
 {/snippet}
 
-<section class="grid gap-y-4">
-	<h1 class="heading-1">
-		Aktuelle Termine
-		<span></span>
-	</h1>
-
+<div class="grid gap-y-4">
 	{#if events.length === 0}
-		<p class="text-slate-600">Es stehen aktuell keine Termine an.</p>
+		<p class="text-slate-600">{blok.emptyText}</p>
 	{/if}
 
 	{#each events.slice(0, showMax) as event, i (i)}
@@ -68,10 +63,12 @@
 
 	{#if !expandAll && events.length > showMax}
 		<footer class="text-right text-sm">
-			<button class="text-accent font-bold" onclick={() => (expandAll = true)}>
-				Alle Termine aufklappen
+			<button class="group text-accent cursor-pointer font-bold" onclick={() => (expandAll = true)}>
+				<span class="decoration-from-font underline-offset-2 group-hover:underline group-focus:underline">
+					{blok.buttonText}
+				</span>
 				<ChevronDownIcon class="inline align-middle" size={16} />
 			</button>
 		</footer>
 	{/if}
-</section>
+</div>

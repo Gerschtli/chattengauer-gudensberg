@@ -1,16 +1,14 @@
 <script lang="ts">
+	import { setEvents } from '$lib/components/richtext/events/context';
 	import StoryblokInit from '$lib/storyblok/StoryblokInit.svelte';
 
-	import Events from './Events.svelte';
 	import News from './News.svelte';
 
 	let { data } = $props();
+
+	setEvents(data.events);
 </script>
 
 <StoryblokInit story={data.story} />
 
-<div class="content-grid gap-y-4">
-	<Events events={data.events} />
-
-	<News news={data.news} />
-</div>
+<News news={data.news} />

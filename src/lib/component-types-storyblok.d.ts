@@ -170,6 +170,15 @@ export interface EnsembleTeaserListStoryblok {
 	[k: string]: any;
 }
 
+export interface EventsStoryblok {
+	showMax: string;
+	emptyText: string;
+	buttonText: string;
+	component: 'events';
+	_uid: string;
+	[k: string]: any;
+}
+
 export interface FormStoryblok {
 	type: 'engage-home' | 'booking' | 'engage-ensemble';
 	component: 'form';

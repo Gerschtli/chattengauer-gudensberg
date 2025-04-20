@@ -219,6 +219,59 @@
 			"component_group_name": "richtext"
 		},
 		{
+			"name": "events",
+			"display_name": "Aktuelle Termine",
+			"description": "",
+			"created_at": "2025-04-20T18:09:26.833Z",
+			"updated_at": "2025-04-20T18:14:32.664Z",
+			"id": 7243500,
+			"schema": {
+				"showMax": {
+					"type": "number",
+					"pos": 0,
+					"display_name": "Standardmäßig maximal anzeigen",
+					"required": true,
+					"description": "Wenn es mehr als diese Anzahl Termine gibt, wird ein Knopf zum Ausklappen angezeigt",
+					"min_value": 1,
+					"decimals": 0,
+					"steps": 1,
+					"id": "p57D6eQTQy-gEOGghgFQGg"
+				},
+				"emptyText": {
+					"type": "text",
+					"pos": 1,
+					"display_name": "Text, wenn keine Termine anstehen",
+					"required": true,
+					"description": "Text wird eingeblendet, wenn es keine anstehenden Termine gibt.",
+					"id": "PE5nY-39THiQdV1T2B7_jw"
+				},
+				"buttonText": {
+					"type": "text",
+					"pos": 2,
+					"display_name": "Aufklappen Knopf Text",
+					"required": true,
+					"description": "Text für Knopf, um alle Termine einzublenden",
+					"id": "D0weYCSPSCydm_n4O8XpLQ"
+				}
+			},
+			"image": null,
+			"preview_field": null,
+			"is_root": false,
+			"preview_tmpl": "{{it.showMax}} Termine anzeigen",
+			"is_nestable": true,
+			"all_presets": [],
+			"preset_id": null,
+			"real_name": "Aktuelle Termine",
+			"component_group_uuid": "7d329944-f827-4304-85c6-d04a64ab2869",
+			"color": null,
+			"icon": null,
+			"internal_tags_list": [],
+			"internal_tag_ids": [],
+			"content_type_asset_preview": null,
+			"metadata": {},
+			"component_group_name": "richtext"
+		},
+		{
 			"name": "form",
 			"display_name": "Formular",
 			"description": "",
