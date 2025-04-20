@@ -102,9 +102,6 @@
 		grid-column: full-width;
 	}
 
-	.prose h1,
-	.prose h2,
-	.prose h3,
 	.heading-1,
 	.heading-2,
 	.heading-3,
@@ -113,6 +110,7 @@
 		--_letter-spacing: var(--letter-spacing, -0.3rem);
 		--_color: var(--color, var(--color-slate-800));
 
+		padding-top: calc(var(--_font-size) / 4);
 		width: fit-content;
 		color: var(--color);
 		font-weight: var(--font-weight-accent-bold);
@@ -126,7 +124,7 @@
 		text-transform: uppercase;
 		text-wrap: balance;
 
-		span {
+		span:last-child {
 			display: inline grid;
 			align-items: baseline;
 			justify-items: center;
@@ -154,17 +152,14 @@
 		}
 	}
 
-	.prose h1,
 	.heading-1 {
-		--font-size: 2.5rem;
+		--font-size: 2.8rem;
 	}
 
-	.prose h2,
 	.heading-2 {
-		--font-size: 2rem;
+		--font-size: 2.2rem;
 	}
 
-	.prose h3,
 	.heading-3 {
 		--font-size: 1.5rem;
 	}
@@ -173,6 +168,8 @@
 		--font-size: 0.875rem;
 		--letter-spacing: -0.1rem;
 		--color: var(--color-white);
+
+		padding-top: 0 !important;
 	}
 
 	.prose {

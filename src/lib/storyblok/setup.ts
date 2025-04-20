@@ -4,12 +4,12 @@ import { dev } from '$app/environment';
 import { PUBLIC_STORYBLOK_ACCESS_TOKEN } from '$env/static/public';
 
 import type { PageStoryblok } from '$lib/component-types-storyblok';
+import { components } from '$lib/components';
 
 export function initStoryblokApi() {
 	storyblokInit({
 		accessToken: PUBLIC_STORYBLOK_ACCESS_TOKEN,
 		use: [apiPlugin],
-		components: {},
 		apiOptions: {
 			https: true,
 			cache: {
@@ -19,6 +19,8 @@ export function initStoryblokApi() {
 			region: 'eu',
 		},
 		bridge: true,
+		// @ts-expect-error wrong type definition in storyblok sdk
+		components,
 	});
 
 	return useStoryblokApi();

@@ -1,3 +1,4 @@
+import type { SuperValidated } from 'sveltekit-superforms';
 import { z } from 'zod';
 
 export const IntentionEnum = z.enum(['join', 'apply', 'support'] as const, {
@@ -10,7 +11,7 @@ export const schemaBooking = z.object({
 	message: z.string().trim().min(1, 'Bitte Nachricht angeben'),
 });
 
-export const schemaEngage = z.object({
+export const schemaEngageHome = z.object({
 	intention: IntentionEnum.default(undefined as unknown as z.infer<typeof IntentionEnum>),
 	name: z.string().trim().min(1, 'Bitte Namen angeben'),
 	email: z.string().trim().email('Bitte E-Mail Adresse angeben'),
@@ -18,3 +19,14 @@ export const schemaEngage = z.object({
 	experience: z.string().trim().optional(),
 	message: z.string().trim().min(1, 'Bitte Nachricht angeben'),
 });
+
+export const schemaEngageEnsemble = z.object({
+	name: z.string().trim().min(1, 'Bitte Namen angeben'),
+	email: z.string().trim().email('Bitte E-Mail Adresse angeben'),
+	instrument: z.string().trim().optional(),
+	message: z.string().trim().min(1, 'Bitte Nachricht angeben'),
+});
+
+export type SuperValidatedEngageHome = SuperValidated<z.infer<typeof schemaEngageHome>>;
+export type SuperValidatedEngageEnsemble = SuperValidated<z.infer<typeof schemaEngageEnsemble>>;
+export type SuperValidatedBooking = SuperValidated<z.infer<typeof schemaBooking>>;

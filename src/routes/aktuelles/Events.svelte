@@ -2,7 +2,6 @@
 	import { ChevronDownIcon } from 'lucide-svelte';
 	import { slide } from 'svelte/transition';
 
-	import { SimpleLayout } from '$lib/simpleLayout';
 	import { TIME_ZONE, getStart } from '$lib/time';
 	import type { EventData } from '$lib/types';
 
@@ -45,7 +44,7 @@
 	<Event {event} />
 {/snippet}
 
-<SimpleLayout.Section class="grid gap-y-4">
+<section class="grid gap-y-4">
 	<h1 class="heading-1">
 		Aktuelle Termine
 		<span></span>
@@ -75,4 +74,4 @@
 			</button>
 		</footer>
 	{/if}
-</SimpleLayout.Section>
+</section>

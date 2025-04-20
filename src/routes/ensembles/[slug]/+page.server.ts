@@ -7,22 +7,21 @@ import { CONTACT_EMAIL, CONTACT_NAME, SENDER_EMAIL, SENDER_NAME } from '$env/sta
 
 import { sendMail } from '$lib/server/mail';
 
+import { schemaEngageEnsemble } from '$lib/components/richtext/form/schema';
 import { isEnsemble } from '$lib/ensembles';
-
-import { schema } from './schema';
 
 export async function load({ params }) {
 	if (!isEnsemble(params.slug)) error(404);
 
 	return {
-		form: await superValidate(zod(schema)),
+		form: await superValidate(zod(schemaEngageEnsemble)),
 		slug: params.slug,
 	};
 }
 
 export const actions = {
 	async default({ request, params }) {
-		const form = await superValidate(request, zod(schema));
+		const form = await superValidate(request, zod(schemaEngageEnsemble));
 
 		if (!form.valid) return fail(400, { form });
 

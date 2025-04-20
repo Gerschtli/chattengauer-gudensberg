@@ -2,7 +2,6 @@
 	import { HashIcon } from 'lucide-svelte';
 
 	import Slider from '$lib/Slider.svelte';
-	import { SimpleLayout } from '$lib/simpleLayout';
 	import { TIME_ZONE } from '$lib/time';
 
 	import type { NewsData } from './types';
@@ -16,7 +15,7 @@
 	const dateTimeFormat = new Intl.DateTimeFormat('de-DE', { dateStyle: 'full', timeZone: TIME_ZONE });
 </script>
 
-<SimpleLayout.Section class="content-grid gap-y-4">
+<section class="content-grid gap-y-4">
 	<h2 class="heading-1">
 		News
 		<span></span>
@@ -47,4 +46,4 @@
 			</article>
 		{/each}
 	</div>
-</SimpleLayout.Section>
+</section>

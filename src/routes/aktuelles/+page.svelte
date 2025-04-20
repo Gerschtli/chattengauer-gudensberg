@@ -1,30 +1,16 @@
 <script lang="ts">
-	import { useStoryblokBridge } from '@storyblok/svelte';
-	import { onMount } from 'svelte';
-
-	import { SimpleLayout } from '$lib/simpleLayout';
+	import StoryblokInit from '$lib/storyblok/StoryblokInit.svelte';
 
 	import Events from './Events.svelte';
 	import News from './News.svelte';
 
 	let { data } = $props();
-
-	let story = $derived(data.story);
-
-	onMount(() => {
-		useStoryblokBridge(story.id, (newStory) => (story = newStory), {
-			preventClicks: true,
-			resolveLinks: 'url',
-		});
-	});
 </script>
 
-<SimpleLayout.Root title={story.content.title} description={story.content.description}>
-	{#if story.content.content[0].component === 'news'}
-		<!-- {@const content = story.content.content[0]} -->
+<StoryblokInit story={data.story} />
 
-		<Events events={data.events} />
+<div class="content-grid gap-y-4">
+	<Events events={data.events} />
 
-		<News news={data.news} />
-	{/if}
-</SimpleLayout.Root>
+	<News news={data.news} />
+</div>

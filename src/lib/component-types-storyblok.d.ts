@@ -2,23 +2,7 @@
 // DO NOT MODIFY THIS FILE BY HAND.
 import type { ISbStoryData } from 'storyblok';
 
-export interface RichtextStoryblok {
-	type: string;
-	content?: RichtextStoryblok[];
-	marks?: RichtextStoryblok[];
-	attrs?: any;
-	text?: string;
-	[k: string]: any;
-}
-
-export interface DefaultStoryblok {
-	text: RichtextStoryblok;
-	component: 'default';
-	_uid: string;
-	[k: string]: any;
-}
-
-export type MultiassetStoryblok = {
+export interface AssetStoryblok {
 	alt: string | null;
 	copyright?: string | null;
 	fieldtype: 'asset';
@@ -40,18 +24,6 @@ export type MultiassetStoryblok = {
 	aspect_ratio?: number | null;
 	public_id?: string | null;
 	content_type?: string;
-	[k: string]: any;
-}[];
-
-export interface EnsembleStoryblok {
-	title: string;
-	slogan?: string;
-	leader?: LeaderStoryblok[];
-	infos: RichtextStoryblok;
-	imageSlider: MultiassetStoryblok;
-	facts: RichtextStoryblok;
-	component: 'ensemble';
-	_uid: string;
 	[k: string]: any;
 }
 
@@ -129,26 +101,34 @@ export type MultilinkStoryblok =
 			[k: string]: any;
 	  };
 
-export interface EnsembleTeaserStoryblok {
-	title: string;
-	description: RichtextStoryblok;
-	link: Exclude<MultilinkStoryblok, { linktype?: 'email' } | { linktype?: 'asset' }>;
-	images: MultiassetStoryblok;
-	component: 'ensembleTeaser';
+export interface BannerStoryblok {
+	image: AssetStoryblok;
+	link?: Exclude<MultilinkStoryblok, { linktype?: 'email' } | { linktype?: 'asset' }>;
+	linkText?: string;
+	component: 'banner';
 	_uid: string;
 	[k: string]: any;
 }
 
-export interface HomeStoryblok {
-	intro: RichtextStoryblok;
-	ensemblesText: RichtextStoryblok;
-	ensembles: EnsembleTeaserStoryblok[];
-	component: 'home';
+export interface DirectionsStoryblok {
+	address: string;
+	googleSearch: string;
+	buttonText: string;
+	component: 'directions';
 	_uid: string;
 	[k: string]: any;
 }
 
-export interface AssetStoryblok {
+export interface RichtextStoryblok {
+	type: string;
+	content?: RichtextStoryblok[];
+	marks?: RichtextStoryblok[];
+	attrs?: any;
+	text?: string;
+	[k: string]: any;
+}
+
+export type MultiassetStoryblok = {
 	alt: string | null;
 	copyright?: string | null;
 	fieldtype: 'asset';
@@ -171,6 +151,30 @@ export interface AssetStoryblok {
 	public_id?: string | null;
 	content_type?: string;
 	[k: string]: any;
+}[];
+
+export interface EnsembleTeaserStoryblok {
+	title: string;
+	description: RichtextStoryblok;
+	link: Exclude<MultilinkStoryblok, { linktype?: 'email' } | { linktype?: 'asset' }>;
+	images: MultiassetStoryblok;
+	component: 'ensembleTeaser';
+	_uid: string;
+	[k: string]: any;
+}
+
+export interface EnsembleTeaserListStoryblok {
+	list: EnsembleTeaserStoryblok[];
+	component: 'ensembleTeaserList';
+	_uid: string;
+	[k: string]: any;
+}
+
+export interface FormStoryblok {
+	type: 'engage-home' | 'booking' | 'engage-ensemble';
+	component: 'form';
+	_uid: string;
+	[k: string]: any;
 }
 
 export interface ImageStoryblok {
@@ -187,26 +191,28 @@ export interface ImageSliderStoryblok {
 	[k: string]: any;
 }
 
-export interface LeaderStoryblok {
-	name: string;
-	image: AssetStoryblok;
-	component: 'leader';
-	_uid: string;
-	[k: string]: any;
-}
-
-export interface NewsStoryblok {
-	component: 'news';
-	_uid: string;
-	[k: string]: any;
-}
-
 export interface PageStoryblok {
 	title: string;
 	description?: string;
-	banner?: AssetStoryblok;
-	content: (DefaultStoryblok | EnsembleStoryblok | HomeStoryblok | NewsStoryblok)[];
+	banner?: BannerStoryblok[];
+	content: RichtextStoryblok;
 	component: 'page';
+	_uid: string;
+	[k: string]: any;
+}
+
+export interface SectionStoryblok {
+	content: RichtextStoryblok;
+	component: 'section';
+	_uid: string;
+	[k: string]: any;
+}
+
+export interface TextAndLeaderStoryblok {
+	name: string;
+	image: AssetStoryblok;
+	text: RichtextStoryblok;
+	component: 'textAndLeader';
 	_uid: string;
 	[k: string]: any;
 }

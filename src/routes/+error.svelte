@@ -1,13 +1,15 @@
 <script lang="ts">
 	import { page } from '$app/state';
 
-	import { SimpleLayout } from '$lib/simpleLayout';
-
-	const isNotFoundError = $derived(page.status === 4094);
+	const isNotFoundError = $derived(page.status === 404);
 	const title = $derived(isNotFoundError ? 'Seite nicht gefunden!' : 'Unerwarteter Fehler!');
 </script>
 
-<SimpleLayout.Root {title} class="content-grid gap-y-4">
+<svelte:head>
+	<title>{title}</title>
+</svelte:head>
+
+<main class="content-grid gap-y-4 py-8">
 	<h1 class="heading-1">
 		{title}
 		<span></span>
@@ -34,4 +36,4 @@
 			</a>.
 		</p>
 	{/if}
-</SimpleLayout.Root>
+</main>

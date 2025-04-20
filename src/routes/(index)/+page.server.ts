@@ -6,12 +6,12 @@ import { CONTACT_EMAIL, CONTACT_NAME, SENDER_EMAIL, SENDER_NAME } from '$env/sta
 
 import { sendMail } from '$lib/server/mail';
 
-import { schemaBooking, schemaEngage } from './schema';
+import { schemaBooking, schemaEngageHome } from '$lib/components/richtext/form/schema';
 
 export async function load() {
 	return {
 		formBooking: await superValidate(zod(schemaBooking)),
-		formEngage: await superValidate(zod(schemaEngage)),
+		formEngage: await superValidate(zod(schemaEngageHome)),
 	};
 }
 
@@ -46,7 +46,7 @@ export const actions = {
 	},
 
 	async engage({ request }) {
-		const formEngage = await superValidate(request, zod(schemaEngage));
+		const formEngage = await superValidate(request, zod(schemaEngageHome));
 
 		if (!formEngage.valid) return fail(400, { formEngage });
 
