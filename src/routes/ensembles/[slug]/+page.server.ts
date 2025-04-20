@@ -1,4 +1,3 @@
-import { error } from '@sveltejs/kit';
 import dedent from 'dedent';
 import { fail, message, superValidate } from 'sveltekit-superforms';
 import { zod } from 'sveltekit-superforms/adapters';
@@ -8,15 +7,9 @@ import { CONTACT_EMAIL, CONTACT_NAME, SENDER_EMAIL, SENDER_NAME } from '$env/sta
 import { sendMail } from '$lib/server/mail';
 
 import { schemaEngageEnsemble } from '$lib/components/richtext/form/schema';
-import { isEnsemble } from '$lib/ensembles';
 
-export async function load({ params }) {
-	if (!isEnsemble(params.slug)) error(404);
-
-	return {
-		form: await superValidate(zod(schemaEngageEnsemble)),
-		slug: params.slug,
-	};
+export async function load() {
+	return { form: await superValidate(zod(schemaEngageEnsemble)) };
 }
 
 export const actions = {

@@ -38,7 +38,7 @@ describe('parseIcalData', () => {
 				some content
 			`,
 			location: 'Musterstraße 123, 12345 Musterstadt',
-			ensembles: ['jugendorchester', 'blaeserklassen'],
+			ensembles: ['jugendorchester', 'blaeserklassen', 'abc'],
 		});
 	});
 
