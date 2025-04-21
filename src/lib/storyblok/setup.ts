@@ -27,12 +27,17 @@ export function initStoryblokApi() {
 	return useStoryblokApi();
 }
 
+function buildDefaultOptions() {
+	return {
+		version: dev ? 'draft' : 'published',
+		resolve_links: 'url',
+		cv: 1, // disable cache
+	} satisfies ISbStoriesParams;
+}
+
 export async function loadStory<T = PageStoryblok>(storyblokApi: ReturnType<typeof initStoryblokApi>, story: string) {
 	try {
-		const dataStory = await storyblokApi.get(`cdn/stories/${story}`, {
-			version: dev ? 'draft' : 'published',
-			resolve_links: 'url',
-		});
+		const dataStory = await storyblokApi.get(`cdn/stories/${story}`, buildDefaultOptions());
 
 		return dataStory.data.story as ISbStoryData<T>;
 	} catch (e) {
@@ -44,8 +49,7 @@ export async function loadStory<T = PageStoryblok>(storyblokApi: ReturnType<type
 
 export async function loadStories<T>(storyblokApi: ReturnType<typeof initStoryblokApi>, options: ISbStoriesParams) {
 	const dataStory = await storyblokApi.get(`cdn/stories`, {
-		version: dev ? 'draft' : 'published',
-		resolve_links: 'url',
+		...buildDefaultOptions(),
 		...options,
 	});
 
