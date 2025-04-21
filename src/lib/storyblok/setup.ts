@@ -31,6 +31,7 @@ export async function loadStory<T = PageStoryblok>(storyblokApi: ReturnType<type
 	try {
 		const dataStory = await storyblokApi.get(`cdn/stories/${story}`, {
 			version: dev ? 'draft' : 'published',
+			resolve_links: 'url',
 		});
 
 		return dataStory.data.story as ISbStoryData<T>;
@@ -44,6 +45,7 @@ export async function loadStory<T = PageStoryblok>(storyblokApi: ReturnType<type
 export async function loadStories<T>(storyblokApi: ReturnType<typeof initStoryblokApi>, options: ISbStoriesParams) {
 	const dataStory = await storyblokApi.get(`cdn/stories`, {
 		version: dev ? 'draft' : 'published',
+		resolve_links: 'url',
 		...options,
 	});
 

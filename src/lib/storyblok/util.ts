@@ -15,8 +15,7 @@ export function getAspectRatio(asset: AssetStoryblok) {
 }
 
 export function buildUrl(link: Exclude<MultilinkStoryblok, { linktype?: 'email' } | { linktype?: 'asset' }>) {
-	let url = '/';
-	if (link.cached_url !== 'home') url += link.cached_url;
+	const url = link.url === '' ? link.story.url : link.url;
 
 	let anchorSuffix = '';
 	if (link.anchor) anchorSuffix = `#${link.anchor}`;

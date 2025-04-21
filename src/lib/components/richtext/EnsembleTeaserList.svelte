@@ -3,6 +3,7 @@
 
 	import type { EnsembleTeaserListStoryblok } from '$lib/component-types-storyblok';
 	import { renderRichText } from '$lib/storyblok/richtext';
+	import { buildUrl } from '$lib/storyblok/util';
 
 	import ImageSliderInternal from './ImageSliderInternal.svelte';
 
@@ -38,7 +39,7 @@
 
 				<footer class="grow place-content-end text-right text-sm">
 					<a
-						href="/{ensemble.link.cached_url}"
+						href={buildUrl(ensemble.link)}
 						class={['group font-bold no-underline', lightBg ? 'text-accent' : 'text-rose-400']}
 					>
 						<span class="group-hover:underline group-focus:underline">Mehr Infos</span>
