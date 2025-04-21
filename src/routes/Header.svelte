@@ -64,7 +64,7 @@
 			<img src={wave} class="h-14" alt="Logo der Chattengauer Gudensberg" />
 		</a>
 
-		<button aria-label="Menü öffnen" onclick={openNav}>
+		<button class="cursor-pointer" aria-label="Menü öffnen" onclick={openNav}>
 			<MenuIcon size={32} />
 		</button>
 	</div>

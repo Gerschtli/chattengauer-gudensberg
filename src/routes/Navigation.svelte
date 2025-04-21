@@ -43,7 +43,7 @@
 			class="fixed right-0 h-full w-[600px] max-w-[90%] overflow-y-auto bg-white/90 p-4 text-lg shadow-lg shadow-black/40"
 			transition:fly={{ x: '100%' }}
 		>
-			<button class="float-right" aria-label="Menü schließen" onclick={closeNav}>
+			<button class="float-right cursor-pointer" aria-label="Menü schließen" onclick={closeNav}>
 				<XIcon size={32} />
 			</button>
 

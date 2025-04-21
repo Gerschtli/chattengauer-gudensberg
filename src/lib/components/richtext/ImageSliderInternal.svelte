@@ -43,7 +43,7 @@
 	<div class="grid-1 z-0 mb-4 self-end justify-self-center">
 		<div class="flex gap-2">
 			{#each multiasset as _, i (i)}
-				<button class="rounded-full p-1" onclick={() => scrollToSlide(i)}>
+				<button class="cursor-pointer rounded-full p-1" onclick={() => scrollToSlide(i)}>
 					<span
 						class="block size-3 rounded-full border-2 border-white shadow-md shadow-black/60"
 						class:bg-white={currentIndex !== i}
