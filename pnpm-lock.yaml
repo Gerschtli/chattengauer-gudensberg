@@ -14,6 +14,9 @@ importers:
       '@eslint/js':
         specifier: ^9.25.0
         version: 9.25.0
+      '@storyblok/richtext':
+        specifier: ^3.2.0
+        version: 3.2.0
       '@storyblok/svelte':
         specifier: ^5.0.1
         version: 5.0.1(svelte@5.28.1)
@@ -883,6 +886,9 @@ packages:
 
   '@storyblok/richtext@3.1.0':
     resolution: {integrity: sha512-QtH5G+F7w3YuGGnHAFldo71vPpBT5prndZWFPDihlIsWaW0rEWyE9iX+6fp2f4XDgbhi0vyF1HqajFplGOtFVg==}
+
+  '@storyblok/richtext@3.2.0':
+    resolution: {integrity: sha512-koVGDv1HtiI5vymE5fzRB1VO1PNguj+RSfHI4zCy2+90pRoqZbsUCR8V2TaNl7Pg8R1oOkFZnbAxdt9Z4xoxDg==}
 
   '@storyblok/svelte@5.0.1':
     resolution: {integrity: sha512-R3JQErpgWLcXmlSqpS8RrGjte/piuvoKEAENUaTR5lA3+sXbUxyoRx6EreEqcVVFovwX67AWb0Y0C1XB+pi8BA==}
@@ -3700,6 +3706,8 @@ snapshots:
   '@storyblok/region-helper@1.1.0': {}
 
   '@storyblok/richtext@3.1.0': {}
+
+  '@storyblok/richtext@3.2.0': {}
 
   '@storyblok/svelte@5.0.1(svelte@5.28.1)':
     dependencies:

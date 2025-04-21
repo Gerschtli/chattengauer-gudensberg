@@ -169,7 +169,7 @@
 			"display_name": "Ensemble Teaser",
 			"description": "",
 			"created_at": "2025-04-18T19:15:50.359Z",
-			"updated_at": "2025-04-18T21:04:09.031Z",
+			"updated_at": "2025-04-21T19:46:15.962Z",
 			"id": 7238156,
 			"schema": {
 				"title": {
@@ -188,7 +188,7 @@
 					"restrict_type": "groups",
 					"restrict_components": false,
 					"allow_target_blank": true,
-					"allow_custom_attributes": true,
+					"allow_custom_attributes": false,
 					"component_group_whitelist": ["7d329944-f827-4304-85c6-d04a64ab2869"],
 					"customize_toolbar": true,
 					"toolbar": [
@@ -513,7 +513,7 @@
 			"display_name": "Navigation Link",
 			"description": "",
 			"created_at": "2025-04-20T21:08:55.455Z",
-			"updated_at": "2025-04-20T21:09:58.452Z",
+			"updated_at": "2025-04-21T19:46:23.346Z",
 			"id": 7245684,
 			"schema": {
 				"link": {
@@ -522,7 +522,7 @@
 					"required": true,
 					"show_anchor": true,
 					"allow_target_blank": true,
-					"allow_custom_attributes": true,
+					"allow_custom_attributes": false,
 					"id": "ilyWbt1AQVa9Gw3WsO7aEg"
 				},
 				"title": {
@@ -554,7 +554,7 @@
 			"display_name": null,
 			"description": "",
 			"created_at": "2025-04-20T18:30:50.122Z",
-			"updated_at": "2025-04-20T18:34:25.461Z",
+			"updated_at": "2025-04-21T19:46:24.422Z",
 			"id": 7243502,
 			"schema": {
 				"date": {
@@ -586,7 +586,7 @@
 					"id": "HFdmPiQQRvejyRvdymdofw",
 					"display_name": "Inhalt",
 					"required": true,
-					"allow_custom_attributes": true,
+					"allow_custom_attributes": false,
 					"allow_target_blank": true,
 					"restrict_type": "groups",
 					"restrict_components": true,
@@ -667,7 +667,7 @@
 			"display_name": "Seite",
 			"description": null,
 			"created_at": "2025-04-14T20:34:40.854Z",
-			"updated_at": "2025-04-19T23:31:45.808Z",
+			"updated_at": "2025-04-21T18:57:23.872Z",
 			"id": 7218570,
 			"schema": {
 				"title": {
@@ -735,7 +735,7 @@
 					"restrict_components": true,
 					"component_group_whitelist": ["7d329944-f827-4304-85c6-d04a64ab2869"],
 					"allow_target_blank": true,
-					"allow_custom_attributes": true,
+					"allow_custom_attributes": false,
 					"id": "-G7eTfAsTZK8m2XMvkG04w"
 				}
 			},
@@ -761,7 +761,7 @@
 			"display_name": "Text und musikalische Leitung",
 			"description": "",
 			"created_at": "2025-04-18T22:39:00.214Z",
-			"updated_at": "2025-04-20T00:34:21.468Z",
+			"updated_at": "2025-04-21T19:46:27.606Z",
 			"id": 7239548,
 			"schema": {
 				"name": {
@@ -815,7 +815,7 @@
 						"undo"
 					],
 					"allow_target_blank": true,
-					"allow_custom_attributes": true,
+					"allow_custom_attributes": false,
 					"id": "is-pyl8bSa-NNgeyTuIGaA"
 				}
 			},

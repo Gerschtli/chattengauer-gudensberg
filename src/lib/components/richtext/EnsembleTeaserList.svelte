@@ -1,9 +1,8 @@
 <script lang="ts">
-	import { renderRichText } from '@storyblok/svelte';
 	import { ChevronRightIcon } from 'lucide-svelte';
 
-	import { anchorProse } from '$lib/anchorProse';
 	import type { EnsembleTeaserListStoryblok } from '$lib/component-types-storyblok';
+	import { renderRichText } from '$lib/storyblok/richtext';
 
 	import ImageSliderInternal from './ImageSliderInternal.svelte';
 
@@ -32,7 +31,7 @@
 			>
 				<h3 class="font-accent font-accent-bold text-xl">{ensemble.title}</h3>
 
-				<div class="prose contents text-sm" use:anchorProse>
+				<div class="prose contents text-sm">
 					<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 					{@html renderRichText(ensemble.description)}
 				</div>
