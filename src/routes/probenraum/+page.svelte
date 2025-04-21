@@ -4,4 +4,4 @@
 	let { data } = $props();
 </script>
 
-<StoryblokInit story={data.story} />
+<StoryblokInit story={data.story} visualEditor={data.storyblokVisualEditor} />

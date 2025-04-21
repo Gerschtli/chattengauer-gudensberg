@@ -10,4 +10,4 @@
 	setNewsList(data.newsList);
 </script>
 
-<StoryblokInit story={data.story} />
+<StoryblokInit story={data.story} visualEditor={data.storyblokVisualEditor} />
