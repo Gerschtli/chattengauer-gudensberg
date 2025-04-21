@@ -2,10 +2,10 @@
 	import { ChevronRightIcon } from 'lucide-svelte';
 
 	import type { BannerStoryblok } from '$lib/component-types-storyblok';
+	import { buildUrl } from '$lib/storyblok/util';
 
 	let { blok }: { blok: BannerStoryblok } = $props();
 
-	const hasLink = $derived(blok.link && blok.linkText);
 	const filter = $derived(blok.image.focus ? `filters:focal(${blok.image.focus})` : 'smart');
 </script>
 
@@ -31,8 +31,8 @@
 	</picture>
 {/snippet}
 
-<section class={['content-grid__full-width', hasLink && 'grid']}>
-	{#if hasLink}
+<section class={['content-grid__full-width', blok.link && blok.linkText && 'grid']}>
+	{#if blok.link && blok.linkText}
 		<div class="grid-1">
 			{@render picture()}
 		</div>
@@ -41,12 +41,10 @@
 			<p class="mb-4 text-right">
 				<a
 					class="font-accent font-accent-bold inline-block bg-white/80 px-4 py-1 text-lg shadow-xs shadow-black/50 transition-all hover:bg-white/90 hover:shadow-lg"
-					href="/aktuelles"
+					href={buildUrl(blok.link)}
 				>
-					Aktuelle Termine und News <ChevronRightIcon
-						class="text-accent inline-block align-middle"
-						size={20}
-					/>
+					{blok.linkText}
+					<ChevronRightIcon class="text-accent inline-block align-middle" size={20} />
 				</a>
 			</p>
 		</div>

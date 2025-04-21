@@ -5,11 +5,8 @@
 	import { afterNavigate, pushState } from '$app/navigation';
 	import { page } from '$app/state';
 
-	import type {
-		MultilinkStoryblok,
-		NavigationGroupStoryblok,
-		NavigationLinkStoryblok,
-	} from '$lib/component-types-storyblok';
+	import type { NavigationGroupStoryblok, NavigationLinkStoryblok } from '$lib/component-types-storyblok';
+	import { buildUrl } from '$lib/storyblok/util';
 
 	const { blok }: { blok: (NavigationLinkStoryblok | NavigationGroupStoryblok)[] } = $props();
 
@@ -35,16 +32,6 @@
 		if (!page.state.showNav) return;
 		closeNav();
 	});
-
-	function buildUrl(link: Exclude<MultilinkStoryblok, { linktype?: 'email' } | { linktype?: 'asset' }>) {
-		let url = '/';
-		if (link.cached_url !== 'home') url += link.cached_url;
-
-		let anchorSuffix = '';
-		if (link.anchor) anchorSuffix = `#${link.anchor}`;
-
-		return url + anchorSuffix;
-	}
 </script>
 
 <svelte:window {onkeydown} {onclick} />
