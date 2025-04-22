@@ -196,7 +196,7 @@
 			@apply list-decimal space-y-2 pl-6;
 		}
 
-		a {
+		a[href] {
 			@apply hover:text-accent focus:text-accent underline decoration-from-font underline-offset-2;
 		}
 	}
