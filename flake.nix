@@ -23,14 +23,17 @@
             nodejs = nodejsFor.${system};
           in
           {
-            default = pkgs.mkShell {
+            default = pkgs.mkShell ({
               packages = [
                 nodejs
                 nodejs.pkgs.pnpm
               ];
-
-              LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath [ pkgs.libgcc.lib]}";
-            };
+            } // (pkgs.lib.optionalAttrs
+              (system != "aarch64-darwin")
+              {
+                LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath [ pkgs.libgcc.lib ]}";
+              }
+            ));
           });
 
       checks = forEachSystem
