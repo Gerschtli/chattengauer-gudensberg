@@ -24,11 +24,12 @@
 					{#snippet children({ props })}
 						<input
 							{...props}
+							class="cursor-pointer"
 							type="radio"
 							bind:group={$formData.intention}
 							value={IntentionEnum.enum.join}
 						/>
-						<Label class="font-bold">Mach mit!</Label>
+						<Label class="cursor-pointer font-bold">Mach mit!</Label>
 						<Description>
 							Möchtest du ein Instrument lernen oder dich als Musiker in eins unserer Orchester
 							einbringen? Dann wird es höchste Zeit, dass wir uns kennenlernen!
@@ -39,11 +40,12 @@
 					{#snippet children({ props })}
 						<input
 							{...props}
+							class="cursor-pointer"
 							type="radio"
 							bind:group={$formData.intention}
 							value={IntentionEnum.enum.apply}
 						/>
-						<Label class="font-bold">Sei dabei!</Label>
+						<Label class="cursor-pointer font-bold">Sei dabei!</Label>
 						<Description>
 							Du bist Instrumentallehrer, Dirigent oder hast eine Fortbildung zum Bläserklassenleiter
 							absolviert? <br />
@@ -56,11 +58,12 @@
 					{#snippet children({ props })}
 						<input
 							{...props}
+							class="cursor-pointer"
 							type="radio"
 							bind:group={$formData.intention}
 							value={IntentionEnum.enum.support}
 						/>
-						<Label class="font-bold">Unterstütze uns!</Label>
+						<Label class="cursor-pointer font-bold">Unterstütze uns!</Label>
 						<Description class="grid gap-1">
 							<p>Hilf uns dabei, noch mehr zu bewegen:</p>
 
@@ -230,6 +233,7 @@
 		grid-template-columns: min-content 1fr;
 		column-gap: calc(var(--spacing) * 4);
 		row-gap: var(--spacing);
+		align-items: center;
 
 		:global([data-fs-description]) {
 			grid-column: 2;
