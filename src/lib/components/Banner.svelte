@@ -9,20 +9,32 @@
 	const filter = $derived(blok.image.focus ? `filters:focal(${blok.image.focus})` : 'smart');
 </script>
 
+{#snippet source(width: number, height: number, media: boolean = true)}
+	<source
+		media={media ? `(max-width: ${width - 1}px)` : undefined}
+		srcset="
+			{blok.image.filename}/m/{width}x{height}/{filter} 1x,
+			{blok.image.filename}/m/{width * 2}x{height * 2}/{filter} 2x
+		"
+	/>
+{/snippet}
+
 {#snippet picture()}
 	<picture>
-		{#each [400, 600, 800, 1000, 1200, 1600, 2000] as size (size)}
-			<source
-				media="(max-width: {size}px)"
-				srcset="{blok.image.filename}/m/{size}x300/{filter} 1x, {blok.image.filename}/m/{size *
-					2}x600/{filter} 2x"
-			/>
+		{#each [400, 600, 800] as size (size)}
+			{@render source(size, 300)}
 		{/each}
-		<source srcset="{blok.image.filename}/m/4000x0/{filter}" />
+		{#each [1000, 1200, 1600, 2000] as size (size)}
+			{@render source(size, 375)}
+		{/each}
+		{#each [2400, 2800, 3200, 3600] as size (size)}
+			{@render source(size, 450)}
+		{/each}
+		{@render source(4000, 450, false)}
 
 		<img
 			src={blok.image.filename}
-			class="h-[300px] w-full object-cover object-center"
+			class="banner w-full object-cover object-center transition-all"
 			fetchpriority="high"
 			loading="eager"
 			alt={blok.image.alt}
@@ -52,3 +64,17 @@
 		{@render picture()}
 	{/if}
 </section>
+
+<style>
+	.banner {
+		height: 300px;
+
+		@media (min-width: 1000px) {
+			height: 375px;
+		}
+
+		@media (min-width: 2000px) {
+			height: 450px;
+		}
+	}
+</style>
