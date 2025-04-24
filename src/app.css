@@ -127,12 +127,13 @@
 		text-transform: uppercase;
 		text-wrap: balance;
 
-		span:last-child {
+		> span:last-child {
 			display: inline grid;
 			align-items: baseline;
 			justify-items: center;
-			font: inherit;
 			text-decoration: inherit;
+			text-decoration-color: inherit;
+			text-decoration-thickness: inherit;
 
 			&::before,
 			&::after {
@@ -151,6 +152,9 @@
 
 			&::before {
 				content: '\00a0\00a0\00a0\00a0';
+				text-decoration: inherit;
+				text-decoration-color: inherit;
+				text-decoration-thickness: inherit;
 			}
 		}
 	}
