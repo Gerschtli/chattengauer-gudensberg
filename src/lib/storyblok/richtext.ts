@@ -7,7 +7,7 @@ const richText = richTextResolver({
 		[BlockTypes.HEADING]: (node) => {
 			const level = node.attrs?.['level'];
 
-			return `<h${level} class="heading-${level}">${node.children}<span></span></h${level}>`;
+			return `<h${level} class="heading-${level}"><span>${node.children}</span>&nbsp;<span></span></h${level}>`;
 		},
 		[MarkTypes.LINK]: (node) => {
 			const href = node.attrs?.['href'];

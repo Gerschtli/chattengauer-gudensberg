@@ -11,7 +11,8 @@
 		<article class="space-y-4">
 			<header>
 				<h2 class="heading-footer">
-					Kontakt
+					<span>Kontakt</span>
+					&nbsp;
 					<span></span>
 				</h2>
 			</header>
@@ -47,7 +48,8 @@
 		<article class="space-y-4">
 			<header>
 				<h2 class="heading-footer">
-					Weitere Links
+					<span>Weitere Links</span>
+					&nbsp;
 					<span></span>
 				</h2>
 			</header>
