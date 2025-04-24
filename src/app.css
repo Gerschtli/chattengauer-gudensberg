@@ -8,6 +8,7 @@
 
 	--color-accent: #dd1e25;
 
+	--content-max-width: 768px; /* take care of image sizes if changed */
 	--breakpoint-xs: 468px;
 
 	--aspect-media: 3 / 2;
@@ -49,10 +50,6 @@
 		font-display: swap;
 	}
 
-	:root {
-		--content-max-width: 768px; /* take care of image sizes if changed */
-	}
-
 	html {
 		@apply accent-accent antialiased;
 		scrollbar-gutter: stable;
@@ -76,9 +73,9 @@
 			[breakout-start]
 			minmax(var(--content-padding), var(--breakout-size))
 			[content-start]
-			min(50% - (var(--content-padding)), var(--content-max-width) / 2)
+			min(50% - var(--content-padding), var(--content-max-width) / 2)
 			[center]
-			min(50% - (var(--content-padding)), var(--content-max-width) / 2)
+			min(50% - var(--content-padding), var(--content-max-width) / 2)
 			[content-end]
 			minmax(var(--content-padding), var(--breakout-size))
 			[breakout-end]
