@@ -41,7 +41,7 @@
 
 	@font-face {
 		font-style: normal;
-		font-weight: var(--font-weight-accent-bold);
+		font-weight: 600;
 		src:
 			local('SairaCondensed-Semibold'),
 			url('/fonts/SairaCondensed-Semibold.woff2') format('woff2');
