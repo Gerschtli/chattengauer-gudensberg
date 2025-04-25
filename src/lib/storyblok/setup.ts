@@ -27,17 +27,21 @@ export function initStoryblokApi() {
 	return useStoryblokApi();
 }
 
-function buildDefaultOptions() {
+function buildDefaultOptions(storyblokVisualEditor: boolean) {
 	return {
-		version: dev ? 'draft' : 'published',
+		version: dev || storyblokVisualEditor ? 'draft' : 'published',
 		resolve_links: 'url',
 		cv: 1, // disable cache
 	} satisfies ISbStoriesParams;
 }
 
-export async function loadStory<T = PageStoryblok>(storyblokApi: ReturnType<typeof initStoryblokApi>, story: string) {
+export async function loadStory<T = PageStoryblok>(
+	storyblokApi: ReturnType<typeof initStoryblokApi>,
+	storyblokVisualEditor: boolean,
+	story: string,
+) {
 	try {
-		const dataStory = await storyblokApi.get(`cdn/stories/${story}`, buildDefaultOptions());
+		const dataStory = await storyblokApi.get(`cdn/stories/${story}`, buildDefaultOptions(storyblokVisualEditor));
 
 		return dataStory.data.story as ISbStoryData<T>;
 	} catch (e) {
@@ -47,9 +51,13 @@ export async function loadStory<T = PageStoryblok>(storyblokApi: ReturnType<type
 	}
 }
 
-export async function loadStories<T>(storyblokApi: ReturnType<typeof initStoryblokApi>, options: ISbStoriesParams) {
+export async function loadStories<T>(
+	storyblokApi: ReturnType<typeof initStoryblokApi>,
+	storyblokVisualEditor: boolean,
+	options: ISbStoriesParams,
+) {
 	const dataStory = await storyblokApi.get(`cdn/stories`, {
-		...buildDefaultOptions(),
+		...buildDefaultOptions(storyblokVisualEditor),
 		...options,
 	});
 
