@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { storyblokEditable } from '@storyblok/svelte';
 	import { ChevronDownIcon } from 'lucide-svelte';
 	import { slide } from 'svelte/transition';
 
@@ -47,7 +48,7 @@
 	<Event {event} {ensembleMap} />
 {/snippet}
 
-<div class="grid gap-y-4">
+<div class="grid gap-y-4" use:storyblokEditable={blok}>
 	{#if events.length === 0}
 		<p class="text-slate-600">{blok.emptyText}</p>
 	{/if}

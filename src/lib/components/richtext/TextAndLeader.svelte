@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { storyblokEditable } from '@storyblok/svelte';
+
 	import type { TextAndLeaderStoryblok } from '$lib/component-types-storyblok';
 
 	import Richtext from '../Richtext.svelte';
@@ -8,7 +10,7 @@
 	const focus = $derived(blok.image.focus ? `filters:focal(${blok.image.focus})` : 'smart');
 </script>
 
-<div class="clear-both">
+<div class="clear-both" use:storyblokEditable={blok}>
 	<figure class="float-right flex flex-col items-center gap-2 pb-4 pl-4">
 		<img
 			src="{blok.image.filename}/m/300x300/{focus}"

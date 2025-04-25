@@ -8,7 +8,7 @@
 		class?: string;
 	}
 
-	const { asset = $bindable(), fixedSize, class: className }: Props = $props();
+	const { asset, fixedSize, class: className }: Props = $props();
 
 	const aspectRatio = 3 / 2;
 

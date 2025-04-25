@@ -37,7 +37,7 @@
 
 <Header />
 
-<Navigation blok={data.config.content.navigation} />
+<Navigation blok={data.config.content} />
 
 {@render children()}
 

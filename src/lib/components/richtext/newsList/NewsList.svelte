@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { storyblokEditable } from '@storyblok/svelte';
 	import { HashIcon } from 'lucide-svelte';
 
 	import type { NewsListStoryblok } from '$lib/component-types-storyblok';
@@ -7,7 +8,7 @@
 
 	import { getEnsembleList, getNewsList } from './context';
 
-	const { blok: _blok }: { blok: NewsListStoryblok } = $props();
+	const { blok }: { blok: NewsListStoryblok } = $props();
 
 	const newsList = getNewsList();
 	const ensembleMap = Object.fromEntries(getEnsembleList().map((e) => [e.uuid, e]));
@@ -15,9 +16,9 @@
 	const dateTimeFormat = new Intl.DateTimeFormat('de-DE', { dateStyle: 'full', timeZone: TIME_ZONE });
 </script>
 
-<div class="content-grid gap-y-8">
+<div class="content-grid gap-y-8" use:storyblokEditable={blok}>
 	{#each newsList as news (news.id)}
-		<article class="content-grid gap-y-2">
+		<article class="content-grid gap-y-2" use:storyblokEditable={news.content}>
 			<header>
 				<p class="text-xs text-slate-600">
 					{dateTimeFormat.format(new Date(news.content.date))}

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { storyblokEditable } from '@storyblok/svelte';
 	import { ChevronRightIcon } from 'lucide-svelte';
 
 	import type { BannerStoryblok } from '$lib/component-types-storyblok';
@@ -43,7 +44,7 @@
 	</picture>
 {/snippet}
 
-<section class={['content-grid__full-width', blok.link && blok.linkText && 'grid']}>
+<section class={['content-grid__full-width', blok.link && blok.linkText && 'grid']} use:storyblokEditable={blok}>
 	{#if blok.link && blok.linkText}
 		<div class="grid-1">
 			{@render picture()}

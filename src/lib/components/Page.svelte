@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { StoryblokComponent } from '@storyblok/svelte';
+	import { StoryblokComponent, storyblokEditable } from '@storyblok/svelte';
 
 	import type { PageStoryblok } from '$lib/component-types-storyblok';
 
@@ -17,10 +17,14 @@
 	{/if}
 </svelte:head>
 
-{#if banner}
-	<StoryblokComponent blok={banner} />
-{/if}
+{#key blok}
+	<div use:storyblokEditable={blok}>
+		{#if banner}
+			<StoryblokComponent blok={banner} />
+		{/if}
 
-<main class={['content-grid gap-y-4 pb-8', !banner && 'pt-4']}>
-	<Richtext blok={blok.content} />
-</main>
+		<main class={['content-grid gap-y-4 pb-8', !banner && 'pt-4']}>
+			<Richtext blok={blok.content} />
+		</main>
+	</div>
+{/key}

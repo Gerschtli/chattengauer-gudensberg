@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { storyblokEditable } from '@storyblok/svelte';
+
 	import type { FormStoryblok } from '$lib/component-types-storyblok';
 
 	import BookingForm from './form/BookingForm.svelte';
@@ -13,10 +15,12 @@
 	let { blok }: { blok: FormStoryblok } = $props();
 </script>
 
-{#if blok.type === 'engage-home'}
-	<EngageHomeForm superValidated={getSuperValidatedEngageHome()} />
-{:else if blok.type === 'engage-ensemble'}
-	<EngageEnsembleForm superValidated={getSuperValidatedEngageEnsemble()} />
-{:else if blok.type === 'booking'}
-	<BookingForm superValidated={getSuperValidatedBooking()} />
-{/if}
+<div use:storyblokEditable={blok}>
+	{#if blok.type === 'engage-home'}
+		<EngageHomeForm superValidated={getSuperValidatedEngageHome()} />
+	{:else if blok.type === 'engage-ensemble'}
+		<EngageEnsembleForm superValidated={getSuperValidatedEngageEnsemble()} />
+	{:else if blok.type === 'booking'}
+		<BookingForm superValidated={getSuperValidatedBooking()} />
+	{/if}
+</div>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { storyblokEditable } from '@storyblok/svelte';
 	import { ChevronRightIcon } from 'lucide-svelte';
 
 	import type { EnsembleTeaserListStoryblok } from '$lib/component-types-storyblok';
@@ -7,10 +8,10 @@
 
 	import ImageSliderInternal from './ImageSliderInternal.svelte';
 
-	const { blok = $bindable() }: { blok: EnsembleTeaserListStoryblok } = $props();
+	const { blok }: { blok: EnsembleTeaserListStoryblok } = $props();
 </script>
 
-<div class="content-grid gap-y-4 md:gap-y-0">
+<div class="content-grid gap-y-4 md:gap-y-0" use:storyblokEditable={blok}>
 	{#each blok.list as ensemble, i (ensemble.title)}
 		{@const lightBg = i % 2 === 0}
 
@@ -19,6 +20,7 @@
 				'content-grid--raw content-grid__full-width md:py-4 md:first-of-type:pt-0',
 				lightBg || 'bg-slate-800 py-4 text-slate-200',
 			]}
+			use:storyblokEditable={ensemble}
 		>
 			<div class={['place-content-center', lightBg ? 'breakout-left' : 'breakout-right md:order-2']}>
 				<ImageSliderInternal multiasset={ensemble.images} />

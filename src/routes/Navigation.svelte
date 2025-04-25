@@ -5,10 +5,10 @@
 	import { afterNavigate, pushState } from '$app/navigation';
 	import { page } from '$app/state';
 
-	import type { NavigationGroupStoryblok, NavigationLinkStoryblok } from '$lib/component-types-storyblok';
+	import type { ConfigStoryblok, NavigationLinkStoryblok } from '$lib/component-types-storyblok';
 	import { buildUrl } from '$lib/storyblok/util';
 
-	const { blok }: { blok: (NavigationLinkStoryblok | NavigationGroupStoryblok)[] } = $props();
+	const { blok }: { blok: ConfigStoryblok } = $props();
 
 	let navRef = $state<HTMLElement | undefined>(undefined);
 
@@ -77,7 +77,7 @@
 			{/snippet}
 
 			<ul role="list" class="mx-auto max-w-[450px] space-y-4 p-4">
-				{#each blok as item (item._uid)}
+				{#each blok.navigation as item (item._uid)}
 					{#if item.component === 'navigationLink'}
 						<li>{@render link(item)}</li>
 					{:else if item.component === 'navigationGroup'}
