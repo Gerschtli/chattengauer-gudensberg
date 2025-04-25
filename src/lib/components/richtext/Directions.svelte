@@ -41,7 +41,7 @@
 		style:background-image="url('{placeholder}')"
 	>
 		<button
-			class="cursor-pointer rounded-md bg-slate-700/90 p-4 text-white shadow-xs transition-colors hover:brightness-105 focus:brightness-110 active:brightness-90"
+			class="rounded-md bg-slate-700/90 p-4 text-white shadow-xs transition-colors hover:brightness-105 focus:brightness-110 active:brightness-90"
 			onclick={() => (mapsEnabled = true)}
 		>
 			{blok.buttonText}

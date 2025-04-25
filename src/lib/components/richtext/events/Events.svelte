@@ -66,7 +66,7 @@
 
 	{#if !expandAll && events.length > showMax}
 		<footer class="text-right text-sm">
-			<button class="group text-accent cursor-pointer font-bold" onclick={() => (expandAll = true)}>
+			<button class="group text-accent font-bold" onclick={() => (expandAll = true)}>
 				<span class="decoration-from-font underline-offset-2 group-hover:underline group-focus:underline">
 					{blok.buttonText}
 				</span>
