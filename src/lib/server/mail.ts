@@ -1,14 +1,13 @@
 import nodemailer from 'nodemailer';
 import type SMTPTransport from 'nodemailer/lib/smtp-transport';
 
-import { SMTP_HOST, SMTP_PASSWORD, SMTP_PORT, SMTP_SECURE, SMTP_USERNAME, SMTP_USE_TEST } from '$env/static/private';
+import { SMTP_HOST, SMTP_PASSWORD, SMTP_PORT, SMTP_USERNAME, SMTP_USE_TEST } from '$env/static/private';
 
 async function buildTransportOptions(): Promise<SMTPTransport.Options> {
 	if (!SMTP_USE_TEST) {
 		return {
 			host: SMTP_HOST,
 			port: parseInt(SMTP_PORT),
-			secure: !!SMTP_SECURE,
 			auth: {
 				user: SMTP_USERNAME,
 				pass: SMTP_PASSWORD,
