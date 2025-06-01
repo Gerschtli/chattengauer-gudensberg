@@ -43,7 +43,7 @@
 		"globals": "^16.0.0",
 		"ical.js": "^2.1.0",
 		"lucide-svelte": "^0.503.0",
-		"nodemailer": "^6.10.1",
+		"nodemailer": "^7.0.0",
 		"prettier": "^3.5.3",
 		"prettier-plugin-css-order": "^2.1.2",
 		"prettier-plugin-svelte": "^3.3.3",
