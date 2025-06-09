@@ -164,7 +164,7 @@ export type MultiassetStoryblok = {
 }[];
 
 export interface EnsembleTeaserStoryblok {
-	title: string;
+	title: RichtextStoryblok;
 	description: RichtextStoryblok;
 	link: Exclude<MultilinkStoryblok, { linktype?: 'email' } | { linktype?: 'asset' }>;
 	images: MultiassetStoryblok;

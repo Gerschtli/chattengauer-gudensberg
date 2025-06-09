@@ -32,7 +32,16 @@
 					lightBg ? 'content-right md:pl-4' : 'content-left md:order-1 md:pr-4',
 				]}
 			>
-				<h3 class="font-accent font-accent-bold text-xl">{ensemble.title}</h3>
+				<h3 class="font-accent font-accent-bold text-xl">
+					{#if ensemble.title.content?.[0].type === 'paragraph'}
+						<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+						{@html renderRichText({
+							type: 'doc',
+							// prevent paragraph rendering
+							content: ensemble.title.content?.[0].content,
+						})}
+					{/if}
+				</h3>
 
 				<div class="prose contents text-sm">
 					<!-- eslint-disable-next-line svelte/no-at-html-tags -->

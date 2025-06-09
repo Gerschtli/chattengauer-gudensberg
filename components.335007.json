@@ -169,15 +169,19 @@
 			"display_name": "Ensemble Teaser",
 			"description": "",
 			"created_at": "2025-04-18T19:15:50.359Z",
-			"updated_at": "2025-04-21T19:46:15.962Z",
+			"updated_at": "2025-06-09T14:29:59.635Z",
 			"id": 7238156,
 			"schema": {
 				"title": {
-					"type": "text",
+					"type": "richtext",
 					"pos": 0,
 					"id": "aHEVEsiqR7OEqc4PhKRxoQ",
 					"display_name": "Titel",
-					"required": true
+					"required": true,
+					"restrict_type": "",
+					"restrict_components": true,
+					"customize_toolbar": true,
+					"toolbar": ["color", "copy", "cut", "emoji", "unset", "paste-action", "redo", "undo"]
 				},
 				"description": {
 					"type": "richtext",
