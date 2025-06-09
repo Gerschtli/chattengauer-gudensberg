@@ -6,6 +6,7 @@
 	import { page } from '$app/state';
 
 	import type { ConfigStoryblok, NavigationLinkStoryblok } from '$lib/component-types-storyblok';
+	import { renderRichText } from '$lib/storyblok/richtext';
 	import { buildUrl } from '$lib/storyblok/util';
 
 	const { blok }: { blok: ConfigStoryblok } = $props();
@@ -72,7 +73,14 @@
 						}, 0);
 					}}
 				>
-					{link.title}
+					{#if link.title.content?.[0].type === 'paragraph'}
+						<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+						{@html renderRichText({
+							type: 'doc',
+							// prevent paragraph rendering
+							content: link.title.content?.[0].content,
+						})}
+					{/if}
 				</a>
 			{/snippet}
 
@@ -82,7 +90,16 @@
 						<li>{@render link(item)}</li>
 					{:else if item.component === 'navigationGroup'}
 						<li class="space-y-2">
-							<span>{item.title}</span>
+							<span>
+								{#if item.title.content?.[0].type === 'paragraph'}
+									<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+									{@html renderRichText({
+										type: 'doc',
+										// prevent paragraph rendering
+										content: item.title.content?.[0].content,
+									})}
+								{/if}
+							</span>
 							<ul role="list" class="space-y-2 pl-8">
 								{#each item.items as subItem (subItem._uid)}
 									<li>{@render link(subItem)}</li>

@@ -211,7 +211,7 @@ export interface ImageSliderStoryblok {
 }
 
 export interface NavigationGroupStoryblok {
-	title: string;
+	title: RichtextStoryblok;
 	items: NavigationLinkStoryblok[];
 	component: 'navigationGroup';
 	_uid: string;
@@ -220,7 +220,7 @@ export interface NavigationGroupStoryblok {
 
 export interface NavigationLinkStoryblok {
 	link: Exclude<MultilinkStoryblok, { linktype?: 'email' } | { linktype?: 'asset' }>;
-	title: string;
+	title: RichtextStoryblok;
 	component: 'navigationLink';
 	_uid: string;
 	[k: string]: any;
