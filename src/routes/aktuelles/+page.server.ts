@@ -1,4 +1,4 @@
-import type { RequestEvent } from '@sveltejs/kit';
+import { type RequestEvent, error } from '@sveltejs/kit';
 
 import { LINK_ICAL } from '$env/static/private';
 
@@ -20,7 +20,11 @@ async function fetchEvents(fetch: RequestEvent['fetch']) {
 		.toSorted((a, b) => getStart(a.time).getTime() - getStart(b.time).getTime());
 }
 
-export async function load({ fetch }) {
+export async function load({ fetch, url }) {
+	if (!url.searchParams.has('preview') || url.searchParams.get('p') !== 'FRs2jkerKf') {
+		error(404);
+	}
+
 	const events = await fetchEvents(fetch);
 
 	return { events };
