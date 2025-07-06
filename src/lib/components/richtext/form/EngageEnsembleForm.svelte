@@ -6,6 +6,7 @@
 
 	import { instruments } from '$lib/instruments';
 
+	import Potty from './Potty.svelte';
 	import { type SuperValidatedEngageEnsemble, schemaEngageEnsemble } from './schema';
 
 	let { superValidated }: { superValidated: SuperValidatedEngageEnsemble } = $props();
@@ -110,6 +111,7 @@
 			<FieldErrors class="text-xs text-red-600" />
 		</Field>
 	</div>
+	<Potty />
 	<div class="flex items-center gap-4">
 		<button
 			class="bg-accent rounded-md px-4 py-2 text-sm text-white shadow-xs transition-colors hover:brightness-105 focus:brightness-110 active:brightness-90"

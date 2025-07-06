@@ -17,9 +17,10 @@ export async function load() {
 
 export const actions = {
 	async booking({ request }) {
-		const formBooking = await superValidate(request, zod(schemaBooking));
+		const formData = await request.formData();
+		const formBooking = await superValidate(formData, zod(schemaBooking));
 
-		if (!formBooking.valid) return fail(400, { formBooking });
+		if (formData.get('code') !== '' || !formBooking.valid) return fail(400, { formBooking });
 
 		const success = await sendMail({
 			from: { name: SENDER_NAME, address: SENDER_EMAIL },
@@ -46,9 +47,10 @@ export const actions = {
 	},
 
 	async engage({ request }) {
-		const formEngage = await superValidate(request, zod(schemaEngageHome));
+		const formData = await request.formData();
+		const formEngage = await superValidate(formData, zod(schemaEngageHome));
 
-		if (!formEngage.valid) return fail(400, { formEngage });
+		if (formData.get('code') !== '' || !formEngage.valid) return fail(400, { formEngage });
 
 		let intention: string;
 		switch (formEngage.data.intention) {

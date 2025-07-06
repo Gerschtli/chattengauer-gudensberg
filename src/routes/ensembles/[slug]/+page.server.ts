@@ -14,18 +14,19 @@ export async function load() {
 
 export const actions = {
 	async default({ request, params }) {
-		const form = await superValidate(request, zod(schemaEngageEnsemble));
+		const formData = await request.formData();
+		const form = await superValidate(formData, zod(schemaEngageEnsemble));
 
-		if (!form.valid) return fail(400, { form });
+		if (formData.get('code') !== '' || !form.valid) return fail(400, { form });
 
 		const success = await sendMail({
 			from: { name: SENDER_NAME, address: SENDER_EMAIL },
 			to: { name: CONTACT_NAME, address: CONTACT_EMAIL },
 			replyTo: { name: form.data.name, address: form.data.email },
-			subject: `Kontaktformular: join via ${params.slug}`,
+			subject: `Kontaktformular: Mach mit! bei ${params.slug}`,
 			text: dedent`
 				Name: ${form.data.name}
-				Intention: join via ${params.slug}
+				Intention: Mach mit! bei ${params.slug}
 				Instrument: ${form.data.instrument ?? 'N/A'}
 
 				${form.data.message}
