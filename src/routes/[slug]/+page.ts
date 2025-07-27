@@ -2,7 +2,7 @@ import { error } from '@sveltejs/kit';
 
 import { loadStory } from '$lib/storyblok/setup';
 
-const allowedRoutes = ['datenschutz', 'impressum', 'probenraum'];
+const allowedRoutes = ['datenschutz', 'impressum', 'probenraum', 'vorstand'];
 
 export async function load({ parent, params }) {
 	const { storyblokApi, storyblokVisualEditor } = await parent();
