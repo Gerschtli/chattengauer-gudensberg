@@ -35,6 +35,9 @@
 				{/snippet}
 			</Control>
 			<FieldErrors class="text-xs text-red-600" />
+			<Description class="text-sm text-neutral-500">
+				Dein Name wird ausschließlich zur direkten Kontaktaufnahme verwendet.
+			</Description>
 		</Field>
 	</div>
 	<div class="flex flex-col gap-y-1">
@@ -57,7 +60,8 @@
 			</Control>
 			<FieldErrors class="text-xs text-red-600" />
 			<Description class="text-sm text-neutral-500">
-				Wie können wir dich erreichen? Wird ausschließlich zur direkten Kontaktaufnahme verwendet.
+				Wie können wir dich erreichen? Deine E-Mail Adresse wird ausschließlich zur direkten Kontaktaufnahme
+				verwendet.
 			</Description>
 		</Field>
 	</div>

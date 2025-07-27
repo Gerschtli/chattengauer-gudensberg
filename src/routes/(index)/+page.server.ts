@@ -28,7 +28,7 @@ export const actions = {
 			replyTo: { name: formBooking.data.name, address: formBooking.data.email },
 			subject: `Kontaktformular: Buchen`,
 			text: dedent`
-				Name: ${formBooking.data.name}
+				Name: ${formBooking.data.name ?? 'N/A'}
 				Intention: Buchen
 
 				${formBooking.data.message}
@@ -71,7 +71,7 @@ export const actions = {
 			replyTo: { name: formEngage.data.name, address: formEngage.data.email },
 			subject: `Kontaktformular: ${intention}`,
 			text: dedent`
-				Name: ${formEngage.data.name}
+				Name: ${formEngage.data.name ?? 'N/A'}
 				Intention: ${intention}
 				Erfahrung: ${formEngage.data.experience ?? 'N/A'}
 				Instrument: ${formEngage.data.instrument ?? 'N/A'}

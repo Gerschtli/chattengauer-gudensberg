@@ -25,7 +25,7 @@ export const actions = {
 			replyTo: { name: form.data.name, address: form.data.email },
 			subject: `Kontaktformular: Mach mit! bei ${params.slug}`,
 			text: dedent`
-				Name: ${form.data.name}
+				Name: ${form.data.name ?? 'N/A'}
 				Intention: Mach mit! bei ${params.slug}
 				Instrument: ${form.data.instrument ?? 'N/A'}
 

@@ -38,7 +38,10 @@ type MailAddress = {
 type SendMailRequest = {
 	from: MailAddress;
 	to: MailAddress;
-	replyTo: MailAddress;
+	replyTo: {
+		name?: string;
+		address: string;
+	};
 	subject: string;
 	text: string;
 };
@@ -48,7 +51,12 @@ export async function sendMail({ from, to, replyTo, subject, text }: SendMailReq
 		const info = await transporter.sendMail({
 			from,
 			to,
-			replyTo,
+			replyTo: replyTo.name
+				? {
+						name: replyTo.name,
+						address: replyTo.address,
+					}
+				: replyTo.address,
 			subject,
 			text,
 		});
