@@ -124,7 +124,7 @@
 		text-decoration: underline;
 		text-decoration-color: var(--color-accent);
 		text-decoration-thickness: 0.125rem;
-		text-underline-offset: 0.5rem;
+		text-underline-offset: calc(var(--_font-size) / 4);
 		text-transform: uppercase;
 		white-space: nowrap;
 
