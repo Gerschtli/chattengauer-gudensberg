@@ -42,7 +42,7 @@
 		"formsnap": "^2.0.1",
 		"globals": "^16.0.0",
 		"ical.js": "^2.1.0",
-		"lucide-svelte": "^0.535.0",
+		"lucide-svelte": "^0.536.0",
 		"nodemailer": "^7.0.0",
 		"prettier": "^3.5.3",
 		"prettier-plugin-css-order": "^2.1.2",
