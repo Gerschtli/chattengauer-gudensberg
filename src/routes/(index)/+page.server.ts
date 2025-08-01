@@ -1,6 +1,6 @@
 import dedent from 'dedent';
 import { fail, message, superValidate } from 'sveltekit-superforms';
-import { zod } from 'sveltekit-superforms/adapters';
+import { zod4 } from 'sveltekit-superforms/adapters';
 
 import { CONTACT_EMAIL, CONTACT_NAME, SENDER_EMAIL, SENDER_NAME } from '$env/static/private';
 
@@ -10,15 +10,15 @@ import { schemaBooking, schemaEngageHome } from '$lib/components/richtext/form/s
 
 export async function load() {
 	return {
-		formBooking: await superValidate(zod(schemaBooking)),
-		formEngage: await superValidate(zod(schemaEngageHome)),
+		formBooking: await superValidate(zod4(schemaBooking)),
+		formEngage: await superValidate(zod4(schemaEngageHome)),
 	};
 }
 
 export const actions = {
 	async booking({ request }) {
 		const formData = await request.formData();
-		const formBooking = await superValidate(formData, zod(schemaBooking));
+		const formBooking = await superValidate(formData, zod4(schemaBooking));
 
 		if (formData.get('code') !== '' || !formBooking.valid) return fail(400, { formBooking });
 
@@ -48,7 +48,7 @@ export const actions = {
 
 	async engage({ request }) {
 		const formData = await request.formData();
-		const formEngage = await superValidate(formData, zod(schemaEngageHome));
+		const formEngage = await superValidate(formData, zod4(schemaEngageHome));
 
 		if (formData.get('code') !== '' || !formEngage.valid) return fail(400, { formEngage });
 

@@ -2,7 +2,7 @@
 	import { Control, Description, Field, FieldErrors, Fieldset, Label } from 'formsnap';
 	import { AsteriskIcon, CheckIcon, LoaderCircleIcon, XIcon } from 'lucide-svelte';
 	import { superForm } from 'sveltekit-superforms';
-	import { zodClient } from 'sveltekit-superforms/adapters';
+	import { zod4Client } from 'sveltekit-superforms/adapters';
 
 	import { instruments } from '$lib/instruments';
 
@@ -12,7 +12,7 @@
 	let { superValidated }: { superValidated: SuperValidatedEngageHome } = $props();
 
 	const form = superForm(superValidated, {
-		validators: zodClient(schemaEngageHome),
+		validators: zod4Client(schemaEngageHome),
 	});
 	const { form: formData, enhance, delayed, message } = form;
 </script>
@@ -88,7 +88,7 @@
 		</Fieldset>
 	</div>
 
-	{#if $formData.intention === IntentionEnum.Enum.join}
+	{#if $formData.intention === IntentionEnum.enum.join}
 		<div class="flex flex-col gap-y-1">
 			<Field {form} name="instrument">
 				<Control>
@@ -117,7 +117,7 @@
 				<Description class="text-sm text-neutral-500">Welche(s) Instrument(e) spielst du?</Description>
 			</Field>
 		</div>
-	{:else if $formData.intention === IntentionEnum.Enum.apply}
+	{:else if $formData.intention === IntentionEnum.enum.apply}
 		<div class="flex flex-col gap-y-1">
 			<Field {form} name="experience">
 				<Control>
