@@ -2,7 +2,7 @@
 	import { Control, Description, Field, FieldErrors, Label } from 'formsnap';
 	import { AsteriskIcon, CheckIcon, LoaderCircleIcon, XIcon } from 'lucide-svelte';
 	import { superForm } from 'sveltekit-superforms';
-	import { zodClient } from 'sveltekit-superforms/adapters';
+	import { zod4Client } from 'sveltekit-superforms/adapters';
 
 	import Potty from './Potty.svelte';
 	import { type SuperValidatedBooking, schemaBooking } from './schema';
@@ -10,7 +10,7 @@
 	let { superValidated }: { superValidated: SuperValidatedBooking } = $props();
 
 	const form = superForm(superValidated, {
-		validators: zodClient(schemaBooking),
+		validators: zod4Client(schemaBooking),
 	});
 	const { form: formData, enhance, delayed, message } = form;
 </script>

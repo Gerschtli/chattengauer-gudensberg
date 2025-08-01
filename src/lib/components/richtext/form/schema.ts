@@ -1,8 +1,8 @@
 import type { SuperValidated } from 'sveltekit-superforms';
 import { z } from 'zod';
 
-export const IntentionEnum = z.enum(['join', 'apply', 'support'] as const, {
-	required_error: 'Bitte wähle eine Option',
+export const IntentionEnum = z.enum(['join', 'apply', 'support'], {
+	error: 'Bitte wähle eine Option',
 });
 
 export const schemaBooking = z.object({
