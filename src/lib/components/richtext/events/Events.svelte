@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { storyblokEditable } from '@storyblok/svelte';
 	import { ChevronDownIcon } from 'lucide-svelte';
+	import { SvelteSet } from 'svelte/reactivity';
 	import { slide } from 'svelte/transition';
 
 	import type { EventsStoryblok } from '$lib/component-types-storyblok';
@@ -21,7 +22,7 @@
 	const showMax = $derived(parseInt(blok.showMax));
 	let expandAll = $state(false);
 
-	const set = new Set<string>();
+	const set = new SvelteSet<string>();
 
 	function buildSeparator(event: EventData) {
 		const rendered = new Intl.DateTimeFormat('de-DE', {
