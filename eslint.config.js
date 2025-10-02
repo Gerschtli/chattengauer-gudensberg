@@ -49,6 +49,11 @@ export default ts.config(
 		},
 	},
 	{
+		rules: {
+			'svelte/no-navigation-without-resolve': 'off',
+		},
+	},
+	{
 		ignores: ['src/lib/component-types-storyblok.d.ts'],
 	},
 );
