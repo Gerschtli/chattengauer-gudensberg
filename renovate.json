@@ -1,7 +1,7 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
 	"extends": ["config:recommended"],
-	"ignoreDeps": ["pnpm", "zod"],
+	"ignoreDeps": ["pnpm"],
 	"schedule": ["on the first day of the month"],
 	"packageRules": [
 		{
