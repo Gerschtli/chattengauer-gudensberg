@@ -21,7 +21,7 @@
 		"storyblok:push-components": "pnpm storyblok push-components --space 335007 components.335007.json"
 	},
 	"devDependencies": {
-		"@eslint/compat": "^1.2.8",
+		"@eslint/compat": "^2.0.0",
 		"@eslint/js": "^9.25.1",
 		"@storyblok/richtext": "^3.2.0",
 		"@storyblok/svelte": "^5.0.2",
