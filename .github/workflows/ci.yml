@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Install nix
-        uses: DeterminateSystems/nix-installer-action@v20
+        uses: DeterminateSystems/nix-installer-action@v21
 
       - name: Build dev shell
         shell: bash
@@ -55,6 +55,6 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Install nix
-        uses: DeterminateSystems/nix-installer-action@v20
+        uses: DeterminateSystems/nix-installer-action@v21
 
       - run: nix flake check --print-build-logs
