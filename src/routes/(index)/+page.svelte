@@ -4,7 +4,9 @@
 
 	let { data } = $props();
 
+	// svelte-ignore state_referenced_locally
 	setSuperValidatedEngageHome(data.formEngage);
+	// svelte-ignore state_referenced_locally
 	setSuperValidatedBooking(data.formBooking);
 </script>
 

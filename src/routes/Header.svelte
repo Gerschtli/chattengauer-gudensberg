@@ -85,8 +85,8 @@
 			@supports (animation-timeline: view()) {
 				animation: header-scroll ease-out forwards;
 				animation-timeline: view();
-				height: var(--height-initial);
 				animation-range: exit;
+				height: var(--height-initial);
 			}
 		}
 	}
