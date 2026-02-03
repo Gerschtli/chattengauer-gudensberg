@@ -5,8 +5,11 @@
 
 	let { data } = $props();
 
+	// svelte-ignore state_referenced_locally
 	setEnsembleList(data.ensembleList);
+	// svelte-ignore state_referenced_locally
 	setEvents(data.events);
+	// svelte-ignore state_referenced_locally
 	setNewsList(data.newsList);
 </script>
 

@@ -9,6 +9,7 @@
 
 	let { superValidated }: { superValidated: SuperValidatedBooking } = $props();
 
+	// svelte-ignore state_referenced_locally
 	const form = superForm(superValidated, {
 		validators: zod4Client(schemaBooking),
 	});

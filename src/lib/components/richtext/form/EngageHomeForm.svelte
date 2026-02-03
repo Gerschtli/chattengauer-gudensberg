@@ -11,6 +11,7 @@
 
 	let { superValidated }: { superValidated: SuperValidatedEngageHome } = $props();
 
+	// svelte-ignore state_referenced_locally
 	const form = superForm(superValidated, {
 		validators: zod4Client(schemaEngageHome),
 	});
