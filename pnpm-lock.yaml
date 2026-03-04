@@ -78,8 +78,8 @@ importers:
         specifier: ^0.574.0
         version: 0.574.0(svelte@5.51.5)
       nodemailer:
-        specifier: ^7.0.0
-        version: 7.0.13
+        specifier: ^8.0.0
+        version: 8.0.1
       prettier:
         specifier: ^3.5.3
         version: 3.8.1
@@ -2170,8 +2170,8 @@ packages:
   node-html-parser@7.0.1:
     resolution: {integrity: sha512-KGtmPY2kS0thCWGK0VuPyOS+pBKhhe8gXztzA2ilAOhbUbxa9homF1bOyKvhGzMLXUoRds9IOmr/v5lr/lqNmA==}
 
-  nodemailer@7.0.13:
-    resolution: {integrity: sha512-PNDFSJdP+KFgdsG3ZzMXCgquO7I6McjY2vlqILjtJd0hy8wEvtugS9xKRF2NWlPNGxvLCXlTNIae4serI7dinw==}
+  nodemailer@8.0.1:
+    resolution: {integrity: sha512-5kcldIXmaEjZcHR6F28IKGSgpmZHaF1IXLWFTG+Xh3S+Cce4MiakLtWY+PlBU69fLbRa8HlaGIrC/QolUpHkhg==}
     engines: {node: '>=6.0.0'}
 
   nopt@8.1.0:
@@ -4724,7 +4724,7 @@ snapshots:
       css-select: 5.2.2
       he: 1.2.0
 
-  nodemailer@7.0.13: {}
+  nodemailer@8.0.1: {}
 
   nopt@8.1.0:
     dependencies:
