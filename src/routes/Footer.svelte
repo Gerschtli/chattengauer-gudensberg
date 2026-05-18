@@ -119,6 +119,15 @@
 				<li>
 					<a
 						class="decoration-from-font underline-offset-2 hover:underline focus:underline"
+						href="/Beitrittserklaerung.pdf"
+						target="_blank"
+					>
+						Beitrittserklärung
+					</a>
+				</li>
+				<li>
+					<a
+						class="decoration-from-font underline-offset-2 hover:underline focus:underline"
 						href="/datenschutz"
 					>
 						Datenschutz
