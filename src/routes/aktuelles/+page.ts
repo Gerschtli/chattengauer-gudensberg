@@ -1,16 +1,16 @@
-import type { NewsStoryblok, PageStoryblok } from '$lib/component-types-storyblok';
 import { loadStories, loadStory } from '$lib/storyblok/setup';
+import type { News, Page } from '$storyblok/335007/storyblok-components';
 
 export async function load({ parent, data }) {
 	const { storyblokApi, storyblokVisualEditor } = await parent();
 
 	const [story, newsList, ensembleList] = await Promise.all([
 		loadStory(storyblokApi, storyblokVisualEditor, 'aktuelles'),
-		loadStories<NewsStoryblok>(storyblokApi, storyblokVisualEditor, {
+		loadStories<News>(storyblokApi, storyblokVisualEditor, {
 			starts_with: 'news/',
 			sort_by: 'content.date:desc',
 		}),
-		loadStories<PageStoryblok>(storyblokApi, storyblokVisualEditor, {
+		loadStories<Page>(storyblokApi, storyblokVisualEditor, {
 			starts_with: 'ensembles/',
 			excluding_fields: 'banner,content',
 		}),

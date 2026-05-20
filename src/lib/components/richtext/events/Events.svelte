@@ -1,19 +1,19 @@
 <script lang="ts">
-	import { storyblokEditable } from '@storyblok/svelte';
 	import { ChevronDownIcon } from 'lucide-svelte';
 	import { SvelteSet } from 'svelte/reactivity';
 	import { slide } from 'svelte/transition';
 
-	import type { EventsStoryblok } from '$lib/component-types-storyblok';
+	import { storyblokEditable } from '$lib/storyblok/util';
 	import { TIME_ZONE, getStart } from '$lib/time';
 	import type { EventData } from '$lib/types';
+	import type { Events } from '$storyblok/335007/storyblok-components';
 
 	import { getEnsembleList } from '../newsList/context';
 
 	import Event from './Event.svelte';
 	import { getEvents } from './context';
 
-	let { blok }: { blok: EventsStoryblok } = $props();
+	let { blok }: { blok: Events } = $props();
 
 	const events = getEvents();
 	const ensembleMap = Object.fromEntries(getEnsembleList().map((e) => [e.url, e.name]));

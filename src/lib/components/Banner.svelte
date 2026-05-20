@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { storyblokEditable } from '@storyblok/svelte';
 	import { ChevronRightIcon } from 'lucide-svelte';
 
-	import type { BannerStoryblok } from '$lib/component-types-storyblok';
+	import { storyblokEditable } from '$lib/storyblok/util';
 	import { buildUrl } from '$lib/storyblok/util';
+	import type { Banner } from '$storyblok/335007/storyblok-components';
 
-	let { blok }: { blok: BannerStoryblok } = $props();
+	let { blok }: { blok: Banner } = $props();
 
 	const filter = $derived(blok.image.focus ? `filters:focal(${blok.image.focus})` : 'smart');
 </script>

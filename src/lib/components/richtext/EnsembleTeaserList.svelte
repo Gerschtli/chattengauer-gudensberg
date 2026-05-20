@@ -1,14 +1,13 @@
 <script lang="ts">
-	import { storyblokEditable } from '@storyblok/svelte';
 	import { ChevronRightIcon } from 'lucide-svelte';
 
-	import type { EnsembleTeaserListStoryblok } from '$lib/component-types-storyblok';
 	import { renderRichText } from '$lib/storyblok/richtext';
-	import { buildUrl } from '$lib/storyblok/util';
+	import { buildUrl, storyblokEditable } from '$lib/storyblok/util';
+	import type { EnsembleTeaserList } from '$storyblok/335007/storyblok-components';
 
 	import ImageSliderInternal from './ImageSliderInternal.svelte';
 
-	const { blok }: { blok: EnsembleTeaserListStoryblok } = $props();
+	const { blok }: { blok: EnsembleTeaserList } = $props();
 </script>
 
 <div class="content-grid gap-y-4 md:gap-y-0" use:storyblokEditable={blok}>

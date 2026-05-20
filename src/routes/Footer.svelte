@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { MailIcon, PhoneIcon, UserIcon } from 'lucide-svelte';
 
-	import type { ConfigStoryblok } from '$lib/component-types-storyblok';
+	import type { Config } from '$storyblok/335007/storyblok-components';
 
-	const { blok }: { blok: ConfigStoryblok } = $props();
+	const { blok }: { blok: Config } = $props();
 </script>
 
 <footer class="content-grid bg-slate-800 py-8">

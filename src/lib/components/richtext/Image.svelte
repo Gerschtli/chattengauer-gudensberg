@@ -1,11 +1,10 @@
 <script lang="ts">
-	import { storyblokEditable } from '@storyblok/svelte';
-
-	import type { ImageStoryblok } from '$lib/component-types-storyblok';
+	import { storyblokEditable } from '$lib/storyblok/util';
+	import type { Image } from '$storyblok/335007/storyblok-components';
 
 	import ImageInternal from './ImageInternal.svelte';
 
-	const { blok }: { blok: ImageStoryblok } = $props();
+	const { blok }: { blok: Image } = $props();
 </script>
 
 <div class="content-grid__breakout" use:storyblokEditable={blok}>

@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { storyblokEditable } from '@storyblok/svelte';
-
-	import type { FormStoryblok } from '$lib/component-types-storyblok';
+	import { storyblokEditable } from '$lib/storyblok/util';
+	import type { Form } from '$storyblok/335007/storyblok-components';
 
 	import BookingForm from './form/BookingForm.svelte';
 	import EngageEnsembleForm from './form/EngageEnsembleForm.svelte';
@@ -12,7 +11,7 @@
 		getSuperValidatedEngageHome,
 	} from './form/context';
 
-	let { blok }: { blok: FormStoryblok } = $props();
+	let { blok }: { blok: Form } = $props();
 </script>
 
 <div use:storyblokEditable={blok}>

@@ -2,9 +2,9 @@
 	import { type ISbStoryData, StoryblokComponent, useStoryblokBridge } from '@storyblok/svelte';
 	import { onMount } from 'svelte';
 
-	import type { PageStoryblok } from '$lib/component-types-storyblok';
+	import type { Page } from '$storyblok/335007/storyblok-components';
 
-	let { story, visualEditor }: { story: ISbStoryData<PageStoryblok>; visualEditor: boolean } = $props();
+	let { story, visualEditor }: { story: ISbStoryData<Page>; visualEditor: boolean } = $props();
 
 	onMount(() => {
 		if (!visualEditor) return;

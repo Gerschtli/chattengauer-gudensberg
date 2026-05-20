@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { storyblokEditable } from '@storyblok/svelte';
 	import { MapPinIcon } from 'lucide-svelte';
 
 	import placeholder from '$lib/assets/placeholder-google-maps.jpg';
-	import type { DirectionsStoryblok } from '$lib/component-types-storyblok';
+	import { storyblokEditable } from '$lib/storyblok/util';
+	import type { Directions } from '$storyblok/335007/storyblok-components';
 
-	let { blok }: { blok: DirectionsStoryblok } = $props();
+	let { blok }: { blok: Directions } = $props();
 </script>
 
 <div class="content-grid gap-y-4" use:storyblokEditable={blok}>

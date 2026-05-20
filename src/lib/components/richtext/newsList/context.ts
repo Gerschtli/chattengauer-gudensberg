@@ -1,7 +1,7 @@
 import type { ISbStoryData } from '@storyblok/svelte';
 import { getContext, setContext } from 'svelte';
 
-import type { NewsStoryblok } from '$lib/component-types-storyblok';
+import type { News } from '$storyblok/335007/storyblok-components';
 
 type EnsembleList = { uuid: string; url: string; name: string }[];
 
@@ -13,10 +13,10 @@ export function getEnsembleList() {
 	return getContext<EnsembleList>('ensemble-list');
 }
 
-export function setNewsList(newsList: ISbStoryData<NewsStoryblok>[]) {
-	setContext<ISbStoryData<NewsStoryblok>[]>('news-list', newsList);
+export function setNewsList(newsList: ISbStoryData<News>[]) {
+	setContext<ISbStoryData<News>[]>('news-list', newsList);
 }
 
 export function getNewsList() {
-	return getContext<ISbStoryData<NewsStoryblok>[]>('news-list');
+	return getContext<ISbStoryData<News>[]>('news-list');
 }

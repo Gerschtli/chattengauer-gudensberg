@@ -1,6 +1,6 @@
 import type { ISbStoryData } from '@storyblok/svelte';
 
-import type { ConfigStoryblok } from '$lib/component-types-storyblok';
+import type { Config } from '$storyblok/335007/storyblok-components';
 
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
@@ -9,7 +9,7 @@ declare global {
 		// interface Error {}
 		// interface Locals {}
 		interface PageData {
-			config: ISbStoryData<ConfigStoryblok>;
+			config: ISbStoryData<Config>;
 		}
 		interface PageState {
 			showNav: boolean;

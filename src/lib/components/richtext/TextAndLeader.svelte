@@ -1,11 +1,10 @@
 <script lang="ts">
-	import { storyblokEditable } from '@storyblok/svelte';
-
-	import type { TextAndLeaderStoryblok } from '$lib/component-types-storyblok';
+	import { storyblokEditable } from '$lib/storyblok/util';
+	import type { TextAndLeader } from '$storyblok/335007/storyblok-components';
 
 	import Richtext from '../Richtext.svelte';
 
-	let { blok }: { blok: TextAndLeaderStoryblok } = $props();
+	let { blok }: { blok: TextAndLeader } = $props();
 
 	const focus = $derived(blok.image.focus ? `filters:focal(${blok.image.focus})` : 'smart');
 </script>

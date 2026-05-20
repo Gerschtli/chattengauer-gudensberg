@@ -5,11 +5,11 @@
 	import { afterNavigate, pushState } from '$app/navigation';
 	import { page } from '$app/state';
 
-	import type { ConfigStoryblok, NavigationLinkStoryblok } from '$lib/component-types-storyblok';
 	import { renderRichText } from '$lib/storyblok/richtext';
 	import { buildUrl } from '$lib/storyblok/util';
+	import type { Config, NavigationLink } from '$storyblok/335007/storyblok-components';
 
-	const { blok }: { blok: ConfigStoryblok } = $props();
+	const { blok }: { blok: Config } = $props();
 
 	let navRef = $state<HTMLElement | undefined>(undefined);
 
@@ -48,7 +48,7 @@
 				<XIcon size={32} />
 			</button>
 
-			{#snippet link(link: NavigationLinkStoryblok)}
+			{#snippet link(link: NavigationLink)}
 				{@const url = buildUrl(link.link)}
 				<a
 					href={url}

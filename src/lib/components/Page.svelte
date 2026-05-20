@@ -1,11 +1,12 @@
 <script lang="ts">
-	import { StoryblokComponent, storyblokEditable } from '@storyblok/svelte';
+	import { StoryblokComponent } from '@storyblok/svelte';
 
-	import type { PageStoryblok } from '$lib/component-types-storyblok';
+	import { storyblokEditable } from '$lib/storyblok/util';
+	import type { Page } from '$storyblok/335007/storyblok-components';
 
 	import Richtext from './Richtext.svelte';
 
-	let { blok }: { blok: PageStoryblok } = $props();
+	let { blok }: { blok: Page } = $props();
 
 	const banner = $derived(blok.banner?.[0]);
 </script>

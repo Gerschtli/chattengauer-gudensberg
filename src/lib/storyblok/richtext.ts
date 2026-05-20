@@ -1,6 +1,6 @@
 import { BlockTypes, MarkTypes, type StoryblokRichTextNode, richTextResolver } from '@storyblok/richtext';
 
-import type { RichtextStoryblok } from '$lib/component-types-storyblok';
+import type { StoryblokRichtext } from '$storyblok/storyblok';
 
 const richText = richTextResolver({
 	resolvers: {
@@ -29,6 +29,6 @@ const richText = richTextResolver({
 	},
 });
 
-export function renderRichText(blok: RichtextStoryblok) {
+export function renderRichText(blok: StoryblokRichtext) {
 	return richText.render(blok as unknown as StoryblokRichTextNode);
 }

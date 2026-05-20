@@ -1,11 +1,11 @@
 <script lang="ts">
-	import type { MultiassetStoryblok } from '$lib/component-types-storyblok';
+	import type { StoryblokMultiasset } from '$storyblok/storyblok';
 
 	import ImageInternal from './ImageInternal.svelte';
 
 	interface Props {
 		class?: string;
-		multiasset: MultiassetStoryblok;
+		multiasset: StoryblokMultiasset;
 	}
 
 	const { class: className, multiasset }: Props = $props();
