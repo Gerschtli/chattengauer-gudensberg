@@ -26,7 +26,7 @@
             default = pkgs.mkShell ({
               packages = [
                 nodejs
-                nodejs.pkgs.pnpm
+                pkgs.pnpm
               ];
             } // (pkgs.lib.optionalAttrs
               (system != "aarch64-darwin")
@@ -66,7 +66,7 @@
                   | ${getExe pkgs.gnused} -e 's,\.x$,,'
               '';
 
-            pnpm = checker "pnpm" "pnpm version in package.json" nodejs.pkgs.pnpm ''
+            pnpm = checker "pnpm" "pnpm version in package.json" pkgs.pnpm ''
               ${getExe pkgs.jq} --raw-output '.packageManager' ${./package.json} \
                 | ${getExe pkgs.gnused} -e 's,^pnpm@,,'
             '';
