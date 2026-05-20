@@ -13,7 +13,7 @@
 	<figure class="float-right flex flex-col items-center gap-2 pb-4 pl-4">
 		<img
 			src="{blok.image.filename}/m/300x300/{focus}"
-			class="size-[150px] rounded-full"
+			class="size-37.5 rounded-full"
 			loading="lazy"
 			alt={blok.image.alt}
 			title={blok.image.title}

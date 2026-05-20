@@ -41,7 +41,7 @@
 	<div class="fixed inset-0 z-20 bg-white/75" transition:fade>
 		<nav
 			bind:this={navRef}
-			class="fixed right-0 h-full w-[600px] max-w-[90%] overflow-y-auto bg-white/90 p-4 text-lg shadow-lg shadow-black/40"
+			class="fixed right-0 h-full w-150 max-w-[90%] overflow-y-auto bg-white/90 p-4 text-lg shadow-lg shadow-black/40"
 			transition:fly={{ x: '100%' }}
 		>
 			<button class="float-right" aria-label="Menü schließen" onclick={closeNav}>
@@ -84,7 +84,7 @@
 				</a>
 			{/snippet}
 
-			<ul role="list" class="mx-auto max-w-[450px] space-y-4 p-4">
+			<ul role="list" class="mx-auto max-w-112.5 space-y-4 p-4">
 				{#each blok.navigation as item (item._uid)}
 					{#if item.component === 'navigationLink'}
 						<li>{@render link(item)}</li>
