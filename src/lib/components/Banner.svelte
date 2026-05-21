@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { ChevronRightIcon } from 'lucide-svelte';
 
-	import { storyblokEditable } from '$lib/storyblok/util';
-	import { buildUrl } from '$lib/storyblok/util';
+	import { buildUrl, storyblokEditable } from '$lib/storyblok/util';
 	import type { Banner } from '$storyblok/335007/storyblok-components';
 
 	let { blok }: { blok: Banner } = $props();
@@ -51,11 +50,8 @@
 		</div>
 
 		<div class="grid-1 content-grid place-content-end">
-			<p class="mb-4 text-right">
-				<a
-					class="font-accent font-accent-bold inline-block bg-white/80 px-4 py-1 text-lg shadow-xs shadow-black/50 transition-all hover:bg-white/90 hover:shadow-lg"
-					href={buildUrl(blok.link)}
-				>
+			<p class="link-wrapper mb-4 text-right">
+				<a class="font-accent font-accent-bold text-lg" href={buildUrl(blok.link)}>
 					{blok.linkText}
 					<ChevronRightIcon class="text-accent inline-block align-middle" size={20} />
 				</a>
@@ -66,7 +62,9 @@
 	{/if}
 </section>
 
-<style>
+<style lang="postcss">
+	@reference "../../app.css";
+
 	.banner {
 		height: 300px;
 
@@ -76,6 +74,47 @@
 
 		@media (min-width: 2000px) {
 			height: 450px;
+		}
+	}
+
+	@supports (anchor-name: --foo) {
+		.link-wrapper {
+			--_padding-x: 1rem;
+			--_padding-y: 0.25rem;
+
+			position: relative;
+			isolation: isolate;
+			padding: var(--_padding-y) var(--_padding-x);
+			text-wrap: balance;
+
+			& > a {
+				anchor-name: --anchor;
+			}
+
+			&::after {
+				@apply bg-white/80 shadow-xs shadow-black/50;
+
+				position: absolute;
+				position-anchor: --anchor;
+				z-index: -1;
+				transition-property: background, box-shadow;
+				inset: calc(anchor(inside) - var(--_padding-y)) calc(anchor(inside) - var(--_padding-x));
+				content: '';
+			}
+
+			&:hover::after {
+				@apply bg-white/90 shadow-md;
+			}
+		}
+	}
+
+	@supports (not (anchor-name: --foo)) {
+		.link-wrapper {
+			@apply bg-white/80 shadow-xs shadow-black/50 transition-all hover:bg-white/90 hover:shadow-md;
+
+			& > a {
+				@apply inline-block px-4 py-1;
+			}
 		}
 	}
 </style>
