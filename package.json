@@ -23,7 +23,7 @@
 	"devDependencies": {
 		"@eslint/compat": "^2.0.0",
 		"@eslint/js": "^10.0.0",
-		"@storyblok/richtext": "^3.2.0",
+		"@storyblok/richtext": "^4.0.0",
 		"@storyblok/svelte": "^6.1.7",
 		"@sveltejs/adapter-vercel": "^6.0.0",
 		"@sveltejs/kit": "^2.60.1",
