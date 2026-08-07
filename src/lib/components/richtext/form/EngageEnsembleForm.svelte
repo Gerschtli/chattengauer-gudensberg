@@ -109,8 +109,7 @@
 					<textarea
 						{...props}
 						class="h-32 w-full rounded-md border border-slate-300 px-3 py-2"
-						bind:value={$formData.message}
-					></textarea>
+						bind:value={$formData.message}></textarea>
 				{/snippet}
 			</Control>
 			<FieldErrors class="text-xs text-red-600" />
