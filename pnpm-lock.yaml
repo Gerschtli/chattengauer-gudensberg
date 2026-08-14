@@ -18,8 +18,8 @@ importers:
         specifier: ^5.0.0
         version: 5.2.0(@floating-ui/dom@1.7.6)
       '@storyblok/svelte':
-        specifier: ^6.1.7
-        version: 6.1.10(@floating-ui/dom@1.7.6)(svelte@5.56.7(@typescript-eslint/types@8.65.0))
+        specifier: ^7.0.0
+        version: 7.3.0(@floating-ui/dom@1.7.6)(svelte@5.56.7(@typescript-eslint/types@8.65.0))
       '@sveltejs/adapter-vercel':
         specifier: ^6.0.0
         version: 6.3.4(@sveltejs/kit@2.70.1(@sveltejs/vite-plugin-svelte@7.2.0(svelte@5.56.7(@typescript-eslint/types@8.65.0))(vite@8.1.5(@types/node@24.13.3)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.56.7(@typescript-eslint/types@8.65.0))(typescript@6.0.3)(vite@8.1.5(@types/node@24.13.3)(esbuild@0.28.1)(jiti@2.7.0)))
@@ -854,11 +854,11 @@ packages:
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
-  '@storyblok/js@5.1.10':
-    resolution: {integrity: sha512-cpiOSizLol8fPiiCLyNfy2Z18mzJDT2YD/WmmEEg+HdqBSx84r+GjdtfOfUo9KGe76tXv676amh6RW/bi9PBSw==}
-
   '@storyblok/js@6.3.0':
     resolution: {integrity: sha512-7H4A3Rsw7UsOIWO6zmzBFVyGxaH5/RD+KBuxsXkPD3kWh56WSjSHnlbdRquxVgL/jCxULcphSHgsHzBRfKkG1Q==}
+
+  '@storyblok/js@6.3.1':
+    resolution: {integrity: sha512-fCeHsPrvitSZOzIqsmsBLQQ16b69ctP3InXK6+u6xJb5WzXqwKlcpqCQuU3KJddUg4DJ+p8txcWd212N2iQRdw==}
 
   '@storyblok/management-api-client@0.6.1':
     resolution: {integrity: sha512-OA+PjK28oRgEgqtjL/p+rESAduU/Qxiyj59LJV8rwb4tAGgSAvp6xPeNR4p/YuI9n1ResQa2WefboWDmEpgMHw==}
@@ -869,14 +869,17 @@ packages:
   '@storyblok/region-helper@1.5.0':
     resolution: {integrity: sha512-ChqoSjZH/6/xzSuaCBR/I61gN/SsSTaDXPB765NA07Xucf5VpmWYTBVJe3z6GgZrZljJaw9YY9rESLsKndyE+w==}
 
-  '@storyblok/richtext@4.3.5':
-    resolution: {integrity: sha512-CSJUf+r6mjv4X6xvn2k9NWNfFoQ+FlWoubcp3Lmg5pIcK8CnJHICSgEBfiIqTzx4dgsAPF06OXaMEWyTTy9kMw==}
-
   '@storyblok/richtext@5.2.0':
     resolution: {integrity: sha512-M/DMwIxJ0SAksgKMP/IUOEh/Y3Ooeb6cnseH9pCHGGD64ayuHrOlxLqOVyVrqidIGyYYjn2VzoalVNixWIhMSQ==}
 
-  '@storyblok/svelte@6.1.10':
-    resolution: {integrity: sha512-dxL2IEHrsrdTN1FctZagK1du52ve6hsuO9xPkOLnxvkBhZ9/hMR50YfcGbKKj8lkelB2e+NopGfX0xspTSbOsg==}
+  '@storyblok/richtext@5.2.1':
+    resolution: {integrity: sha512-Lw5DP8hwH3BKTp7ddYAbrZPAYDkM26SvxyC/xOlxCV/FQnFzsBgRAOfRsXr/NvNt9piKWWAYscD2iCZmw6eitA==}
+
+  '@storyblok/richtext@5.3.0':
+    resolution: {integrity: sha512-UiJggZqBV7X4jg8/Z5I+WSFgnoIeobrx42K7BelvK9V0kXxY8hkpalcwcr1zE7HgRgeDF+jW0QPbtnYWY2jYgQ==}
+
+  '@storyblok/svelte@7.3.0':
+    resolution: {integrity: sha512-ulsORFhG4/JXHv6UDna+9SnhPWO18DZC8jitbdOuB1dIHhwnsyh8e7pjmOvvbxs2R9trFsOoI7OjNZ7J3KwOnw==}
     peerDependencies:
       svelte: ^5.0.0
 
@@ -1039,13 +1042,6 @@ packages:
     peerDependencies:
       '@tiptap/core': 3.29.2
 
-  '@tiptap/extension-details@3.27.1':
-    resolution: {integrity: sha512-plmo3rxmX/VZ6VXnt3yBdIjqlOPYESoKNOl6TccF1hJ1+JXeiKRryT/vgodKhkWeA0S9UvfuOxxuGUISlFnNrg==}
-    peerDependencies:
-      '@tiptap/core': 3.27.1
-      '@tiptap/extension-text-style': 3.27.1
-      '@tiptap/pm': 3.27.1
-
   '@tiptap/extension-document@3.29.2':
     resolution: {integrity: sha512-YUamvefLnsqu6124GavVTI7nqcFlQJ12ROB0oSwG69eSBZYNjg1tIs05LFrBxkwf4Xgqd6YzfJ9+FeG428RvzQ==}
     peerDependencies:
@@ -1128,11 +1124,6 @@ packages:
     peerDependencies:
       '@tiptap/core': 3.29.2
       '@tiptap/pm': 3.29.2
-
-  '@tiptap/extension-text-align@3.27.1':
-    resolution: {integrity: sha512-EXawuJBO55wd8WcTbHTMoPhv0CGQxza4yCCPB5Hqz4ZPQwahIr3ej+8yp/kimIl0xokabwZ0/Fu8STQ4AkZv5g==}
-    peerDependencies:
-      '@tiptap/core': 3.27.1
 
   '@tiptap/extension-text-style@3.29.2':
     resolution: {integrity: sha512-aQad9V9ROaEi3hE4g5z9wQ6lv5FSnzlnWFMVJxRjNlwXgm7H0fymxb4rGfca+pAwYkiRwpKYh1LatpJw2ECQAA==}
@@ -2611,14 +2602,14 @@ packages:
   std-env@4.2.0:
     resolution: {integrity: sha512-oCUKSupKTHX53EyjDtuZQ64pjLJ6yYCtpmEw0goYxtjG9KpbRe8KAsl2tBUGU9DyMcJ0RwJ8GqJAFzMXcXW1Rw==}
 
-  storyblok-js-client@7.6.1:
-    resolution: {integrity: sha512-vwViT+Rehe6o0INeNL4KbdO00j/QCqrD/Dubvl9JLZtufmptJyT7DzXC9HQg//9JfyAYmfaizf4CH5Rrrgvtwg==}
-
   storyblok-js-client@7.7.1:
     resolution: {integrity: sha512-aofkkc+62W5EGfxmlabA8snTi5QygFmdsXquEUE3FessVkyvOkMuP1Am9hww491O2dsRjBQdBCzHbAmguR27SA==}
 
   storyblok-js-client@7.7.2:
     resolution: {integrity: sha512-Y01kOqq6yxZBeGkVHTXwhuMFQobAV0Ejyr4EPHIobFq8UWv7xDPh6pyk5S0A54WgRouVPWeYvHsDLgkXlnsp0Q==}
+
+  storyblok-js-client@7.7.3:
+    resolution: {integrity: sha512-Do4Z0mSgoYMewtPArE/3dvW8T8/WI5wqjckqkPO0/2o4CE0dKojS40Nmde3ZQMt9faYxwAgNqOKY0l3NwqQJuA==}
 
   storyblok@4.21.0:
     resolution: {integrity: sha512-EL7Nre1j63dPkqZGgG/PGXAs//JMdmJiVas1S8GKZAM6Wirb415d7yYeLe1nHuJz29HvQq7rrtLkmD4XATZtKQ==}
@@ -3620,20 +3611,21 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@storyblok/js@5.1.10(@floating-ui/dom@1.7.6)':
-    dependencies:
-      '@storyblok/richtext': 4.3.5(@floating-ui/dom@1.7.6)
-      storyblok-js-client: 7.6.1
-    transitivePeerDependencies:
-      - '@floating-ui/dom'
-      - bufferutil
-      - utf-8-validate
-
   '@storyblok/js@6.3.0(@floating-ui/dom@1.7.6)':
     dependencies:
       '@storyblok/preview-bridge': 2.2.1
       '@storyblok/richtext': 5.2.0(@floating-ui/dom@1.7.6)
       storyblok-js-client: 7.7.1
+    transitivePeerDependencies:
+      - '@floating-ui/dom'
+      - bufferutil
+      - utf-8-validate
+
+  '@storyblok/js@6.3.1(@floating-ui/dom@1.7.6)':
+    dependencies:
+      '@storyblok/preview-bridge': 2.2.1
+      '@storyblok/richtext': 5.2.1(@floating-ui/dom@1.7.6)
+      storyblok-js-client: 7.7.3
     transitivePeerDependencies:
       - '@floating-ui/dom'
       - bufferutil
@@ -3649,45 +3641,6 @@ snapshots:
       pure-parse: 0.0.0-beta.8
 
   '@storyblok/region-helper@1.5.0': {}
-
-  '@storyblok/richtext@4.3.5(@floating-ui/dom@1.7.6)':
-    dependencies:
-      '@tiptap/core': 3.29.2(@tiptap/pm@3.29.2)
-      '@tiptap/extension-blockquote': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
-      '@tiptap/extension-bold': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
-      '@tiptap/extension-code': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
-      '@tiptap/extension-code-block': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
-      '@tiptap/extension-details': 3.27.1(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/extension-text-style@3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2)))(@tiptap/pm@3.29.2)
-      '@tiptap/extension-document': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
-      '@tiptap/extension-emoji': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)(@tiptap/suggestion@3.29.2(@floating-ui/dom@1.7.6)(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2))(emojibase@17.0.0)
-      '@tiptap/extension-hard-break': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
-      '@tiptap/extension-heading': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
-      '@tiptap/extension-highlight': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
-      '@tiptap/extension-horizontal-rule': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
-      '@tiptap/extension-image': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
-      '@tiptap/extension-italic': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
-      '@tiptap/extension-link': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
-      '@tiptap/extension-list': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
-      '@tiptap/extension-paragraph': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
-      '@tiptap/extension-strike': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
-      '@tiptap/extension-subscript': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
-      '@tiptap/extension-superscript': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
-      '@tiptap/extension-table': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
-      '@tiptap/extension-text': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
-      '@tiptap/extension-text-align': 3.27.1(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
-      '@tiptap/extension-text-style': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
-      '@tiptap/extension-underline': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
-      '@tiptap/html': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)(happy-dom@20.11.1)
-      '@tiptap/pm': 3.29.2
-      '@tiptap/suggestion': 3.29.2(@floating-ui/dom@1.7.6)(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
-      emojibase: 17.0.0
-      happy-dom: 20.11.1
-      markdown-it: 14.3.0
-      storyblok-js-client: 7.6.1
-    transitivePeerDependencies:
-      - '@floating-ui/dom'
-      - bufferutil
-      - utf-8-validate
 
   '@storyblok/richtext@5.2.0(@floating-ui/dom@1.7.6)':
     dependencies:
@@ -3725,9 +3678,82 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@storyblok/svelte@6.1.10(@floating-ui/dom@1.7.6)(svelte@5.56.7(@typescript-eslint/types@8.65.0))':
+  '@storyblok/richtext@5.2.1(@floating-ui/dom@1.7.6)':
     dependencies:
-      '@storyblok/js': 5.1.10(@floating-ui/dom@1.7.6)
+      '@tiptap/core': 3.29.2(@tiptap/pm@3.29.2)
+      '@tiptap/extension-blockquote': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
+      '@tiptap/extension-bold': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/extension-code': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/extension-code-block': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
+      '@tiptap/extension-document': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/extension-emoji': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)(@tiptap/suggestion@3.29.2(@floating-ui/dom@1.7.6)(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2))(emojibase@17.0.0)
+      '@tiptap/extension-hard-break': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/extension-heading': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/extension-highlight': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/extension-horizontal-rule': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
+      '@tiptap/extension-image': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/extension-italic': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/extension-link': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
+      '@tiptap/extension-list': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
+      '@tiptap/extension-paragraph': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/extension-strike': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/extension-subscript': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
+      '@tiptap/extension-superscript': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
+      '@tiptap/extension-table': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
+      '@tiptap/extension-text': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/extension-text-style': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/extension-underline': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/html': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)(happy-dom@20.11.1)
+      '@tiptap/pm': 3.29.2
+      '@tiptap/suggestion': 3.29.2(@floating-ui/dom@1.7.6)(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
+      emojibase: 17.0.0
+      happy-dom: 20.11.1
+      markdown-it: 14.3.0
+    transitivePeerDependencies:
+      - '@floating-ui/dom'
+      - bufferutil
+      - utf-8-validate
+
+  '@storyblok/richtext@5.3.0(@floating-ui/dom@1.7.6)':
+    dependencies:
+      '@tiptap/core': 3.29.2(@tiptap/pm@3.29.2)
+      '@tiptap/extension-blockquote': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
+      '@tiptap/extension-bold': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/extension-code': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/extension-code-block': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
+      '@tiptap/extension-document': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/extension-emoji': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)(@tiptap/suggestion@3.29.2(@floating-ui/dom@1.7.6)(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2))(emojibase@17.0.0)
+      '@tiptap/extension-hard-break': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/extension-heading': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/extension-highlight': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/extension-horizontal-rule': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
+      '@tiptap/extension-image': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/extension-italic': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/extension-link': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
+      '@tiptap/extension-list': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
+      '@tiptap/extension-paragraph': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/extension-strike': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/extension-subscript': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
+      '@tiptap/extension-superscript': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
+      '@tiptap/extension-table': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
+      '@tiptap/extension-text': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/extension-text-style': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/extension-underline': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
+      '@tiptap/html': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)(happy-dom@20.11.1)
+      '@tiptap/pm': 3.29.2
+      '@tiptap/suggestion': 3.29.2(@floating-ui/dom@1.7.6)(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/pm@3.29.2)
+      emojibase: 17.0.0
+      happy-dom: 20.11.1
+      markdown-it: 14.3.0
+    transitivePeerDependencies:
+      - '@floating-ui/dom'
+      - bufferutil
+      - utf-8-validate
+
+  '@storyblok/svelte@7.3.0(@floating-ui/dom@1.7.6)(svelte@5.56.7(@typescript-eslint/types@8.65.0))':
+    dependencies:
+      '@storyblok/js': 6.3.1(@floating-ui/dom@1.7.6)
+      '@storyblok/richtext': 5.3.0(@floating-ui/dom@1.7.6)
       svelte: 5.56.7(@typescript-eslint/types@8.65.0)
     transitivePeerDependencies:
       - '@floating-ui/dom'
@@ -3869,12 +3895,6 @@ snapshots:
     dependencies:
       '@tiptap/core': 3.29.2(@tiptap/pm@3.29.2)
 
-  '@tiptap/extension-details@3.27.1(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))(@tiptap/extension-text-style@3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2)))(@tiptap/pm@3.29.2)':
-    dependencies:
-      '@tiptap/core': 3.29.2(@tiptap/pm@3.29.2)
-      '@tiptap/extension-text-style': 3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))
-      '@tiptap/pm': 3.29.2
-
   '@tiptap/extension-document@3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))':
     dependencies:
       '@tiptap/core': 3.29.2(@tiptap/pm@3.29.2)
@@ -3948,10 +3968,6 @@ snapshots:
     dependencies:
       '@tiptap/core': 3.29.2(@tiptap/pm@3.29.2)
       '@tiptap/pm': 3.29.2
-
-  '@tiptap/extension-text-align@3.27.1(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))':
-    dependencies:
-      '@tiptap/core': 3.29.2(@tiptap/pm@3.29.2)
 
   '@tiptap/extension-text-style@3.29.2(@tiptap/core@3.29.2(@tiptap/pm@3.29.2))':
     dependencies:
@@ -5361,11 +5377,11 @@ snapshots:
 
   std-env@4.2.0: {}
 
-  storyblok-js-client@7.6.1: {}
-
   storyblok-js-client@7.7.1: {}
 
   storyblok-js-client@7.7.2: {}
+
+  storyblok-js-client@7.7.3: {}
 
   storyblok@4.21.0(@floating-ui/dom@1.7.6)(@types/node@24.13.3):
     dependencies:
