@@ -1,12 +1,8 @@
-import {
-	type SbRichTextInput,
-	type SbRichTextRenderContext,
-	renderRichText as renderStoryblokRichText,
-} from '@storyblok/richtext';
+import { type StoryblokRichTextRenderContext, renderRichText as renderStoryblokRichText } from '@storyblok/richtext';
 
-import type { StoryblokRichtext } from '$storyblok/storyblok';
+import type { StoryblokRichTextDoc } from '$storyblok/storyblok';
 
-const options: SbRichTextRenderContext = {
+const options: StoryblokRichTextRenderContext = {
 	renderers: {
 		heading: ({ attrs, children }) => {
 			const level = attrs?.level;
@@ -32,6 +28,17 @@ const options: SbRichTextRenderContext = {
 	},
 };
 
-export function renderRichText(blok: StoryblokRichtext) {
-	return renderStoryblokRichText(blok as unknown as SbRichTextInput, options);
+export function renderRichTextWithoutParagraph(blok: StoryblokRichTextDoc) {
+	if (blok.content?.[0].type === 'paragraph' && blok.content?.[0].content?.[0]) {
+		blok = {
+			type: 'doc',
+			content: blok.content?.[0].content,
+		};
+	}
+
+	return renderRichText(blok);
+}
+
+export function renderRichText(blok: StoryblokRichTextDoc) {
+	return renderStoryblokRichText(blok, options);
 }

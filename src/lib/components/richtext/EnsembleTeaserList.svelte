@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { ChevronRightIcon } from 'lucide-svelte';
 
-	import { renderRichText } from '$lib/storyblok/richtext';
+	import { renderRichText, renderRichTextWithoutParagraph } from '$lib/storyblok/richtext';
 	import { buildUrl, storyblokEditable } from '$lib/storyblok/util';
 	import type { EnsembleTeaserList } from '$storyblok/335007/storyblok-components';
 
@@ -32,14 +32,8 @@
 				]}
 			>
 				<h3 class="font-accent font-accent-bold text-xl">
-					{#if ensemble.title.content?.[0].type === 'paragraph'}
-						<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-						{@html renderRichText({
-							type: 'doc',
-							// prevent paragraph rendering
-							content: ensemble.title.content?.[0].content,
-						})}
-					{/if}
+					<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+					{@html renderRichTextWithoutParagraph(ensemble.title)}
 				</h3>
 
 				<div class="prose contents text-sm">

@@ -5,7 +5,7 @@
 	import { afterNavigate, pushState } from '$app/navigation';
 	import { page } from '$app/state';
 
-	import { renderRichText } from '$lib/storyblok/richtext';
+	import { renderRichTextWithoutParagraph } from '$lib/storyblok/richtext';
 	import { buildUrl } from '$lib/storyblok/util';
 	import type { Config, NavigationLink } from '$storyblok/335007/storyblok-components';
 
@@ -73,14 +73,8 @@
 						}, 0);
 					}}
 				>
-					{#if link.title.content?.[0].type === 'paragraph'}
-						<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-						{@html renderRichText({
-							type: 'doc',
-							// prevent paragraph rendering
-							content: link.title.content?.[0].content,
-						})}
-					{/if}
+					<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+					{@html renderRichTextWithoutParagraph(link.title)}
 				</a>
 			{/snippet}
 
@@ -91,14 +85,8 @@
 					{:else if item.component === 'navigationGroup'}
 						<li class="space-y-2">
 							<span>
-								{#if item.title.content?.[0].type === 'paragraph'}
-									<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-									{@html renderRichText({
-										type: 'doc',
-										// prevent paragraph rendering
-										content: item.title.content?.[0].content,
-									})}
-								{/if}
+								<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+								{@html renderRichTextWithoutParagraph(item.title)}
 							</span>
 							<ul role="list" class="space-y-2 pl-8">
 								{#each item.items as subItem (subItem._uid)}
