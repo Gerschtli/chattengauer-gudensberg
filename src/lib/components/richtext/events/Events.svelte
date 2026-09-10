@@ -6,8 +6,6 @@
 	import type { EventData } from '$lib/types';
 	import type { Events } from '$storyblok/335007/storyblok-components';
 
-	import { getEnsembleList } from '../newsList/context';
-
 	import { SvelteMap } from 'svelte/reactivity';
 	import { getEvents } from './context';
 	import Event from './Event.svelte';
@@ -15,7 +13,6 @@
 	let { blok }: { blok: Events } = $props();
 
 	const events = getEvents();
-	const ensembleMap = Object.fromEntries(getEnsembleList().map((e) => [e.url, e.name]));
 
 	const showMax = $derived(parseInt(blok.showMax));
 	let expandAll = $state(false);
@@ -50,7 +47,7 @@
 				{separator}
 			</h2>
 			{#each eventList as event, j (j)}
-				<Event {event} {ensembleMap} />
+				<Event {event} />
 			{/each}
 		{/each}
 	{/if}

@@ -28,6 +28,14 @@ export function buildUrl(link: Exclude<StoryblokMultilink, { linktype?: 'email' 
 	return url + anchorSuffix;
 }
 
+export function getLinkName(link: Exclude<StoryblokMultilink, { linktype?: 'email' } | { linktype?: 'asset' }>) {
+	if (link.linktype === 'story') {
+		return link.story?.name;
+	}
+
+	return link.title;
+}
+
 type RemoveIndex<T> = {
 	[K in keyof T as string extends K ? never : number extends K ? never : symbol extends K ? never : K]: T[K];
 };

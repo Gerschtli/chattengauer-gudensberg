@@ -23,7 +23,11 @@ export function getEnd(time: EventData['time']) {
 			return date;
 		}
 		case 'range': {
-			return time.end;
+			return time.end ?? time.start;
 		}
 	}
+}
+
+export function parseDateAsUtc(date: string) {
+	return new Date(`${date.trim()}+0000`);
 }

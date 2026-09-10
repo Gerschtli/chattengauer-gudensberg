@@ -30,6 +30,13 @@ export interface Directions {
 	_editable?: string | undefined;
 }
 
+export interface EnsembleLink {
+	ensemble: Exclude<StoryblokMultilink, { linktype?: 'email' } | { linktype?: 'asset' }>;
+	component: 'ensembleLink';
+	_uid: string;
+	_editable?: string | undefined;
+}
+
 export interface EnsembleTeaser {
 	title: StoryblokRichTextDoc;
 	description: StoryblokRichTextDoc;
@@ -43,6 +50,25 @@ export interface EnsembleTeaser {
 export interface EnsembleTeaserList {
 	list: EnsembleTeaser[];
 	component: 'ensembleTeaserList';
+	_uid: string;
+	_editable?: string | undefined;
+}
+
+export interface Event {
+	start: string;
+	end?: string;
+	title: string;
+	description?: StoryblokRichTextDoc;
+	location?: string;
+	ensembles?: EnsembleLink[];
+	component: 'event';
+	_uid: string;
+	_editable?: string | undefined;
+}
+
+export interface EventList {
+	events?: Event[];
+	component: 'eventList';
 	_uid: string;
 	_editable?: string | undefined;
 }
@@ -130,4 +156,4 @@ export interface TextAndLeader {
 	_editable?: string | undefined;
 }
 
-export type ContentType = Config | News | Page;
+export type ContentType = Config | EventList | News | Page;

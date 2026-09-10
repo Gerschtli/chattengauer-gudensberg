@@ -163,6 +163,38 @@
 		"metadata": {}
 	},
 	{
+		"name": "ensembleLink",
+		"display_name": "Ensemble Link",
+		"description": "",
+		"created_at": "2026-09-10T21:18:37.853Z",
+		"updated_at": "2026-09-10T21:35:10.188Z",
+		"id": 218667081133837,
+		"schema": {
+			"ensemble": {
+				"type": "multilink",
+				"pos": 0,
+				"required": true,
+				"link_scope": "ensembles/",
+				"id": "ortLZyDYRyms9andC8wK_w"
+			}
+		},
+		"image": null,
+		"preview_field": null,
+		"is_root": false,
+		"preview_tmpl": "{{it.ensemble.cached_url}}",
+		"is_nestable": true,
+		"all_presets": [],
+		"preset_id": null,
+		"real_name": "Ensemble Link",
+		"component_group_uuid": null,
+		"color": null,
+		"icon": null,
+		"internal_tags_list": [],
+		"internal_tag_ids": [],
+		"content_type_asset_preview": null,
+		"metadata": {}
+	},
+	{
 		"name": "ensembleTeaser",
 		"display_name": "Ensemble Teaser",
 		"description": "",
@@ -282,6 +314,134 @@
 		"preset_id": null,
 		"real_name": "Ensemble Teaser Liste",
 		"component_group_uuid": "7d329944-f827-4304-85c6-d04a64ab2869",
+		"color": null,
+		"icon": null,
+		"internal_tags_list": [],
+		"internal_tag_ids": [],
+		"content_type_asset_preview": null,
+		"metadata": {}
+	},
+	{
+		"name": "event",
+		"display_name": "Termin",
+		"description": "",
+		"created_at": "2026-09-10T21:09:06.868Z",
+		"updated_at": "2026-09-10T21:38:42.675Z",
+		"id": 218664742379274,
+		"schema": {
+			"start": {
+				"type": "datetime",
+				"pos": 0,
+				"display_name": "Beginn",
+				"required": true,
+				"disable_time": false,
+				"id": "LNzT6iDGTDOBoMXkt024bg"
+			},
+			"end": {
+				"type": "datetime",
+				"pos": 1,
+				"display_name": "Ende",
+				"id": "6p9tTwgJTPazjFMRVgUKww"
+			},
+			"title": {
+				"type": "text",
+				"pos": 2,
+				"display_name": "Titel",
+				"required": true,
+				"id": "tHMt9j2-QRG0RAyEwCyPPg"
+			},
+			"description": {
+				"type": "richtext",
+				"pos": 3,
+				"id": "-_vxnJEjTPuLHbA7oO-wuw",
+				"required": false,
+				"display_name": "Beschreibung",
+				"customize_toolbar": true,
+				"restrict_type": "",
+				"restrict_components": false,
+				"allow_target_blank": true,
+				"allow_custom_attributes": true,
+				"toolbar": [
+					"copy",
+					"cut",
+					"color",
+					"emoji",
+					"bold",
+					"unset",
+					"italic",
+					"link",
+					"paste-action",
+					"redo",
+					"underline",
+					"undo"
+				]
+			},
+			"location": {
+				"type": "text",
+				"pos": 4,
+				"id": "_9gPJv1YT4KiTU-zLCvuhQ",
+				"display_name": "Ort"
+			},
+			"ensembles": {
+				"type": "bloks",
+				"pos": 5,
+				"id": "3n63u5qtQ1-F0QVUfwTwOg",
+				"restrict_type": "",
+				"restrict_components": true,
+				"component_whitelist": ["ensembleLink"],
+				"component_denylist": [],
+				"component_group_whitelist": [],
+				"component_group_denylist": [],
+				"component_tag_whitelist": [],
+				"component_tag_denylist": [],
+				"force_link_scope": false
+			}
+		},
+		"image": null,
+		"preview_field": null,
+		"is_root": false,
+		"preview_tmpl": "{{it.start}} Uhr - {{it.title}}",
+		"is_nestable": true,
+		"all_presets": [],
+		"preset_id": null,
+		"real_name": "Termin",
+		"component_group_uuid": null,
+		"color": null,
+		"icon": null,
+		"internal_tags_list": [],
+		"internal_tag_ids": [],
+		"content_type_asset_preview": null,
+		"metadata": {}
+	},
+	{
+		"name": "eventList",
+		"display_name": "Terminliste",
+		"description": "",
+		"created_at": "2026-09-10T21:08:20.115Z",
+		"updated_at": "2026-09-10T21:20:43.420Z",
+		"id": 218664550878985,
+		"schema": {
+			"events": {
+				"type": "bloks",
+				"pos": 0,
+				"required": false,
+				"display_name": "Termine",
+				"id": "rTwgxAV3Sv-S6Woua26zag",
+				"restrict_type": "",
+				"restrict_components": true,
+				"component_whitelist": ["event"],
+				"component_denylist": []
+			}
+		},
+		"image": null,
+		"preview_field": null,
+		"is_root": true,
+		"preview_tmpl": null,
+		"is_nestable": false,
+		"all_presets": [],
+		"preset_id": null,
+		"real_name": "Terminliste",
+		"component_group_uuid": null,
 		"color": null,
 		"icon": null,
 		"internal_tags_list": [],

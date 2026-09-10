@@ -1,3 +1,6 @@
+import type { EnsembleLink } from '$storyblok/335007/storyblok-components';
+import type { StoryblokRichTextDoc } from '$storyblok/storyblok';
+
 export type EventData = {
 	time:
 		| {
@@ -7,10 +10,10 @@ export type EventData = {
 		| {
 				type: 'range';
 				start: Date;
-				end: Date;
+				end?: Date;
 		  };
 	title: string;
-	description?: string;
+	description?: StoryblokRichTextDoc;
 	location?: string;
-	ensembles?: string[];
+	ensembles?: EnsembleLink[];
 };
