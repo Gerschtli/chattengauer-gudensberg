@@ -2,7 +2,7 @@
 	import { MenuIcon } from 'lucide-svelte';
 	import { scrollY } from 'svelte/reactivity/window';
 
-	import { browser } from '$app/environment';
+	import { browser } from '$app/env';
 	import { pushState } from '$app/navigation';
 	import { page } from '$app/state';
 
