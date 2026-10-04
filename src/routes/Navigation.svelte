@@ -2,7 +2,7 @@
 	import { XIcon } from 'lucide-svelte';
 	import { fade, fly } from 'svelte/transition';
 
-	import { afterNavigate, pushState } from '$app/navigation';
+	import { afterNavigate, goto } from '$app/navigation';
 	import { page } from '$app/state';
 
 	import { renderRichTextWithoutParagraph } from '$lib/storyblok/richtext';
@@ -29,7 +29,8 @@
 		closeNav();
 	}
 
-	afterNavigate(() => {
+	afterNavigate(({ shallow }) => {
+		if (shallow) return;
 		if (!page.state.showNav) return;
 		closeNav();
 	});
@@ -66,7 +67,7 @@
 
 						closeNav();
 
-						pushState(url, { showNav: false });
+						goto(url, { shallow: true, state: { showNav: false } });
 
 						setTimeout(() => {
 							document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
