@@ -13,11 +13,6 @@ export default defineConfig({
 			// for more information about preprocessors
 			preprocess: vitePreprocess(),
 			adapter: adapter({ runtime: 'nodejs24.x', regions: ['fra1'] }),
-			alias: {
-				// an alias ending /* will only match
-				// the contents of a directory, not the directory itself
-				'$storyblok/*': '.storyblok/types/*',
-			},
 		}),
 		basicSsl(),
 	],

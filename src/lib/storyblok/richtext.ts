@@ -1,6 +1,6 @@
 import { type StoryblokRichTextRenderContext, renderRichText as renderStoryblokRichText } from '@storyblok/richtext';
 
-import type { StoryblokRichTextDoc } from '$storyblok/storyblok';
+import type { StoryblokRichTextDoc } from '#storyblok/storyblok.js';
 
 const options: StoryblokRichTextRenderContext = {
 	renderers: {

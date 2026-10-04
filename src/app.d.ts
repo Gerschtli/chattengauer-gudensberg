@@ -1,6 +1,6 @@
 import type { ISbStoryData } from '@storyblok/svelte';
 
-import type { Config } from '$storyblok/335007/storyblok-components';
+import type { Config } from '#storyblok/335007/storyblok-components.js';
 
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces

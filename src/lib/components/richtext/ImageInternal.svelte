@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { StoryblokAsset } from '$storyblok/storyblok';
+	import type { StoryblokAsset } from '#storyblok/storyblok.js';
 
 	import { getAspectRatio, getDimensionsOfImageUrl } from '../../storyblok/util';
 

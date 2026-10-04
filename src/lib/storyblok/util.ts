@@ -1,6 +1,6 @@
 import { type SbBlokData, storyblokEditable as storyblokEditableOriginal } from '@storyblok/svelte';
 
-import type { StoryblokAsset, StoryblokMultilink } from '$storyblok/storyblok';
+import type { StoryblokAsset, StoryblokMultilink } from '#storyblok/storyblok.js';
 
 export function getDimensionsOfImageUrl(asset: StoryblokAsset) {
 	const result = asset.filename?.match('^https://a\\.storyblok\\.com/f/\\d+/(\\d+)x(\\d+)/');

@@ -5,7 +5,7 @@ import { dev } from '$app/env';
 import { PUBLIC_STORYBLOK_ACCESS_TOKEN } from '$app/env/public';
 
 import { components } from '#lib/components/index.js';
-import type { Page } from '$storyblok/335007/storyblok-components';
+import type { Page } from '#storyblok/335007/storyblok-components.js';
 
 export function initStoryblokApi() {
 	storyblokInit({
