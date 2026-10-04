@@ -4,7 +4,7 @@
 	import { superForm } from 'sveltekit-superforms';
 	import { zod4Client } from 'sveltekit-superforms/adapters';
 
-	import { instruments } from '$lib/instruments';
+	import { instruments } from '#lib/instruments.js';
 
 	import Potty from './Potty.svelte';
 	import { type SuperValidatedEngageEnsemble, schemaEngageEnsemble } from './schema';

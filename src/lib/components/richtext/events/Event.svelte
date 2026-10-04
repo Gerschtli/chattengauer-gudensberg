@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { HashIcon, MapPinIcon } from 'lucide-svelte';
 
-	import { renderRichText } from '$lib/storyblok/richtext';
-	import { buildUrl, getLinkName } from '$lib/storyblok/util';
-	import { TIME_ZONE } from '$lib/time';
-	import type { EventData } from '$lib/types';
+	import { renderRichText } from '#lib/storyblok/richtext.js';
+	import { buildUrl, getLinkName } from '#lib/storyblok/util.js';
+	import { TIME_ZONE } from '#lib/time.js';
+	import type { EventData } from '#lib/types.js';
 
 	interface Props {
 		event: EventData;

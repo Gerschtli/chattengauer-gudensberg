@@ -4,9 +4,9 @@ import { zod4 } from 'sveltekit-superforms/adapters';
 
 import { CONTACT_EMAIL, CONTACT_NAME, SENDER_EMAIL, SENDER_NAME } from '$app/env/private';
 
-import { sendMail } from '$lib/server/mail';
+import { sendMail } from '#lib/server/mail.js';
 
-import { schemaBooking, schemaEngageHome } from '$lib/components/richtext/form/schema';
+import { schemaBooking, schemaEngageHome } from '#lib/components/richtext/form/schema.js';
 
 export async function load() {
 	return {

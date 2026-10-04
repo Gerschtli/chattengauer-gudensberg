@@ -5,8 +5,8 @@
 	import { afterNavigate, goto } from '$app/navigation';
 	import { page } from '$app/state';
 
-	import { renderRichTextWithoutParagraph } from '$lib/storyblok/richtext';
-	import { buildUrl } from '$lib/storyblok/util';
+	import { renderRichTextWithoutParagraph } from '#lib/storyblok/richtext.js';
+	import { buildUrl } from '#lib/storyblok/util.js';
 	import type { Config, NavigationLink } from '$storyblok/335007/storyblok-components';
 
 	const { blok }: { blok: Config } = $props();

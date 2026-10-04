@@ -2,9 +2,9 @@
 	import { type SbBlokData } from '@storyblok/svelte';
 	import { HashIcon } from 'lucide-svelte';
 
-	import Richtext from '$lib/components/Richtext.svelte';
-	import { storyblokEditable } from '$lib/storyblok/util';
-	import { TIME_ZONE } from '$lib/time';
+	import Richtext from '#lib/components/Richtext.svelte';
+	import { storyblokEditable } from '#lib/storyblok/util.js';
+	import { TIME_ZONE } from '#lib/time.js';
 	import type { NewsList } from '$storyblok/335007/storyblok-components';
 
 	import { getEnsembleList, getNewsList } from './context';

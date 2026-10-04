@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { setEvents } from '$lib/components/richtext/events/context';
-	import { setEnsembleList, setNewsList } from '$lib/components/richtext/newsList/context';
-	import StoryblokInit from '$lib/storyblok/StoryblokInit.svelte';
+	import { setEvents } from '#lib/components/richtext/events/context.js';
+	import { setEnsembleList, setNewsList } from '#lib/components/richtext/newsList/context.js';
+	import StoryblokInit from '#lib/storyblok/StoryblokInit.svelte';
 
 	let { data } = $props();
 

@@ -12,7 +12,7 @@
 		"prettier-plugin-tailwindcss"
 	],
 	"importOrderParserPlugins": ["typescript"],
-	"importOrder": ["^\\$(app|env)/", "^\\$lib/server", "^\\$", "^\\.\\./", "^\\./", "\\.css$"],
+	"importOrder": ["^\\$app/", "^#lib/server", "^(\\$|#)", "^\\.\\./", "^\\./", "\\.css$"],
 	"importOrderSeparation": true,
 	"importOrderSortSpecifiers": true,
 	"overrides": [

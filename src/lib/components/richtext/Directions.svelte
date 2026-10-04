@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { MapPinIcon } from 'lucide-svelte';
 
-	import placeholder from '$lib/assets/placeholder-google-maps.jpg';
-	import { storyblokEditable } from '$lib/storyblok/util';
+	import placeholder from '#lib/assets/placeholder-google-maps.jpg';
+	import { storyblokEditable } from '#lib/storyblok/util.js';
 	import type { Directions } from '$storyblok/335007/storyblok-components';
 
 	let { blok }: { blok: Directions } = $props();

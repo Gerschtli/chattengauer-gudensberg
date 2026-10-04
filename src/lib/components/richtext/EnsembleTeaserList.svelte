@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { ChevronRightIcon } from 'lucide-svelte';
 
-	import { renderRichText, renderRichTextWithoutParagraph } from '$lib/storyblok/richtext';
-	import { buildUrl, storyblokEditable } from '$lib/storyblok/util';
+	import { renderRichText, renderRichTextWithoutParagraph } from '#lib/storyblok/richtext.js';
+	import { buildUrl, storyblokEditable } from '#lib/storyblok/util.js';
 	import type { EnsembleTeaserList } from '$storyblok/335007/storyblok-components';
 
 	import ImageSliderInternal from './ImageSliderInternal.svelte';

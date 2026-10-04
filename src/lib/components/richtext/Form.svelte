@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { storyblokEditable } from '$lib/storyblok/util';
+	import { storyblokEditable } from '#lib/storyblok/util.js';
 	import type { Form } from '$storyblok/335007/storyblok-components';
 
 	import BookingForm from './form/BookingForm.svelte';
