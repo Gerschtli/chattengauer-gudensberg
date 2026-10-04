@@ -24,7 +24,7 @@
 		"@eslint/compat": "^2.0.0",
 		"@eslint/js": "^10.0.0",
 		"@storyblok/richtext": "^5.0.0",
-		"@storyblok/svelte": "^6.1.7",
+		"@storyblok/svelte": "^7.0.0",
 		"@sveltejs/adapter-vercel": "^6.0.0",
 		"@sveltejs/kit": "^2.60.1",
 		"@sveltejs/vite-plugin-svelte": "^7.1.2",
