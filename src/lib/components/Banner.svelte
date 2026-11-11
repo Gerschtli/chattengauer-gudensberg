@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ChevronRightIcon } from 'lucide-svelte';
+	import { ChevronRightIcon } from '@lucide/svelte';
 
 	import { buildUrl, storyblokEditable } from '#lib/storyblok/util.ts';
 	import type { Banner } from '$storyblok/335007/storyblok-components';

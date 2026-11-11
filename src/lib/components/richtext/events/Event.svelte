@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { HashIcon, MapPinIcon } from 'lucide-svelte';
+	import { HashIcon, MapPinIcon } from '@lucide/svelte';
 
 	import { renderRichText } from '#lib/storyblok/richtext.ts';
 	import { buildUrl, getLinkName } from '#lib/storyblok/util.ts';

@@ -1,6 +1,6 @@
 <script lang="ts">
+	import { AsteriskIcon, CheckIcon, LoaderCircleIcon, XIcon } from '@lucide/svelte';
 	import { Control, Description, Field, FieldErrors, Fieldset, Label } from 'formsnap';
-	import { AsteriskIcon, CheckIcon, LoaderCircleIcon, XIcon } from 'lucide-svelte';
 	import { superForm } from 'sveltekit-superforms';
 	import { zod4Client } from 'sveltekit-superforms/adapters';
 

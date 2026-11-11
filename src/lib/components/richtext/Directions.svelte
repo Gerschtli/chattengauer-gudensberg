@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { MapPinIcon } from 'lucide-svelte';
+	import { MapPinIcon } from '@lucide/svelte';
 
 	import placeholder from '#lib/assets/placeholder-google-maps.jpg';
 	import { storyblokEditable } from '#lib/storyblok/util.ts';

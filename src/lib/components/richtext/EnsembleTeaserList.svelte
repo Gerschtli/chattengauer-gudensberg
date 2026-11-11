@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ChevronRightIcon } from 'lucide-svelte';
+	import { ChevronRightIcon } from '@lucide/svelte';
 
 	import { renderRichText, renderRichTextWithoutParagraph } from '#lib/storyblok/richtext.ts';
 	import { buildUrl, storyblokEditable } from '#lib/storyblok/util.ts';

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { MenuIcon } from 'lucide-svelte';
+	import { MenuIcon } from '@lucide/svelte';
 	import { scrollY } from 'svelte/reactivity/window';
 
 	import { browser } from '$app/env';

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { XIcon } from 'lucide-svelte';
+	import { XIcon } from '@lucide/svelte';
 	import { fade, fly } from 'svelte/transition';
 
 	import { afterNavigate, goto } from '$app/navigation';

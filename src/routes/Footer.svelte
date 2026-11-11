@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { MailIcon, PhoneIcon, UserIcon } from 'lucide-svelte';
+	import { MailIcon, PhoneIcon, UserIcon } from '@lucide/svelte';
 
 	import type { Config } from '$storyblok/335007/storyblok-components';
 

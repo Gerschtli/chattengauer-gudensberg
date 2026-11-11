@@ -1,6 +1,6 @@
 <script lang="ts">
+	import { HashIcon } from '@lucide/svelte';
 	import { type SbBlokData } from '@storyblok/svelte';
-	import { HashIcon } from 'lucide-svelte';
 
 	import Richtext from '#lib/components/Richtext.svelte';
 	import { storyblokEditable } from '#lib/storyblok/util.ts';
