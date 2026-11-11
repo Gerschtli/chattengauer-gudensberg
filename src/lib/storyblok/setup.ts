@@ -1,8 +1,8 @@
 import { type ISbStoriesParams, type ISbStoryData, apiPlugin, storyblokInit, useStoryblokApi } from '@storyblok/svelte';
 import { error } from '@sveltejs/kit';
 
-import { dev } from '$app/environment';
-import { PUBLIC_STORYBLOK_ACCESS_TOKEN } from '$env/static/public';
+import { dev } from '$app/env';
+import { PUBLIC_STORYBLOK_ACCESS_TOKEN } from '$app/env/public';
 
 import { components } from '$lib/components';
 import type { Page } from '$storyblok/335007/storyblok-components';
