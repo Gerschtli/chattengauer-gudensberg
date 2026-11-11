@@ -3,8 +3,7 @@
 	import { scrollY } from 'svelte/reactivity/window';
 
 	import { browser } from '$app/env';
-	import { pushState } from '$app/navigation';
-	import { page } from '$app/state';
+	import { goto } from '$app/navigation';
 
 	import schrift from '$lib/assets/schrift.svg';
 	import wave from '$lib/assets/wave.svg';
@@ -41,7 +40,7 @@
 	function openNav(e: MouseEvent) {
 		e.stopPropagation();
 
-		pushState(page.url, { showNav: true });
+		goto('', { shallow: true, state: { showNav: true } });
 	}
 </script>
 
