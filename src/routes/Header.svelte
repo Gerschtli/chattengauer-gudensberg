@@ -5,8 +5,8 @@
 	import { browser } from '$app/env';
 	import { goto } from '$app/navigation';
 
-	import schrift from '$lib/assets/schrift.svg';
-	import wave from '$lib/assets/wave.svg';
+	import schrift from '#lib/assets/schrift.svg';
+	import wave from '#lib/assets/wave.svg';
 
 	let lastScrollY = $state<number | undefined>();
 	let hideHeader = $state(false);

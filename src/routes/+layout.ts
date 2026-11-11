@@ -1,4 +1,5 @@
-import { initStoryblokApi, loadStory } from '$lib/storyblok/setup';
+import { initStoryblokApi, loadStory } from '#lib/storyblok/setup.ts';
+
 import type { Config } from '$storyblok/335007/storyblok-components';
 
 export async function load({ url }) {

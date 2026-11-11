@@ -1,5 +1,5 @@
 <script lang="ts">
-	import StoryblokInit from '$lib/storyblok/StoryblokInit.svelte';
+	import StoryblokInit from '#lib/storyblok/StoryblokInit.svelte';
 
 	let { data } = $props();
 </script>

@@ -1,6 +1,7 @@
-import { loadStories, loadStory } from '$lib/storyblok/setup';
-import { getEnd, getStart, parseDateAsUtc } from '$lib/time';
-import type { EventData } from '$lib/types';
+import { loadStories, loadStory } from '#lib/storyblok/setup.ts';
+import { getEnd, getStart, parseDateAsUtc } from '#lib/time.ts';
+import type { EventData } from '#lib/types.ts';
+
 import type { EventList, News, Page } from '$storyblok/335007/storyblok-components';
 
 export async function load({ parent }) {

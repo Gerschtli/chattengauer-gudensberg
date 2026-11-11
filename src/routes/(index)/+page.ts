@@ -1,4 +1,4 @@
-import { loadStory } from '$lib/storyblok/setup';
+import { loadStory } from '#lib/storyblok/setup.ts';
 
 export async function load({ parent, data }) {
 	const { storyblokApi, storyblokVisualEditor } = await parent();
