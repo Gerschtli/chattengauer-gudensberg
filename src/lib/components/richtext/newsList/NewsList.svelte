@@ -3,9 +3,9 @@
 	import { type SbBlokData } from '@storyblok/svelte';
 
 	import Richtext from '#lib/components/Richtext.svelte';
+	import type { NewsList } from '#lib/storyblok/types.js';
 	import { storyblokEditable } from '#lib/storyblok/util.ts';
 	import { TIME_ZONE } from '#lib/time.ts';
-	import type { NewsList } from '$storyblok/335007/storyblok-components';
 
 	import { getEnsembleList, getNewsList } from './context';
 

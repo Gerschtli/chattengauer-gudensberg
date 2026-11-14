@@ -17,8 +17,8 @@
 		"lint": "prettier --check . && eslint --max-warnings=0 .",
 		"format": "prettier --write .",
 		"test:unit": "vitest",
-		"storyblok:pull-components": "storyblok components pull && storyblok types generate --strict",
-		"storyblok:push-components": "storyblok components push"
+		"storyblok:pull-components": "storyblok components pull --path ./src/lib/storyblok && storyblok types generate --strict --path ./src/lib/storyblok",
+		"storyblok:push-components": "storyblok components push --path ./src/lib/storyblok"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^2.0.0",

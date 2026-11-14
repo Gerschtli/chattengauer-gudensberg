@@ -1,5 +1,4 @@
-import type { EnsembleLink } from '$storyblok/335007/storyblok-components';
-import type { StoryblokRichTextDoc } from '$storyblok/storyblok';
+import type { EnsembleLink, StoryblokRichTextDoc } from '#lib/storyblok/types.js';
 
 export type EventData = {
 	time:

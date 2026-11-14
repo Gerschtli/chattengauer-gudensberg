@@ -1,6 +1,6 @@
 <script lang="ts">
+	import type { TextAndLeader } from '#lib/storyblok/types.js';
 	import { storyblokEditable } from '#lib/storyblok/util.ts';
-	import type { TextAndLeader } from '$storyblok/335007/storyblok-components';
 
 	import Richtext from '../Richtext.svelte';
 

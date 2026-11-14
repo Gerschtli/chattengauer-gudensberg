@@ -1,6 +1,6 @@
 <script lang="ts">
+	import type { Image } from '#lib/storyblok/types.js';
 	import { storyblokEditable } from '#lib/storyblok/util.ts';
-	import type { Image } from '$storyblok/335007/storyblok-components';
 
 	import ImageInternal from './ImageInternal.svelte';
 

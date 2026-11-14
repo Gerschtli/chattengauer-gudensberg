@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { ChevronRightIcon } from '@lucide/svelte';
 
+	import type { Banner } from '#lib/storyblok/types.js';
 	import { buildUrl, storyblokEditable } from '#lib/storyblok/util.ts';
-	import type { Banner } from '$storyblok/335007/storyblok-components';
 
 	let { blok }: { blok: Banner } = $props();
 

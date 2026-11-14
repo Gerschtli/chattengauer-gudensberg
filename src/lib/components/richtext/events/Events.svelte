@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { ChevronDownIcon } from '@lucide/svelte';
 
+	import type { Events } from '#lib/storyblok/types.js';
 	import { storyblokEditable } from '#lib/storyblok/util.ts';
 	import { TIME_ZONE, getStart } from '#lib/time.ts';
 	import type { EventData } from '#lib/types.ts';
-	import type { Events } from '$storyblok/335007/storyblok-components';
 
 	import { SvelteMap } from 'svelte/reactivity';
 	import { getEvents } from './context';

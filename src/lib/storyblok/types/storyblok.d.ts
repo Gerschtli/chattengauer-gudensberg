@@ -2,11 +2,11 @@
 // DO NOT MODIFY THIS FILE BY HAND.
 import type { ISbStoryData } from '@storyblok/js';
 
-type RichTextDoc = RichTextFieldValueRoot;
+type RichTextDoc = RichTextFieldValue2;
 /**
  * Rich text field type - structured rich text document (ProseMirror/Tiptap format)
  */
-type RichTextFieldValueRoot = {
+type RichTextFieldValue2 = {
 	/**
 	 * Root node type — always "doc"
 	 */
@@ -20,40 +20,40 @@ type RichTextFieldValueRoot = {
  * A rich text document node
  */
 type RichTextFieldValueRichTextNode =
-	| RichTextFieldValueParagraphNode
-	| RichTextFieldValueTextNode
-	| RichTextFieldValueHeadingNode
-	| RichTextFieldValueBlockquoteNode
-	| RichTextFieldValueBulletListNode
-	| RichTextFieldValueOrderedListNode
-	| RichTextFieldValueListItemNode
-	| RichTextFieldValueCodeBlockNode
-	| RichTextFieldValueHardBreakNode
-	| RichTextFieldValueHorizontalRuleNode
-	| RichTextFieldValueImageNode
-	| RichTextFieldValueEmojiNode
-	| RichTextFieldValueTableNode
-	| RichTextFieldValueTableRowNode
-	| RichTextFieldValueTableCellNode
-	| RichTextFieldValueTableHeaderNode
-	| RichTextFieldValueBlockNode;
+	| ParagraphNode
+	| TextNode
+	| HeadingNode
+	| BlockquoteNode
+	| BulletListNode
+	| OrderedListNode
+	| ListItemNode
+	| CodeBlockNode
+	| HardBreakNode
+	| HorizontalRuleNode
+	| ImageNode
+	| EmojiNode
+	| TableNode
+	| TableRowNode
+	| TableCellNode
+	| TableHeaderNode
+	| BlockNode;
 /**
  * Inline formatting mark applied to a text node
  */
 type RichTextFieldValueRichTextMark =
-	| RichTextFieldValueLinkMark
-	| RichTextFieldValueBoldMark
-	| RichTextFieldValueItalicMark
-	| RichTextFieldValueStrikeMark
-	| RichTextFieldValueUnderlineMark
-	| RichTextFieldValueCodeMark
-	| RichTextFieldValueSuperscriptMark
-	| RichTextFieldValueSubscriptMark
-	| RichTextFieldValueHighlightMark
-	| RichTextFieldValueTextStyleMark
-	| RichTextFieldValueAnchorMark
-	| RichTextFieldValueStyledMark;
-type RichTextFieldValueParagraphNode = {
+	| LinkMark
+	| BoldMark
+	| ItalicMark
+	| StrikeMark
+	| UnderlineMark
+	| CodeMark
+	| SuperscriptMark
+	| SubscriptMark
+	| HighlightMark
+	| TextStyleMark
+	| AnchorMark
+	| StyledMark;
+type ParagraphNode = {
 	type: 'paragraph';
 	attrs?: {
 		/**
@@ -68,7 +68,7 @@ type RichTextFieldValueParagraphNode = {
 	content?: Array<RichTextFieldValueRichTextNode>;
 	marks?: Array<RichTextFieldValueRichTextMark>;
 };
-type RichTextFieldValueTextNode = {
+type TextNode = {
 	type: 'text';
 	/**
 	 * The text content
@@ -76,7 +76,7 @@ type RichTextFieldValueTextNode = {
 	text: string;
 	marks?: Array<RichTextFieldValueRichTextMark>;
 };
-type RichTextFieldValueHeadingNode = {
+type HeadingNode = {
 	type: 'heading';
 	attrs: {
 		/**
@@ -95,7 +95,7 @@ type RichTextFieldValueHeadingNode = {
 	content?: Array<RichTextFieldValueRichTextNode>;
 	marks?: Array<RichTextFieldValueRichTextMark>;
 };
-type RichTextFieldValueBlockquoteNode = {
+type BlockquoteNode = {
 	type: 'blockquote';
 	attrs?: {
 		/**
@@ -106,12 +106,12 @@ type RichTextFieldValueBlockquoteNode = {
 	content?: Array<RichTextFieldValueRichTextNode>;
 	marks?: Array<RichTextFieldValueRichTextMark>;
 };
-type RichTextFieldValueBulletListNode = {
+type BulletListNode = {
 	type: 'bullet_list';
 	content?: Array<RichTextFieldValueRichTextNode>;
 	marks?: Array<RichTextFieldValueRichTextMark>;
 };
-type RichTextFieldValueOrderedListNode = {
+type OrderedListNode = {
 	type: 'ordered_list';
 	attrs: {
 		/**
@@ -122,7 +122,7 @@ type RichTextFieldValueOrderedListNode = {
 	content?: Array<RichTextFieldValueRichTextNode>;
 	marks?: Array<RichTextFieldValueRichTextMark>;
 };
-type RichTextFieldValueListItemNode = {
+type ListItemNode = {
 	type: 'list_item';
 	attrs?: {
 		/**
@@ -133,7 +133,7 @@ type RichTextFieldValueListItemNode = {
 	content?: Array<RichTextFieldValueRichTextNode>;
 	marks?: Array<RichTextFieldValueRichTextMark>;
 };
-type RichTextFieldValueCodeBlockNode = {
+type CodeBlockNode = {
 	type: 'code_block';
 	attrs: {
 		/**
@@ -148,13 +148,13 @@ type RichTextFieldValueCodeBlockNode = {
 	content?: Array<RichTextFieldValueRichTextNode>;
 	marks?: Array<RichTextFieldValueRichTextMark>;
 };
-type RichTextFieldValueHardBreakNode = {
+type HardBreakNode = {
 	type: 'hard_break';
 };
-type RichTextFieldValueHorizontalRuleNode = {
+type HorizontalRuleNode = {
 	type: 'horizontal_rule';
 };
-type RichTextFieldValueImageNode = {
+type ImageNode = {
 	type: 'image';
 	attrs: {
 		/**
@@ -180,11 +180,11 @@ type RichTextFieldValueImageNode = {
 			title?: string | null;
 			source?: string | null;
 			copyright?: string | null;
-			[key: string]: string | null | string | null | string | null | string | null | string | null | undefined;
+			[key: string]: string | null | undefined;
 		} | null;
 	};
 };
-type RichTextFieldValueEmojiNode = {
+type EmojiNode = {
 	type: 'emoji';
 	attrs: {
 		/**
@@ -201,15 +201,15 @@ type RichTextFieldValueEmojiNode = {
 		fallbackImage: string;
 	};
 };
-type RichTextFieldValueTableNode = {
+type TableNode = {
 	type: 'table';
 	content?: Array<RichTextFieldValueRichTextNode>;
 };
-type RichTextFieldValueTableRowNode = {
+type TableRowNode = {
 	type: 'tableRow';
 	content?: Array<RichTextFieldValueRichTextNode>;
 };
-type RichTextFieldValueTableCellNode = {
+type TableCellNode = {
 	type: 'tableCell';
 	attrs: {
 		colspan?: number;
@@ -222,7 +222,7 @@ type RichTextFieldValueTableCellNode = {
 	};
 	content?: Array<RichTextFieldValueRichTextNode>;
 };
-type RichTextFieldValueTableHeaderNode = {
+type TableHeaderNode = {
 	type: 'tableHeader';
 	attrs: {
 		colspan?: number;
@@ -234,7 +234,7 @@ type RichTextFieldValueTableHeaderNode = {
 	};
 	content?: Array<RichTextFieldValueRichTextNode>;
 };
-type RichTextFieldValueBlockNode = {
+type BlockNode = {
 	type: 'blok';
 	attrs: {
 		/**
@@ -244,10 +244,10 @@ type RichTextFieldValueBlockNode = {
 		/**
 		 * Array of embedded component instances
 		 */
-		body: Array<BlockContentInputRoot> | null;
+		body: Array<BlockContentInput2> | null;
 	};
 };
-type RichTextFieldValueLinkMark = {
+type LinkMark = {
 	type: 'link';
 	/**
 	 * Link attributes
@@ -281,28 +281,28 @@ type RichTextFieldValueLinkMark = {
 		} | null;
 	};
 };
-type RichTextFieldValueBoldMark = {
+type BoldMark = {
 	type: 'bold';
 };
-type RichTextFieldValueItalicMark = {
+type ItalicMark = {
 	type: 'italic';
 };
-type RichTextFieldValueStrikeMark = {
+type StrikeMark = {
 	type: 'strike';
 };
-type RichTextFieldValueUnderlineMark = {
+type UnderlineMark = {
 	type: 'underline';
 };
-type RichTextFieldValueCodeMark = {
+type CodeMark = {
 	type: 'code';
 };
-type RichTextFieldValueSuperscriptMark = {
+type SuperscriptMark = {
 	type: 'superscript';
 };
-type RichTextFieldValueSubscriptMark = {
+type SubscriptMark = {
 	type: 'subscript';
 };
-type RichTextFieldValueHighlightMark = {
+type HighlightMark = {
 	type: 'highlight';
 	attrs: {
 		/**
@@ -311,7 +311,7 @@ type RichTextFieldValueHighlightMark = {
 		color: string | null;
 	};
 };
-type RichTextFieldValueTextStyleMark = {
+type TextStyleMark = {
 	type: 'textStyle';
 	attrs: {
 		color?: string | null;
@@ -319,7 +319,7 @@ type RichTextFieldValueTextStyleMark = {
 		class?: string | null;
 	};
 };
-type RichTextFieldValueAnchorMark = {
+type AnchorMark = {
 	type: 'anchor';
 	attrs: {
 		/**
@@ -328,7 +328,7 @@ type RichTextFieldValueAnchorMark = {
 		id: string;
 	};
 };
-type RichTextFieldValueStyledMark = {
+type StyledMark = {
 	type: 'styled';
 	attrs: {
 		/**
@@ -340,7 +340,7 @@ type RichTextFieldValueStyledMark = {
 /**
  * Content object for creating or updating a component instance. Contains a component technical name and dynamic fields whose values depend on the component's schema field types. The _uid is optional — Storyblok will auto-generate one if not provided.
  */
-type BlockContentInputRoot = {
+type BlockContentInput2 = {
 	/**
 	 * Unique identifier for this component instance (auto-generated when omitted)
 	 */
@@ -358,19 +358,18 @@ type BlockContentInputRoot = {
 		| string
 		| number
 		| boolean
-		| Array<string | AssetFieldValueRoot | BlockContentInputRoot>
-		| AssetFieldValueRoot
-		| MultilinkFieldValueRoot
-		| TableFieldValueRoot
-		| RichTextFieldValueRoot
-		| PluginFieldValueRoot
-		| string
+		| Array<string | AssetFieldValue2 | BlockContentInput2>
+		| AssetFieldValue2
+		| MultilinkFieldValue2
+		| TableFieldValue2
+		| RichTextFieldValue2
+		| PluginFieldValue2
 		| undefined;
 };
 /**
  * Asset field type - single asset (image, video, audio, or document)
  */
-type AssetFieldValueRoot = {
+type AssetFieldValue2 = {
 	/**
 	 * Identifies this as an asset field
 	 */
@@ -421,15 +420,11 @@ type AssetFieldValueRoot = {
 /**
  * Multilink field type - link to internal stories, external URLs, emails, or assets.
  */
-type MultilinkFieldValueRoot =
-	| MultilinkFieldValueStoryLink
-	| MultilinkFieldValueUrlLink
-	| MultilinkFieldValueEmailLink
-	| MultilinkFieldValueAssetLink;
+type MultilinkFieldValue2 = StoryLink | UrlLink | EmailLink | AssetLink;
 /**
  * Table field type - structured table data
  */
-type TableFieldValueRoot = {
+type TableFieldValue2 = {
 	/**
 	 * Table header cells
 	 */
@@ -463,7 +458,7 @@ type TableFieldValueRoot = {
 /**
  * Plugin/Custom field type - field plugin with custom structure
  */
-type PluginFieldValueRoot = {
+type PluginFieldValue2 = {
 	/**
 	 * Technical name of the field plugin
 	 */
@@ -472,12 +467,12 @@ type PluginFieldValueRoot = {
 	 * Unique identifier for this plugin field instance
 	 */
 	_uid?: string;
-	[key: string]: unknown | string | undefined;
+	[key: string]: unknown;
 };
 /**
  * Link to an internal Storyblok story.
  */
-type MultilinkFieldValueStoryLink = MultilinkFieldValueSharedLink & {
+type StoryLink = SharedLink & {
 	linktype: 'story';
 	/**
 	 * Anchor/fragment identifier for the story link
@@ -497,7 +492,7 @@ type MultilinkFieldValueStoryLink = MultilinkFieldValueSharedLink & {
 /**
  * Link to an external URL.
  */
-type MultilinkFieldValueUrlLink = MultilinkFieldValueSharedLink & {
+type UrlLink = SharedLink & {
 	linktype: 'url';
 	/**
 	 * Link relationship attribute
@@ -513,7 +508,7 @@ type MultilinkFieldValueUrlLink = MultilinkFieldValueSharedLink & {
 /**
  * Link to an email address.
  */
-type MultilinkFieldValueEmailLink = MultilinkFieldValueSharedLink & {
+type EmailLink = SharedLink & {
 	linktype: 'email';
 	/**
 	 * Email address
@@ -523,10 +518,10 @@ type MultilinkFieldValueEmailLink = MultilinkFieldValueSharedLink & {
 /**
  * Link to a Storyblok asset.
  */
-type MultilinkFieldValueAssetLink = MultilinkFieldValueSharedLink & {
+type AssetLink = SharedLink & {
 	linktype: 'asset';
 };
-type MultilinkFieldValueSharedLink = {
+type SharedLink = {
 	/**
 	 * Identifies this as a multilink field
 	 */

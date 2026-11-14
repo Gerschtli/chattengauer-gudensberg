@@ -54,6 +54,6 @@ export default ts.config(
 		},
 	},
 	{
-		ignores: ['.storyblok/types/**/*.d.ts'],
+		ignores: ['src/lib/storyblok/types/*.d.ts'],
 	},
 );

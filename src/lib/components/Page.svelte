@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { StoryblokComponent } from '@storyblok/svelte';
 
+	import type { Page } from '#lib/storyblok/types.js';
 	import { storyblokEditable } from '#lib/storyblok/util.ts';
-	import type { Page } from '$storyblok/335007/storyblok-components';
 
 	import Richtext from './Richtext.svelte';
 

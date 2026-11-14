@@ -1,6 +1,5 @@
 import { initStoryblokApi, loadStory } from '#lib/storyblok/setup.ts';
-
-import type { Config } from '$storyblok/335007/storyblok-components';
+import type { Config } from '#lib/storyblok/types.js';
 
 export async function load({ url }) {
 	const storyblokApi = initStoryblokApi();

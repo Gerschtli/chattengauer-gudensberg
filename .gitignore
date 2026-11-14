@@ -1,8 +1,8 @@
-/.storyblok/logs
 /.svelte-kit
 /.vercel
 /build
 /package
+/src/lib/storyblok/logs
 /test-results
 
 node_modules

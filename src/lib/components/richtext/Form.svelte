@@ -1,6 +1,6 @@
 <script lang="ts">
+	import type { Form } from '#lib/storyblok/types.js';
 	import { storyblokEditable } from '#lib/storyblok/util.ts';
-	import type { Form } from '$storyblok/335007/storyblok-components';
 
 	import BookingForm from './form/BookingForm.svelte';
 	import EngageEnsembleForm from './form/EngageEnsembleForm.svelte';

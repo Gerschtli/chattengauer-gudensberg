@@ -2,7 +2,7 @@
 	import { StoryblokComponent } from '@storyblok/svelte';
 
 	import { renderRichText } from '#lib/storyblok/richtext.ts';
-	import type { StoryblokRichtext } from '$storyblok/storyblok';
+	import type { StoryblokRichtext } from '#lib/storyblok/types.js';
 
 	const { blok, class: className }: { blok: StoryblokRichtext; class?: string } = $props();
 </script>

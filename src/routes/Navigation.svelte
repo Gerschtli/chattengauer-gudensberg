@@ -6,8 +6,8 @@
 	import { page } from '$app/state';
 
 	import { renderRichTextWithoutParagraph } from '#lib/storyblok/richtext.ts';
+	import type { Config, NavigationLink } from '#lib/storyblok/types.js';
 	import { buildUrl } from '#lib/storyblok/util.ts';
-	import type { Config, NavigationLink } from '$storyblok/335007/storyblok-components';
 
 	const { blok }: { blok: Config } = $props();
 

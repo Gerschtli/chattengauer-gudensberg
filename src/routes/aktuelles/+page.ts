@@ -1,8 +1,7 @@
 import { loadStories, loadStory } from '#lib/storyblok/setup.ts';
+import type { EventList, News, Page } from '#lib/storyblok/types.js';
 import { getEnd, getStart, parseDateAsUtc } from '#lib/time.ts';
 import type { EventData } from '#lib/types.ts';
-
-import type { EventList, News, Page } from '$storyblok/335007/storyblok-components';
 
 export async function load({ parent }) {
 	const { storyblokApi, storyblokVisualEditor } = await parent();

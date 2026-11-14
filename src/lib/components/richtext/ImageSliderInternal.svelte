@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { StoryblokMultiasset } from '$storyblok/storyblok';
+	import type { StoryblokMultiasset } from '#lib/storyblok/types.js';
 
 	import ImageInternal from './ImageInternal.svelte';
 
