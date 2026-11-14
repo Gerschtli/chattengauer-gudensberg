@@ -1,5 +1,6 @@
-import type { StoryblokRichTextDoc } from '#lib/storyblok/types.js';
 import { type StoryblokRichTextRenderContext, renderRichText as renderStoryblokRichText } from '@storyblok/richtext';
+
+import type { StoryblokRichTextDoc } from '#lib/storyblok/types.js';
 
 const options: StoryblokRichTextRenderContext = {
 	renderers: {
